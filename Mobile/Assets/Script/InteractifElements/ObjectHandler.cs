@@ -11,6 +11,8 @@ public class ObjectHandler : MonoBehaviour
 
     private bool isZoomed;
 
+    private GameObject trialInstantiate;
+
     void Start()
     {
         interactifElement = GetComponent<InteractifElement>();
@@ -75,6 +77,7 @@ public class ObjectHandler : MonoBehaviour
             hitBoxDezoom.gameObject.SetActive(false);
             HitBoxZoom.gameObject.layer = 8;
             isZoomed = false;
+            Destroy(trialInstantiate);
         }
     }
 
@@ -82,7 +85,7 @@ public class ObjectHandler : MonoBehaviour
     public virtual void Interact(GameObject currentGameObject)
     {
        
-        if(currentGameObject == HitBoxZoom.gameObject )
+        if(HitBoxZoom != null && currentGameObject == HitBoxZoom.gameObject )
         {
             if(interactifElement.hasLinkGameObject)
             {
@@ -95,8 +98,13 @@ public class ObjectHandler : MonoBehaviour
                 }
                 if (numberOfObject != interactifElement.ObjectoOpen.Count)
                     return;
-            }            
-            interactifElement.interactionAnimator.SetTrigger("Interact");
+            }
+            if(!interactifElement.spawnNewTrial)
+                interactifElement.interactionAnimator.SetTrigger("Interact");
+            else if(trialInstantiate == null)
+            {
+               trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform);
+            }
         }
     }
     public virtual void CollectObject(GameObject currentGameObject)
