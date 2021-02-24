@@ -17,6 +17,7 @@ public class EventManager : MonoBehaviour
     }
 
     #region Actions
+   //call in DeviceManager
     public event Action<bool> SwipeUp;
     public event Action SwipeLeft;
     public event Action SwipeRight;
@@ -26,6 +27,8 @@ public class EventManager : MonoBehaviour
 
     public event Action<GameObject> CollectObject;
     public event Action<GameObject> InteractObject;
+    // call in LightManager
+    public event Action<GameObject> LightObject;
 #endregion
 
     #region Invoke
@@ -57,6 +60,10 @@ public class EventManager : MonoBehaviour
     public void OnInteract(GameObject currentObjects)
     {
         InteractObject.Invoke(currentObjects);
+    }
+    public void OnLightOn(GameObject currentObject)
+    {
+        LightObject.Invoke(currentObject);
     }
     #endregion
 }

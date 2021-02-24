@@ -131,6 +131,7 @@ public class InteractifElementEditor : Editor
         interactifElements.inventory = EditorGUILayout.Toggle("Will be Stock in inventory", interactifElements.inventory);
         if (interactifElements.inventory)
         {
+            
             interactifElements.needToBeAssemble = EditorGUILayout.Toggle("Need To be Assemble", interactifElements.needToBeAssemble);
             if (interactifElements.needToBeAssemble)
             {

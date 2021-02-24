@@ -45,27 +45,31 @@ public class ObjectHandler : MonoBehaviour
     }
     public float Zoom(CamDirection currentDirection)
     {
-        if (interactifElement.zoomFromUp && !isZoomed)
-            if (!EventManager.instance.uspideDown)
-                return 2f;
-            else
-                return -2f;
+        if (!isZoomed)
+        {
+            if (interactifElement.zoomFromUp )
+                if (!EventManager.instance.uspideDown)
+                    return 2f;
+                else
+                    return -2f;
 
 
-        foreach (var direction in interactifElement.leftCam)
-        {
-            if (currentDirection == direction)
+            foreach (var direction in interactifElement.leftCam)
             {
-                return -1f;
+                if (currentDirection == direction)
+                {
+                    return -1f;
+                }
+            }
+            foreach (var direction in interactifElement.rightCam)
+            {
+                if (currentDirection == direction)
+                {
+                    return 1f;
+                }
             }
         }
-        foreach (var direction in interactifElement.rightCam)
-        {
-            if (currentDirection == direction)
-            {
-                return 1f;
-            }
-        }
+
 
         return default;
     }

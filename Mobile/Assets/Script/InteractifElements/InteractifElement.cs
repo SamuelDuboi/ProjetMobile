@@ -27,7 +27,6 @@ public class InteractifElement : MonoBehaviour
     public bool needToBeAssemble;
     public GameObject otherAssemblingObject;
     public GameObject assembledGameObjetc;
-
     public void AddList<T>(List<T> list)
     {
         if (list == null)
