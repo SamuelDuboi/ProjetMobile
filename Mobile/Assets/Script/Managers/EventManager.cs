@@ -63,6 +63,7 @@ public class EventManager : MonoBehaviour
     }
     public void OnLightOn(GameObject currentObject)
     {
+        if(LightObject != null)
         LightObject.Invoke(currentObject);
     }
     #endregion

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+[RequireComponent(typeof(LineRenderer))]
 public class LightManager : MonoBehaviour
 {
-    public GameObject light;
     private float maxStepDistance = 200;
     public int maxReflectionCount = 5;
     private LineRenderer lineRenderer;
@@ -13,6 +13,9 @@ public class LightManager : MonoBehaviour
     void Start()
     {
         EventManager.instance.InteractObject += LunchCastLight;
+        EventManager.instance.SwipeLeft += LunchCastOnSwipeSide;
+        EventManager.instance.SwipeUp += LunchCastOnSwipeUp;
+        EventManager.instance.SwipeRight += LunchCastOnSwipeSide;
         lineRenderer = GetComponent<LineRenderer>();
         LunchCastLight(gameObject);
     }
@@ -25,18 +28,33 @@ public class LightManager : MonoBehaviour
         DrawPattern(this.transform.position + this.transform.forward * 0.75f, this.transform.forward, maxReflectionCount);
     }
 
-    private void LunchCastLight(GameObject currentObject)
+    private void LunchCastOnSwipeSide()
+    {
+        StartCoroutine(WaitToCastLight());
+
+    }
+    private void LunchCastOnSwipeUp(bool right)
+    {
+        StartCoroutine(WaitToCastLight());
+
+    }
+
+    private void LunchCastLight(GameObject currentObject = null)
     {
         StartCoroutine(WaitToCastLight());
     }
    private IEnumerator WaitToCastLight() 
     {
+        
         yield return new WaitForSeconds(0.5f);
+        lineRenderer.positionCount = 0;
+        lineRenderer.positionCount = 1;
         CastLight(this.transform.position + this.transform.forward * 0.75f, this.transform.forward, maxReflectionCount);
     }
 
     private void CastLight(Vector3 position, Vector3 direction, int reflexionRemaining)
     {
+        
         if (reflexionRemaining == 0)
         {
             return;
@@ -55,17 +73,17 @@ public class LightManager : MonoBehaviour
             }
             else if (hit.collider.gameObject.tag == "Reception")
             {
-                var currentlight = Instantiate(light, position, transform.rotation);
-                currentlight.GetComponent<LineRenderer>().SetPosition(0, startingPostion);
-                currentlight.GetComponent<LineRenderer>().SetPosition(1, hit.point);
+                lineRenderer.positionCount++;
+                lineRenderer.SetPosition(lineRenderer.positionCount-2, startingPostion);
+                lineRenderer.SetPosition(lineRenderer.positionCount-1, hit.point);
                 EventManager.instance.OnLightOn(gameObject);
                 return;
             }
             else
             {
-                var currentlight = Instantiate(light, position, transform.rotation);
-                currentlight.GetComponent<LineRenderer>().SetPosition(0, startingPostion);
-                currentlight.GetComponent<LineRenderer>().SetPosition(1, hit.point);
+                lineRenderer.positionCount++;
+                lineRenderer.SetPosition(lineRenderer.positionCount - 2, startingPostion);
+                lineRenderer.SetPosition(lineRenderer.positionCount-1, hit.point);
                 return;
             }
 
@@ -74,9 +92,9 @@ public class LightManager : MonoBehaviour
         {
             return;
         }
-        var _light = Instantiate(light, position, transform.rotation);
-        _light.GetComponent<LineRenderer>().SetPosition(0, startingPostion);
-        _light.GetComponent<LineRenderer>().SetPosition(1, position);
+        lineRenderer.positionCount++;
+        lineRenderer.SetPosition(lineRenderer.positionCount - 2, startingPostion);
+        lineRenderer.SetPosition(lineRenderer.positionCount-1, startingPostion);
         CastLight(position, direction, reflexionRemaining - 1);
     }
     
