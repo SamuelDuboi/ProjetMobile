@@ -34,6 +34,8 @@ public class EventManager : MonoBehaviour
     #region Invoke
     public void OnSwipeUp(bool up)
     {
+        uspideDown = !uspideDown;
+
         SwipeUp.Invoke(up);
     }
     public void OnSwipeLeft()
