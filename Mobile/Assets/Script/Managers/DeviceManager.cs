@@ -89,6 +89,7 @@ public class DeviceManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            
             RaycastHit hit = new RaycastHit();
             LayerMask mask = 1<<8;
 

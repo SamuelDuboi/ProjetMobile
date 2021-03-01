@@ -9,6 +9,7 @@ public class LightManager : MonoBehaviour
     private float maxStepDistance = 200;
     public int maxReflectionCount = 5;
     private LineRenderer lineRenderer;
+    private float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,11 +46,16 @@ public class LightManager : MonoBehaviour
     }
    private IEnumerator WaitToCastLight() 
     {
+        timer = 0;
+        while (timer < 0.5f)
+        {
+            timer += Time.deltaTime;
+            lineRenderer.positionCount = 0;
+            lineRenderer.positionCount = 1;
+            CastLight(this.transform.position + this.transform.forward * 0.75f, this.transform.forward, maxReflectionCount);
+            yield return new WaitForEndOfFrame();
+        }
         
-        yield return new WaitForSeconds(0.5f);
-        lineRenderer.positionCount = 0;
-        lineRenderer.positionCount = 1;
-        CastLight(this.transform.position + this.transform.forward * 0.75f, this.transform.forward, maxReflectionCount);
     }
 
     private void CastLight(Vector3 position, Vector3 direction, int reflexionRemaining)
