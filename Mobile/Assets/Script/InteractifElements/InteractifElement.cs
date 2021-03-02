@@ -23,6 +23,8 @@ public class InteractifElement : MonoBehaviour
     public bool spawnNewTrial;
     public GameObject TrialGameObjects;
 
+    public List<GameObject> objectToActive;
+
     public bool inventory;
     public bool needToBeAssemble;
     public GameObject otherAssemblingObject;

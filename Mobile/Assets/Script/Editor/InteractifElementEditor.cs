@@ -8,7 +8,7 @@ public class InteractifElementEditor : Editor
     InteractifElement interactifElements;
 
 
-    private bool toogleListLeft, ToggleListRIght;
+    private bool foldoutListLeft, foldoutListRight,foldoutListOpen;
     private void OnEnable()
     {
         interactifElements = target as InteractifElement;
@@ -20,6 +20,13 @@ public class InteractifElementEditor : Editor
         interactifElements.isLInkedToWall = EditorGUILayout.Toggle("Link to a wall", interactifElements.isLInkedToWall);
         if (interactifElements.isLInkedToWall)
             interactifElements.wallLinked = (GameObject)EditorGUILayout.ObjectField("Wall linked", interactifElements.wallLinked, typeof(GameObject), true);
+        EditorGUILayout.Space(20);
+        foldoutListOpen = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListOpen, "ObjectToActivate");
+        if (foldoutListOpen)
+        {
+            ManageObjectList(interactifElements.objectToActive);
+        }
+        EditorGUILayout.EndFoldoutHeaderGroup();
 
         EditorGUILayout.Space(20);
         interactifElements.zoom = EditorGUILayout.Toggle("Zoom", interactifElements.zoom);
@@ -45,14 +52,14 @@ public class InteractifElementEditor : Editor
             {
                 EditorGUILayout.Space(20);
 
-                toogleListLeft = EditorGUILayout.BeginFoldoutHeaderGroup(toogleListLeft,"Zoom On Left");
-                    if(toogleListLeft)
+                foldoutListLeft = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListLeft,"Zoom On Left");
+                    if(foldoutListLeft)
                          ManageCamLis(interactifElements.leftCam);
                     EditorGUILayout.Space(20);
                 EditorGUILayout.EndFoldoutHeaderGroup();
 
-                    ToggleListRIght = EditorGUILayout.BeginFoldoutHeaderGroup(ToggleListRIght,"Zoom On Right");
-                    if (ToggleListRIght)
+                    foldoutListRight = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListRight,"Zoom On Right");
+                    if (foldoutListRight)
                         ManageCamLis(interactifElements.rightCam);
                 EditorGUILayout.EndFoldoutHeaderGroup();
 
@@ -102,26 +109,7 @@ public class InteractifElementEditor : Editor
         interactifElements.hasLinkGameObject = EditorGUILayout.Toggle("Need object to open/work", interactifElements.hasLinkGameObject);
         if (interactifElements.hasLinkGameObject)
         {
-            var list = interactifElements.ObjectoOpen;
-            if (list != null && list.Count != 0)
-            {
-                for (int i = 0; i < list.Count; i++)
-                {
-                    list[i] = (GameObject)EditorGUILayout.ObjectField(list[i], typeof(GameObject), true);
-                }
-
-                EditorGUILayout.BeginHorizontal();
-                if (GUILayout.Button("+", EditorStyles.miniButton))
-                    interactifElements.AddList(list);
-                if (GUILayout.Button("-", EditorStyles.miniButton))
-                    interactifElements.RemoveFromList(list);
-                EditorGUILayout.EndHorizontal();
-            }
-            else
-            {
-                if (GUILayout.Button("+", EditorStyles.miniButton))
-                    interactifElements.AddList(list);
-            }
+            ManageObjectList(interactifElements.ObjectoOpen);
         }
         EditorGUILayout.Space(20);
     }
@@ -140,4 +128,30 @@ public class InteractifElementEditor : Editor
             }
         }
     }
+
+    private void ManageObjectList(List<GameObject> list)
+    {
+        if (list != null && list.Count != 0)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                list[i] = (GameObject)EditorGUILayout.ObjectField(list[i], typeof(GameObject), true);
+            }
+
+            EditorGUILayout.BeginHorizontal();
+            if (GUILayout.Button("+", EditorStyles.miniButton))
+                interactifElements.AddList(list);
+            if (GUILayout.Button("-", EditorStyles.miniButton))
+                interactifElements.RemoveFromList(list);
+            EditorGUILayout.EndHorizontal();
+        }
+        else
+        {
+            if (GUILayout.Button("+", EditorStyles.miniButton))
+                interactifElements.AddList(list);
+        }
+
+    }
+        
+    
 }

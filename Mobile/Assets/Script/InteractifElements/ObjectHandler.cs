@@ -30,6 +30,10 @@ public class ObjectHandler : MonoBehaviour
 
         if (interactifElement.inventory)
             HitBoxZoom.gameObject.tag = "Collectable";
+
+
+        InteractActiveObject(false);
+
     }
 
 
@@ -91,6 +95,8 @@ public class ObjectHandler : MonoBehaviour
        
         if(HitBoxZoom != null && currentGameObject == HitBoxZoom.gameObject )
         {
+            InteractActiveObject(true);
+
             if(interactifElement.hasLinkGameObject)
             {
                 int numberOfObject = 0;
@@ -117,6 +123,18 @@ public class ObjectHandler : MonoBehaviour
         {
             InventoryManager.Instance.AddList(gameObject);
             gameObject.SetActive(false);
+        }
+    }
+
+    public void InteractActiveObject(bool setActive)
+    {
+
+        if (interactifElement.objectToActive != null)
+        {
+            foreach (var gameObject in interactifElement.objectToActive)
+            {
+                gameObject.SetActive(setActive);
+            }
         }
     }
 }
