@@ -39,13 +39,14 @@ public class RoomManagerEditor : Editor
         {
             if (!roomManager.upsideDownEditor)
             {
-                roomManager.animator.gameObject.transform.position = Vector3.up * 22;
-                roomManager.animator.gameObject.transform.rotation = Quaternion.Euler(Vector3.forward * 180);
+                roomManager.main.transform.rotation = Quaternion.Euler(new Vector3(0,-45,180));
+                roomManager.main.transform.position = Vector3.up*20;
             }
             else
             {
-                roomManager.animator.gameObject.transform.position = Vector3.zero;
-                roomManager.animator.gameObject.transform.rotation = Quaternion.Euler(Vector3.zero);
+                roomManager.main.transform.rotation = Quaternion.Euler(Vector3.up*45);
+                roomManager.main.transform.position = Vector3.zero;
+
             }
             roomManager.upsideDownEditor = !roomManager.upsideDownEditor;
         }
