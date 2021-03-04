@@ -24,6 +24,7 @@ public class InteractifElement : MonoBehaviour
     public GameObject TrialGameObjects;
 
     public List<GameObject> objectToActive;
+    public List<GameObject> objectToInteract;
 
     public bool inventory;
     public bool needToBeAssemble;

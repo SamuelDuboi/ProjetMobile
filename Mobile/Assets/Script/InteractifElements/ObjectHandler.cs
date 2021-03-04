@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectHandler : MonoBehaviour
 {
-    private InteractifElement interactifElement;
+    [HideInInspector] public InteractifElement interactifElement;
 
     public BoxCollider hitBoxDezoom;
     public BoxCollider HitBoxZoom;
@@ -31,6 +31,9 @@ public class ObjectHandler : MonoBehaviour
         if (interactifElement.inventory)
             HitBoxZoom.gameObject.tag = "Collectable";
 
+        if (interactifElement.objectToInteract != null || interactifElement.objectToInteract.Count != 0)
+        {
+        }
 
         InteractActiveObject(false);
 

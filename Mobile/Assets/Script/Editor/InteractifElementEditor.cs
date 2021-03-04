@@ -8,7 +8,7 @@ public class InteractifElementEditor : Editor
     InteractifElement interactifElements;
 
 
-    private bool foldoutListLeft, foldoutListRight,foldoutListOpen;
+    private bool foldoutListLeft, foldoutListRight,foldoutListOpen, foldoutListInteract;
     private void OnEnable()
     {
         interactifElements = target as InteractifElement;
@@ -25,6 +25,13 @@ public class InteractifElementEditor : Editor
         if (foldoutListOpen)
         {
             ManageObjectList(interactifElements.objectToActive);
+        }
+        EditorGUILayout.EndFoldoutHeaderGroup();
+        EditorGUILayout.Space(20);
+        foldoutListInteract = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListInteract, "Object to interact after anim");
+        if (foldoutListInteract)
+        {
+            ManageObjectList(interactifElements.objectToInteract);
         }
         EditorGUILayout.EndFoldoutHeaderGroup();
 
@@ -106,11 +113,12 @@ public class InteractifElementEditor : Editor
         }
 
 
-        interactifElements.hasLinkGameObject = EditorGUILayout.Toggle("Need object to open/work", interactifElements.hasLinkGameObject);
+        interactifElements.hasLinkGameObject = EditorGUILayout.Toggle("Need object to open/", interactifElements.hasLinkGameObject);
         if (interactifElements.hasLinkGameObject)
         {
             ManageObjectList(interactifElements.ObjectoOpen);
         }
+
         EditorGUILayout.Space(20);
     }
 

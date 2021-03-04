@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -371,6 +371,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZoomSide
       objectReference: {fileID: 0}
+    - target: {fileID: 1734937885724693130, guid: 272afe7ccc531f34585a945f99f2ab5c,
+        type: 3}
+      propertyPath: zoom
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1734937885724693131, guid: 272afe7ccc531f34585a945f99f2ab5c,
         type: 3}
       propertyPath: m_RootOrder
@@ -443,6 +448,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 272afe7ccc531f34585a945f99f2ab5c, type: 3}
+--- !u!1 &1178996810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1734937885724693124, guid: 272afe7ccc531f34585a945f99f2ab5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1040209068}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1209961619
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,6 +674,8 @@ MonoBehaviour:
   TrialGameObjects: {fileID: 0}
   objectToActive:
   - {fileID: 1911968256}
+  objectToInteract:
+  - {fileID: 1178996810}
   inventory: 0
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
@@ -679,6 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb44047e9ad33749a7d29d1b6cd3131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactifElement: {fileID: 0}
   hitBoxDezoom: {fileID: 2554871875978629599}
   HitBoxZoom: {fileID: 2554871876186218031}
 --- !u!1 &2554871875591534527
@@ -2409,6 +2423,7 @@ MonoBehaviour:
   spawnNewTrial: 0
   TrialGameObjects: {fileID: 0}
   objectToActive: []
+  objectToInteract: []
   inventory: 0
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
@@ -2425,6 +2440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb44047e9ad33749a7d29d1b6cd3131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactifElement: {fileID: 0}
   hitBoxDezoom: {fileID: 786757186762188227}
   HitBoxZoom: {fileID: 6614351516974643534}
 --- !u!1 &6614351517504131615
