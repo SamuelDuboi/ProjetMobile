@@ -30,7 +30,7 @@ public class LightManager : MonoBehaviour
     }
     private void Update()
     {
-        if (!cantCast)
+        if (!cantCast )
         {
             lineRenderer.positionCount = 0;
             lineRenderer.positionCount = 1;
@@ -94,7 +94,7 @@ public class LightManager : MonoBehaviour
                 lineRenderer.positionCount++;
                 lineRenderer.SetPosition(lineRenderer.positionCount-2, startingPostion);
                 lineRenderer.SetPosition(lineRenderer.positionCount-1, hit.point);
-                EventManager.instance.OnLightOn(gameObject);
+                EventManager.instance.OnLightOn(hit.collider.gameObject);
                 cantCast = false;
                 return;
             }

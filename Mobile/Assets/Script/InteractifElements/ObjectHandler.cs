@@ -117,6 +117,7 @@ public class ObjectHandler : MonoBehaviour
             else if(trialInstantiate == null)
             {
                trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform);
+                interactifElement.spawnNewTrial = false;
             }
         }
     }
