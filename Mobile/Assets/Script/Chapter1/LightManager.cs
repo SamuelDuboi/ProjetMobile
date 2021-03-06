@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[RequireComponent(typeof(LineRenderer))]
+
 public class LightManager : MonoBehaviour
 {
     private float maxStepDistance = 200;
@@ -13,22 +13,33 @@ public class LightManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventManager.instance.InteractObject += LunchCastLight;
-        EventManager.instance.SwipeLeft += LunchCastOnSwipeSide;
-        EventManager.instance.SwipeUp += LunchCastOnSwipeUp;
-        EventManager.instance.SwipeRight += LunchCastOnSwipeSide;
+        //EventManager.instance.InteractObject += LunchCastLight;
+        //EventManager.instance.SwipeLeft += LunchCastOnSwipeSide;
+       // EventManager.instance.SwipeUp += LunchCastOnSwipeUp;
+       // EventManager.instance.SwipeRight += LunchCastOnSwipeSide;
         lineRenderer = GetComponent<LineRenderer>();
         LunchCastLight(gameObject);
     }
-   /* private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Handles.color = Color.red;
         Handles.ArrowHandleCap(0, this.transform.position + this.transform.forward * 0.25f, this.transform.rotation, 0.5f, EventType.Repaint);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(this.transform.position, 0.25f);
         DrawPattern(this.transform.position + this.transform.forward * 0.75f, this.transform.forward, maxReflectionCount);
-    }*/
-
+    }
+    private void Update()
+    {
+        if (!cantCast)
+        {
+            lineRenderer.positionCount = 0;
+            lineRenderer.positionCount = 1;
+            cantCast = true;
+            CastLight(this.transform.position + this.transform.forward * 0.75f, this.transform.forward, maxReflectionCount);
+        }
+        
+    }
+    
     private void LunchCastOnSwipeSide()
     {
         StartCoroutine(WaitToCastLight());
@@ -57,12 +68,13 @@ public class LightManager : MonoBehaviour
         }
         
     }
-
+    private bool cantCast;
     private void CastLight(Vector3 position, Vector3 direction, int reflexionRemaining)
     {
-        
+             
         if (reflexionRemaining == 0)
         {
+            cantCast = false;
             return;
         }
 
@@ -83,6 +95,7 @@ public class LightManager : MonoBehaviour
                 lineRenderer.SetPosition(lineRenderer.positionCount-2, startingPostion);
                 lineRenderer.SetPosition(lineRenderer.positionCount-1, hit.point);
                 EventManager.instance.OnLightOn(gameObject);
+                cantCast = false;
                 return;
             }
             else
@@ -90,12 +103,14 @@ public class LightManager : MonoBehaviour
                 lineRenderer.positionCount++;
                 lineRenderer.SetPosition(lineRenderer.positionCount - 2, startingPostion);
                 lineRenderer.SetPosition(lineRenderer.positionCount-1, hit.point);
+                cantCast = false;
                 return;
             }
 
         }
         else
         {
+            cantCast = false;
             return;
         }
         lineRenderer.positionCount++;

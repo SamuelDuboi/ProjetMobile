@@ -22,7 +22,7 @@ public class RoomManagerEditor : Editor
             else
                 roomManager.TurnEditor(-90);
         }
-        if (GUILayout.Button("TrunRight"))
+        if (GUILayout.Button("TurnRight"))
         {
             if (!roomManager.upsideDownEditor)
                 roomManager.TurnEditor(-90);

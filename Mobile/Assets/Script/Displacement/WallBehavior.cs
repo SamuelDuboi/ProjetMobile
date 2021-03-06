@@ -26,7 +26,7 @@ public class WallBehavior : MonoBehaviour
         {
             for (int i = 0; i < 50; i++)
             {
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + multiplicateur * (4 * i / 50) / 17.5f, transform.localPosition.z);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + multiplicateur * (7f * i / 50) / 10f, transform.localPosition.z);
                 yield return new WaitForSeconds(0.01f);
             }
         }
@@ -34,7 +34,7 @@ public class WallBehavior : MonoBehaviour
         {
             for (int i = 0; i < 50; i++)
             {
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - multiplicateur * (4 * i / 50) / 17.5f, transform.localPosition.z);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - multiplicateur * (7f * i / 50) / 10f, transform.localPosition.z);
                 yield return new WaitForSeconds(0.01f);
 
             }
@@ -57,13 +57,13 @@ public class WallBehavior : MonoBehaviour
         if (!upsideDown)
         {
 
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + multiplicateur * 4, transform.localPosition.z);
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + multiplicateur * 17.5f, transform.localPosition.z);
 
         }
         else
         {
 
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - multiplicateur * 4, transform.localPosition.z);
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - multiplicateur * 17.5f, transform.localPosition.z);
 
         }
     }
@@ -85,14 +85,14 @@ public class WallBehavior : MonoBehaviour
         {
             for (int i = 0; i < 50; i++)
             {
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 2 * (4 * i / 50) / 17.5f, transform.localPosition.z);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 2 * (7f * i / 50) / 10f, transform.localPosition.z);
             }
         }
         else
         {
             for (int i = 0; i < 50; i++)
             {
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 2 * (4 * i / 50) / 17.5f, transform.localPosition.z);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 2 * (7f * i / 50) / 10f, transform.localPosition.z);
             }
 
         }
