@@ -32,7 +32,7 @@ public class CamBehavior : MonoBehaviour
 
         float verticalFoV = 2.0f * Mathf.Atan(halfHeight) * Mathf.Rad2Deg;
 
-        cam.fieldOfView = verticalFoV;
+        cam.orthographicSize = verticalFoV;
     }
     private void MoveCam(Vector3 position, float direction)
     {
