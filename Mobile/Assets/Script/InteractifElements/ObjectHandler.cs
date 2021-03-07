@@ -13,7 +13,7 @@ public class ObjectHandler : MonoBehaviour
 
     private GameObject trialInstantiate;
 
-    void Start()
+  public  virtual void Start()
     {
         interactifElement = GetComponent<InteractifElement>();
         if (interactifElement.isLInkedToWall)
@@ -46,6 +46,11 @@ public class ObjectHandler : MonoBehaviour
         if (direction != default)
         {
             hitBoxDezoom.gameObject.SetActive(true);
+            if (interactifElement.onlyZoom)
+            {
+                HitBoxZoom.enabled = false;
+            }
+            else
             HitBoxZoom.gameObject.layer = 9;
             isZoomed = true;
         }
@@ -59,7 +64,13 @@ public class ObjectHandler : MonoBehaviour
                     return 2f;
                 else
                     return -2f;
-
+            else if (interactifElement.zoomFromDown)
+            {
+                if (!EventManager.instance.uspideDown)
+                    return -2f;
+                else
+                    return 2f;
+            }
 
             foreach (var direction in interactifElement.leftCam)
             {
@@ -86,6 +97,10 @@ public class ObjectHandler : MonoBehaviour
         if (isZoomed)
         {
             hitBoxDezoom.gameObject.SetActive(false);
+            if (interactifElement.onlyZoom)
+            {
+                HitBoxZoom.enabled = true;
+            }
             HitBoxZoom.gameObject.layer = 8;
             isZoomed = false;
             Destroy(trialInstantiate);
