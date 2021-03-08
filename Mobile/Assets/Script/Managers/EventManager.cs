@@ -7,6 +7,8 @@ public class EventManager : MonoBehaviour
    // [HideInInspector] public bool cantRotate;
      [HideInInspector] public bool uspideDown;
      [HideInInspector] public CamDirection cuurrentCamDirection;
+    [HideInInspector] public bool cantDoZoom;
+    [HideInInspector] public bool isZoomed;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -34,26 +36,50 @@ public class EventManager : MonoBehaviour
     #region Invoke
     public void OnSwipeUp(bool up)
     {
-        uspideDown = !uspideDown;
+        if (!cantDoZoom && !isZoomed)
+        {
+            uspideDown = !uspideDown;
+            cantDoZoom = true;
+            SwipeUp.Invoke(up);
+        }
 
-        SwipeUp.Invoke(up);
     }
     public void OnSwipeLeft()
     {
-        SwipeLeft.Invoke();
+        if (!cantDoZoom && !isZoomed)
+        {
+            cantDoZoom = true;
+
+            SwipeLeft.Invoke();           
+        }
     }
     public void OnSwipeRight()
     {
-        SwipeRight.Invoke();
+        if (!cantDoZoom && !isZoomed)
+        {
+            cantDoZoom = true;
+
+            SwipeRight.Invoke();
+        }
     }
     public void OnZoomIn(Vector3 position, float direction)
     {
-        ZoomIn.Invoke(position, direction);
+        if (!cantDoZoom && !isZoomed)
+        {
+            cantDoZoom = true;
+
+            ZoomIn.Invoke(position, direction);
+        }
     }
 
     public void OnZoomOut()
     {
-        ZoomOut.Invoke();
+        if (!cantDoZoom)
+        {
+            cantDoZoom = true;
+
+            ZoomOut.Invoke();
+        }
     }
     public void OnCollect(GameObject currentObjects)
     {

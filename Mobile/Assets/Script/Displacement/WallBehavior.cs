@@ -76,6 +76,8 @@ public class WallBehavior : MonoBehaviour
         {
             StartCoroutine(ChangeRoomRotation());
         }
+
+
     }
 
     private IEnumerator ChangeRoomRotation()
@@ -96,6 +98,7 @@ public class WallBehavior : MonoBehaviour
             }
 
         }
+        EventManager.instance.cantDoZoom = false;
     }
 
 }

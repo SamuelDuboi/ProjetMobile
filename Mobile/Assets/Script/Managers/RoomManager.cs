@@ -137,7 +137,7 @@ public class RoomManager : MonoBehaviour
         }
 
         EventManager.instance.cuurrentCamDirection = currentDirection;
-
+        EventManager.instance.cantDoZoom = false;
     }
 
     public void LunchRotate(bool up)
@@ -146,7 +146,8 @@ public class RoomManager : MonoBehaviour
         {
             StartCoroutine(Rotate(up));
         }
-
+        else
+            EventManager.instance.cantDoZoom = false;
     }
 
     private IEnumerator Rotate(bool up)
@@ -164,6 +165,7 @@ public class RoomManager : MonoBehaviour
         var timer = animator.GetCurrentAnimatorStateInfo(0).length;
         yield return new WaitForSeconds(timer - 0.2f);
         cantRotate = false;
+        EventManager.instance.cantDoZoom = false;
     }
 
     public void TurnEditor(float angle)

@@ -7,7 +7,6 @@ public class CamBehavior : MonoBehaviour
 
     private float timer;
     private Vector3 position;
-    private bool isZoomed;
     private float direction;
 
 
@@ -37,17 +36,21 @@ public class CamBehavior : MonoBehaviour
     private void MoveCam(Vector3 position, float direction)
     {
 
-        if (!cantRotate && direction != default && !isZoomed)
+        if (!cantRotate && direction != default && !EventManager.instance.isZoomed)
         {
             ZoomLunch(position, direction);
         }
+        else 
+            EventManager.instance.cantDoZoom = false;
     }
     private void UnZoom()
     {
-        if (isZoomed)
+        if (EventManager.instance.isZoomed)
         {
             StartCoroutine(ZoomCoroutine(position, direction, -1));
         }
+        else
+            EventManager.instance.cantDoZoom = false;
     }
 
 
@@ -82,7 +85,8 @@ public class CamBehavior : MonoBehaviour
         }
         timer = 0;
 
-        isZoomed = !isZoomed;
+        EventManager.instance.isZoomed = !EventManager.instance.isZoomed;
         cantRotate = false;
+        EventManager.instance.cantDoZoom = false;
     }
 }
