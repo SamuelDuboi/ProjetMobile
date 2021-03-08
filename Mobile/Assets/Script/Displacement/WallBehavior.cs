@@ -98,7 +98,6 @@ public class WallBehavior : MonoBehaviour
             }
 
         }
-        EventManager.instance.cantDoZoom = false;
     }
 
 }
