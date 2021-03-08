@@ -32,6 +32,10 @@ public class InteractifElement : MonoBehaviour
     public bool needToBeAssemble;
     public GameObject otherAssemblingObject;
     public GameObject assembledGameObjetc;
+
+    public bool popup, popInteract, PopupAfterAnim;
+    public string text;
+    public float timePopup;
     public void AddList<T>(List<T> list)
     {
         if (list == null)

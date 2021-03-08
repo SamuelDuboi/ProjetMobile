@@ -31,6 +31,8 @@ public class EventManager : MonoBehaviour
     public event Action<GameObject> InteractObject;
     // call in LightManager
     public event Action<GameObject> LightObject;
+
+    public event Action<string, float> Popup;
 #endregion
 
     #region Invoke
@@ -93,6 +95,10 @@ public class EventManager : MonoBehaviour
     {
         if(LightObject != null)
         LightObject.Invoke(currentObject);
+    }
+    public void OnPopup(string text, float time)
+    {
+        Popup.Invoke(text, time);
     }
     #endregion
 }

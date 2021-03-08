@@ -113,6 +113,10 @@ public class ObjectHandler : MonoBehaviour
        
         if(HitBoxZoom != null && currentGameObject == HitBoxZoom.gameObject )
         {
+            if (interactifElement.popInteract)
+            {
+                EventManager.instance.OnPopup(interactifElement.text, interactifElement.timePopup);
+            }
             InteractActiveObject(true);
 
             if(interactifElement.hasLinkGameObject)
@@ -127,8 +131,14 @@ public class ObjectHandler : MonoBehaviour
                 if (numberOfObject != interactifElement.ObjectoOpen.Count)
                     return;
             }
-            if(!interactifElement.spawnNewTrial)
+            if (!interactifElement.spawnNewTrial)
+            {
                 interactifElement.interactionAnimator.SetTrigger("Interact");
+                if (interactifElement.PopupAfterAnim)
+                {
+                    StartCoroutine(WaitToPopUp(interactifElement.interactionAnimator.GetCurrentAnimatorClipInfo(0).Length));
+                }
+            }
             else if(trialInstantiate == null)
             {
                trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform);
@@ -155,5 +165,11 @@ public class ObjectHandler : MonoBehaviour
                 gameObject.SetActive(setActive);
             }
         }
+    }
+
+    private IEnumerator WaitToPopUp(float timeToWait)
+    {
+        yield return new WaitForSeconds(timeToWait);
+        EventManager.instance.OnPopup(interactifElement.text, interactifElement.timePopup);
     }
 }

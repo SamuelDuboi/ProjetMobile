@@ -8,7 +8,7 @@ public class InteractifElementEditor : Editor
     InteractifElement interactifElements;
 
 
-    private bool foldoutListLeft, foldoutListRight,foldoutListOpen, foldoutListInteract;
+    private bool foldoutListLeft, foldoutListRight,foldoutListOpen, foldoutListInteract, foldoutLists;
     private void OnEnable()
     {
         interactifElements = target as InteractifElement;
@@ -21,21 +21,13 @@ public class InteractifElementEditor : Editor
         if (interactifElements.isLInkedToWall)
             interactifElements.wallLinked = (GameObject)EditorGUILayout.ObjectField("Wall linked", interactifElements.wallLinked, typeof(GameObject), true);
         EditorGUILayout.Space(20);
-        foldoutListOpen = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListOpen, "ObjectToActivate");
-        if (foldoutListOpen)
-        {
-            ManageObjectList(interactifElements.objectToActive);
-        }
-        EditorGUILayout.EndFoldoutHeaderGroup();
-        EditorGUILayout.Space(20);
-        foldoutListInteract = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListInteract, "Object to interact after anim");
-        if (foldoutListInteract)
-        {
-            ManageObjectList(interactifElements.objectToInteract);
-        }
-        EditorGUILayout.EndFoldoutHeaderGroup();
+        ObjectInteract();
 
         EditorGUILayout.Space(20);
+        Popup();
+
+        EditorGUILayout.Space(20);
+
         interactifElements.zoom = EditorGUILayout.Toggle("Zoom", interactifElements.zoom);
 
         if (interactifElements.zoom)
@@ -168,5 +160,55 @@ public class InteractifElementEditor : Editor
 
     }
         
-    
+    private void Popup()
+    {
+        interactifElements.popup = EditorGUILayout.Toggle("PopUp", interactifElements.popup);
+        if (interactifElements.popup)
+        {
+            interactifElements.popInteract = EditorGUILayout.Toggle("Pop Up On Interaction", interactifElements.popInteract);
+            if (interactifElements.popInteract)
+                interactifElements.PopupAfterAnim = false;
+            interactifElements.PopupAfterAnim = EditorGUILayout.Toggle("Pop Up After Animation", interactifElements.PopupAfterAnim);
+            if (interactifElements.PopupAfterAnim)
+                interactifElements.popInteract = false;
+
+            if(!interactifElements.popInteract && !interactifElements.PopupAfterAnim)
+            {
+                EditorGUILayout.LabelField("You need to select when the pop up will appear",EditorStyles.helpBox);
+            }
+            else
+            {
+                EditorGUILayout.LabelField("Text");
+                interactifElements.text = EditorGUILayout.TextArea(interactifElements.text, EditorStyles.textArea);
+                interactifElements.timePopup = EditorGUILayout.FloatField("Time", interactifElements.timePopup);
+            }
+        }
+        else
+        {
+            interactifElements.PopupAfterAnim = false;
+            interactifElements.popInteract = false;
+            interactifElements.text = string.Empty;
+        }
+    }
+    private void ObjectInteract()
+    {
+        foldoutLists = EditorGUILayout.Foldout(foldoutLists, "Objects linked");
+        if (foldoutLists)
+        {
+            foldoutListOpen = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListOpen, "ObjectToActivate");
+            if (foldoutListOpen)
+            {
+                ManageObjectList(interactifElements.objectToActive);
+            }
+            EditorGUILayout.EndFoldoutHeaderGroup();
+            EditorGUILayout.Space(20);
+            foldoutListInteract = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListInteract, "Object to interact after anim");
+            if (foldoutListInteract)
+            {
+                ManageObjectList(interactifElements.objectToInteract);
+            }
+            EditorGUILayout.EndFoldoutHeaderGroup();
+        }
+       
+    }
 }
