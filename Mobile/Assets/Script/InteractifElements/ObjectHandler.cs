@@ -11,7 +11,7 @@ public class ObjectHandler : MonoBehaviour
 
     private bool isZoomed;
 
-    private GameObject trialInstantiate;
+   [HideInInspector]public GameObject trialInstantiate;
 
   public  virtual void Start()
     {
@@ -141,7 +141,8 @@ public class ObjectHandler : MonoBehaviour
             }
             else if(trialInstantiate == null)
             {
-               trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform);
+               trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform.position,Quaternion.identity);
+                trialInstantiate.transform.SetParent(transform);
                 interactifElement.spawnNewTrial = false;
             }
         }

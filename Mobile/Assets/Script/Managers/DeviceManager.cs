@@ -31,7 +31,7 @@ public class DeviceManager : MonoBehaviour
             }
             else
             {
-                mask = 9;
+                mask = 1<<9;
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
                 {
 
