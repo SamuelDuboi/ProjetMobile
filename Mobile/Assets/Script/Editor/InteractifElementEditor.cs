@@ -115,7 +115,26 @@ public class InteractifElementEditor : Editor
         interactifElements.hasLinkGameObject = EditorGUILayout.Toggle("Need object to open/", interactifElements.hasLinkGameObject);
         if (interactifElements.hasLinkGameObject)
         {
-            ManageObjectList(interactifElements.ObjectoOpen);
+            if (interactifElements.ObjectoOpen != null && interactifElements.ObjectoOpen.Count != 0)
+            {
+                for (int i = 0; i < interactifElements.ObjectoOpen.Count; i++)
+                {
+                    interactifElements.ObjectoOpen[i] = EditorGUILayout.TextField("Name of item in inventorty",interactifElements.ObjectoOpen[i]);
+                }
+
+                EditorGUILayout.BeginHorizontal();
+                if (GUILayout.Button("+", EditorStyles.miniButton))
+                    interactifElements.AddList(interactifElements.ObjectoOpen);
+                if (GUILayout.Button("-", EditorStyles.miniButton))
+                    interactifElements.RemoveFromList(interactifElements.ObjectoOpen);
+                EditorGUILayout.EndHorizontal();
+            }
+            else
+            {
+                if (GUILayout.Button("+", EditorStyles.miniButton))
+                    interactifElements.AddList(interactifElements.ObjectoOpen);
+            }
+            
         }
 
         EditorGUILayout.Space(20);
@@ -126,7 +145,8 @@ public class InteractifElementEditor : Editor
         interactifElements.inventory = EditorGUILayout.Toggle("Will be Stock in inventory", interactifElements.inventory);
         if (interactifElements.inventory)
         {
-            
+            interactifElements.nameInventory = EditorGUILayout.TextField("Name in Inventory", interactifElements.nameInventory);
+            interactifElements.inventoryTexture =(Texture2D) EditorGUILayout.ObjectField( interactifElements.inventoryTexture, typeof(Texture2D),true);
             interactifElements.needToBeAssemble = EditorGUILayout.Toggle("Need To be Assemble", interactifElements.needToBeAssemble);
             if (interactifElements.needToBeAssemble)
             {

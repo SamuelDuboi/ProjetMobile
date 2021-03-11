@@ -7,6 +7,7 @@ public class LustreReception : MonoBehaviour
     public LineRenderer lineRenderer;
     private bool doOnce;
     public Cristal[] cristals;
+    
     private void Start()
     {
         EventManager.instance.LightObject += LightOn;
@@ -22,7 +23,7 @@ public class LustreReception : MonoBehaviour
             }
             doOnce = true;
             lineRenderer.enabled = true;
-            InventoryManager.Instance.AddList(gameObject);
+            InventoryManager.Instance.AddList(gameObject,"room1Final",default);
             EventManager.instance.OnZoomOut();
         }
     }

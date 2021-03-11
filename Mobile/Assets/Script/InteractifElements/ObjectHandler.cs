@@ -124,8 +124,12 @@ public class ObjectHandler : MonoBehaviour
                 int numberOfObject = 0;
                 foreach (var curentGamObject in interactifElement.ObjectoOpen)
                 {
-                    if (InventoryManager.Instance.interactifElementsList.Contains(curentGamObject))
-                        numberOfObject++;
+                    foreach (var inventoryItem in InventoryManager.Instance.interactifElementsList)
+                    {
+                        if(inventoryItem.name == curentGamObject)
+                            numberOfObject++;
+                    }
+                        
 
                 }
                 if (numberOfObject != interactifElement.ObjectoOpen.Count)
@@ -151,7 +155,7 @@ public class ObjectHandler : MonoBehaviour
     {
         if (currentGameObject == HitBoxZoom.gameObject && interactifElement.inventory)
         {
-            InventoryManager.Instance.AddList(gameObject);
+            InventoryManager.Instance.AddList(gameObject, interactifElement.nameInventory, interactifElement.inventoryTexture);
             gameObject.SetActive(false);
         }
     }

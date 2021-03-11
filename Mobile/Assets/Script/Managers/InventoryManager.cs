@@ -4,23 +4,47 @@ using UnityEngine;
 
 public class InventoryManager : Singleton<InventoryManager>
 {
-    public List<GameObject> interactifElementsList = new List<GameObject>();
+    public List<InventoryItem> interactifElementsList = new List<InventoryItem>();
 
-    public void AddList(GameObject elementToAdd)
+    public void AddList(GameObject elementToAdd, string name, Texture2D image, int number = 1)
     {
         if(interactifElementsList == null)
         {
-            interactifElementsList = new List<GameObject>();
+            interactifElementsList = new List<InventoryItem>();
         }
-
-        interactifElementsList.Add(elementToAdd);
+        foreach (var item in interactifElementsList)
+        {
+            if(item.name == name)
+            {
+                item.number+= number;
+                break;
+            }
+        }
+        
+        interactifElementsList.Add(new InventoryItem(elementToAdd, name, 1, image));
     }
 
-    public void RemoveFromList(GameObject elementToRemove)
+    public void RemoveFromList(string name, int numberToRemove)
     {
-        if (interactifElementsList.Contains(elementToRemove))
+        int index = 1000;
+        for (int i = 0; i < interactifElementsList.Count; i++)
         {
-            interactifElementsList.Remove(elementToRemove);
+            if(interactifElementsList[i].name == name)
+            {
+                if (interactifElementsList[i].number > 1 +numberToRemove)
+                {
+                    interactifElementsList[i].number-=numberToRemove;
+                }
+                else
+                {
+                    index = i;
+                    break;
+                }
+            }
+        }
+        if(index != 1000)
+        {
+            interactifElementsList.RemoveAt(index);
         }
     }
     private void Awake()

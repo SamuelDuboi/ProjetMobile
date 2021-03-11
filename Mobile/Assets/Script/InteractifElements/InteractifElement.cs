@@ -19,7 +19,7 @@ public class InteractifElement : MonoBehaviour
     public List<CamDirection> rightCam = new List<CamDirection>();
 
     public bool hasLinkGameObject;
-    public List<GameObject> ObjectoOpen;
+    public List<string> ObjectoOpen;
 
 
     public bool spawnNewTrial;
@@ -29,6 +29,8 @@ public class InteractifElement : MonoBehaviour
     public List<GameObject> objectToInteract;
 
     public bool inventory;
+    public string nameInventory;
+    public Texture2D inventoryTexture;
     public bool needToBeAssemble;
     public GameObject otherAssemblingObject;
     public GameObject assembledGameObjetc;
