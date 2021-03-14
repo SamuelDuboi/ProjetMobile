@@ -6,6 +6,29 @@ public class InventoryManager : Singleton<InventoryManager>
 {
     public List<InventoryItem> interactifElementsList = new List<InventoryItem>();
 
+
+    public GameObject FindObject(string name)
+    {
+        for (int i = 0; i < interactifElementsList.Count; i++)
+        {
+            if( interactifElementsList[i].name == name)
+            {
+                return interactifElementsList[i].gameObject;
+            }
+        }
+        return null;        
+    }
+    public GameObject FindObject(GameObject gameObject)
+    {
+        for (int i = 0; i < interactifElementsList.Count; i++)
+        {
+            if (interactifElementsList[i].gameObject == gameObject)
+            {
+                return interactifElementsList[i].gameObject;
+            }
+        }
+        return null;
+    }
     public void AddList(GameObject elementToAdd, string name, Texture2D image, int number = 1)
     {
         if(interactifElementsList == null)

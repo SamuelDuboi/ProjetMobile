@@ -92,7 +92,7 @@ public class ObjectHandler : MonoBehaviour
         return default;
     }
 
-    private void UnZoom()
+    public void UnZoom()
     {
         if (isZoomed)
         {
