@@ -35,17 +35,17 @@ public class RoomManagerEditor : Editor
         EditorGUILayout.LabelField("Position          " + roomManager.currentDirection.ToString(), EditorStyles.boldLabel);
 
         EditorGUILayout.Space(20);
-        if (GUILayout.Button("UpsideDOwn"))
+        if (GUILayout.Button("UpsideDown"))
         {
             if (!roomManager.upsideDownEditor)
             {
-                roomManager.main.transform.rotation = Quaternion.Euler(new Vector3(0,-45,180));
-                roomManager.main.transform.position = Vector3.up*20;
+                roomManager.main.transform.rotation = Quaternion.Euler(new Vector3(-270,45,-90));
+                roomManager.main.transform.localPosition = Vector3.up*12;
             }
             else
             {
-                roomManager.main.transform.rotation = Quaternion.Euler(Vector3.up*45);
-                roomManager.main.transform.position = Vector3.zero;
+                roomManager.main.transform.rotation = Quaternion.Euler(-90,45,0);
+                roomManager.main.transform.localPosition = Vector3.zero;
 
             }
             roomManager.upsideDownEditor = !roomManager.upsideDownEditor;
