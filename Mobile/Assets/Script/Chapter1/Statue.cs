@@ -16,7 +16,8 @@ public class Statue : ObjectHandler
     {
         if (HitBoxZoom != null && currentGameObject == HitBoxZoom.gameObject)
         {
-            var gameObject = InventoryManager.Instance.FindObject(partsName[index]);
+            int random;
+            var gameObject = InventoryManager.Instance.FindObject(partsName[index],out random);
             if(gameObject!= null)
             {
                 parts[index].SetActive(true);
