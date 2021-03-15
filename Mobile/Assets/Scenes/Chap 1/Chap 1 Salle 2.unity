@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 719e8212914fb554eb9167a4cd32d338,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -214,7 +214,7 @@ RectTransform:
   m_Children:
   - {fileID: 2083532662}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -680,6 +680,8 @@ MonoBehaviour:
   onlyZoom: 0
   leftCam: 0000000001000000
   rightCam: 0200000003000000
+  angle: 0
+  orthoGraphicSize: 0
   hasLinkGameObject: 0
   ObjectoOpen: []
   spawnNewTrial: 0
@@ -687,6 +689,8 @@ MonoBehaviour:
   objectToActive: []
   objectToInteract: []
   inventory: 0
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
   assembledGameObjetc: {fileID: 0}
@@ -1708,14 +1712,18 @@ MonoBehaviour:
   onlyZoom: 0
   leftCam: 
   rightCam: 
+  angle: 0
+  orthoGraphicSize: 0
   hasLinkGameObject: 0
   ObjectoOpen:
-  - {fileID: 0}
+  - 
   spawnNewTrial: 0
   TrialGameObjects: {fileID: 0}
   objectToActive: []
   objectToInteract: []
   inventory: 1
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 1
   otherAssemblingObject: {fileID: 5966572503183318183}
   assembledGameObjetc: {fileID: 0}
@@ -2900,6 +2908,8 @@ MonoBehaviour:
   onlyZoom: 0
   leftCam: 0000000001000000
   rightCam: 0200000003000000
+  angle: 0
+  orthoGraphicSize: 0
   hasLinkGameObject: 0
   ObjectoOpen: []
   spawnNewTrial: 0
@@ -2907,6 +2917,8 @@ MonoBehaviour:
   objectToActive: []
   objectToInteract: []
   inventory: 0
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
   assembledGameObjetc: {fileID: 0}
@@ -4927,14 +4939,18 @@ MonoBehaviour:
   onlyZoom: 0
   leftCam: 
   rightCam: 
+  angle: 0
+  orthoGraphicSize: 0
   hasLinkGameObject: 0
   ObjectoOpen:
-  - {fileID: 0}
+  - 
   spawnNewTrial: 0
   TrialGameObjects: {fileID: 0}
   objectToActive: []
   objectToInteract: []
   inventory: 1
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 1
   otherAssemblingObject: {fileID: 7030137940307089231}
   assembledGameObjetc: {fileID: 0}
@@ -6536,7 +6552,7 @@ RectTransform:
   - {fileID: 319258780}
   - {fileID: 1395176211}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7442,7 +7458,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1295893739
 PrefabInstance:
@@ -7596,6 +7612,8 @@ MonoBehaviour:
   onlyZoom: 0
   leftCam: 0000000001000000
   rightCam: 0200000003000000
+  angle: 0
+  orthoGraphicSize: 0
   hasLinkGameObject: 0
   ObjectoOpen: []
   spawnNewTrial: 0
@@ -7603,6 +7621,8 @@ MonoBehaviour:
   objectToActive: []
   objectToInteract: []
   inventory: 0
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
   assembledGameObjetc: {fileID: 0}
@@ -7673,7 +7693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13f34ddba608c2d4e9ca66546f73e8fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactifElementsList: []
 --- !u!1 &1320530492
 GameObject:
   m_ObjectHideFlags: 0
@@ -8223,6 +8242,8 @@ MonoBehaviour:
   onlyZoom: 0
   leftCam: 0000000001000000
   rightCam: 0200000003000000
+  angle: 0
+  orthoGraphicSize: 0
   hasLinkGameObject: 0
   ObjectoOpen: []
   spawnNewTrial: 0
@@ -8230,6 +8251,8 @@ MonoBehaviour:
   objectToActive: []
   objectToInteract: []
   inventory: 0
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
   assembledGameObjetc: {fileID: 0}
@@ -8863,8 +8886,87 @@ Transform:
   - {fileID: 1384466833}
   - {fileID: 2015251667}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1490730022
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1406505359676647908, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: m_Name
+      value: Statue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647914, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: angle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647914, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: orthoGraphicSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647915, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647915, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.72529745
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647915, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.355402
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647915, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647915, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647915, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647915, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647915, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647915, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647915, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406505359676647915, guid: 100b8cc47decd104e9fd189cb54213c4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 100b8cc47decd104e9fd189cb54213c4, type: 3}
 --- !u!1001 &1504984660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10531,6 +10633,8 @@ MonoBehaviour:
   onlyZoom: 0
   leftCam: 0000000001000000
   rightCam: 0200000003000000
+  angle: 0
+  orthoGraphicSize: 0
   hasLinkGameObject: 0
   ObjectoOpen: []
   spawnNewTrial: 0
@@ -10538,6 +10642,8 @@ MonoBehaviour:
   objectToActive: []
   objectToInteract: []
   inventory: 0
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
   assembledGameObjetc: {fileID: 0}
@@ -11827,7 +11933,7 @@ Transform:
   m_Children:
   - {fileID: 5671788649713107795}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919132148473434782
 GameObject:
@@ -12544,6 +12650,8 @@ MonoBehaviour:
   onlyZoom: 0
   leftCam: 0100000000000000
   rightCam: 0200000003000000
+  angle: 0
+  orthoGraphicSize: 0
   hasLinkGameObject: 0
   ObjectoOpen: []
   spawnNewTrial: 0
@@ -12551,6 +12659,8 @@ MonoBehaviour:
   objectToActive: []
   objectToInteract: []
   inventory: 0
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
   assembledGameObjetc: {fileID: 0}
@@ -12861,14 +12971,18 @@ MonoBehaviour:
   onlyZoom: 0
   leftCam: 
   rightCam: 
+  angle: 0
+  orthoGraphicSize: 0
   hasLinkGameObject: 0
   ObjectoOpen:
-  - {fileID: 0}
+  - 
   spawnNewTrial: 0
   TrialGameObjects: {fileID: 0}
   objectToActive: []
   objectToInteract: []
   inventory: 1
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 1
   otherAssemblingObject: {fileID: 858277968}
   assembledGameObjetc: {fileID: 0}
@@ -13151,6 +13265,8 @@ MonoBehaviour:
   onlyZoom: 0
   leftCam: 0000000001000000
   rightCam: 0200000003000000
+  angle: 0
+  orthoGraphicSize: 0
   hasLinkGameObject: 0
   ObjectoOpen: []
   spawnNewTrial: 0
@@ -13158,6 +13274,8 @@ MonoBehaviour:
   objectToActive: []
   objectToInteract: []
   inventory: 0
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
   assembledGameObjetc: {fileID: 0}
