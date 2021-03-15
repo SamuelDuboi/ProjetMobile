@@ -23,8 +23,10 @@ public class DeviceManager : MonoBehaviour
                 
                     float direction;
                     hit.collider.GetComponentInParent<ObjectHandler>().ChoseToZoom( out direction);
+                    int angle = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.angle;
+                    float orthographicSize= hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
                     if (direction != default)
-                        EventManager.instance.OnZoomIn(hit.collider.transform.position, direction);
+                        EventManager.instance.OnZoomIn(hit.collider.transform.position, direction, angle,orthographicSize);
                     else
                         EventManager.instance.OnCollect(hit.collider.gameObject);               
                 
@@ -98,8 +100,10 @@ public class DeviceManager : MonoBehaviour
 
                 float direction;
                 hit.collider.GetComponentInParent<ObjectHandler>().ChoseToZoom( out direction);
+                int angle = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.angle;
+                float orthographicSize = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
                 if (direction != default)
-                    EventManager.instance.OnZoomIn(hit.collider.transform.position, direction);
+                    EventManager.instance.OnZoomIn(hit.collider.transform.position, direction,angle, orthographicSize);
                 else
                 {
                     mask = 1 << 9;                       
@@ -130,7 +134,6 @@ public class DeviceManager : MonoBehaviour
                 }
                 else
                 {
-
                     EventManager.instance.OnZoomOut();
                 }
             }

@@ -8,7 +8,7 @@ public class CamBehavior : MonoBehaviour
     private float timer;
     private Vector3 position;
     private float direction;
-
+    private int currentAngle;
 
     public AnimationCurve camCurve;
     public float horizontalFoV = 60f;
@@ -34,12 +34,12 @@ public class CamBehavior : MonoBehaviour
 
         cam.orthographicSize = verticalFoV;
     }
-    private void MoveCam(Vector3 position, float direction)
+    private void MoveCam(Vector3 position, float direction, int angle, float orthogrphicSize)
     {
 
         if (!cantRotate && direction != default && !EventManager.instance.isZoomed)
         {
-            ZoomLunch(position, direction);
+            ZoomLunch(position, direction, angle, orthogrphicSize);
         }
         else 
             EventManager.instance.cantDoZoom = false;
@@ -48,23 +48,24 @@ public class CamBehavior : MonoBehaviour
     {
         if (EventManager.instance.isZoomed)
         {
-            StartCoroutine(ZoomCoroutine(position, direction, -1));
+            StartCoroutine(ZoomCoroutine(position, direction, -1, currentAngle));
         }
         else
             EventManager.instance.cantDoZoom = false;
     }
 
 
-    private void ZoomLunch(Vector3 _position, float direction)
+    private void ZoomLunch(Vector3 _position, float direction, int angle, float orhtoGraphicSzze)
     {
         cantRotate = true;
         this.position = _position;
         this.direction = direction;
-        StartCoroutine(ZoomCoroutine(position, direction, 1));
+        currentAngle = angle;
+        StartCoroutine(ZoomCoroutine(position, direction, 1,angle, orhtoGraphicSzze ));
     }
 
 
-    IEnumerator ZoomCoroutine(Vector3 _position, float direction, float multiplicator, float angle =45, float FinalOrthographicZoom = 3)
+    IEnumerator ZoomCoroutine(Vector3 _position, float direction, float multiplicator, int angle =45, float FinalOrthographicZoom = 3)
     {
       //  _position = new Vector3(_position.x - 1, _position.y - 1, _position.z - 1);
         Vector3 directionVector = Vector3.down;
@@ -76,7 +77,7 @@ public class CamBehavior : MonoBehaviour
             _position = new Vector3(_position.x - 1, _position.y - 4, _position.z - 4);
             while (timer < 0.75f)
             {
-                timer += Time.deltaTime;
+                timer += Time.deltaTime; 
                 // multiply by 2 to compsate the loss of the cam curve, not an exact value but good enough
                 cam.transform.RotateAround(_position, directionVector, 120*Time.deltaTime* camCurve.Evaluate(timer / .75f) * multiplicator * direction);
                 cam.orthographicSize -= camCurve.Evaluate(timer / .75f) * 10 * Time.deltaTime/.75f * multiplicator;

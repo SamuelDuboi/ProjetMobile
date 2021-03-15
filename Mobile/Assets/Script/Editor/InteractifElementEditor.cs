@@ -45,7 +45,8 @@ public class InteractifElementEditor : Editor
     {
         interactifElements.inventory = false;
             EditorGUILayout.Space(20);
-
+        interactifElements.angle = EditorGUILayout.IntField("Angle ", interactifElements.angle);
+        interactifElements.orthoGraphicSize = EditorGUILayout.FloatField("Orthographic size ", interactifElements.orthoGraphicSize);
             interactifElements.zoomFromUp = EditorGUILayout.Toggle("Zoom from up", interactifElements.zoomFromUp);
         if (interactifElements.zoomFromUp)
             interactifElements.zoomFromDown = false;
