@@ -17,8 +17,8 @@ public class InteractifElement : MonoBehaviour
 
     public List<CamDirection> leftCam = new List<CamDirection>();
     public List<CamDirection> rightCam = new List<CamDirection>();
-    public int angle;
-    public float orthoGraphicSize;
+    public int angle = 45;
+    public float orthoGraphicSize = 3;
 
     public bool hasLinkGameObject;
     public List<string> ObjectoOpen;

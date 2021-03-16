@@ -217,17 +217,30 @@ MonoBehaviour:
   wallLinked: {fileID: 0}
   zoom: 1
   zoomFromUp: 1
+  zoomFromDown: 0
+  onlyZoom: 0
   leftCam: 
   rightCam: 
+  angle: 90
+  orthoGraphicSize: 3
   hasLinkGameObject: 0
   ObjectoOpen:
-  - {fileID: 0}
+  - 
   spawnNewTrial: 0
   TrialGameObjects: {fileID: 0}
+  objectToActive: []
+  objectToInteract: []
   inventory: 0
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
   assembledGameObjetc: {fileID: 0}
+  popup: 0
+  popInteract: 0
+  PopupAfterAnim: 0
+  text: 
+  timePopup: 0
 --- !u!114 &9128235399286457131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,5 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb44047e9ad33749a7d29d1b6cd3131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactifElement: {fileID: 0}
   hitBoxDezoom: {fileID: 9128235397825881418}
   HitBoxZoom: {fileID: 9128235398159297210}
+  trialInstantiate: {fileID: 0}
