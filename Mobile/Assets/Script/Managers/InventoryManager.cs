@@ -7,15 +7,17 @@ public class InventoryManager : Singleton<InventoryManager>
     public List<InventoryItem> interactifElementsList = new List<InventoryItem>();
 
 
-    public GameObject FindObject(string name)
+    public GameObject FindObject(string name, out int number)
     {
         for (int i = 0; i < interactifElementsList.Count; i++)
         {
             if( interactifElementsList[i].name == name)
             {
+                number = interactifElementsList[i].number;
                 return interactifElementsList[i].gameObject;
             }
         }
+        number = 0;
         return null;        
     }
     public GameObject FindObject(GameObject gameObject)
