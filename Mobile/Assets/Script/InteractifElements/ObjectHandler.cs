@@ -7,7 +7,7 @@ public class ObjectHandler : MonoBehaviour
     [HideInInspector] public InteractifElement interactifElement;
 
     public BoxCollider hitBoxDezoom;
-    public BoxCollider HitBoxZoom;
+    public Collider HitBoxZoom;
 
     private bool isZoomed;
 
