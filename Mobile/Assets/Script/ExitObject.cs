@@ -5,7 +5,7 @@ using TMPro;
 
 public class ExitObject : MonoBehaviour
 {
-    public TextMeshProUGUI text;
+    public GameObject text;
     private void Start()
     {
         EventManager.instance.InteractObject += Interact;
