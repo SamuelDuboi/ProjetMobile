@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 719e8212914fb554eb9167a4cd32d338,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5713,13 +5713,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377668015}
-  m_LocalRotation: {x: 0.69953865, y: 0, z: 0, w: 0.71459484}
-  m_LocalPosition: {x: 2.08, y: -1.56, z: 0.01}
-  m_LocalScale: {x: 0.78590834, y: 1.126233, z: 1.0150083}
+  m_LocalRotation: {x: 0.49464884, y: 0.49464825, z: 0.5052947, w: 0.5052949}
+  m_LocalPosition: {x: 1.560002, y: 2.0799985, z: 0.3600006}
+  m_LocalScale: {x: 0.7859085, y: 1.1262329, z: 1.0150086}
   m_Children:
   - {fileID: 3726446356520307518}
-  m_Father: {fileID: 5671788649713107795}
-  m_RootOrder: 12
+  m_Father: {fileID: 2282206632010082422}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 88.78, y: 0, z: 0}
 --- !u!114 &1377668017
 MonoBehaviour:
@@ -8630,13 +8630,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293492493926824120}
-  m_LocalRotation: {x: -0.000000044703487, y: -0.000000029802326, z: 0.3262282, w: 0.9452911}
-  m_LocalPosition: {x: 2.0520015, y: -1.7240014, z: 0.7460003}
+  m_LocalRotation: {x: 0.00000014156103, y: -0.00000011920929, z: 0.8990997, w: 0.43774387}
+  m_LocalPosition: {x: 1.7240037, y: 2.052, z: 1.0960002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 293492494500045829}
-  m_Father: {fileID: 5671788649713107795}
-  m_RootOrder: 13
+  m_Father: {fileID: 2282206632010082422}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &293492493009109121
 MonoBehaviour:
@@ -8879,10 +8879,10 @@ MonoBehaviour:
   zoomFromUp: 0
   zoomFromDown: 0
   onlyZoom: 0
-  leftCam: 0200000001000000
-  rightCam: 0300000000000000
-  angle: -20
-  orthoGraphicSize: 1
+  leftCam: 0200000000000000
+  rightCam: 0300000001000000
+  angle: 45
+  orthoGraphicSize: 2
   hasLinkGameObject: 0
   ObjectoOpen: []
   spawnNewTrial: 0
@@ -10220,6 +10220,9 @@ Transform:
   - {fileID: 1918093595}
   - {fileID: 1248413810}
   - {fileID: 1072661367}
+  - {fileID: 3798026609976128044}
+  - {fileID: 1377668016}
+  - {fileID: 293492492875543835}
   m_Father: {fileID: 2868396661050373506}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90.00001}
@@ -10633,12 +10636,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113078149333335011}
-  m_LocalRotation: {x: 0.70692766, y: -0.015919074, z: -0.015919015, w: 0.70692754}
-  m_LocalPosition: {x: 2.1034298, y: -1.0368333, z: 0.32763982}
+  m_LocalRotation: {x: 0.51113015, y: 0.48861656, z: 0.48861665, w: 0.51112974}
+  m_LocalPosition: {x: 1.0368354, y: 2.103429, z: 0.6776409}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5671788649713107795}
-  m_RootOrder: 10
+  m_Father: {fileID: 2282206632010082422}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 42.42, z: 0}
 --- !u!65 &3820332399501413856
 BoxCollider:
@@ -11657,10 +11660,7 @@ Transform:
   - {fileID: 1957358067}
   - {fileID: 9126247839641100432}
   - {fileID: 4132434801559826139}
-  - {fileID: 3798026609976128044}
   - {fileID: 8393578940972710805}
-  - {fileID: 1377668016}
-  - {fileID: 293492492875543835}
   m_Father: {fileID: 543450652141340708}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 45, z: 0}
@@ -12509,7 +12509,7 @@ Transform:
   - {fileID: 4247276615375084724}
   - {fileID: 4029459176220424936}
   m_Father: {fileID: 5671788649713107795}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!114 &8471409491989963711
 MonoBehaviour:
@@ -12659,7 +12659,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.5142851
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -12902,6 +12902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8393578940972710805}
   - component: {fileID: 9164872795447943473}
+  - component: {fileID: 9164872795447943472}
   m_Layer: 0
   m_Name: Corde Statue
   m_TagString: Untagged
@@ -12909,6 +12910,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &9164872795447943472
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9164872795447943471}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3639429, y: 0.3925601, z: 1.0481781}
+  m_Center: {x: -0.31802878, y: -0.30372113, z: -0.024089046}
 --- !u!95 &9164872795447943473
 Animator:
   serializedVersion: 3

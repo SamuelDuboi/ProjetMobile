@@ -14,7 +14,7 @@ public class Gear : MonoBehaviour
 
     private void Start()
     {
-        transform.position = new Vector3(Camera.main.transform.position.x + Camera.main.transform.forward.x*2, Camera.main.transform.position.y + Camera.main.transform.forward.y*2, Camera.main.transform.position.z + Camera.main.transform.forward.z*2);
+        transform.position = new Vector3(Camera.main.transform.position.x - Camera.main.transform.forward.x*0.5f, Camera.main.transform.position.y - Camera.main.transform.forward.y*0.5f, Camera.main.transform.position.z - Camera.main.transform.forward.z*0.5f);
         transform.rotation = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles);
         for (int i = 0; i < gears.Length; i++)
         {
@@ -46,7 +46,7 @@ public class Gear : MonoBehaviour
                 {
                     if(gears[i] == hit.collider.gameObject)
                     {
-                        _gameObject = gears[i];
+                        _gameObject = gears[i].transform.GetChild(0).gameObject;
                         break;
                     }
                 }

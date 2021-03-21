@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class ExitObject : MonoBehaviour
 {
     public GameObject text;
@@ -15,7 +15,7 @@ public class ExitObject : MonoBehaviour
     {
         if(currentObject == gameObject)
         {
-            text.gameObject.SetActive(true);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

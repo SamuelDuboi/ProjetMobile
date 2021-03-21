@@ -52,7 +52,7 @@ public class InteractifElementEditor : Editor
             interactifElements.zoomFromDown = false;
 
         interactifElements.zoomFromDown = EditorGUILayout.Toggle("Zoom from Down", interactifElements.zoomFromDown);
-        interactifElements.onlyZoom = EditorGUILayout.Toggle("Ony zoom", interactifElements.onlyZoom);
+        interactifElements.onlyZoom = EditorGUILayout.Toggle("Only zoom", interactifElements.onlyZoom);
         if (interactifElements.zoomFromDown)
             interactifElements.zoomFromUp = false;
         if (!interactifElements.zoomFromUp && !interactifElements.zoomFromDown)
