@@ -35,7 +35,6 @@ public class EnigmeCristaux : MonoBehaviour
         
         for (int i = 0; i < cristaux.Length; i++)
         {
-            Debug.Log(cristaux[i]);
             if (cristaux[i] == gameObject)
             {
                  index = i;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gear : MonoBehaviour
 {
     public GameObject[] gears;
+    public GameObject[] gearsChild;
     private GameObject _gameObject;
     public float _sensitivity = 1f;
     private Vector3 _rotation = Vector3.zero;
@@ -19,9 +20,11 @@ public class Gear : MonoBehaviour
         for (int i = 0; i < gears.Length; i++)
         {
             int number = int.Parse(initiNumber[i].ToString());
-            gears[i].transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 360 *( number -1)/ 10));
+            gearsChild[i].transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 360 *( number )/ 10));
+            Debug.Log(gearsChild[i].transform.localRotation.eulerAngles.z);
         }
         GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = true;
+
     }
     // Update is called once per frame
     void Update()
@@ -46,14 +49,15 @@ public class Gear : MonoBehaviour
                 {
                     if(gears[i] == hit.collider.gameObject)
                     {
-                        _gameObject = gears[i].transform.GetChild(0).gameObject;
+                        _gameObject = gearsChild[i];
                         break;
                     }
                 }
             }
             if(touch.phase == TouchPhase.Moved)
             {
-
+                if (_gameObject == null)
+                    return;
                 // apply rotation
                 _rotation.z = (touch.deltaPosition.x + touch.deltaPosition.y) * _sensitivity;
 
@@ -63,27 +67,36 @@ public class Gear : MonoBehaviour
             }
             if(touch.phase== TouchPhase.Ended)
             {
-                for (int i = 0; i < 9; i++)
+                for (int i = 0; i <10; i++)
                 {
+
                     if (_gameObject.transform.localRotation.eulerAngles.z >= 360 *i/10 && _gameObject.transform.localRotation.eulerAngles.z < 360 *(i + 1)/10) 
                     {
                         _gameObject.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 360 * i / 10));
                         break;
-                    }
+                    }                    
                 }
                 for (int i = 0; i < gears.Length; i++)
                 {
-                    if(gears[i].transform.localRotation.eulerAngles.z != 360 * (int.Parse(endNumber[i].ToString()) - 1) / 10)
+                    if(gearsChild[i].transform.localRotation.eulerAngles.z != 360 * (int.Parse(endNumber[i].ToString())) / 10)
                     {
-                        Debug.Log(i.ToString() + gears[i].transform.localRotation.eulerAngles.z);
-                        Debug.Log(i.ToString() + 360 * (int.Parse(endNumber[i].ToString())-1) / 10);
-                        return ;
+                        if(gearsChild[i].transform.localRotation.eulerAngles.z >= 360 * (int.Parse(endNumber[i].ToString())) / 10 -1 && gearsChild[i].transform.localRotation.eulerAngles.z <= 360 * (int.Parse(endNumber[i].ToString())) / 10 + 1)
+                        {
+                          
+                        }
+                        else
+                        {
+                            Debug.Log(i + "" + gearsChild[i].transform.localRotation.eulerAngles.z);
+                            Debug.Log(i + "" + 360 * (int.Parse(endNumber[i].ToString())) / 10);
+                            return;
+                        }
+
                     }
                     
                 }
                 GetComponentInParent<ObjectHandler>().trialInstantiate = null;
-                GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().gameObject);
                 GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
+                GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
                 Destroy(gameObject);
 
             }
