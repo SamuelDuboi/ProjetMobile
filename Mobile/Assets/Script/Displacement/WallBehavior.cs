@@ -63,7 +63,7 @@ public class WallBehavior : MonoBehaviour
         else
         {
 
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - multiplicateur * 17.5f, transform.localPosition.z);
+            transform.localPosition = new Vector3(transform.localPosition.x,0, transform.localPosition.z);
 
         }
     }
