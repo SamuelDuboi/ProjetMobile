@@ -66,7 +66,7 @@ public class CamBehavior : MonoBehaviour
         StartCoroutine(ZoomCoroutine(position, direction, 1,angle, orhtoGraphicSzze ));
     }
 
-    IEnumerator ZoomCoroutine(Vector3 _position, float direction, float multiplicator, int angle =45, float FinalOrthographicZoom = 3)
+    IEnumerator ZoomCoroutine(Vector3 _position, float direction, float multiplicator, int angle =45, float FinalOrthographicZoom = 100)
     {
       //  _position = new Vector3(_position.x - 1, _position.y - 1, _position.z - 1);
         Vector3 directionVector = Vector3.down;
@@ -99,9 +99,11 @@ public class CamBehavior : MonoBehaviour
             EventManager.instance.cantDoZoom = false;
             yield break;*/
         }
-
-        float orthographicSizeToChange = initialOrthographicSize - FinalOrthographicZoom;
-
+        float orthographicSizeToChange = 0;
+        if (FinalOrthographicZoom != 100)
+            orthographicSizeToChange = initialOrthographicSize - FinalOrthographicZoom;
+        else
+            orthographicSizeToChange = initialOrthographicSize - cam.orthographicSize;
 
         //StartCoroutine(Translate(positionToGo, multiplicator));
         //StartCoroutine(Rotate(directionVector, angle, multiplicator, direction, orthographicSizeToChange));
