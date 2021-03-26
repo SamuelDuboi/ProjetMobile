@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class DeviceManager : MonoBehaviour
 {
     private Vector2 startPos;
@@ -12,6 +12,9 @@ public class DeviceManager : MonoBehaviour
         #region Finger
         if (Input.touchCount > 0)
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
             #region RayCast
             var touch = Input.GetTouch(0);
             var ray = Camera.main.ScreenPointToRay(touch.position);
@@ -90,6 +93,8 @@ public class DeviceManager : MonoBehaviour
         #region Mouse
         if (Input.GetMouseButtonDown(0))
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             
             RaycastHit hit = new RaycastHit();

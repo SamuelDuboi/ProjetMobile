@@ -18,6 +18,7 @@ public class EnigmeCristaux : MonoBehaviour
     public string cristalName;
     public Texture2D texture2D;
 
+    public ObjectHandler exitDoor;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,9 +38,12 @@ public class EnigmeCristaux : MonoBehaviour
         {
             if (cristaux[i] == gameObject)
             {
-                 index = i;
+                index = i;
                 break;
             }
+            else 
+                index = 1000;
+                
         }
         if(index != 1000)
         {
@@ -62,7 +66,8 @@ public class EnigmeCristaux : MonoBehaviour
             Constellation6Check();
             if (constellation2 && constellation3 && constellation6)
             {
-                Debug.Log("Gagné");
+                exitDoor.interactifElement.interactionAnimator.SetTrigger("Interact");
+                EventManager.instance.OnZoomOut();
                 this.enabled = false;
             }
             index = 1000;
@@ -146,7 +151,7 @@ public class EnigmeCristaux : MonoBehaviour
                 for (int i = 38; i < 45; i++)
                 {
                     lockCristaux[i] = true;
-                    constellation3 = true;
+                    constellation6 = true;
                 }
                 countCristaux = 0;
             }

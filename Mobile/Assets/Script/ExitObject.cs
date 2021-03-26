@@ -13,7 +13,7 @@ public class ExitObject : MonoBehaviour
 
     private void Interact(GameObject currentObject)
     {
-        if(currentObject == gameObject)
+        if(currentObject == gameObject || currentObject== transform.GetChild(0).gameObject)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

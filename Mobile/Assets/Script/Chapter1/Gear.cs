@@ -6,6 +6,7 @@ public class Gear : MonoBehaviour
 {
     public GameObject[] gears;
     public GameObject[] gearsChild;
+    public GameObject[] lights;
     private GameObject _gameObject;
     public float _sensitivity = 1f;
     private Vector3 _rotation = Vector3.zero;
@@ -13,18 +14,43 @@ public class Gear : MonoBehaviour
     public string initiNumber;
     public string endNumber;
 
+    private bool down;
     private void Start()
     {
-        transform.position = new Vector3(Camera.main.transform.position.x - Camera.main.transform.forward.x*0.5f, Camera.main.transform.position.y - Camera.main.transform.forward.y*0.5f, Camera.main.transform.position.z - Camera.main.transform.forward.z*0.5f);
-        transform.localRotation = Quaternion.Euler(Camera.main.transform.localRotation.eulerAngles );
+      /*  transform.position = new Vector3(Camera.main.transform.position.x - Camera.main.transform.forward.x*0.5f, Camera.main.transform.position.y - Camera.main.transform.forward.y*0.5f, Camera.main.transform.position.z - Camera.main.transform.forward.z*0.5f);
+        transform.localRotation = Quaternion.Euler(Camera.main.transform.localRotation.eulerAngles );*/
         for (int i = 0; i < gears.Length; i++)
         {
             int number = int.Parse(initiNumber[i].ToString());
             gearsChild[i].transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 360 *( number )/ 10));
-            Debug.Log(gearsChild[i].transform.localRotation.eulerAngles.z);
         }
         GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = true;
 
+    }
+
+    public void ButtonPress( GameObject button)
+    {
+        if (down)
+            return;
+        for (int i = 0; i < gears.Length; i++)
+        {
+            if (gears[i] == button)
+            {
+                if(_gameObject != gearsChild[i])
+                {
+                    _gameObject = gearsChild[i];
+                    lights[i].SetActive(true);
+                }/*
+                else
+                {
+                    _gameObject = null;
+                    lights[i].SetActive(false);
+                }*/
+
+            }
+            else
+                lights[i].SetActive(false);
+        }
     }
     // Update is called once per frame
     void Update()
@@ -32,32 +58,11 @@ public class Gear : MonoBehaviour
         if (Input.touchCount > 0)
         {
             var touch = Input.GetTouch(0);
-            var ray = Camera.main.ScreenPointToRay(touch.position);
-            RaycastHit hit = new RaycastHit();
-            //cast a ray to zoomable object if null, cast a ray to interactible object, if null try to unzoom
-            LayerMask mask = 1<<9;
-            
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
+            if (_gameObject == null)
+                return;
+            if (touch.phase == TouchPhase.Moved)
             {
-                if(hit.collider.gameObject == gameObject)
-                {
-                    GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = true;
-                    GetComponentInParent<ObjectHandler>().trialInstantiate = null;
-                    Destroy(gameObject);
-                }
-                for (int i = 0; i < gears.Length; i++)
-                {
-                    if(gears[i] == hit.collider.gameObject)
-                    {
-                        _gameObject = gearsChild[i];
-                        break;
-                    }
-                }
-            }
-            if(touch.phase == TouchPhase.Moved)
-            {
-                if (_gameObject == null)
-                    return;
+                down = true;
                 // apply rotation
                 _rotation.z = (touch.deltaPosition.x + touch.deltaPosition.y) * _sensitivity;
 
@@ -67,6 +72,7 @@ public class Gear : MonoBehaviour
             }
             if(touch.phase== TouchPhase.Ended)
             {
+                down = false;
                 for (int i = 0; i <10; i++)
                 {
 
@@ -86,8 +92,6 @@ public class Gear : MonoBehaviour
                         }
                         else
                         {
-                            Debug.Log(i + "" + gearsChild[i].transform.localRotation.eulerAngles.z);
-                            Debug.Log(i + "" + 360 * (int.Parse(endNumber[i].ToString())) / 10);
                             return;
                         }
 
