@@ -57,7 +57,7 @@ public class WallBehavior : MonoBehaviour
         if (!upsideDown)
         {
 
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + multiplicateur * 17.5f, transform.localPosition.z);
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + multiplicateur * 17.15f, transform.localPosition.z);
 
         }
         else

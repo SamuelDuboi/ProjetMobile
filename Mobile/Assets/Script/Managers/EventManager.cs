@@ -9,6 +9,8 @@ public class EventManager : MonoBehaviour
      [HideInInspector] public CamDirection cuurrentCamDirection;
     [HideInInspector] public bool cantDoZoom;
     [HideInInspector] public bool isZoomed;
+
+    public GameObject returnButton;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -69,7 +71,7 @@ public class EventManager : MonoBehaviour
         if (!cantDoZoom && !isZoomed)
         {
             cantDoZoom = true;
-
+            returnButton.SetActive(true);
             ZoomIn.Invoke(position, direction, angle, orthographicSize);
         }
     }
@@ -79,7 +81,7 @@ public class EventManager : MonoBehaviour
         if (!cantDoZoom)
         {
             cantDoZoom = true;
-
+            returnButton.SetActive(false);
             ZoomOut.Invoke();
         }
     }

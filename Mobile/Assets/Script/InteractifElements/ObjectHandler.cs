@@ -6,7 +6,6 @@ public class ObjectHandler : MonoBehaviour
 {
     [HideInInspector] public InteractifElement interactifElement;
 
-    public BoxCollider hitBoxDezoom;
     public Collider HitBoxZoom;
 
     private bool isZoomed;
@@ -45,7 +44,6 @@ public class ObjectHandler : MonoBehaviour
         direction = Zoom(EventManager.instance.cuurrentCamDirection);
         if (direction != default)
         {
-            hitBoxDezoom.gameObject.SetActive(true);
             if (interactifElement.onlyZoom)
             {
                 HitBoxZoom.enabled = false;
@@ -96,7 +94,6 @@ public class ObjectHandler : MonoBehaviour
     {
         if (isZoomed)
         {
-            hitBoxDezoom.gameObject.SetActive(false);
             if (interactifElement.onlyZoom)
             {
                 HitBoxZoom.enabled = true;

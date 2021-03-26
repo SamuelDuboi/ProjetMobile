@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
+using UnityEngine.UI;
 public class DeviceManager : MonoBehaviour
 {
     private Vector2 startPos;
     private Vector2 endPos;
     public float deadZone = 0.2f;
 
-
+    
     void Update()
     {
         #region Finger
         if (Input.touchCount > 0)
         {
-            if (EventSystem.current.IsPointerOverGameObject())
-                return;
 
             #region RayCast
             var touch = Input.GetTouch(0);
@@ -34,7 +34,7 @@ public class DeviceManager : MonoBehaviour
                         EventManager.instance.OnCollect(hit.collider.gameObject);               
                 
             }
-            else
+           /* else
             {
                 mask = 1<<9;
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
@@ -46,7 +46,7 @@ public class DeviceManager : MonoBehaviour
 
                     EventManager.instance.OnZoomOut();
                 }
-            }
+            }*/
             #endregion
 
             #region Swipe
@@ -136,11 +136,11 @@ public class DeviceManager : MonoBehaviour
                     {
                         EventManager.instance.OnInteract(hit.collider.gameObject);
                     }
-                }
+                }/*
                 else
                 {
                     EventManager.instance.OnZoomOut();
-                }
+                }*/
             }
 
         }
