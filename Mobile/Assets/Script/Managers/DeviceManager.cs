@@ -102,7 +102,7 @@ public class DeviceManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
             {
-
+               
                 float direction;
                 hit.collider.GetComponentInParent<ObjectHandler>().ChoseToZoom( out direction);
                 int angle = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.angle;
@@ -114,7 +114,7 @@ public class DeviceManager : MonoBehaviour
                     mask = 1 << 9;                       
                     if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
                     {
-                        if(hit.collider.gameObject.tag == "Collectable")
+                        if (hit.collider.gameObject.tag == "Collectable")
                             EventManager.instance.OnCollect(hit.collider.gameObject);
                         else
                         {
@@ -130,6 +130,7 @@ public class DeviceManager : MonoBehaviour
                 mask =1<< 9;
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
                 {
+
                     if (hit.collider.gameObject.tag == "Collectable")
                         EventManager.instance.OnCollect(hit.collider.gameObject);
                     else
