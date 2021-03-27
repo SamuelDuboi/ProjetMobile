@@ -18,7 +18,7 @@ public class ArcFeu : MonoBehaviour
     public float startTime, deltaTime, speed;
 
     public float swipeCount;
-
+    public Animator animator;
     private void Update()
     {
         tap = false;
@@ -50,17 +50,18 @@ public class ArcFeu : MonoBehaviour
             }
         }
 
-        if (swipeDelta.magnitude > 200)
+        if (swipeDelta.magnitude > 150)
         {
+
             float x = swipeDelta.x;
 
             deltaTime = Time.time - startTime;
             speed = 200 / deltaTime;
 
-            if (x < 0 && speed > 1000 && swipeRight == true)
+            if (x < 0 && speed > 100 && swipeRight == true)
             {
-                Debug.Log("Swipe à gauche");
-                Debug.Log(speed);
+                animator.speed =speed / 100;
+                animator.SetTrigger("Left");
                 swipeLeft = true;
                 swipeRight = false;
                 swipeCount += 1;
@@ -69,8 +70,9 @@ public class ArcFeu : MonoBehaviour
             }
             else if (x > 0 && speed > 100 && swipeLeft == true)
             {
-                Debug.Log("Swipe à droite");
-                Debug.Log(speed);
+                animator.speed = speed / 100;
+
+                animator.SetTrigger("Right");
                 swipeRight = true;
                 swipeLeft = false;
                 swipeCount += 1;
@@ -81,7 +83,7 @@ public class ArcFeu : MonoBehaviour
 
         if(swipeCount == 20)
         {
-            Debug.Log("C'est gagné");
+
             Reset();
         }
     }
