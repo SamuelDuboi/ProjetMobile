@@ -166,7 +166,7 @@ Animator:
   m_GameObject: {fileID: 4710989}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1bab94ab658fc6c41921314f561e5a60, type: 2}
+  m_Controller: {fileID: 9100000, guid: 75725d7eaabc0894788f161e063f9e54, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -473,14 +473,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122705299}
-  m_LocalRotation: {x: -0.00000011920929, y: 0.7071067, z: 0.7071069, w: -0.000000059604645}
+  m_LocalRotation: {x: 0.00000013240826, y: -0.70710695, z: -0.70710665, w: -0.0000001324082}
   m_LocalPosition: {x: 1.4623506, y: 2.1741915, z: 1.308096}
   m_LocalScale: {x: 0.19999994, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 825421877}
   m_Father: {fileID: 5601560689513058625}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.99999, y: -180, z: -0.000015258789}
 --- !u!114 &122705301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9026f22dd4c1a314b8dfd31a1647bb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionAnimator: {fileID: 0}
+  interactionAnimator: {fileID: 825421878}
   isLInkedToWall: 1
   wallLinked: {fileID: 5113676196764683259}
   zoom: 1
@@ -1907,7 +1907,7 @@ MonoBehaviour:
   - {fileID: 1916873189997190872}
   animator: {fileID: 1944396833}
   upsideDownEditor: 0
-  currentDirection: 2
+  currentDirection: 1
 --- !u!1 &497436584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2999,7 +2999,7 @@ Animator:
   m_GameObject: {fileID: 825421876}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1bab94ab658fc6c41921314f561e5a60, type: 2}
+  m_Controller: {fileID: 9100000, guid: 75725d7eaabc0894788f161e063f9e54, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5012,15 +5012,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9026f22dd4c1a314b8dfd31a1647bb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionAnimator: {fileID: 0}
+  interactionAnimator: {fileID: 4710991}
   isLInkedToWall: 1
   wallLinked: {fileID: 1506408426558730956}
   zoom: 1
   zoomFromUp: 0
   zoomFromDown: 0
   onlyZoom: 0
-  leftCam: 0000000001000000
-  rightCam: 0200000003000000
+  leftCam: 00000000
+  rightCam: 01000000
   angle: 45
   orthoGraphicSize: 2
   hasLinkGameObject: 0
@@ -7228,7 +7228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf9c9f624dfd264d8cee33bf98c8a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWallUp: 1
+  isWallUp: 0
 --- !u!4 &2282206632010082422
 Transform:
   m_ObjectHideFlags: 0
@@ -7237,7 +7237,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506408426558730956}
   m_LocalRotation: {x: -0.6532815, y: 0.2705982, z: 0.27059838, w: 0.65328133}
-  m_LocalPosition: {x: -0, y: 17.15, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1396785562}
@@ -7259,7 +7259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf9c9f624dfd264d8cee33bf98c8a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWallUp: 0
+  isWallUp: 1
 --- !u!114 &2736543465348454453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7364,7 +7364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4539043758428502305}
   m_LocalRotation: {x: 0.27059796, y: 0.65328145, z: 0.65328157, w: -0.2705983}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 17.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4934570848577256781}
@@ -7564,7 +7564,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018491661396130714}
-  m_LocalRotation: {x: 0.27059808, y: -0.6532815, z: -0.6532815, w: -0.27059808}
+  m_LocalRotation: {x: -0.27059802, y: -0.6532815, z: -0.6532815, w: 0.27059802}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
