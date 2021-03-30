@@ -26,7 +26,7 @@ public class EventManager : MonoBehaviour
     public event Action SwipeLeft;
     public event Action SwipeRight;
 
-    public event Action<Vector3, float, int, float> ZoomIn;
+    public event Action<Cams,  float> ZoomIn;
     public event Action  ZoomOut;
 
     public event Action<GameObject> CollectObject;
@@ -66,13 +66,13 @@ public class EventManager : MonoBehaviour
             SwipeRight.Invoke();
         }
     }
-    public void OnZoomIn(Vector3 position, float direction, int angle, float orthographicSize)
+    public void OnZoomIn( Cams cam, float orthographicSize)
     {
         if (!cantDoZoom && !isZoomed)
         {
             cantDoZoom = true;
             returnButton.SetActive(true);
-            ZoomIn.Invoke(position, direction, angle, orthographicSize);
+            ZoomIn.Invoke( cam, orthographicSize);
         }
     }
 

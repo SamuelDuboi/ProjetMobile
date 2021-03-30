@@ -39,10 +39,11 @@ public class ObjectHandler : MonoBehaviour
     }
 
 
-    public void ChoseToZoom( out float direction)
+    public void ChoseToZoom( out Cams cams)
     {
-        direction = Zoom(EventManager.instance.cuurrentCamDirection);
-        if (direction != default)
+        cams = Zoom(EventManager.instance.cuurrentCamDirection);
+        
+        if (cams != null )
         {
             if (interactifElement.onlyZoom)
             {
@@ -53,41 +54,23 @@ public class ObjectHandler : MonoBehaviour
             isZoomed = true;
         }
     }
-    public float Zoom(CamDirection currentDirection)
+    public Cams Zoom(CamDirection currentDirection)
     {
-        if (!isZoomed)
-        {
-            if (interactifElement.zoomFromUp )
-                if (!EventManager.instance.uspideDown)
-                    return 2f;
-                else
-                    return -2f;
-            else if (interactifElement.zoomFromDown)
-            {
-                if (!EventManager.instance.uspideDown)
-                    return -2f;
-                else
-                    return 2f;
-            }
+        if (!isZoomed)      
+        {          
 
-            foreach (var direction in interactifElement.leftCam)
+            foreach (var cams in interactifElement.cams)
             {
-                if (currentDirection == direction)
+                if (currentDirection == cams.camDirection)
                 {
-                    return -1f;
+                    cams.current = gameObject;
+                    return cams;
                 }
             }
-            foreach (var direction in interactifElement.rightCam)
-            {
-                if (currentDirection == direction)
-                {
-                    return 1f;
-                }
-            }
+            
         }
+        return null;
 
-
-        return default;
     }
 
     public virtual void UnZoom()

@@ -8,7 +8,7 @@ public class InteractifElementEditor : Editor
     InteractifElement interactifElements;
 
 
-    private bool foldoutListLeft, foldoutListRight,foldoutListOpen, foldoutListInteract, foldoutLists;
+    private bool foldoutListCam,foldoutListOpen, foldoutListInteract, foldoutLists;
     private void OnEnable()
     {
         interactifElements = target as InteractifElement;
@@ -45,7 +45,6 @@ public class InteractifElementEditor : Editor
     {
         interactifElements.inventory = false;
             EditorGUILayout.Space(20);
-        interactifElements.angle = EditorGUILayout.IntField("Angle ", interactifElements.angle);
         interactifElements.orthoGraphicSize = EditorGUILayout.FloatField("Orthographic size ", interactifElements.orthoGraphicSize);
             interactifElements.zoomFromUp = EditorGUILayout.Toggle("Zoom from up", interactifElements.zoomFromUp);
         if (interactifElements.zoomFromUp)
@@ -59,16 +58,12 @@ public class InteractifElementEditor : Editor
             {
                 EditorGUILayout.Space(20);
 
-                foldoutListLeft = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListLeft,"Zoom On Left");
-                    if(foldoutListLeft)
-                         ManageCamLis(interactifElements.leftCam);
+                foldoutListCam = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListCam,"CamsToZoom");
+         
+                    if(foldoutListCam)
+                         ManageCams(interactifElements.cams);
                     EditorGUILayout.Space(20);
-                EditorGUILayout.EndFoldoutHeaderGroup();
-
-                    foldoutListRight = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListRight,"Zoom On Right");
-                    if (foldoutListRight)
-                        ManageCamLis(interactifElements.rightCam);
-                EditorGUILayout.EndFoldoutHeaderGroup();
+                EditorGUILayout.EndFoldoutHeaderGroup();                  
 
             }
             EditorGUILayout.Space(20);
@@ -77,15 +72,16 @@ public class InteractifElementEditor : Editor
 
         
     }
-
-
-    private void ManageCamLis(List<CamDirection> list)
+    private void ManageCams(List<Cams> list)
     {
         if (list != null && list.Count != 0)
         {
             for (int i = 0; i < list.Count; i++)
             {
-                list[i] = (CamDirection)EditorGUILayout.EnumPopup(list[i]);
+                EditorGUILayout.BeginHorizontal();
+                list[i].camDirection = (CamDirection)EditorGUILayout.EnumPopup(list[i].camDirection);
+                list[i].cam = (GameObject)EditorGUILayout.ObjectField(list[i].cam, typeof(GameObject), true);
+                EditorGUILayout.EndHorizontal();
             }
 
             EditorGUILayout.BeginHorizontal();
@@ -101,6 +97,8 @@ public class InteractifElementEditor : Editor
                 interactifElements.AddList(list);
         }
     }
+
+
 
     private void Links()
     {

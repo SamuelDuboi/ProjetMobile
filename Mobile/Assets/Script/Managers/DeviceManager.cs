@@ -24,14 +24,17 @@ public class DeviceManager : MonoBehaviour
             if (Physics.Raycast(ray, out hit,Mathf.Infinity, mask))
             {
                 
-                    float direction;
-                    hit.collider.GetComponentInParent<ObjectHandler>().ChoseToZoom( out direction);
-                    int angle = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.angle;
-                    float orthographicSize= hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
-                    if (direction != default)
-                        EventManager.instance.OnZoomIn(hit.collider.transform.position, direction, angle,orthographicSize);
+                   
+                if (!EventManager.instance.cantDoZoom)
+                {
+                    Cams cams;
+                    hit.collider.GetComponentInParent<ObjectHandler>().ChoseToZoom(out cams);
+                    float orthographicSize = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
+                    if (cams != null)
+                        EventManager.instance.OnZoomIn(cams, orthographicSize);
                     else
-                        EventManager.instance.OnCollect(hit.collider.gameObject);               
+                        EventManager.instance.OnCollect(hit.collider.gameObject);
+                }            
                 
             }
            /* else
@@ -102,25 +105,27 @@ public class DeviceManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
             {
-               
-                float direction;
-                hit.collider.GetComponentInParent<ObjectHandler>().ChoseToZoom( out direction);
-                int angle = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.angle;
-                float orthographicSize = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
-                if (direction != default)
-                    EventManager.instance.OnZoomIn(hit.collider.transform.parent.transform.position, direction,angle, orthographicSize);
-                else
+                if (!EventManager.instance.isZoomed)
                 {
-                    mask = 1 << 9;                       
-                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
-                    {
-                        if (hit.collider.gameObject.tag == "Collectable")
-                            EventManager.instance.OnCollect(hit.collider.gameObject);
-                        else
-                        {
-                            EventManager.instance.OnInteract(hit.collider.gameObject);
-                        }
+                    Cams cams;
 
+                    hit.collider.GetComponentInParent<ObjectHandler>().ChoseToZoom(out cams);
+                    float orthographicSize = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
+                    if (cams != null)
+                        EventManager.instance.OnZoomIn(cams, orthographicSize);
+                    else
+                    {
+                        mask = 1 << 9;
+                        if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
+                        {
+                            if (hit.collider.gameObject.tag == "Collectable")
+                                EventManager.instance.OnCollect(hit.collider.gameObject);
+                            else
+                            {
+                                EventManager.instance.OnInteract(hit.collider.gameObject);
+                            }
+
+                        }
                     }
                 }
 

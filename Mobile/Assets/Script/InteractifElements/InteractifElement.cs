@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class InteractifElement : MonoBehaviour
 {
     public Animator interactionAnimator;
@@ -15,9 +16,7 @@ public class InteractifElement : MonoBehaviour
     public bool onlyZoom;
 
 
-    public List<CamDirection> leftCam = new List<CamDirection>();
-    public List<CamDirection> rightCam = new List<CamDirection>();
-    public int angle = 45;
+    public List<Cams> cams = new List<Cams>();
     public float orthoGraphicSize = 3;
 
     public bool hasLinkGameObject;
@@ -50,10 +49,34 @@ public class InteractifElement : MonoBehaviour
         list.Add(default);
     }
 
+    public void AddList(List<Cams> list)
+    {
+        if (list == null)
+        {
+            list = new List<Cams>();
+        }
+
+        list.Add( new Cams());
+    }
     public void RemoveFromList<T>(List<T> list)
     {
         list.RemoveAt(list.Count - 1);
     }
 }
+
+[System.Serializable]
+public class Cams
+{
+    [SerializeField] public CamDirection camDirection ;
+    [SerializeField] public GameObject cam ;
+    [SerializeField] public GameObject current ;
+    public Cams()
+    {
+        camDirection = CamDirection.SouthEast;
+        cam = null;
+        current = null;
+    }
+}
+
 
 
