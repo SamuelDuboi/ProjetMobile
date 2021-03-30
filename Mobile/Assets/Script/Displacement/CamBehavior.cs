@@ -112,8 +112,10 @@ public class CamBehavior : MonoBehaviour
             positionToGo = new Vector3(initialPos.x - cam.transform.position.x, initialPos.y - cam.transform.position.y, initialPos.z - cam.transform.position.z);
         else
             initialPos = cam.transform.position;
+        int i = 0;
         while (timer < 0.5)
         {
+            i++;
             if (timer > 0.1f && timer < .2f)
             {
                 angle += 1;
@@ -131,14 +133,14 @@ public class CamBehavior : MonoBehaviour
             //cam.transform.RotateAround(_position, directionVector, angle/75f * 2*camCurve.Evaluate(timer / .75f) * multiplicator * direction);
 
             cam.transform.Rotate(directionVector,angle/33f* multiplicator * direction, Space.World );
-            cam.orthographicSize -= orthographicSizeToChange / 50*2* camCurve.Evaluate(timer / .5f)  * multiplicator;
+            cam.orthographicSize -= orthographicSizeToChange / 51*2* camCurve.Evaluate(timer / .5f)  * multiplicator;
             //cam.transform.position -= positionToGo /75f * multiplicator;
-            cam.transform.Translate (positionToGo/50f, Space.World);
+            cam.transform.Translate (positionToGo/51f, Space.World);
 
            // cam.transform.Translate (0,0,-0.1f, Space.Self);
             yield return new WaitForSeconds(0.01f);
         }
-
+        Debug.Log(i);
         // try with bool
       /*  Debug.Log(cam.transform.position);
         Debug.Log(_position);
