@@ -108,7 +108,7 @@ public class DeviceManager : MonoBehaviour
                 int angle = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.angle;
                 float orthographicSize = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
                 if (direction != default)
-                    EventManager.instance.OnZoomIn(hit.collider.transform.position, direction,angle, orthographicSize);
+                    EventManager.instance.OnZoomIn(hit.collider.transform.parent.transform.position, direction,angle, orthographicSize);
                 else
                 {
                     mask = 1 << 9;                       

@@ -112,8 +112,7 @@ public class CamBehavior : MonoBehaviour
             positionToGo = new Vector3(initialPos.x - cam.transform.position.x, initialPos.y - cam.transform.position.y, initialPos.z - cam.transform.position.z);
         else
             initialPos = cam.transform.position;
-        while (timer < 0.5)
-        {
+      
             if (timer > 0.1f && timer < .2f)
             {
                 angle += 1;
@@ -134,9 +133,51 @@ public class CamBehavior : MonoBehaviour
             cam.orthographicSize -= orthographicSizeToChange / 50*2* camCurve.Evaluate(timer / .5f)  * multiplicator;
             //cam.transform.position -= positionToGo /75f * multiplicator;
             cam.transform.Translate (positionToGo/50f, Space.World);
+            Debug.Log(positionToGo.x / 50f);
+            Debug.Log(positionToGo.y / 50f);
+            Debug.Log(positionToGo.z / 50f);
            // cam.transform.Translate (0,0,-0.1f, Space.Self);
             yield return new WaitForSeconds(0.01f);
-        }
+        
+
+        // try with bool
+      /*  Debug.Log(cam.transform.position);
+        Debug.Log(_position);
+        bool stop = false;
+        int i= 0;
+        while (!stop)
+        {
+            if (timer > 0.1f && timer < .2f)
+            {
+                angle += 1;
+            }
+            else if (timer > 0.2f && timer < .3f)
+            {
+                angle += 2;
+            }
+
+            else if (timer > .4f)
+                angle -= 3;
+
+            timer += 0.01f;
+            // multiply by 2 to compsate the loss of the cam curve, not an exact value but good enough
+            //cam.transform.RotateAround(_position, directionVector, angle/75f * 2*camCurve.Evaluate(timer / .75f) * multiplicator * direction);
+            i++;
+            cam.transform.Rotate(directionVector, angle / 33f * multiplicator * direction, Space.World);
+            cam.orthographicSize -= orthographicSizeToChange / 50 * 2 * camCurve.Evaluate(timer / .5f) * multiplicator;
+            //cam.transform.position -= positionToGo /75f * multiplicator;
+          
+            cam.transform.position = Vector3.MoveTowards(cam.transform.position, _position, 20* 0.01f);
+            if (Mathf.Abs(cam.transform.position.x) <= Mathf.Abs(_position.x) + 0.5f && Mathf.Abs(cam.transform.position.x) >= Mathf.Abs(_position.x) - 0.5f &&
+                Mathf.Abs(cam.transform.position.y) <= Mathf.Abs(_position.y) + 0.5f && Mathf.Abs(cam.transform.position.y) >= Mathf.Abs(_position.y) - 0.5f&&
+                Mathf.Abs(cam.transform.position.z) <= Mathf.Abs(_position.z) + 0.5f && Mathf.Abs(cam.transform.position.z) >= Mathf.Abs(_position.z) - 0.5f)
+            {
+                stop = true;
+                Debug.Log(i);
+            }
+            // cam.transform.Translate (0,0,-0.1f, Space.Self);
+            yield return new WaitForSeconds(0.01f);
+        }*/
         timer = 0;
         EventManager.instance.isZoomed = !EventManager.instance.isZoomed;
         cantRotate = false;
