@@ -46,31 +46,25 @@ public class InteractifElementEditor : Editor
         interactifElements.inventory = false;
             EditorGUILayout.Space(20);
         interactifElements.orthoGraphicSize = EditorGUILayout.FloatField("Orthographic size ", interactifElements.orthoGraphicSize);
-            interactifElements.zoomFromUp = EditorGUILayout.Toggle("Zoom from up", interactifElements.zoomFromUp);
-        if (interactifElements.zoomFromUp)
-            interactifElements.zoomFromDown = false;
 
-        interactifElements.zoomFromDown = EditorGUILayout.Toggle("Zoom from Down", interactifElements.zoomFromDown);
+
         interactifElements.onlyZoom = EditorGUILayout.Toggle("Only zoom", interactifElements.onlyZoom);
-        if (interactifElements.zoomFromDown)
-            interactifElements.zoomFromUp = false;
-        if (!interactifElements.zoomFromUp && !interactifElements.zoomFromDown)
-            {
-                EditorGUILayout.Space(20);
 
-                foldoutListCam = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListCam,"CamsToZoom");
-         
-                    if(foldoutListCam)
-                         ManageCams(interactifElements.cams);
-                    EditorGUILayout.Space(20);
-                EditorGUILayout.EndFoldoutHeaderGroup();                  
+        EditorGUILayout.Space(20);
 
-            }
+        foldoutListCam = EditorGUILayout.BeginFoldoutHeaderGroup(foldoutListCam, "CamsToZoom");
+
+            if (foldoutListCam)
+                ManageCams(interactifElements.cams);
             EditorGUILayout.Space(20);
+        EditorGUILayout.EndFoldoutHeaderGroup();
 
-            Links();
 
-        
+        EditorGUILayout.Space(20);
+
+        Links();
+
+
     }
     private void ManageCams(List<Cams> list)
     {

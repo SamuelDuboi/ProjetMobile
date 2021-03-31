@@ -11,8 +11,6 @@ public class InteractifElement : MonoBehaviour
 
 
     public bool zoom;
-    public bool zoomFromUp;
-    public bool zoomFromDown;
     public bool onlyZoom;
 
 

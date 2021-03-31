@@ -23,18 +23,20 @@ public class DeviceManager : MonoBehaviour
             LayerMask mask = 8;
             if (Physics.Raycast(ray, out hit,Mathf.Infinity, mask))
             {
-                
-                   
-                if (!EventManager.instance.cantDoZoom)
+
+
+                Cams cams = null;
+                float orthographicSize = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
+                if (!EventManager.instance.isZoomed)
                 {
-                    Cams cams;
                     hit.collider.GetComponentInParent<ObjectHandler>().ChoseToZoom(out cams);
-                    float orthographicSize = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
-                    if (cams != null)
+                }
+
+                if (cams != null)
                         EventManager.instance.OnZoomIn(cams, orthographicSize);
                     else
                         EventManager.instance.OnCollect(hit.collider.gameObject);
-                }            
+                  
                 
             }
            /* else
@@ -105,12 +107,12 @@ public class DeviceManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
             {
+                    Cams cams = null;
+                    float orthographicSize = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
                 if (!EventManager.instance.isZoomed)
                 {
-                    Cams cams;
-
                     hit.collider.GetComponentInParent<ObjectHandler>().ChoseToZoom(out cams);
-                    float orthographicSize = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
+                }
                     if (cams != null)
                         EventManager.instance.OnZoomIn(cams, orthographicSize);
                     else
@@ -127,7 +129,7 @@ public class DeviceManager : MonoBehaviour
 
                         }
                     }
-                }
+                
 
             }
             else
