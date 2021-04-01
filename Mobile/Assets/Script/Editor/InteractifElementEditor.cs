@@ -49,6 +49,7 @@ public class InteractifElementEditor : Editor
 
 
         interactifElements.onlyZoom = EditorGUILayout.Toggle("Only zoom", interactifElements.onlyZoom);
+        interactifElements.UpsideDown = EditorGUILayout.Toggle("Upside Down", interactifElements.UpsideDown);
 
         EditorGUILayout.Space(20);
 

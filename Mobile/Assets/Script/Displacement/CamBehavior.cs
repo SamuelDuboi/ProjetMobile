@@ -75,10 +75,21 @@ public class CamBehavior : MonoBehaviour
         vcam2.transform.position = cams.cam.transform.position;
         vcam2.m_Lens.OrthographicSize = orthogrphicSize;
         vcam2.LookAt = cams.current.transform;
+        if (cams.upsideDown)
+        {
+            vcam2.transform.rotation = cams.cam.transform.rotation;
+            vcam2.LookAt = null;
+        }
+        else
+        {
+            vcam2.LookAt = cams.current.transform;
+        }
+
         vcam2.Priority = 1;
         vcam1.Priority = 0;
         EventManager.instance.isZoomed = !EventManager.instance.isZoomed;
         yield return new WaitForSeconds(1.0f);
+        
         EventManager.instance.cantDoZoom = false;
 
     }

@@ -12,6 +12,7 @@ public class InteractifElement : MonoBehaviour
 
     public bool zoom;
     public bool onlyZoom;
+    public bool UpsideDown;
 
 
     public List<Cams> cams = new List<Cams>();
@@ -68,11 +69,13 @@ public class Cams
     [SerializeField] public CamDirection camDirection ;
     [SerializeField] public GameObject cam ;
     [SerializeField] public GameObject current ;
+    [SerializeField] public bool upsideDown;
     public Cams()
     {
         camDirection = CamDirection.SouthEast;
         cam = null;
         current = null;
+        upsideDown = false; 
     }
 }
 

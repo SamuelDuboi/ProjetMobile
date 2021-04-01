@@ -58,16 +58,16 @@ public class ObjectHandler : MonoBehaviour
     {
         if (!isZoomed)      
         {          
-
             foreach (var cams in interactifElement.cams)
             {
                 if (currentDirection == cams.camDirection)
                 {
+                    if (interactifElement.UpsideDown)
+                        cams.upsideDown = true;
                     cams.current = gameObject;
                     return cams;
                 }
             }
-            
         }
         return null;
 
@@ -113,7 +113,12 @@ public class ObjectHandler : MonoBehaviour
 
                 }
                 if (numberOfObject != interactifElement.ObjectoOpen.Count)
+                {
+                    interactifElement.interactionAnimator.SetLayerWeight(1, 1);
+                    interactifElement.interactionAnimator.SetTrigger("Interact");
                     return;
+                }
+                interactifElement.interactionAnimator.SetLayerWeight(1, 0);
             }
             if (!interactifElement.spawnNewTrial)
             {
