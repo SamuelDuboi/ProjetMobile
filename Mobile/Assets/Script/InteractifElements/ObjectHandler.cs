@@ -115,10 +115,12 @@ public class ObjectHandler : MonoBehaviour
                 if (numberOfObject != interactifElement.ObjectoOpen.Count)
                 {
                     interactifElement.interactionAnimator.SetLayerWeight(1, 1);
+                    interactifElement.interactionAnimator.SetLayerWeight(2, 0);
                     interactifElement.interactionAnimator.SetTrigger("Interact");
                     return;
                 }
                 interactifElement.interactionAnimator.SetLayerWeight(1, 0);
+                interactifElement.interactionAnimator.SetLayerWeight(2, 1);
             }
             if (!interactifElement.spawnNewTrial)
             {
