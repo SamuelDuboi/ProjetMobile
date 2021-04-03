@@ -2535,7 +2535,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775807103}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 616af1a0b0ffd324787e7c59f7de6cf0, type: 3}
   m_Name: 
@@ -3647,7 +3647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1136948694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10284,68 +10284,6 @@ Transform:
   m_Father: {fileID: 817173397}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
---- !u!114 &1766587880578674115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766587880578674125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9026f22dd4c1a314b8dfd31a1647bb32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionAnimator: {fileID: 1766587880578674126}
-  isLInkedToWall: 0
-  wallLinked: {fileID: 0}
-  zoom: 1
-  onlyZoom: 0
-  UpsideDown: 0
-  cams:
-  - camDirection: 0
-    cam: {fileID: 1834197284}
-    current: {fileID: 0}
-    upsideDown: 0
-  - camDirection: 3
-    cam: {fileID: 1834197284}
-    current: {fileID: 0}
-    upsideDown: 0
-  orthoGraphicSize: 1
-  hasLinkGameObject: 1
-  ObjectoOpen:
-  - 
-  spawnNewTrial: 0
-  TrialGameObjects: {fileID: 0}
-  objectToActive: []
-  objectToInteract:
-  - {fileID: 9148966947421150688}
-  inventory: 0
-  nameInventory: 
-  inventoryTexture: {fileID: 0}
-  needToBeAssemble: 0
-  otherAssemblingObject: {fileID: 0}
-  assembledGameObjetc: {fileID: 0}
-  popup: 0
-  popInteract: 0
-  PopupAfterAnim: 0
-  text: 
-  timePopup: 0
---- !u!114 &1766587880578674124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766587880578674125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb44047e9ad33749a7d29d1b6cd3131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactifElement: {fileID: 0}
-  HitBoxZoom: {fileID: 986077382}
-  trialInstantiate: {fileID: 0}
 --- !u!1 &1766587880578674125
 GameObject:
   m_ObjectHideFlags: 0
@@ -10355,9 +10293,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1766587880578674114}
-  - component: {fileID: 1766587880578674115}
-  - component: {fileID: 1766587880578674124}
-  - component: {fileID: 1766587880578674126}
   m_Layer: 0
   m_Name: book
   m_TagString: Untagged
@@ -10365,25 +10300,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
   m_IsActive: 1
---- !u!95 &1766587880578674126
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766587880578674125}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a6bd3144227ef48498b76b1ce30219af, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1819551312764929790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15626,7 +15542,7 @@ MonoBehaviour:
   isLInkedToWall: 0
   wallLinked: {fileID: 0}
   zoom: 1
-  onlyZoom: 0
+  onlyZoom: 1
   UpsideDown: 0
   cams:
   - camDirection: 3
@@ -15638,8 +15554,9 @@ MonoBehaviour:
     current: {fileID: 0}
     upsideDown: 0
   orthoGraphicSize: 3
-  hasLinkGameObject: 0
-  ObjectoOpen: []
+  hasLinkGameObject: 1
+  ObjectoOpen:
+  - room1Final
   spawnNewTrial: 0
   TrialGameObjects: {fileID: 0}
   objectToActive: []
