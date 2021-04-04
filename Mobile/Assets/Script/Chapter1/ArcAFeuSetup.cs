@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ArcAFeuSetup : ObjectHandler
 {
-    public GameObject[] parts;
-    public string[] partsName;
-    private int index = 0;
+    public GameObject[] objects;
+    public string [] names;
+    public bool canPutTorche;
     public override void Start()
     {
         base.Start();
@@ -17,13 +17,25 @@ public class ArcAFeuSetup : ObjectHandler
         if (HitBoxZoom != null && currentGameObject == HitBoxZoom.gameObject)
         {
             int random;
-            var gameObject = InventoryManager.Instance.FindObject(partsName[index], out random);
-            if (gameObject != null)
+            if (!canPutTorche)
             {
-                parts[index].SetActive(true);
-                index++;
-                if (index == partsName.Length)
+                var gameObject = InventoryManager.Instance.FindObject(names[0], out random);
+                if (gameObject != null)
                 {
+                    InventoryManager.Instance.RemoveFromList(names[0], 1);
+                    objects[0].SetActive(true);
+                    interactifElement.onlyZoom = true;
+                    HitBoxZoom.enabled = false;
+                }
+            }
+
+            else
+            {
+                var gameObject = InventoryManager.Instance.FindObject(names[1], out random);
+                if (gameObject != null)
+                {
+                    InventoryManager.Instance.RemoveFromList(names[1], 1);
+                    objects[1].SetActive(true);
                     interactifElement.onlyZoom = true;
                     HitBoxZoom.enabled = false;
                 }
@@ -31,4 +43,13 @@ public class ArcAFeuSetup : ObjectHandler
         }
 
     }
+
+
+    public void CanPutTorche()
+    {
+        interactifElement.onlyZoom = false;
+        HitBoxZoom.enabled = true;
+        canPutTorche = true;
+    }
+
 }

@@ -20,6 +20,7 @@ public class ArcFeu : MonoBehaviour
     public Animator torcheFire;
     public float swipeCount;
     public Animator animator;
+    public Animator animatorFire;
     private void Update()
     {
         tap = false;
@@ -68,6 +69,12 @@ public class ArcFeu : MonoBehaviour
                 swipeCount += 1;
                 startTouch = Input.touches[0].position;
                 startTime = Time.time;
+                if(swipeCount>8 && swipeCount < 15)
+                     animatorFire.SetInteger("FlammeNumber", 1);
+                else if (swipeCount > 15 && swipeCount < 20)
+                    animatorFire.SetInteger("FlammeNumber", 2);
+
+
             }
             else if (x > 0 && speed > 100 && swipeLeft == true)
             {
@@ -79,19 +86,19 @@ public class ArcFeu : MonoBehaviour
                 swipeCount += 1;
                 startTouch = Input.touches[0].position;
                 startTime = Time.time;
+                if (swipeCount > 8 && swipeCount < 15)
+                    animatorFire.SetInteger("FlammeNumber", 1);
+                else if (swipeCount > 15 && swipeCount < 20)
+                    animatorFire.SetInteger("FlammeNumber", 2);
             }
         }
 
-        if(swipeCount == 20)
+        if (swipeCount >= 20)
         {
-            int number;
-            if (InventoryManager.Instance.FindObject("Torche", out number)!= null);
-            {
-                torcheFire.SetTrigger("Interact");
-                InventoryManager.Instance.RemoveFromList("Torche", 1);
-                Destroy(this);
-            }
-            Restart();
+
+            GetComponentInParent<ArcAFeuSetup>().CanPutTorche();
+            animatorFire.SetInteger("FlammeNumber", 3);
+            Destroy(this);
         }
     }
 
@@ -102,7 +109,9 @@ public class ArcFeu : MonoBehaviour
         startTime = 0;
         swipeLeft = true;
         swipeRight = true;
-        if(swipeCount < 20)
+        animatorFire.SetInteger("FlammeNumber", 0);
+
+        if (swipeCount < 20)
         {
             swipeCount = 0;
         }
