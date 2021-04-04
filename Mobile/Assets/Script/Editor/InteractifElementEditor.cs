@@ -140,7 +140,7 @@ public class InteractifElementEditor : Editor
         if (interactifElements.inventory)
         {
             interactifElements.nameInventory = EditorGUILayout.TextField("Name in Inventory", interactifElements.nameInventory);
-            interactifElements.inventoryTexture =(Texture2D) EditorGUILayout.ObjectField( interactifElements.inventoryTexture, typeof(Texture2D),true);
+            interactifElements.inventoryTexture =(Sprite) EditorGUILayout.ObjectField( interactifElements.inventoryTexture, typeof(Sprite),true);
             interactifElements.needToBeAssemble = EditorGUILayout.Toggle("Need To be Assemble", interactifElements.needToBeAssemble);
             if (interactifElements.needToBeAssemble)
             {

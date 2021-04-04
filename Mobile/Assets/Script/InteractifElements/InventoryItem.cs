@@ -5,8 +5,9 @@ public class InventoryItem
     public GameObject gameObject;
     public string name;
     public int number;
-    public Texture2D image;
-    public InventoryItem(GameObject gameObject, string name, int number, Texture2D image)
+    public Sprite image;
+    public int imageIndex = 1000;
+    public InventoryItem(GameObject gameObject, string name, int number, Sprite image)
     {
         this.gameObject = gameObject;
         this.name = name;

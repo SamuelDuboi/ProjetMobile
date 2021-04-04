@@ -16,7 +16,7 @@ public class EnigmeCristaux : MonoBehaviour
 
     public int index = 1000;
     public string cristalName;
-    public Texture2D texture2D;
+    public Sprite inventorySprite;
 
     public ObjectHandler exitDoor;
     // Start is called before the first frame update
@@ -52,7 +52,7 @@ public class EnigmeCristaux : MonoBehaviour
                 cristaux[index].GetComponent<MeshRenderer>().enabled = false;
                 cristalActif[index] = false;
                 inventoryCristaux += 1;
-                InventoryManager.Instance.AddList(cristaux[index], cristalName, texture2D);
+                InventoryManager.Instance.AddList(cristaux[index], cristalName, inventorySprite);
             }
             else if (cristalActif[index] == false && lockCristaux[index] == false && inventoryCristaux > 0)
             {

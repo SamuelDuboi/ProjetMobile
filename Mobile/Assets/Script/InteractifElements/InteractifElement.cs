@@ -30,7 +30,7 @@ public class InteractifElement : MonoBehaviour
 
     public bool inventory;
     public string nameInventory;
-    public Texture2D inventoryTexture;
+    public Sprite inventoryTexture;
     public bool needToBeAssemble;
     public GameObject otherAssemblingObject;
     public GameObject assembledGameObjetc;
