@@ -17,6 +17,7 @@ public class ArcFeu : MonoBehaviour
 
     public float startTime, deltaTime, speed;
 
+    public Animator torcheFire;
     public float swipeCount;
     public Animator animator;
     private void Update()
@@ -36,7 +37,7 @@ public class ArcFeu : MonoBehaviour
             else if (Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled)
             {
                 isDragging = false;
-                Reset();
+                Restart();
             }
         }
         #endregion
@@ -83,12 +84,18 @@ public class ArcFeu : MonoBehaviour
 
         if(swipeCount == 20)
         {
-
-            Reset();
+            int number;
+            if (InventoryManager.Instance.FindObject("Torche", out number)!= null);
+            {
+                torcheFire.SetTrigger("Interact");
+                InventoryManager.Instance.RemoveFromList("Torche", 1);
+                Destroy(this);
+            }
+            Restart();
         }
     }
 
-    private void Reset()
+    private void Restart()
     {
         startTouch = swipeDelta = Vector2.zero;
         isDragging = false;
