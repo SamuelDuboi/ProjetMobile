@@ -83,7 +83,14 @@ public class ObjectHandler : MonoBehaviour
             }
             HitBoxZoom.gameObject.layer = 8;
             isZoomed = false;
-            Destroy(trialInstantiate);
+            if(trialInstantiate != null)
+            {
+                interactifElement.onlyZoom = false;
+                HitBoxZoom.enabled = true;
+                interactifElement.spawnNewTrial = true;
+                Destroy(trialInstantiate);
+            }
+           
         }
     }
 
@@ -132,9 +139,11 @@ public class ObjectHandler : MonoBehaviour
             }
             else if(trialInstantiate == null)
             {
-               trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform.position,Quaternion.identity);
-                trialInstantiate.transform.SetParent(transform);
+                interactifElement.onlyZoom = true;
+                HitBoxZoom.enabled = false;
                 interactifElement.spawnNewTrial = false;
+                trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform.position,Quaternion.identity);
+                trialInstantiate.transform.SetParent(transform);
             }
         }
     }
