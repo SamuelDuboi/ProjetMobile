@@ -105,33 +105,6 @@ public class EnigmeCristaux : MonoBehaviour
 
     void Constellation3Check()
     {
-        if (index >= 12 && index <= 18)
-        {
-            for (int i = 12; i < 19; i++)
-            {
-                if (cristalActif[i])
-                {
-                    countCristaux++;
-                }
-                else
-                {
-                    countCristaux = 0;
-                    break;
-                }
-            }
-            if (countCristaux == 7)
-            {
-                for (int i = 12; i < 19; i++)
-                {
-                    lockCristaux[i] = true;
-                    constellation3 = true;
-                }
-                countCristaux = 0;
-            }
-        }
-    }
-    void Constellation6Check()
-    {
         if (index >= 38 && index <= 44)
         {
             for (int i = 38; i < 45; i++)
@@ -149,6 +122,33 @@ public class EnigmeCristaux : MonoBehaviour
             if (countCristaux == 7)
             {
                 for (int i = 38; i < 45; i++)
+                {
+                    lockCristaux[i] = true;
+                    constellation3 = true;
+                }
+                countCristaux = 0;
+            }
+        }
+    }
+    void Constellation6Check()
+    {
+        if (index >= 15 && index <= 18)
+        {
+            for (int i = 15; i < 19; i++)
+            {
+                if (cristalActif[i])
+                {
+                    countCristaux++;
+                }
+                else
+                {
+                    countCristaux = 0;
+                    break;
+                }
+            }
+            if (countCristaux == 4)
+            {
+                for (int i = 15; i < 19; i++)
                 {
                     lockCristaux[i] = true;
                     constellation6 = true;
