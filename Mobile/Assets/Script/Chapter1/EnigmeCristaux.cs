@@ -9,7 +9,7 @@ public class EnigmeCristaux : MonoBehaviour
     public bool[] lockCristaux;
     public bool constellation2;
     public bool constellation3;
-    public bool constellation6;
+    public bool constellation8;
 
     public int countCristaux;
     public int inventoryCristaux;
@@ -63,8 +63,8 @@ public class EnigmeCristaux : MonoBehaviour
             }
             Constellation2Check();
             Constellation3Check();
-            Constellation6Check();
-            if (constellation2 && constellation3 && constellation6)
+            Constellation8Check();
+            if (constellation2 && constellation3 && constellation8)
             {
                 exitDoor.interactifElement.interactionAnimator.SetTrigger("Interact");
                 EventManager.instance.OnZoomOut();
@@ -130,7 +130,7 @@ public class EnigmeCristaux : MonoBehaviour
             }
         }
     }
-    void Constellation6Check()
+    void Constellation8Check()
     {
         if (index >= 15 && index <= 18)
         {
@@ -151,7 +151,7 @@ public class EnigmeCristaux : MonoBehaviour
                 for (int i = 15; i < 19; i++)
                 {
                     lockCristaux[i] = true;
-                    constellation6 = true;
+                    constellation8 = true;
                 }
                 countCristaux = 0;
             }
