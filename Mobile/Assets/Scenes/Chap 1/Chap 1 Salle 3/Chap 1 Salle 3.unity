@@ -6687,7 +6687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1136948694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8862,9 +8862,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9026f22dd4c1a314b8dfd31a1647bb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionAnimator: {fileID: 1442035225}
-  isLInkedToWall: 1
-  wallLinked: {fileID: 5113676196764683259}
+  interactionAnimator: {fileID: 3576594137177073528}
+  isLInkedToWall: 0
+  wallLinked: {fileID: 0}
   zoom: 0
   onlyZoom: 0
   UpsideDown: 0
@@ -9252,7 +9252,6 @@ GameObject:
   - component: {fileID: 1442035228}
   - component: {fileID: 1442035227}
   - component: {fileID: 1442035226}
-  - component: {fileID: 1442035225}
   m_Layer: 0
   m_Name: PorteEntree
   m_TagString: Untagged
@@ -9274,25 +9273,6 @@ Transform:
   m_Father: {fileID: 1387934324}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1442035225
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442035223}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 92f6db1a00c4b9e46b7644892d40d6c4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &1442035226
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13699,7 +13679,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6078ce846cc7ed4780473516bc8ac13, type: 2}
+  - {fileID: 2100000, guid: a5e49d288d323144fb14bff3a815f6bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18386,7 +18366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2543635524127894141
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19054,7 +19034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9026f22dd4c1a314b8dfd31a1647bb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionAnimator: {fileID: 8254467196261527623}
+  interactionAnimator: {fileID: 0}
   isLInkedToWall: 1
   wallLinked: {fileID: 5113676196764683259}
   zoom: 1
@@ -20180,6 +20160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3576594137177073524}
   - component: {fileID: 3576594137177073525}
+  - component: {fileID: 3576594137177073528}
   m_Layer: 0
   m_Name: Enigme Cristaux
   m_TagString: Untagged
@@ -20187,6 +20168,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
   m_IsActive: 1
+--- !u!95 &3576594137177073528
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3576594137177073527}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 73592a04cd8026c43a71c445c9e65aaf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3576594139090505006
 GameObject:
   m_ObjectHideFlags: 0
@@ -22902,7 +22902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9109303494465611801}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: -0.044, z: -1.389}
+  m_LocalPosition: {x: 0, y: -0.044, z: -1.389}
   m_LocalScale: {x: 1.19485, y: 1.19485, z: 1}
   m_Children: []
   m_Father: {fileID: 5548940100303690093}
@@ -24047,25 +24047,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8254467196261527624}
   m_Mesh: {fileID: 0}
---- !u!95 &8254467196261527623
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8254467196261527624}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ff1aaaf727d1acf49b682f0284942cf8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8254467196261527624
 GameObject:
   m_ObjectHideFlags: 0
@@ -24077,7 +24058,6 @@ GameObject:
   - component: {fileID: 8254467196261527620}
   - component: {fileID: 8254467196261527621}
   - component: {fileID: 8254467196261527626}
-  - component: {fileID: 8254467196261527623}
   m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
