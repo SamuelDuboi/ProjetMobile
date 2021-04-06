@@ -1614,6 +1614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 785709207}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &410747199
 MonoBehaviour:
@@ -3173,6 +3174,7 @@ GameObject:
   - component: {fileID: 653725969}
   - component: {fileID: 653725968}
   - component: {fileID: 653725967}
+  - component: {fileID: 653725970}
   m_Layer: 0
   m_Name: Chaise
   m_TagString: Untagged
@@ -3192,7 +3194,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 766729998}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 58.508003}
 --- !u!95 &653725967
 Animator:
@@ -3260,6 +3262,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653725965}
   m_Mesh: {fileID: -7594849867523302965, guid: e2dd076e91f779447a112769d47cc63e, type: 3}
+--- !u!65 &653725970
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653725965}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5418521, y: 0.4268553, z: 0.6387557}
+  m_Center: {x: -0.00023868709, y: 0.0023563972, z: 0.019377742}
 --- !u!1001 &699026707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3498,6 +3513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 1933681076}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &705412705
 MonoBehaviour:
@@ -3825,7 +3841,6 @@ Transform:
   m_LocalPosition: {x: -1.1, y: 0.97, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1345842881}
   - {fileID: 653725966}
   m_Father: {fileID: 5671788649713107795}
   m_RootOrder: 7
@@ -3843,7 +3858,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
-  HitBoxZoom: {fileID: 1345842883}
+  HitBoxZoom: {fileID: 653725970}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &766730000
 MonoBehaviour:
@@ -7194,6 +7210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 1292451412}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &1329615314
 MonoBehaviour:
@@ -7353,119 +7370,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1336734755}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1345842880
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1345842881}
-  - component: {fileID: 1345842885}
-  - component: {fileID: 1345842884}
-  - component: {fileID: 1345842883}
-  - component: {fileID: 1345842882}
-  m_Layer: 9
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
-  m_IsActive: 1
---- !u!4 &1345842881
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345842880}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -1.14, y: 1.57, z: 0.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 766729998}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!95 &1345842882
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345842880}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &1345842883
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345842880}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.51228654, y: 0.57172656, z: 0.8197064}
-  m_Center: {x: 0.048233964, y: -0.044477284, z: -0.09014673}
---- !u!23 &1345842884
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345842880}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1345842885
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345842880}
-  m_Mesh: {fileID: 0}
 --- !u!1 &1357167067
 GameObject:
   m_ObjectHideFlags: 0
@@ -8020,6 +7924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 457931311}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &1422771282
 MonoBehaviour:
@@ -8137,6 +8042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 229017527}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &1438919515
 MonoBehaviour:
@@ -8668,6 +8574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 5080275981282813341}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
   objects:
   - {fileID: 1357167067}
@@ -9219,6 +9126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 1905652123}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &1645944172
 MonoBehaviour:
@@ -9816,6 +9724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 7701994645086604404}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &1743909803
 MonoBehaviour:
@@ -10220,6 +10129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 989406244}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &1848051237
 MonoBehaviour:
@@ -11016,6 +10926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 1033229575}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &2019226865
 MonoBehaviour:
@@ -12198,6 +12109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 5946830781858525624}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &498469104959834316
 MonoBehaviour:
@@ -12227,8 +12139,9 @@ MonoBehaviour:
     current: {fileID: 0}
     upsideDown: 0
   orthoGraphicSize: 2
-  hasLinkGameObject: 0
-  ObjectoOpen: []
+  hasLinkGameObject: 1
+  ObjectoOpen:
+  - burningOil
   spawnNewTrial: 0
   TrialGameObjects: {fileID: 0}
   objectToActive: []
@@ -15366,6 +15279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 2544798596611926227}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!1 &2544798597451645251
 GameObject:
@@ -16008,6 +15922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 528888786}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!1 &2951848871437401665
 GameObject:
@@ -16805,6 +16720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 3267643494728958375}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!1 &3267643495436544055
 GameObject:
@@ -17207,7 +17123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838454012612294752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: -3.49, z: 1.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7815008085374884244}
@@ -17916,6 +17832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 3820332399347884906}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!1 &3835504128107551387
 GameObject:
@@ -18448,6 +18365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 2871430447378236196}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!1 &4178338649815380021
 GameObject:
@@ -20515,7 +20433,7 @@ MonoBehaviour:
   objectToInteract: []
   inventory: 1
   nameInventory: Burin
-  inventoryTexture: {fileID: 0}
+  inventoryTexture: {fileID: 21300000, guid: bec78661e393dd945b7d31d1a78dce57, type: 3}
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
   assembledGameObjetc: {fileID: 0}
@@ -20538,6 +20456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 5481945688124330875}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!1 &5481945689410861803
 GameObject:
@@ -20651,6 +20570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 8359278315572395900}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &5537188337334451912
 MonoBehaviour:
@@ -20904,7 +20824,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018491661396130714}
-  m_LocalRotation: {x: 0.6532815, y: 0.27059808, z: 0.27059808, w: -0.6532815}
+  m_LocalRotation: {x: -0.6532815, y: -0.2705981, z: -0.2705981, w: 0.6532815}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -21112,6 +21032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 5752399147075945459}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!1 &5752399147075945458
 GameObject:
@@ -21958,6 +21879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 6180648554291883391}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!1 &6180648555060561135
 GameObject:
@@ -24256,7 +24178,7 @@ MonoBehaviour:
   isLInkedToWall: 0
   wallLinked: {fileID: 0}
   zoom: 1
-  onlyZoom: 1
+  onlyZoom: 0
   UpsideDown: 0
   cams:
   - camDirection: 0
@@ -24295,21 +24217,6 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
---- !u!114 &7815008085374884250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7815008085374884251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb44047e9ad33749a7d29d1b6cd3131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactifElement: {fileID: 0}
-  HitBoxZoom: {fileID: 7815008086495637515}
-  trialInstantiate: {fileID: 0}
 --- !u!1 &7815008085374884251
 GameObject:
   m_ObjectHideFlags: 0
@@ -24320,7 +24227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7815008085374884244}
   - component: {fileID: 7815008085374884245}
-  - component: {fileID: 7815008085374884250}
+  - component: {fileID: 7815008085374884252}
   m_Layer: 0
   m_Name: FireOil
   m_TagString: Untagged
@@ -24328,6 +24235,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7815008085374884252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815008085374884251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f79c174d839b074bb97ff5b4b4ea9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactifElement: {fileID: 0}
+  HitBoxZoom: {fileID: 7815008086495637515}
+  isZoomed: 0
+  trialInstantiate: {fileID: 0}
 --- !u!4 &7815008086495637508
 Transform:
   m_ObjectHideFlags: 0
@@ -24336,7 +24259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7815008086495637512}
   m_LocalRotation: {x: 0.9995226, y: -0.03089745, z: -0.00000046193594, w: -0.0000000372529}
-  m_LocalPosition: {x: 0.45000035, y: -1.5699991, z: -0.060000807}
+  m_LocalPosition: {x: 0.45000052, y: -1.5699991, z: -0.060000807}
   m_LocalScale: {x: 1.5119997, y: 3.167488, z: 1.5119998}
   m_Children:
   - {fileID: 614276078}
@@ -25932,6 +25855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 8130635208592404579}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!1 &8961529375222148319
 GameObject:
@@ -26147,6 +26071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
   HitBoxZoom: {fileID: 2412929302678179555}
+  isZoomed: 0
   trialInstantiate: {fileID: 0}
 --- !u!114 &9085248809685891704
 MonoBehaviour:

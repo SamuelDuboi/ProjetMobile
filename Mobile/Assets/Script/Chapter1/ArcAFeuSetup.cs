@@ -44,7 +44,10 @@ public class ArcAFeuSetup : ObjectHandler
 
     }
 
-
+    public override Cams Zoom(CamDirection currentDirection)
+    {
+        return base.Zoom(currentDirection);
+    }
     public void CanPutTorche()
     {
         interactifElement.onlyZoom = false;
