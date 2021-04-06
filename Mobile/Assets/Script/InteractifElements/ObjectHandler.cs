@@ -8,7 +8,7 @@ public class ObjectHandler : MonoBehaviour
 
     public Collider HitBoxZoom;
 
-    private bool isZoomed;
+  [HideInInspector] public bool isZoomed;
 
    [HideInInspector]public GameObject trialInstantiate;
 
@@ -54,7 +54,7 @@ public class ObjectHandler : MonoBehaviour
             isZoomed = true;
         }
     }
-    public Cams Zoom(CamDirection currentDirection)
+    public virtual Cams Zoom(CamDirection currentDirection)
     {
         if (!isZoomed)      
         {          
@@ -168,7 +168,7 @@ public class ObjectHandler : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitToPopUp(float timeToWait)
+    public IEnumerator WaitToPopUp(float timeToWait)
     {
         yield return new WaitForSeconds(timeToWait);
         EventManager.instance.OnPopup(interactifElement.text, interactifElement.timePopup);
