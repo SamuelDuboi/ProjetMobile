@@ -9,9 +9,10 @@ public class WaterWall : MonoBehaviour
     public bool thirdGood;
     private List<SpriteRenderer> spritesArray;
     public WaterIntesection[] waterIntesections;
-
+    public bool hasWater;
     public void ChangeSide(GameObject self, bool goodSide, SpriteRenderer spriteToScale, int number, float angle, SpriteRenderer spriteToRestart, float sizeToReceize)
     {
+        
         spritesArray = new List<SpriteRenderer>();
         spritesArray.Add(spriteToScale);
         for (int i = number; i < waterIntesections.Length; i++)
@@ -62,7 +63,7 @@ public class WaterWall : MonoBehaviour
         {
             spriteToRestart.size = new Vector2(spriteToRestart.size.x, sizeToReceize);
         }
-        if (canMoveSprite)
+        if (canMoveSprite && hasWater)
         {            
               StartCoroutine(  MoveSprite(spriteToScale));
         }

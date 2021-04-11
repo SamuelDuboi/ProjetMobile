@@ -4,32 +4,91 @@ using UnityEngine;
 
 public class WaterRoom2 : MonoBehaviour
 {
-    public WaterQuad[] waterQuads;
-    public bool red,green,yellow,blue;
+    public SpriteRenderer[] waterQuads;
+    public bool[] open ;
 
-    public float distanceBewteenQuad;
+
+    public int[] numbers;
     void Start()
     {
         EventManager.instance.SwipeUp += UpsideDown;
- 
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            waterQuads[i * 2].size = new Vector2(waterQuads[i * 2].size.x, 0.03f * numbers[i]);
+            waterQuads[i * 2 + 1].size = new Vector2(waterQuads[i * 2 + 1].size.x, 0.03f * numbers[i]);
+        }
     }
 
     public virtual void UpsideDown(bool up)
     {
-        Vector3 direction;
         if (EventManager.instance.uspideDown)
         {
-            direction = Vector3.up;
+            for (int i = 0; i < 2; i++)
+            {
+                if (open[i])
+                {
+                    numbers[i + 1] += numbers[i];
+                    numbers[i] = 0;
+                }
+            }
+           if( numbers[2] >0)
+            { 
+                //activate water
+            }
+            numbers[3] += numbers[2];
+            numbers[2] = 0;
+
             
+            for (int i = 3; i < 5; i++)
+            {
+                if (open[i-1])
+                {
+                    numbers[i + 1] += numbers[i];
+                    numbers[i] = 0;
+                }
+            } 
+
         }
         else
         {
-            direction = Vector3.down;
-        }
+            for (int i = 5; i >3; i--)
+            {
+                if (open[i-2])
+                {
+                    numbers[i -1] += numbers[i];
+                    numbers[i] = 0;
+                }
+            }
+            if (numbers[3] > 0)
+            {
+                //activate water
+            }
+            numbers[2] += numbers[3];
+            numbers[3] = 0;
 
-        foreach (var quad in waterQuads)
-        {
-            quad.Move(direction, distanceBewteenQuad);
+            for (int i = 2; i >0; i--)
+            {
+                if (open[i-1])
+                {
+                    numbers[i -1] += numbers[i];
+                    numbers[i] = 0;
+                }
+            }
         }
+        if (numbers[5] == 4)
+        {
+            //activeSomething
+        }
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            waterQuads[i * 2].size = new Vector2(waterQuads[i * 2].size.x, 0.03f * numbers[i]);
+            waterQuads[i * 2 +1].size = new Vector2(waterQuads[i * 2+1].size.x, 0.03f * numbers[i]);
+        }
+    }
+
+    public void ActivateBool(int index )
+    {
+        open[index] = !open[index];
+        UpsideDown(true);
     }
 }
