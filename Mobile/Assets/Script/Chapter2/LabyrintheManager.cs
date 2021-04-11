@@ -63,6 +63,13 @@ public class LabyrintheManager : MonoBehaviour
         CheckSolution5();
         CheckSolution6();
         CheckSolution7();
+
+        if (labyrintheResolved)
+        {
+            GetComponentInParent<ObjectHandler>().trialInstantiate = null;
+            GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
+            Destroy(gameObject);
+        }
     }
 
     public void CheckSolution1()
