@@ -108,6 +108,8 @@ public class DeviceManager : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
             {
                     Cams cams = null;
+                if (hit.transform.tag == "Water")
+                    return;
                     float orthographicSize = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
                 if (!EventManager.instance.isZoomed)
                 {
