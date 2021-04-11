@@ -1,0 +1,75 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Puzzle : MonoBehaviour
+{
+    public GameObject[] tuiles;
+    public int index;
+    public int[] indexRotate;
+    public float timer = 0;
+    private bool puzzleResolved = false;
+
+    public void Start()
+    {
+        for (int i = 0; i < indexRotate.Length; i++)
+        {
+            indexRotate[i] = 0;
+        }
+    }
+
+    public void StartRotationPuzzle(GameObject button)
+    {
+        if (timer == 0 && puzzleResolved == false)
+            StartCoroutine(RotateTouchePuzzle(button));
+    }
+
+    private IEnumerator RotateTouchePuzzle(GameObject button)
+    {
+        for (int i = 0; i < tuiles.Length; i++)
+        {
+            if (tuiles[i] == button)
+            {
+                index = i;
+                break;
+            }
+            else
+            {
+                index = 1000;
+            }
+        }
+        if (index != 1000)
+        {
+            if (indexRotate[index] == 3)
+            {
+                indexRotate[index] = 0;
+            }
+            else
+            {
+                indexRotate[index] += 1;
+            }
+            timer = 0f;
+        }
+        while (timer <= 0.20f)
+        {
+            timer += 0.01f;
+            button.transform.Rotate(Vector3.forward, -(90f / 20f));
+            yield return new WaitForSeconds(0.01f);
+        }
+        timer = 0;
+
+        PuzzleSolution();
+    }
+
+    void PuzzleSolution()
+    {
+        if (indexRotate[0] == 2 && indexRotate[1] == 0 && (indexRotate[2] == 1 || indexRotate[2] == 3) && indexRotate[3] == 1)
+        {
+            puzzleResolved = true;
+            Debug.Log("Gagné");
+            GetComponentInParent<ObjectHandler>().trialInstantiate = null;
+            GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
+            Destroy(gameObject);
+        }
+    }
+}
