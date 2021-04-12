@@ -33,9 +33,10 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(script);
         }
-        zoomOnTapis.interactifElement.onlyZoom = false;
-        zoomOnTapis.HitBoxZoom.enabled = true;
+        zoomOnTapis.interactifElement.onlyZoom = true;
+        zoomOnTapis.HitBoxZoom.enabled = false;
         zoomOnTapis.done = true;
+        StartCoroutine(zoomOnTapis.ActivateStick());
         Destroy(this);
     }
 }

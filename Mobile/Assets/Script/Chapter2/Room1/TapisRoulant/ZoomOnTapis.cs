@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZoomOnTapis : ObjectHandler
 {
     public LevelManager levelManager;
+    public WaterStick redStick;
     public MonoBehaviour[] scriptToActive;
     public bool done;
     public override void Start()
@@ -60,5 +61,13 @@ public class ZoomOnTapis : ObjectHandler
         }
         base.UnZoom();
 
+    }
+
+    public IEnumerator  ActivateStick()
+    {
+        redStick.Interact(redStick.HitBoxZoom.gameObject);
+        yield return new WaitForSeconds(redStick.interactifElement.interactionAnimator.GetCurrentAnimatorClipInfo(0).Length);
+        UnZoom();
+        HitBoxZoom.enabled = false;
     }
 }
