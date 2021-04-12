@@ -36,7 +36,7 @@ public class burningOil : ObjectHandler
                 InventoryManager.Instance.AddList(gameObject, "burningOil", default, 1);
                 interactifElement.objectToInteract[0].GetComponent<ObjectHandler>().interactifElement.ObjectoOpen.RemoveAt(0);
                 interactifElement.objectToInteract[0].GetComponent<ObjectHandler>().interactifElement.PopupAfterAnim = false;
-
+                SaveManager.instance.SaveChapter1();
             }
             if (!interactifElement.spawnNewTrial)
             {

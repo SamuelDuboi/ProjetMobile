@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -196,6 +196,7 @@ Transform:
   - {fileID: 1484641588}
   - {fileID: 199384295}
   - {fileID: 828365479}
+  - {fileID: 1070657299}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -448,6 +449,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 272afe7ccc531f34585a945f99f2ab5c, type: 3}
+--- !u!1 &1070657298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1070657299}
+  - component: {fileID: 1070657300}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1070657299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070657298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 504594086}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1070657300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070657298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7952b608fdc3c9341b2ac710a67ff867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDoneTuto: 0
+  chapter1Number: 0
+  chapter2Number: 0
+  instance: {fileID: 0}
 --- !u!1 &1178996810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1734937885724693124, guid: 272afe7ccc531f34585a945f99f2ab5c,
@@ -497,7 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13f34ddba608c2d4e9ca66546f73e8fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactifElementsList: []
+  inventoryImages: []
 --- !u!1 &1484641586
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +577,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uspideDown: 0
   cuurrentCamDirection: 0
+  cantDoZoom: 0
+  isZoomed: 0
+  returnButton: {fileID: 0}
 --- !u!4 &1484641588
 Transform:
   m_ObjectHideFlags: 0
@@ -665,9 +716,10 @@ MonoBehaviour:
   isLInkedToWall: 0
   wallLinked: {fileID: 0}
   zoom: 1
-  zoomFromUp: 1
-  leftCam: 
-  rightCam: 
+  onlyZoom: 0
+  UpsideDown: 0
+  cams: []
+  orthoGraphicSize: 3
   hasLinkGameObject: 0
   ObjectoOpen: []
   spawnNewTrial: 0
@@ -677,9 +729,16 @@ MonoBehaviour:
   objectToInteract:
   - {fileID: 1178996810}
   inventory: 0
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
   assembledGameObjetc: {fileID: 0}
+  popup: 0
+  popInteract: 0
+  PopupAfterAnim: 0
+  text: 
+  timePopup: 0
 --- !u!114 &2554871875591534526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,8 +752,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
-  hitBoxDezoom: {fileID: 2554871875978629599}
   HitBoxZoom: {fileID: 2554871876186218031}
+  isZoomed: 0
+  trialInstantiate: {fileID: 0}
 --- !u!1 &2554871875591534527
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,6 +1054,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   horizontalFoV: 60
+  vcam1: {fileID: 0}
+  vcam2: {fileID: 0}
 --- !u!20 &3234080678754623398
 Camera:
   m_ObjectHideFlags: 0
@@ -2414,20 +2476,28 @@ MonoBehaviour:
   isLInkedToWall: 0
   wallLinked: {fileID: 0}
   zoom: 1
-  zoomFromUp: 1
-  leftCam: 
-  rightCam: 
+  onlyZoom: 0
+  UpsideDown: 0
+  cams: []
+  orthoGraphicSize: 3
   hasLinkGameObject: 1
   ObjectoOpen:
-  - {fileID: 0}
+  - 
   spawnNewTrial: 0
   TrialGameObjects: {fileID: 0}
   objectToActive: []
   objectToInteract: []
   inventory: 0
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
   needToBeAssemble: 0
   otherAssemblingObject: {fileID: 0}
   assembledGameObjetc: {fileID: 0}
+  popup: 0
+  popInteract: 0
+  PopupAfterAnim: 0
+  text: 
+  timePopup: 0
 --- !u!114 &6614351517504131614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2441,8 +2511,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
-  hitBoxDezoom: {fileID: 786757186762188227}
   HitBoxZoom: {fileID: 6614351516974643534}
+  isZoomed: 0
+  trialInstantiate: {fileID: 0}
 --- !u!1 &6614351517504131615
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ public class RopeBurned : MonoBehaviour
             doOnce = true;
             burnedRope.SetTrigger("Interact");
             EventManager.instance.OnZoomOut();
+            SaveManager.instance.SaveChapter1();
         }
     }
 

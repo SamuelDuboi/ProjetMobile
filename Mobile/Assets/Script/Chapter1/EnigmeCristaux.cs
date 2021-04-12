@@ -68,6 +68,7 @@ public class EnigmeCristaux : MonoBehaviour
             {
                 exitDoor.interactifElement.interactionAnimator.SetTrigger("Interact");
                 EventManager.instance.OnZoomOut();
+                SaveManager.instance.SaveChapter1();
                 this.enabled = false;
             }
             index = 1000;
