@@ -10,6 +10,9 @@ public class InteractAfterAnim : StateMachineBehaviour
         var gameObject = animator.gameObject.GetComponentInParent<ObjectHandler>();
         foreach (var objet in gameObject.interactifElement.objectToInteract)
         {
+            if (!objet.activeSelf)
+                objet.SetActive(true);
+            if(objet.GetComponent<ObjectHandler>())
             objet.GetComponent<ObjectHandler>().Interact(objet.transform.GetChild(0).gameObject);
         } 
     }

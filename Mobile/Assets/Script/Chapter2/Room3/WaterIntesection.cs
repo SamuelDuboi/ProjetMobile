@@ -19,6 +19,7 @@ public class WaterIntesection : ObjectHandler
     {
         base.Start();
         initialLeftSize = left.size.y;
+        if(right != null)
         initialRightSize = right.size.y;
         if (number == 1)
             right.size = new Vector2(right.size.x, 0.1f);
