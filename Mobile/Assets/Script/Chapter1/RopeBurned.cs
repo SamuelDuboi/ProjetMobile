@@ -18,7 +18,9 @@ public class RopeBurned : MonoBehaviour
             doOnce = true;
             burnedRope.SetTrigger("Interact");
             EventManager.instance.OnZoomOut();
-            SaveManager.instance.SaveChapter1();
+            if(gameObject.layer == 10)
+                SaveManager.instance.SaveChapter1();
+
         }
     }
 

@@ -5,4 +5,5 @@ using UnityEngine;
 public class Room3Capt1Trap : ObjectHandler
 {
     public GameObject light;
+
 }

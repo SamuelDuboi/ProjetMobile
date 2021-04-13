@@ -110,13 +110,13 @@ public class ObjectHandler : MonoBehaviour
                 int numberOfObject = 0;
                 foreach (var curentGamObject in interactifElement.ObjectoOpen)
                 {
-                    foreach (var inventoryItem in InventoryManager.Instance.interactifElementsList)
+                    int number;
+                    var inventoryItem = InventoryManager.Instance.FindObject(curentGamObject, out number);
+                    if (inventoryItem)
                     {
-                        if(inventoryItem.name == curentGamObject)
-                            numberOfObject++;
+                        numberOfObject++;
+                        InventoryManager.Instance.RemoveFromList(curentGamObject, 1);
                     }
-                        
-
                 }
                 if (numberOfObject != interactifElement.ObjectoOpen.Count)
                 {
