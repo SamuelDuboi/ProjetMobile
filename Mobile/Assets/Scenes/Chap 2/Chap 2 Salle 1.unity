@@ -2484,6 +2484,7 @@ GameObject:
   - component: {fileID: 596974788}
   - component: {fileID: 596974790}
   - component: {fileID: 596974789}
+  - component: {fileID: 596974791}
   m_Layer: 0
   m_Name: Plaque
   m_TagString: Untagged
@@ -2500,10 +2501,11 @@ Transform:
   m_GameObject: {fileID: 596974787}
   m_LocalRotation: {x: 0.00000013411044, y: -0.0000000745058, z: 0.00000016391276,
     w: 1}
-  m_LocalPosition: {x: -0.01, y: 2.24, z: 1.43}
+  m_LocalPosition: {x: -0.01, y: 2.25, z: 1.45}
   m_LocalScale: {x: 0.8000001, y: 0.10000002, z: 1.1029602}
   m_Children:
   - {fileID: 2069877768}
+  - {fileID: 1405258500}
   - {fileID: 911177838}
   m_Father: {fileID: 5601560689513058625}
   m_RootOrder: 2
@@ -2537,7 +2539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9026f22dd4c1a314b8dfd31a1647bb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionAnimator: {fileID: 2069877769}
+  interactionAnimator: {fileID: 596974791}
   isLInkedToWall: 1
   wallLinked: {fileID: 5113676196764683259}
   zoom: 1
@@ -2571,6 +2573,25 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+--- !u!95 &596974791
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596974787}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c0004721da86b3e4bb45522244ebd375, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &598568607
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,7 +3466,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 596974788}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &945586238
 GameObject:
@@ -5574,7 +5595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1405258500
 Transform:
   m_ObjectHideFlags: 0
@@ -5588,7 +5609,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1750377057}
-  m_Father: {fileID: 2069877768}
+  m_Father: {fileID: 596974788}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1405258501
@@ -5621,8 +5642,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionAnimator: {fileID: 1750377058}
-  isLInkedToWall: 1
-  wallLinked: {fileID: 5113676196764683259}
+  isLInkedToWall: 0
+  wallLinked: {fileID: 0}
   zoom: 0
   onlyZoom: 0
   UpsideDown: 0
@@ -6882,7 +6903,6 @@ GameObject:
   - component: {fileID: 2069877772}
   - component: {fileID: 2069877771}
   - component: {fileID: 2069877770}
-  - component: {fileID: 2069877769}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -6902,29 +6922,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 917263}
-  - {fileID: 1405258500}
   m_Father: {fileID: 596974788}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2069877769
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069877767}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 181d540c6bfda7c4a953c945b38884a4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &2069877770
 BoxCollider:
   m_ObjectHideFlags: 0
