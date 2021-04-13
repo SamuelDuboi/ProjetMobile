@@ -61,7 +61,6 @@ public class Jauge : MonoBehaviour
     {
         if(jaugeIndex[0] == 4 && jaugeIndex[1] == 2 && jaugeIndex[2] == 7)
         {
-            Debug.Log("Gagné");
             GetComponentInParent<ObjectHandler>().trialInstantiate = null;
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             Destroy(gameObject);
