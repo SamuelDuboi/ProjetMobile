@@ -11,7 +11,7 @@ public class ObjectHandler : MonoBehaviour
   [HideInInspector] public bool isZoomed;
 
    [HideInInspector]public GameObject trialInstantiate;
-
+    public string NameToAddIfAnimToAdd;
   public  virtual void Start()
     {
         interactifElement = GetComponent<InteractifElement>();
