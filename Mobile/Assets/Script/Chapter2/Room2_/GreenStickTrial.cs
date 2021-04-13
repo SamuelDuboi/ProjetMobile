@@ -9,23 +9,25 @@ public class GreenStickTrial : MonoBehaviour
     public void ClickOnBigGear(Button currentButtons)
     {
         int number;
-        var gear = InventoryManager.Instance.FindObject("BigGear", out number);
+        var gear = InventoryManager.Instance.FindObject("EngrenageGros", out number);
         if (gear)
         {
-            InventoryManager.Instance.RemoveFromList("BigGear", 1);
+            InventoryManager.Instance.RemoveFromList("EngrenageGros", 1);
             currentButtons.GetComponent<Image>().sprite = bigGear;
             currentButtons.interactable = false;
+            CheckNumberOfGear();
         }
     }
     public void ClickOnSmallGear(Button currentButtons)
     {
         int number;
-        var gear = InventoryManager.Instance.FindObject("SmallGear", out number);
+        var gear = InventoryManager.Instance.FindObject("EngrenagePetit", out number);
         if (gear)
         {
-            InventoryManager.Instance.RemoveFromList("SmallGear", 1);
+            InventoryManager.Instance.RemoveFromList("EngrenagePetit", 1);
             currentButtons.GetComponent<Image>().sprite = smallgGear;
             currentButtons.interactable = false;
+            CheckNumberOfGear();
         }
     }
 

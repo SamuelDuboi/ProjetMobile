@@ -18,9 +18,7 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
     private ChestManager chestManager;
     public void OnDrag(PointerEventData eventData)
     {
-        if(Input.touchCount>0)
-            childTransform.position = new Vector3(childTransform.position.x + eventData.delta.x* sensibility, Input.GetTouch(0).position.y, childTransform.position.z);
-        else
+        if (Input.touchCount > 0)
         {
             currentEventDataX = eventData.delta.x;
             childTransform.position = new Vector3(childTransform.position.x+ eventData.delta.x*sensibility, childTransform.position.y, childTransform.position.z);
@@ -32,13 +30,11 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
             if(Mathf.Abs(childTransform.position.x - previusXPos) > positionMovement / 10)
             {
                 previusXPos = childTransform.position.x;
-
                 if (eventData.delta.x> 0)
                 {
                     index--;
                     if (index == -1)
                         index = 9;
-
                 }
                 else
                 {
@@ -46,7 +42,7 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
                     if (index == 10)
                         index = 0;
                 }
-
+                Debug.Log(index);
             }
         }
     }

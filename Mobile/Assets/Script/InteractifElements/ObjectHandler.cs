@@ -35,7 +35,6 @@ public class ObjectHandler : MonoBehaviour
         }
 
         InteractActiveObject(false);
-
     }
 
 
@@ -152,8 +151,9 @@ public class ObjectHandler : MonoBehaviour
         if (currentGameObject == HitBoxZoom.gameObject && interactifElement.inventory)
         {
             InventoryManager.Instance.AddList(gameObject, interactifElement.nameInventory, interactifElement.inventoryTexture);
-            //gameObject.setActive(false);
-            Destroy(gameObject);
+            EventManager.instance.CollectObject -= CollectObject;
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
     }
 

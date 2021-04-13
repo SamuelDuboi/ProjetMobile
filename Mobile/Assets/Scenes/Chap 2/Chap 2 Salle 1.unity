@@ -2502,7 +2502,7 @@ Transform:
   m_LocalRotation: {x: 0.00000013411044, y: -0.0000000745058, z: 0.00000016391276,
     w: 1}
   m_LocalPosition: {x: -0.01, y: 2.25, z: 1.45}
-  m_LocalScale: {x: 0.8000001, y: 0.10000002, z: 1.1029602}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2069877768}
   - {fileID: 1405258500}
@@ -2560,7 +2560,8 @@ MonoBehaviour:
   - Manivelle2
   spawnNewTrial: 0
   TrialGameObjects: {fileID: 0}
-  objectToActive: []
+  objectToActive:
+  - {fileID: 1405258499}
   objectToInteract: []
   inventory: 0
   nameInventory: 
@@ -5603,8 +5604,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405258499}
-  m_LocalRotation: {x: -0.0000000074505797, y: 0.000000014901159, z: -0.000000014901167,
-    w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6186,7 +6186,7 @@ BoxCollider:
   m_GameObject: {fileID: 1750377056}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

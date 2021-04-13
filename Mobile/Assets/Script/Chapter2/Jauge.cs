@@ -63,8 +63,9 @@ public class Jauge : MonoBehaviour
         {
             GetComponentInParent<ObjectHandler>().trialInstantiate = null;
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
+            InventoryManager.Instance.AddList(gameObject, "LevierBleu", default, 0);
+            StartCoroutine(GetComponentInParent<ActivateStick>().ActivateWaterStick());
             Destroy(gameObject);
-            jaugesResolved = true;
         }
     }
 }
