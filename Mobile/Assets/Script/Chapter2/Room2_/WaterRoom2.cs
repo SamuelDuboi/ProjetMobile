@@ -7,7 +7,7 @@ public class WaterRoom2 : MonoBehaviour
     public SpriteRenderer[] waterQuads;
     public bool[] open ;
     public Collider exitCollider;
-
+    public GameObject hundredKG;
     public int[] numbers;
     void Start()
     {
@@ -78,6 +78,16 @@ public class WaterRoom2 : MonoBehaviour
         if (numbers[5] == 4)
         {
             exitCollider.enabled = true;
+            hundredKG.SetActive(true);
+        }
+        else
+        {
+            if (!hundredKG.activeSelf)
+            {
+                exitCollider.enabled = false;
+
+                hundredKG.SetActive(false);
+            }
         }
         for (int i = 0; i < numbers.Length; i++)
         {
