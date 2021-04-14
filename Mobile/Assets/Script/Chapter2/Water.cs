@@ -8,6 +8,8 @@ public class Water : MonoBehaviour
     public Animator waterAnim;
     public bool blockUp;
     public bool blockDown;
+    public ObjectHandler interactifElement;
+    bool doOnce;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,12 @@ public class Water : MonoBehaviour
     public virtual void UpsideDown(bool up)
     {
         waterAnim.SetTrigger("UpsideDown");
+        if(interactifElement != null && !doOnce)
+        {
+            doOnce = true;
+            InventoryManager.Instance.AddList(gameObject, interactifElement.name,default, 1);
+            interactifElement.Interact(interactifElement.HitBoxZoom.gameObject);
+        }
     }
 
     public virtual void BlockUp()
