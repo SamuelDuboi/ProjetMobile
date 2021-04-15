@@ -24,7 +24,7 @@ public class Water : MonoBehaviour
         if(interactifElement != null && !doOnce)
         {
             doOnce = true;
-            InventoryManager.Instance.AddList(gameObject, interactifElement.name,default, 1);
+            InventoryManager.Instance.AddList(gameObject, interactifElement.NameToAddIfAnimToAdd,default, 1);
             interactifElement.Interact(interactifElement.HitBoxZoom.gameObject);
         }
     }

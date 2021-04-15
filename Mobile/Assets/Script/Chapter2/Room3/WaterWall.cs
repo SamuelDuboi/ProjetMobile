@@ -10,6 +10,8 @@ public class WaterWall : MonoBehaviour
     private List<SpriteRenderer> spritesArray;
     public WaterIntesection[] waterIntesections;
     public bool hasWater;
+
+    public ObjectHandler trappe;
     public void ChangeSide(GameObject self, bool goodSide, SpriteRenderer spriteToScale, int number, float angle, SpriteRenderer spriteToRestart, float sizeToReceize)
     {
         
@@ -34,6 +36,9 @@ public class WaterWall : MonoBehaviour
                 if (firstGood && secondGood)
                 {
                     StartCoroutine(Move(self, spritesArray.ToArray(), angle, true, spriteToRestart, sizeToReceize));
+                    thirdGood = true;
+                    InventoryManager.Instance.AddList(gameObject, trappe.NameToAddIfAnimToAdd, default, 1);
+                    trappe.Interact(trappe.HitBoxZoom.gameObject);
                 }
                 else
                     StartCoroutine( Move(self, spritesArray.ToArray(), angle, false, spriteToRestart, sizeToReceize));
