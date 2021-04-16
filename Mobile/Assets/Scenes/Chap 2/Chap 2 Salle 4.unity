@@ -873,7 +873,7 @@ MonoBehaviour:
   - {fileID: 1916873189997190872}
   animator: {fileID: 1944396833}
   upsideDownEditor: 0
-  currentDirection: 0
+  currentDirection: 3
 --- !u!1001 &373664897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3312,6 +3312,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 171656973}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &1752030214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3425,6 +3426,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 850210048}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &1864632470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3542,6 +3544,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 574385965}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &1900496672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4108,6 +4111,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 378772144933564113}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &378772143906752321
 GameObject:
   m_ObjectHideFlags: 0
@@ -4331,21 +4335,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &543450653128038009
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148652756163}
-  m_LocalRotation: {x: -0.000000029802315, y: -0.00000025331968, z: -0.000000044703473,
-    w: 1}
-  m_LocalPosition: {x: -1.3799999, y: 2.480002, z: -0.2800008}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3870347532964324251}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &764000963703869617
 Transform:
   m_ObjectHideFlags: 0
@@ -4375,24 +4364,6 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &919132148652756163
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 543450653128038009}
-  - component: {fileID: 3469287836978092508}
-  - component: {fileID: 1711813856138456342}
-  m_Layer: 0
-  m_Name: PorteEntree
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1018491661396130714
 GameObject:
@@ -4551,45 +4522,6 @@ Transform:
   m_Father: {fileID: 2370033923383592279}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!23 &1711813856138456342
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148652756163}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: cf2ae13d154a8d842b6aa072407dbe4d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!114 &1916873189997190872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4602,7 +4534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf9c9f624dfd264d8cee33bf98c8a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWallUp: 0
+  isWallUp: 1
 --- !u!4 &2033670986048336167
 Transform:
   m_ObjectHideFlags: 0
@@ -4641,7 +4573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506408426558730956}
   m_LocalRotation: {x: -0.6532815, y: 0.2705982, z: 0.27059838, w: 0.65328133}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 17.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 378772143906752334}
@@ -4651,25 +4583,6 @@ Transform:
   m_Father: {fileID: 2868396661050373506}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90.00001}
---- !u!95 &2370033921843031236
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2370033921843031243}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 181d540c6bfda7c4a953c945b38884a4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!33 &2370033921843031238
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4756,7 +4669,6 @@ GameObject:
   - component: {fileID: 2370033921843031238}
   - component: {fileID: 2370033921843031241}
   - component: {fileID: 2370033921843031240}
-  - component: {fileID: 2370033921843031236}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -4776,7 +4688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9026f22dd4c1a314b8dfd31a1647bb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionAnimator: {fileID: 2370033921843031236}
+  interactionAnimator: {fileID: 0}
   isLInkedToWall: 0
   wallLinked: {fileID: 0}
   zoom: 1
@@ -4836,6 +4748,7 @@ GameObject:
   - component: {fileID: 2370033923383592279}
   - component: {fileID: 2370033923383592278}
   - component: {fileID: 2370033923383592281}
+  - component: {fileID: 2370033923383592282}
   m_Layer: 0
   m_Name: Bout de Tapisserie
   m_TagString: Untagged
@@ -4859,6 +4772,26 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 2370033921843031240}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
+--- !u!95 &2370033923383592282
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2370033923383592280}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b628d14f2a171f6478e2e362b2056b86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2502930970569095000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4871,7 +4804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf9c9f624dfd264d8cee33bf98c8a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWallUp: 1
+  isWallUp: 0
 --- !u!1 &2714742317079789525
 GameObject:
   m_ObjectHideFlags: 0
@@ -5167,6 +5100,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 3151499934274098207}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &3151499935445220751
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,14 +5135,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!33 &3469287836978092508
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148652756163}
-  m_Mesh: {fileID: 5690125794567541757, guid: e1c1f477ebb813a4fa6238d1518974cd, type: 3}
 --- !u!4 &3658268428150311913
 Transform:
   m_ObjectHideFlags: 0
@@ -5231,10 +5157,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4539043758428502305}
   m_LocalRotation: {x: 0.27059796, y: 0.65328145, z: 0.65328157, w: -0.2705983}
-  m_LocalPosition: {x: 0, y: 17.15, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 543450653128038009}
+  m_Children: []
   m_Father: {fileID: 2868396661050373506}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 90.00001}
@@ -5445,6 +5370,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 4404285512213263753}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &4404285513627671577
 GameObject:
   m_ObjectHideFlags: 0
@@ -5659,6 +5585,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 4852323164902417586}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &4852323165895626028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5882,6 +5809,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 5134385248764731105}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &5134385249380431729
 GameObject:
   m_ObjectHideFlags: 0
@@ -6070,6 +5998,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 5152569894026394232}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!95 &5152569894026394228
 Animator:
   serializedVersion: 3
@@ -6254,6 +6183,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 5459568383973993751}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &5459568383077565575
 GameObject:
   m_ObjectHideFlags: 0
@@ -6478,8 +6408,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018491661396130714}
-  m_LocalRotation: {x: 0.6532815, y: 0.27059808, z: 0.27059808, w: -0.6532815}
-  m_LocalPosition: {x: 0, y: -0.423, z: 0}
+  m_LocalRotation: {x: -0.6532815, y: 0.27059808, z: 0.27059808, w: 0.6532815}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 583127233}
@@ -6580,6 +6510,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 5999122124030831591}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &5999122122486088311
 GameObject:
   m_ObjectHideFlags: 0
@@ -7018,6 +6949,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 7411396060267175492}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &7411396061107304410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7526,6 +7458,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 7541788239656619237}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &7541788241167410549
 GameObject:
   m_ObjectHideFlags: 0
@@ -7661,6 +7594,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 8342806637756149953}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &8342806636339534161
 GameObject:
   m_ObjectHideFlags: 0
@@ -8096,6 +8030,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 8515672065586562853}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &8515672066726489781
 GameObject:
   m_ObjectHideFlags: 0
