@@ -718,12 +718,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3625732006820946222}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &34914100 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2218833405982118023, guid: 7b63cb39958d3694e9afb728834f7f2a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1819551312764929790}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &44881290 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6167940385428871016, guid: a2c33b5ce6b40494a960a3b45f719ee7,
@@ -760,6 +754,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 0}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
   rotation: 1
   isGood: 0
 --- !u!114 &44881296
@@ -1167,7 +1162,7 @@ Transform:
   m_Children:
   - {fileID: 407077901}
   m_Father: {fileID: 2282206632010082422}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &201764974
 MonoBehaviour:
@@ -1185,6 +1180,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 407077903}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &201764975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1270,6 +1266,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 0}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
   rotation: 2
   isGood: 0
 --- !u!114 &219033224
@@ -1552,6 +1549,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 0}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
   rotation: 2
   isGood: 0
 --- !u!114 &268053825
@@ -2511,7 +2509,7 @@ Transform:
   m_Children:
   - {fileID: 1481903115}
   m_Father: {fileID: 2282206632010082422}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &561434440
 MonoBehaviour:
@@ -2529,6 +2527,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 1481903117}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &561434441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2820,7 +2819,7 @@ Transform:
   m_Children:
   - {fileID: 1991711059}
   m_Father: {fileID: 2282206632010082422}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &643181781
 MonoBehaviour:
@@ -2838,6 +2837,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 1991711061}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &643181782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2943,7 +2943,7 @@ Transform:
   m_Children:
   - {fileID: 809998077}
   m_Father: {fileID: 2282206632010082422}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &728730672
 MonoBehaviour:
@@ -2961,6 +2961,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 809998079}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &728730673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3549,6 +3550,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 0}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
   rotation: 3
   isGood: 0
 --- !u!114 &831066135
@@ -3624,6 +3626,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 0}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
   rotation: 3
   isGood: 0
 --- !u!114 &842544783
@@ -3812,7 +3815,7 @@ Transform:
   m_Children:
   - {fileID: 995133647}
   m_Father: {fileID: 2282206632010082422}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &896369320
 MonoBehaviour:
@@ -3830,6 +3833,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 995133649}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &896369321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3898,7 +3902,7 @@ Transform:
   m_Children:
   - {fileID: 1423739817}
   m_Father: {fileID: 2282206632010082422}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &901150457
 MonoBehaviour:
@@ -3916,6 +3920,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 1423739819}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &901150458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3995,6 +4000,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 0}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
   rotation: 1
   isGood: 0
 --- !u!114 &950815464
@@ -4845,7 +4851,7 @@ Transform:
   m_Children:
   - {fileID: 507773229}
   m_Father: {fileID: 2282206632010082422}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &1167153343
 MonoBehaviour:
@@ -4863,6 +4869,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 507773231}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &1167153344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5105,7 +5112,7 @@ PrefabInstance:
     - target: {fileID: 8312959215943527134, guid: a8d1236af2487374787a33c3a1a14b1b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8312959215943527134, guid: a8d1236af2487374787a33c3a1a14b1b,
         type: 3}
@@ -6228,6 +6235,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 0}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
   rotation: 0
   isGood: 0
 --- !u!114 &1338992639
@@ -7394,6 +7402,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 0}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
   rotation: 1
   isGood: 0
 --- !u!114 &1571188819
@@ -7983,7 +7992,7 @@ PrefabInstance:
     - target: {fileID: 6708916469792465401, guid: 5e71e3b6bd094314b8ba2ae3b8039b14,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6708916469792465401, guid: 5e71e3b6bd094314b8ba2ae3b8039b14,
         type: 3}
@@ -8395,7 +8404,7 @@ PrefabInstance:
     - target: {fileID: 8312959215943527134, guid: a8d1236af2487374787a33c3a1a14b1b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8312959215943527134, guid: a8d1236af2487374787a33c3a1a14b1b,
         type: 3}
@@ -8664,6 +8673,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 1966121062}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &1966121061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9830,7 +9840,7 @@ Transform:
   m_Children:
   - {fileID: 1393955544}
   m_Father: {fileID: 2282206632010082422}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2130271804
 MonoBehaviour:
@@ -9848,6 +9858,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 1393955546}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &2130271805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9970,7 +9981,7 @@ Transform:
   m_Children:
   - {fileID: 572615946612071687}
   m_Father: {fileID: 2282206632010082422}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572615945755473048
 GameObject:
@@ -10006,6 +10017,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 572615946612071688}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!95 &572615946612071684
 Animator:
   serializedVersion: 3
@@ -10188,6 +10200,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 712320115137030847}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &712320114395464495
 GameObject:
   m_ObjectHideFlags: 0
@@ -11446,6 +11459,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 1594253201341969576}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &1622882511171381734
 GameObject:
   m_ObjectHideFlags: 0
@@ -11480,6 +11494,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 1622882512594501750}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &1622882511171381736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11868,80 +11883,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
   m_IsActive: 1
---- !u!1001 &1819551312764929790
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2282206632010082422}
-    m_Modifications:
-    - target: {fileID: 1549574269420554813, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_Name
-      value: PorteEntree
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549574269420554813, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218833405982118023, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218833405982118023, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218833405982118023, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218833405982118023, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218833405982118023, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218833405982118023, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.00000017881392
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218833405982118023, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.0000000745058
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218833405982118023, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.00000034272668
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218833405982118023, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218833405982118023, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -45
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218833405982118023, guid: 7b63cb39958d3694e9afb728834f7f2a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7b63cb39958d3694e9afb728834f7f2a, type: 3}
 --- !u!1 &1840820073172762988
 GameObject:
   m_ObjectHideFlags: 0
@@ -12172,6 +12113,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 2105815529075416080}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &2105815530215142798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12324,7 +12266,6 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 34914100}
   - {fileID: 1918093595}
   - {fileID: 1248413810}
   - {fileID: 1804571484}
@@ -12698,6 +12639,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 3572887513588035038}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &3572887512705098283
 GameObject:
   m_ObjectHideFlags: 0
@@ -13583,6 +13525,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 1975396562}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &5287523500290973486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13989,6 +13932,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 6121659121569026580}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &6121659123107183498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14039,7 +13983,7 @@ Transform:
   m_Children:
   - {fileID: 6121659121569026587}
   m_Father: {fileID: 2282206632010082422}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6147961124238273650
 GameObject:
@@ -14075,6 +14019,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 6147961125105419746}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &6147961124238273660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16284,6 +16229,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 8150195292613230623}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!1 &8150195292033395087
 GameObject:
   m_ObjectHideFlags: 0
@@ -16995,6 +16941,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 575286830}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!114 &8716563636708951512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17110,6 +17057,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 606301263}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
 --- !u!95 &9148966947421150690
 Animator:
   serializedVersion: 3
