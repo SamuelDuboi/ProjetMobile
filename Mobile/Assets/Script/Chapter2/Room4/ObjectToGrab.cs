@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ObjectToGrab : ObjectHandler
 {
+    public override void Start()
+    {
+        base.Start();
+        EventManager.instance.SwipeUp += Swipe;
+    }
 
     private int cpt;
 
@@ -38,5 +43,18 @@ public class ObjectToGrab : ObjectHandler
             yield return new WaitForSeconds(0.01f);
         }
         Destroy(transform.parent.gameObject);
+    }
+
+    private void Swipe(bool up)
+    {
+        var main = waterSystem.main;
+        if (EventManager.instance.uspideDown)
+        {
+            main.gravityModifier = new ParticleSystem.MinMaxCurve(-13f, -13f);
+        }
+        else
+        {
+            main.gravityModifier = new ParticleSystem.MinMaxCurve(13f, 13f);
+        }
     }
 }

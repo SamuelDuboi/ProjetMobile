@@ -9,7 +9,7 @@ public class TheWaterManager : MonoBehaviour
 
     public Animator waterAnim;
     public int currentLevel = 0;
-
+    public GameObject water;
     private void Awake()
     {
         if(instance == null)
@@ -26,7 +26,8 @@ public class TheWaterManager : MonoBehaviour
     void Start()
     {
         EventManager.instance.SwipeUp += UpsideDown;
-        
+        EventManager.instance.ZoomIn += ZoomOn;
+        EventManager.instance.ZoomOut += ZoomOut;
     }
 
     public virtual void UpsideDown(bool up)
@@ -38,5 +39,13 @@ public class TheWaterManager : MonoBehaviour
     {
         currentLevel++;
         waterAnim.SetInteger("Level", currentLevel);
+    }
+    private void ZoomOn(Cams cam, float value)
+    {
+        water.layer = 9;
+    }
+    private void ZoomOut()
+    {
+        water.layer = 8;
     }
 }
