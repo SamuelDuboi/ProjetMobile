@@ -154,6 +154,7 @@ public class ObjectHandler : MonoBehaviour
             InventoryManager.Instance.AddList(gameObject, interactifElement.nameInventory, interactifElement.inventoryTexture);
             EventManager.instance.CollectObject -= CollectObject;
             gameObject.SetActive(false);
+
             //Destroy(gameObject);
         }
     }

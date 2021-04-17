@@ -35,6 +35,7 @@ public class InteractifElementEditor : Editor
         else
             PickUp();
 
+              Links();
         EditorUtility.SetDirty(interactifElements);
         serializedObject.ApplyModifiedProperties();
         Repaint();
@@ -63,7 +64,7 @@ public class InteractifElementEditor : Editor
 
         EditorGUILayout.Space(20);
 
-        Links();
+  
 
 
     }
