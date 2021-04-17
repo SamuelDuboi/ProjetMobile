@@ -22,9 +22,13 @@ public class CompteurManager : MonoBehaviour
         cpt++;
         if (compteur.Length ==  cpt)
         {
-            Debug.Log("Gagné");
-            GetComponentInParent<ObjectHandler>().trialInstantiate = null;
-            GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
+
+            // to anyone who read, I'm sorry for your eyes loss but I'm super lazy
+            var _objectHandler = GetComponentInParent<ObjectHandler>();
+            _objectHandler.trialInstantiate = null;
+            _objectHandler.interactifElement.spawnNewTrial = false;
+            _objectHandler.Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
+          //  EventManager.instance.OnZoomOut();
             Destroy(gameObject);
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectToGrab : ObjectHandler
 {
+    private bool destoyed;
     public override void Start()
     {
         base.Start();
@@ -29,6 +30,7 @@ public class ObjectToGrab : ObjectHandler
                 main.startSize = new ParticleSystem.MinMaxCurve(2f, 2f);
                 HitBoxZoom.gameObject.SetActive(false);
                 StartCoroutine(WaterCaroutine(main));
+                destoyed = true;
             }
         }
     }
@@ -47,14 +49,17 @@ public class ObjectToGrab : ObjectHandler
 
     private void Swipe(bool up)
     {
-        var main = waterSystem.main;
-        if (EventManager.instance.uspideDown)
+        if (!destoyed)
         {
-            main.gravityModifier = new ParticleSystem.MinMaxCurve(-13f, -13f);
-        }
-        else
-        {
-            main.gravityModifier = new ParticleSystem.MinMaxCurve(13f, 13f);
+            var main = waterSystem.main;
+            if (EventManager.instance.uspideDown)
+            {
+                main.gravityModifier = new ParticleSystem.MinMaxCurve(-13f, -13f);
+            }
+            else
+            {
+                main.gravityModifier = new ParticleSystem.MinMaxCurve(13f, 13f);
+            }
         }
     }
 }

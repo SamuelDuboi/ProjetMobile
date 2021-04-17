@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjectHandlerActiveWater : ObjectHandler
 {
   public  TheWaterManager waterManager;
+   
     private bool doOnce;
     override public void  Interact(GameObject currentGameObject)
     {
@@ -15,10 +16,30 @@ public class ObjectHandlerActiveWater : ObjectHandler
             {
                 EventManager.instance.OnPopup(interactifElement.text, interactifElement.timePopup);
             }
+            if (!interactifElement.spawnNewTrial)
+            {
+                if (interactifElement.PopupAfterAnim)
+                {
+                    StartCoroutine(WaitToPopUp(interactifElement.interactionAnimator.GetCurrentAnimatorClipInfo(0).Length));
+                }
+            }
+            else if (trialInstantiate == null)
+            {
+                interactifElement.onlyZoom = true;
+                HitBoxZoom.enabled = false;
+                interactifElement.spawnNewTrial = false;
+                trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform.position, Quaternion.identity);
+                trialInstantiate.transform.SetParent(transform);
+                return;
+            }
             if (!doOnce)
             {
                 doOnce = true;
                 interactifElement.interactionAnimator.SetTrigger("Interact");
+                if(interactifElement.objectToActive.Count>0)
+                {
+                    interactifElement.objectToActive[0].SetActive(true);
+                }
                 StartCoroutine(WaterACtiveAfterAnim());
             }
         }

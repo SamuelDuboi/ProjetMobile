@@ -103,7 +103,7 @@ public class ObjectHandler : MonoBehaviour
             {
                 EventManager.instance.OnPopup(interactifElement.text, interactifElement.timePopup);
             }
-            InteractActiveObject(true);
+           
 
             if(interactifElement.hasLinkGameObject)
             {
@@ -128,6 +128,7 @@ public class ObjectHandler : MonoBehaviour
                 interactifElement.interactionAnimator.SetLayerWeight(1, 0);
                 interactifElement.interactionAnimator.SetLayerWeight(2, 1);
             }
+            InteractActiveObject(true);
             if (!interactifElement.spawnNewTrial)
             {
                 interactifElement.interactionAnimator.SetTrigger("Interact");
