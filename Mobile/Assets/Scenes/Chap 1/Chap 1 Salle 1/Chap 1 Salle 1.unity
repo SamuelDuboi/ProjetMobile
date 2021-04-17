@@ -1013,6 +1013,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b66f59a698bd2c4b9f84ba90e6a1cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &114052674
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114052671}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e0c2faa5252765459cce55841f4adce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &125900739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3814730500141105038, guid: 37f36054ea661974cb8cdcf73bf326f0,
@@ -3478,16 +3497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616af1a0b0ffd324787e7c59f7de6cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 775807108}
-  cristals:
-  - {fileID: 950815463}
-  - {fileID: 219033223}
-  - {fileID: 842544782}
-  - {fileID: 1338992638}
-  - {fileID: 268053824}
-  - {fileID: 1571188818}
-  - {fileID: 831066134}
-  - {fileID: 44881295}
+  main: {fileID: 0}
+  bookHandler: {fileID: 0}
 --- !u!120 &775807108
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4609,6 +4620,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1757104181}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &986077380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986077378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616af1a0b0ffd324787e7c59f7de6cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 946492788}
+  bookHandler: {fileID: 1766587880578674126}
 --- !u!65 &986077382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5280,6 +5305,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 109880420831980994, guid: 0a0ce9e622a27884db4fe752628999f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -70.13743
       objectReference: {fileID: 0}
     - target: {fileID: 3155085155413119374, guid: 0a0ce9e622a27884db4fe752628999f3,
         type: 3}
@@ -9097,7 +9127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834197284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.3, y: 0, z: -0}
+  m_LocalPosition: {x: 7.3, y: 0, z: -3.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1766587880578674114}
@@ -11398,6 +11428,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 84777942918390508, guid: 846c5162cdc6cc4488c2c60fb5623c60,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84777942918390508, guid: 846c5162cdc6cc4488c2c60fb5623c60,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -12578,59 +12613,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f1a24f23195e484ea90cf4b3b883702, type: 3}
---- !u!1 &1766587879925320616
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1766587879925320623}
-  - component: {fileID: 1766587879925320622}
-  - component: {fileID: 1766587879925320621}
-  m_Layer: 8
-  m_Name: HitBoxDezoom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
-  m_IsActive: 0
---- !u!65 &1766587879925320621
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766587879925320616}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5635489, y: 1.6340832, z: 1.8725114}
-  m_Center: {x: 0.2817745, y: 0.31704152, z: -0.067059405}
---- !u!33 &1766587879925320622
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766587879925320616}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1766587879925320623
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766587879925320616}
-  m_LocalRotation: {x: -0, y: -0, z: -5.293952e-23, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.3000021}
-  m_LocalScale: {x: 3, y: 3, z: 3}
-  m_Children: []
-  m_Father: {fileID: 986077379}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1766587880578674114
 Transform:
   m_ObjectHideFlags: 0
@@ -12656,6 +12638,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1766587880578674114}
+  - component: {fileID: 1766587880578674128}
+  - component: {fileID: 1766587880578674127}
+  - component: {fileID: 1766587880578674126}
   m_Layer: 0
   m_Name: book
   m_TagString: Untagged
@@ -12663,6 +12648,89 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
   m_IsActive: 1
+--- !u!114 &1766587880578674126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766587880578674125}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb44047e9ad33749a7d29d1b6cd3131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactifElement: {fileID: 0}
+  HitBoxZoom: {fileID: 986077382}
+  isZoomed: 0
+  trialInstantiate: {fileID: 0}
+  NameToAddIfAnimToAdd: 
+--- !u!95 &1766587880578674127
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766587880578674125}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d7d398f9fdd18648bd2dcaf4ce00798, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1766587880578674128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766587880578674125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9026f22dd4c1a314b8dfd31a1647bb32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionAnimator: {fileID: 1766587880578674127}
+  isLInkedToWall: 0
+  wallLinked: {fileID: 0}
+  zoom: 1
+  onlyZoom: 0
+  UpsideDown: 0
+  cams:
+  - camDirection: 3
+    cam: {fileID: 1834197284}
+    current: {fileID: 0}
+    upsideDown: 0
+  - camDirection: 0
+    cam: {fileID: 1834197284}
+    current: {fileID: 0}
+    upsideDown: 0
+  orthoGraphicSize: 1.5
+  hasLinkGameObject: 0
+  ObjectoOpen: []
+  spawnNewTrial: 0
+  TrialGameObjects: {fileID: 0}
+  objectToActive:
+  - {fileID: 2017343144}
+  objectToInteract:
+  - {fileID: 9148966947421150688}
+  inventory: 0
+  nameInventory: 
+  inventoryTexture: {fileID: 0}
+  needToBeAssemble: 0
+  otherAssemblingObject: {fileID: 0}
+  assembledGameObjetc: {fileID: 0}
+  popup: 0
+  popInteract: 0
+  PopupAfterAnim: 0
+  text: 
+  timePopup: 0
 --- !u!1 &1840820073172762988
 GameObject:
   m_ObjectHideFlags: 0
@@ -17844,7 +17912,7 @@ MonoBehaviour:
   HitBoxZoom: {fileID: 606301263}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
-  NameToAddIfAnimToAdd: 
+  NameToAddIfAnimToAdd: "room1Bibliot\xE8que"
 --- !u!95 &9148966947421150690
 Animator:
   serializedVersion: 3
@@ -17894,7 +17962,7 @@ MonoBehaviour:
   orthoGraphicSize: 3
   hasLinkGameObject: 1
   ObjectoOpen:
-  - room1Final
+  - "room1Bibliot\xE8que"
   spawnNewTrial: 0
   TrialGameObjects: {fileID: 0}
   objectToActive: []

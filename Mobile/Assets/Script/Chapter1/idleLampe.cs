@@ -13,7 +13,7 @@ public class idleLampe : Singleton<idleLampe>
     // Start is called before the first frame update
     void Start()
     {
-      // gameObject.transform.Translate(0, 8.547f, 0);
+       gameObject.transform.Translate(0, 8.547f, 0);
     }
 
 

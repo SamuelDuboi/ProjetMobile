@@ -16,7 +16,7 @@ public class InteractAfterAnim : StateMachineBehaviour
             {
                 if (objet.GetComponent<ObjectHandler>().interactifElement.hasLinkGameObject)
                     InventoryManager.Instance.AddList(gameObject.gameObject, objet.GetComponent<ObjectHandler>().NameToAddIfAnimToAdd, default);
-                objet.GetComponent<ObjectHandler>().Interact(objet.transform.GetChild(0).gameObject);
+                objet.GetComponent<ObjectHandler>().Interact(objet.GetComponent<ObjectHandler>().HitBoxZoom.gameObject);
             }
         } 
     }
