@@ -42,7 +42,6 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
                     if (index == 10)
                         index = 0;
                 }
-                Debug.Log(index);
             }
         }
     }

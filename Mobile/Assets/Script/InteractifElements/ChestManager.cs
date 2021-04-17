@@ -38,6 +38,6 @@ public class ChestManager : MonoBehaviour
          GetComponentInParent<ObjectHandler>().trialInstantiate = null;
          GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
          GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
-         Destroy(gameObject);
+         Destroy(transform.parent.gameObject);
     }
 }
