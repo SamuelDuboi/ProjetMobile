@@ -99,7 +99,7 @@ public class LabyrintheManager : MonoBehaviour
     }
     public void CheckSolution4()
     {
-        if (indexRotate[1] == 2 && indexRotate[2] == 0 && indexRotate[4] == 1 && indexRotate[7] == 1 && indexRotate[8] == 1 && (indexRotate[9] == 1 || indexRotate[9] == 3) && indexRotate[10] == 0 && indexRotate[11] == 0 && indexRotate[12] == 1 && indexRotate[15] == 3 && indexRotate[17] == 2 && indexRotate[21] == 0 && indexRotate[22] == 1 && (indexRotate[24] == 0 || indexRotate[24] == 2) && (indexRotate[26] == 0 || indexRotate[26] == 2) && indexRotate[27] == 1 && (indexRotate[31] == 0 || indexRotate[31] == 1) && (indexRotate[32] == 1 || indexRotate[32] == 3) && indexRotate[16] == 0)
+        if (indexRotate[1] == 2 && indexRotate[2] == 0 && indexRotate[4] == 1 && indexRotate[7] == 1 && indexRotate[8] == 1 && (indexRotate[9] == 1 || indexRotate[9] == 3) && indexRotate[10] == 0 && indexRotate[11] == 0 && indexRotate[12] == 1 && indexRotate[15] == 3 && indexRotate[17] == 2 && indexRotate[21] == 0 && indexRotate[22] == 2 && (indexRotate[24] == 0 || indexRotate[24] == 2) && (indexRotate[26] == 0 || indexRotate[26] == 2) && indexRotate[27] == 1 && (indexRotate[31] == 0 || indexRotate[31] == 1) && (indexRotate[32] == 1 || indexRotate[32] == 3) && indexRotate[16] == 0)
         {
             Debug.Log("Gagné");
             labyrintheResolved = true;
