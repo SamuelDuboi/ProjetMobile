@@ -20,7 +20,7 @@ public class EndFall : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
          animator.transform.Translate(0, -8.547f, 0);
-        animator.GetComponent<idleLampe>().lustreReception.enabled = true;
+        //animator.GetComponent<idleLampe>().lustreReception.enabled = true;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
