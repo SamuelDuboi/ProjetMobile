@@ -27,21 +27,21 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
                 childTransform.position = new Vector3(initialPos, childTransform.position.y);
                 index = initialIndex;
             }
-            if(Mathf.Abs(childTransform.position.x - previusXPos) > positionMovement / 10)
+            if(childTransform.position.x>= initialPos + (1 + Mathf.Abs(index - initialIndex)) *positionMovement / 10)
             {
-                previusXPos = childTransform.position.x;
-                if (eventData.delta.x> 0)
-                {
+                previusXPos = initialPos + ( 1 +Mathf.Abs(index - initialIndex)) * positionMovement / 10;                
                     index--;
                     if (index == -1)
                         index = 9;
-                }
-                else
-                {
-                    index++;
-                    if (index == 10)
-                        index = 0;
-                }
+                
+            }
+            else if (childTransform.position.x<= initialPos- (1 + Mathf.Abs(index - initialIndex)) * positionMovement / 10)
+            {
+                previusXPos = initialPos - (1 + Mathf.Abs(index - initialIndex)) * positionMovement / 10;
+                index++;
+                if (index == 10)
+                    index = 0;
+
             }
         }
     }
@@ -66,7 +66,7 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         if (currentEventDataX < 0)
         {
-            if (Mathf.Abs(childTransform.position.x) > Mathf.Abs(previusXPos) + positionMovement / 20)
+            if (Mathf.Abs(childTransform.position.x) > Mathf.Abs(previusXPos) - positionMovement / 20)
             {
                 childTransform.position = new Vector2(previusXPos, childTransform.position.y);
             }
@@ -84,7 +84,6 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
             if (Mathf.Abs(childTransform.position.x) < Mathf.Abs(previusXPos) + positionMovement / 20)
             {
                 childTransform.position = new Vector2(previusXPos, childTransform.position.y);
-
             }
             else
             {
@@ -93,6 +92,7 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
                 previusXPos = childTransform.position.x;
                 if (index == -1)
                     index = 9;
+
             }
 
         }

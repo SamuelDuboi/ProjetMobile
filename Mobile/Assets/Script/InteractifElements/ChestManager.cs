@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChestManager : MonoBehaviour
 {
+    public bool dontDestroyHitBox;
     public Chest[] chests;
     public string initialNumber;
     public string finalNumbers;
@@ -37,8 +38,11 @@ public class ChestManager : MonoBehaviour
         }
          GetComponentInParent<ObjectHandler>().trialInstantiate = null;
          GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
-         GetComponentInParent<ObjectHandler>().interactifElement.onlyZoom = false;
-         GetComponentInParent<ObjectHandler>().HitBoxZoom.enabled= true;
+        if (dontDestroyHitBox)
+        {
+             GetComponentInParent<ObjectHandler>().interactifElement.onlyZoom = false;
+             GetComponentInParent<ObjectHandler>().HitBoxZoom.enabled= true;
+        }
          GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
          Destroy(transform.parent.gameObject);
     }

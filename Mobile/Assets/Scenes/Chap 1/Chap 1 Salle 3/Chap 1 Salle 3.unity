@@ -4694,7 +4694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
-  HitBoxZoom: {fileID: 7447025562915355256}
+  HitBoxZoom: {fileID: 7753034283741604095}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
@@ -23766,7 +23766,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7447025562915355252}
   - component: {fileID: 7447025562915355257}
-  - component: {fileID: 7447025562915355256}
   m_Layer: 0
   m_Name: Mirroir
   m_TagString: Untagged
@@ -23774,19 +23773,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
   m_IsActive: 1
---- !u!65 &7447025562915355256
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7447025562915355255}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.37419727, y: 0.33916503, z: 0.57633513}
-  m_Center: {x: -0.00837978, y: -0.008460197, z: 0.2118325}
 --- !u!95 &7447025562915355257
 Animator:
   serializedVersion: 3
@@ -23920,6 +23906,7 @@ GameObject:
   - component: {fileID: 6977095302396752452}
   - component: {fileID: 6303989046648028641}
   - component: {fileID: 8113432549456890155}
+  - component: {fileID: 7753034283741604095}
   m_Layer: 0
   m_Name: Alexandrie_scene1_mirroir1
   m_TagString: Miror
@@ -23927,6 +23914,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
   m_IsActive: 1
+--- !u!64 &7753034283741604095
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753034283741604094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2128599272216676504, guid: 8ebe89f0fad695044ab7ed1d568b87bc, type: 3}
 --- !u!1 &7753034284865893417
 GameObject:
   m_ObjectHideFlags: 0
