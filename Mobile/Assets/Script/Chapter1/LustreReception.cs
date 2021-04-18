@@ -5,9 +5,10 @@ using UnityEngine;
 public class LustreReception : MonoBehaviour
 {
     private bool doOnce;
-    public Collider main;
+    public ObjectHandler main;
     public ObjectHandler bookHandler;
-
+    public Material newMat;
+    public Cristal[] cristals;
     private void Start()
     {
         EventManager.instance.LightObject += LightOn;
@@ -18,8 +19,15 @@ public class LustreReception : MonoBehaviour
         {
             doOnce = true;
             InventoryManager.Instance.AddList(gameObject,"room1Final",default);
-            EventManager.instance.OnZoomOut();
+            EventManager.instance.ZoomOut -= main.UnZoom;
+            main.HitBoxZoom.enabled = false;
             main.enabled = false;
+            foreach (var cristal in cristals)
+            {
+                cristal.GetComponent<MeshRenderer>().material = newMat;
+                EventManager.instance.InteractObject -= cristal.Interact;
+                cristal.enabled = false;
+            }
             bookHandler.enabled = true;
         }
     }
