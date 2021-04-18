@@ -5,6 +5,9 @@ using UnityEngine;
 public class WaterRoom2 : MonoBehaviour
 {
     public SpriteRenderer[] waterQuads;
+    public MeshRenderer[] graduation;
+    public Material[] activated;
+    public Material nonactivated;
     public bool[] open ;
     public Collider exitCollider;
     public GameObject hundredKG;
@@ -99,6 +102,14 @@ public class WaterRoom2 : MonoBehaviour
     public void ActivateBool(int index )
     {
         open[index] = !open[index];
+        if (open[index])
+        {
+            graduation[index].material = nonactivated;
+        }
+        else
+        {
+            graduation[index].material = activated[index];
+        }
         UpsideDown(true);
     }
 }
