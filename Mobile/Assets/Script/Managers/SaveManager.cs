@@ -9,8 +9,8 @@ public class SaveManager : MonoBehaviour
 {
 
     public bool hasDoneTuto;
-    public int chapter1Number;
-   public int chapter2Number;
+    public int chapter1Number =1;
+   public int chapter2Number = 5;
     public static SaveManager instance;
     public string path;
 
@@ -142,9 +142,9 @@ public class SaveManager : MonoBehaviour
     public void LoadChapter2()
     {
         LoadByXML();
-        for (int i = 5; i < chap2Button.Length; i++)
+        for (int i = 1; i < chap2Button.Length; i++)
         {
-            if (i != chapter1Number - 5)
+            if (i != chapter2Number + 5)
             {
                 chap2Button[i].interactable = false;
             }
