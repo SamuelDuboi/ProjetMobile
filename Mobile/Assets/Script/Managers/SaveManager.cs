@@ -25,7 +25,10 @@ public class SaveManager : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(SaveManager.instance);
+            instance = this;
+            DontDestroyOnLoad(instance);
+
             Debug.LogError("Instance Already existe");
         }
     }

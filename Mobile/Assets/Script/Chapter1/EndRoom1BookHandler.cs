@@ -42,6 +42,7 @@ public class EndRoom1BookHandler : ObjectHandler
             {
                 interactifElement.interactionAnimator.SetTrigger("Interact");
                 EventManager.instance.OnZoomOut();
+                SaveManager.instance.SaveChapter1();
                 if (interactifElement.PopupAfterAnim)
                 {
                     StartCoroutine(WaitToPopUp(interactifElement.interactionAnimator.GetCurrentAnimatorClipInfo(0).Length));
