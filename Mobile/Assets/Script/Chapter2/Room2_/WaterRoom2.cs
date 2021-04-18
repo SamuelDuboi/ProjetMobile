@@ -78,10 +78,29 @@ public class WaterRoom2 : MonoBehaviour
                 }
             }
         }
+        switch (numbers[5])
+        {
+            case 0:
+                // 0kg
+                break;
+            case 1:
+                // 25kg
+                break;
+            case 2:
+                // 50kg
+
+                break;
+            case 3:
+                // 75kg
+
+                break;
+
+            default:
+                break;
+        }
         if (numbers[5] == 4)
         {
-            exitCollider.enabled = true;
-            hundredKG.SetActive(true);
+            
         }
         else
         {

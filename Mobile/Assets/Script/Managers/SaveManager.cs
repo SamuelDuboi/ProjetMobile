@@ -8,11 +8,11 @@ using UnityEngine.UI;
 public class SaveManager : MonoBehaviour
 {
 
-   [HideInInspector] public bool hasDoneTuto;
-   [HideInInspector] public int chapter1Number;
-   [HideInInspector] public int chapter2Number;
-   [HideInInspector]  public static SaveManager instance;
-
+    public bool hasDoneTuto;
+    public int chapter1Number;
+   public int chapter2Number;
+    public static SaveManager instance;
+    public string path;
 
     public Button[] chap1Button;
     public Button[] chap2Button;
@@ -71,6 +71,7 @@ public class SaveManager : MonoBehaviour
     {
         if (File.Exists(Application.dataPath + "/DataXML.text"))
         {
+            path = Application.dataPath;
             Save save = new Save();
 
             XmlDocument xmlDocument = new XmlDocument();
@@ -109,14 +110,14 @@ public class SaveManager : MonoBehaviour
     public void SaveChapter1()
     {
        
-            chapter1Number = SceneManager.GetActiveScene().buildIndex ;
+            chapter1Number = SceneManager.GetActiveScene().buildIndex +1;
         SaveByXML();
     }
 
     public void SaveChapter2()
     {
        
-            chapter2Number = SceneManager.GetActiveScene().buildIndex ;
+            chapter2Number = SceneManager.GetActiveScene().buildIndex+1 ;
 
         SaveByXML();
     }
