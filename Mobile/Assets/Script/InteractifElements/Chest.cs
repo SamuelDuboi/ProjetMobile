@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
 {
 
@@ -14,6 +13,7 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
     private float previusXPos;
     private float currentEventDataX;
 
+    public Text text;
     private int inedxInArray;
     private ChestManager chestManager;
     public void OnDrag(PointerEventData eventData)
@@ -58,6 +58,7 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
         childTransform.position = new Vector3(childTransform.position.x - index * positionMovement / 10, childTransform.position.y, childTransform.position.z);
         initialPos = childTransform.position.x;
         previusXPos = initialPos;
+        text.text = childTransform.position.ToString();
         initialIndex = index;
     }
 
