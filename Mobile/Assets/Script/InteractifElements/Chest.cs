@@ -13,7 +13,6 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
     private float previusXPos;
     private float currentEventDataX;
 
-    public Text text;
     private int inedxInArray;
     private ChestManager chestManager;
     public void OnDrag(PointerEventData eventData)
@@ -54,11 +53,10 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
         index = _index;
         sensibility = _sensibility;
         var rect = childTransform as RectTransform;
-        positionMovement = rect.sizeDelta.x / 3;
+        positionMovement = rect.sizeDelta.x / 3 * Screen.width/1080;
         childTransform.position = new Vector3(childTransform.position.x - index * positionMovement / 10, childTransform.position.y, childTransform.position.z);
         initialPos = childTransform.position.x;
         previusXPos = initialPos;
-        text.text = childTransform.position.ToString();
         initialIndex = index;
     }
 

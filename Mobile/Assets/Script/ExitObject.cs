@@ -15,7 +15,7 @@ public class ExitObject : MonoBehaviour
     {
         if(currentObject == gameObject || currentObject== transform.GetChild(0).gameObject)
         {
-            if(SceneManager.GetActiveScene().buildIndex == 5)
+            if(SceneManager.GetActiveScene().buildIndex == 4)
             {
                 SceneManager.LoadScene(0);
             }
