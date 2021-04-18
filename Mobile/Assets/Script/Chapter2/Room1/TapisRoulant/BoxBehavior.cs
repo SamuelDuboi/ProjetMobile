@@ -48,9 +48,9 @@ public class BoxBehavior : MonoBehaviour
         }
         else if (goDown)
         {
-            if (!Physics.Raycast(transform.position, Vector3.down,  .1f, mask)) 
+            if (!Physics.Raycast(transform.position, Vector3.down,  .01f, mask)) 
             {
-                transform.Translate(Vector3.back * 0.1f*speed);
+                transform.Translate(Vector3.back * 0.01f*speed*5);
                 Debug.DrawRay(transform.position, Vector3.down, Color.red, 1f);
             }
             else
