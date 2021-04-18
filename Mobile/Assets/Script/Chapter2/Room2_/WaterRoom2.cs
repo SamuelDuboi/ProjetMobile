@@ -105,6 +105,10 @@ public class WaterRoom2 : MonoBehaviour
 
             exitCollider.enabled = true;
             hundredKG.SetActive(true);
+            if (!EventManager.instance.uspideDown)
+            {
+                SaveManager.instance.SaveChapter2();
+            }
         }
         else
         {
