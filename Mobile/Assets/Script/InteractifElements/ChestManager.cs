@@ -11,6 +11,7 @@ public class ChestManager : MonoBehaviour
     [Range(0, 1)]
     public float sensibilty = 0.5f;
     private bool[] results;
+    public bool save;
     void Start()
     {
         for (int i = 0; i < chests.Length; i++)
@@ -43,6 +44,8 @@ public class ChestManager : MonoBehaviour
              GetComponentInParent<ObjectHandler>().interactifElement.onlyZoom = false;
              GetComponentInParent<ObjectHandler>().HitBoxZoom.enabled= true;
         }
+        if (save)
+            SaveManager.instance.SaveChapter2();
          GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
          Destroy(transform.parent.gameObject);
     }

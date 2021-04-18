@@ -12,6 +12,7 @@ public class WaterRoom2 : MonoBehaviour
     public Collider exitCollider;
     public GameObject hundredKG;
     public int[] numbers;
+    public GameObject aiguille;
     void Start()
     {
         EventManager.instance.SwipeUp += UpsideDown;
@@ -78,10 +79,36 @@ public class WaterRoom2 : MonoBehaviour
                 }
             }
         }
+        switch (numbers[5])
+        {
+            case 0:
+                aiguille.transform.localRotation = Quaternion.Euler(-90, 0, 0);
+                break;
+            case 1:
+                aiguille.transform.localRotation = Quaternion.Euler(-90, 0, 45);
+                break;
+            case 2:
+                aiguille.transform.localRotation = Quaternion.Euler(-90, 0, 90);
+
+                break;
+            case 3:
+                aiguille.transform.localRotation = Quaternion.Euler(-90, 0, 135);
+
+                break;
+
+            default:
+                break;
+        }
         if (numbers[5] == 4)
         {
+            aiguille.transform.localRotation = Quaternion.Euler(-90, 0, 180);
+
             exitCollider.enabled = true;
             hundredKG.SetActive(true);
+            if (!EventManager.instance.uspideDown)
+            {
+                SaveManager.instance.SaveChapter2();
+            }
         }
         else
         {
