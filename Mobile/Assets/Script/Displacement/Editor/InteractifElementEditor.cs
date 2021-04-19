@@ -16,7 +16,6 @@ public class InteractifElementEditor : Editor
     public override void OnInspectorGUI()
     {
         interactifElements.interactionAnimator = (Animator)EditorGUILayout.ObjectField("Interaction Animator", interactifElements.interactionAnimator, typeof(Animator), true);
-
         interactifElements.isLInkedToWall = EditorGUILayout.Toggle("Link to a wall", interactifElements.isLInkedToWall);
         if (interactifElements.isLInkedToWall)
             interactifElements.wallLinked = (GameObject)EditorGUILayout.ObjectField("Wall linked", interactifElements.wallLinked, typeof(GameObject), true);

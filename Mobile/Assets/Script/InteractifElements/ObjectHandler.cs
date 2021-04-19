@@ -5,7 +5,6 @@ using UnityEngine;
 public class ObjectHandler : MonoBehaviour
 {
     [HideInInspector] public InteractifElement interactifElement;
-
     public Collider HitBoxZoom;
 
   [HideInInspector] public bool isZoomed;

@@ -9,7 +9,6 @@ public class InteractifElement : MonoBehaviour
     public bool isLInkedToWall;
     public GameObject wallLinked;
 
-
     public bool zoom;
     public bool onlyZoom;
     public bool UpsideDown;
