@@ -42,6 +42,7 @@ public class ObjectHandler : MonoBehaviour
 
         if (cams != null)
         {
+            if(HitBoxZoom != null && HitBoxZoom.gameObject != null)
             HitBoxZoom.gameObject.layer = 9;
         }
 
@@ -102,6 +103,7 @@ public class ObjectHandler : MonoBehaviour
         }
         if (interactifElement.zoom)
         {
+            if(HitBoxZoom != null && HitBoxZoom.gameObject != null)
             HitBoxZoom.gameObject.layer = 8;
         }
     }
