@@ -301,7 +301,7 @@ MonoBehaviour:
   - {fileID: 4615808960741850193}
   - {fileID: 4615808960936112678}
   indexInArray: 2
-  compteurManager: {fileID: 4615808959487505258}
+  compteurManager: {fileID: 2760108203711437634}
   solution: 2
   isResolved: 0
 --- !u!1 &4615808959461166346
@@ -465,7 +465,6 @@ GameObject:
   - component: {fileID: 4615808959487505259}
   - component: {fileID: 4615808959487505252}
   - component: {fileID: 4615808959487505253}
-  - component: {fileID: 4615808959487505258}
   m_Layer: 5
   m_Name: Fond
   m_TagString: Untagged
@@ -533,19 +532,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4615808959487505258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4615808959487505256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98cb3ddd7025b9344a7c1e1fb83f3e2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compteur: 00000000
 --- !u!1 &4615808959565469958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,7 +1431,7 @@ MonoBehaviour:
   - {fileID: 4615808960463215155}
   - {fileID: 4615808959750996656}
   indexInArray: 1
-  compteurManager: {fileID: 4615808959487505258}
+  compteurManager: {fileID: 2760108203711437634}
   solution: 4
   isResolved: 0
 --- !u!1 &4615808960161664077
@@ -1751,7 +1737,7 @@ MonoBehaviour:
   - {fileID: 4615808959424447549}
   - {fileID: 4615808961328387377}
   indexInArray: 0
-  compteurManager: {fileID: 4615808959487505258}
+  compteurManager: {fileID: 2760108203711437634}
   solution: 1
   isResolved: 0
 --- !u!1 &4615808960333704675
@@ -2427,7 +2413,7 @@ MonoBehaviour:
   - {fileID: 4615808960366352799}
   - {fileID: 4615808960333704675}
   indexInArray: 3
-  compteurManager: {fileID: 4615808959487505258}
+  compteurManager: {fileID: 2760108203711437634}
   solution: 2
   isResolved: 0
 --- !u!1 &4615808960741850193
@@ -2665,6 +2651,7 @@ GameObject:
   - component: {fileID: 4615808960926846105}
   - component: {fileID: 4615808960926846110}
   - component: {fileID: 4615808960926846111}
+  - component: {fileID: 2760108203711437634}
   m_Layer: 5
   m_Name: CompteurCanvas
   m_TagString: Untagged
@@ -2753,6 +2740,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2760108203711437634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4615808960926846108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98cb3ddd7025b9344a7c1e1fb83f3e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compteur: 00000000
 --- !u!1 &4615808960936112678
 GameObject:
   m_ObjectHideFlags: 0
