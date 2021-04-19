@@ -10,9 +10,10 @@ public class WaterWall : MonoBehaviour
     private List<SpriteRenderer> spritesArray;
     public WaterIntesection[] waterIntesections;
     public bool hasWater;
+    public GameObject water;
 
     public ObjectHandler trappe;
-    public void ChangeSide(GameObject self, bool goodSide, SpriteRenderer spriteToScale, int number, float angle, SpriteRenderer spriteToRestart, float sizeToReceize)
+    public void ChangeSide(GameObject self, bool goodSide, SpriteRenderer spriteToScale, int number, float angle, SpriteRenderer spriteToRestart, float sizeToReceize, bool turnLeft)
     {
         
         spritesArray = new List<SpriteRenderer>();
@@ -24,24 +25,29 @@ public class WaterWall : MonoBehaviour
         switch (number)
         {
             case 1:                
-                StartCoroutine( Move(self, spritesArray.ToArray(), angle,true, spriteToRestart, sizeToReceize));
+                StartCoroutine( Move(self, spritesArray.ToArray(), angle,true, spriteToRestart, sizeToReceize,turnLeft));
                 firstGood = goodSide;
                 break;
             case 2:
 
-                StartCoroutine(Move(self, spritesArray.ToArray(), angle, firstGood,spriteToRestart,sizeToReceize));
+                StartCoroutine(Move(self, spritesArray.ToArray(), angle, firstGood,spriteToRestart,sizeToReceize,turnLeft));
                 secondGood = goodSide;
                 break;
             case 3:
+
+                StartCoroutine(Move(self, spritesArray.ToArray(), angle, firstGood, spriteToRestart, sizeToReceize, turnLeft));
+                break;
+            case 4:
                 if (firstGood && secondGood)
                 {
-                    StartCoroutine(Move(self, spritesArray.ToArray(), angle, true, spriteToRestart, sizeToReceize));
+                    StartCoroutine(Move(self, spritesArray.ToArray(), angle, true, spriteToRestart, sizeToReceize,turnLeft));
                     thirdGood = true;
                     InventoryManager.Instance.AddList(gameObject, trappe.NameToAddIfAnimToAdd, default, 1);
                     trappe.Interact(trappe.HitBoxZoom.gameObject);
+                    water.SetActive(true);
                 }
                 else
-                    StartCoroutine( Move(self, spritesArray.ToArray(), angle, false, spriteToRestart, sizeToReceize));
+                    StartCoroutine( Move(self, spritesArray.ToArray(), angle, false, spriteToRestart, sizeToReceize,turnLeft));
                 break;
 
             default:
@@ -50,13 +56,13 @@ public class WaterWall : MonoBehaviour
 
     }
 
-   private IEnumerator Move(GameObject self, SpriteRenderer[] spriteToScale, float angle, bool canMoveSprite, SpriteRenderer spriteToRestart, float sizeToReceize)
+   private IEnumerator Move(GameObject self, SpriteRenderer[] spriteToScale, float angle, bool canMoveSprite, SpriteRenderer spriteToRestart, float sizeToReceize, bool turnLeft)
     {
         float _angle= self.transform.localRotation.eulerAngles.z;
         Debug.Log(_angle);
         float currentAngle = 0;
         float direction = 1;
-        if (self.transform.localRotation.eulerAngles.z >300)
+        if (!turnLeft)
             direction = -1;
         while (currentAngle < angle)
         {

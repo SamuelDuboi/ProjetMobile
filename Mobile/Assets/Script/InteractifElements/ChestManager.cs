@@ -19,6 +19,7 @@ public class ChestManager : MonoBehaviour
             chests[i].Init(int.Parse(initialNumber[i].ToString()), sensibilty,i, this);
         }
         results = new bool[chests.Length];
+        EventManager.instance.ZoomOut += Unzoom;
     }
 
  
@@ -48,5 +49,14 @@ public class ChestManager : MonoBehaviour
             SaveManager.instance.SaveChapter2();
          GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
          Destroy(transform.parent.gameObject);
+    }
+
+    private void Unzoom()
+    {
+        var parent = GetComponentInParent<ObjectHandler>();
+        parent.interactifElement.onlyZoom = false;
+        parent.HitBoxZoom.enabled = true;
+        parent.interactifElement.spawnNewTrial = true;
+        Destroy(parent.trialInstantiate);
     }
 }

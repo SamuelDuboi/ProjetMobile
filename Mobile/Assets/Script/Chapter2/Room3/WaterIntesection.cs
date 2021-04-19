@@ -18,7 +18,8 @@ public class WaterIntesection : ObjectHandler
     public override void Start()
     {
         base.Start();
-        initialLeftSize = left.size.y;
+        if (left != null)
+            initialLeftSize = left.size.y;
         if(right != null)
         initialRightSize = right.size.y;
         if (number == 1)
@@ -31,13 +32,20 @@ public class WaterIntesection : ObjectHandler
             goodSide = !goodSide;
             if (isLeft)
             {
-                 waterWall.ChangeSide(gameObject, goodSide,left,number, angleToTurn, right, initialRightSize);
+                if (left != null)
+                {
+                    waterWall.ChangeSide(gameObject, goodSide, left, number, angleToTurn, right, initialRightSize, true);
+                    if (right != null)
+                        right.size = new Vector2(right.size.x, initialLeftSize);
+                }
+               
             }
             else
             {
                 if(right != null)
                 {
-                    waterWall.ChangeSide(gameObject, goodSide, right, number, angleToTurn, null,0);
+                    waterWall.ChangeSide(gameObject, goodSide, right, number, angleToTurn, null,0, false);
+                    if(left!=null)
                     left.size = new Vector2(left.size.x, initialLeftSize);
                 }
             }
@@ -58,6 +66,7 @@ public class WaterIntesection : ObjectHandler
                 }
                 else
                 {
+                    if(left!=null)
                     return left;
                 }
             }

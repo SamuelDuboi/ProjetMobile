@@ -10,7 +10,7 @@ public class ObjectHandler : MonoBehaviour
 
   [HideInInspector] public bool isZoomed;
 
-   [HideInInspector]public GameObject trialInstantiate;
+    [HideInInspector] public GameObject trialInstantiate;
     public string NameToAddIfAnimToAdd;
   public  virtual void Start()
     {
@@ -21,6 +21,7 @@ public class ObjectHandler : MonoBehaviour
         EventManager.instance.ZoomOut += UnZoom;
         EventManager.instance.CollectObject += CollectObject;
         EventManager.instance.InteractObject += Interact;
+        EventManager.instance.ZoomIn += MoveCam;
 
         if (interactifElement.zoom)
             HitBoxZoom.gameObject.layer = 8;
@@ -37,6 +38,15 @@ public class ObjectHandler : MonoBehaviour
         InteractActiveObject(false);
     }
 
+    private void MoveCam(Cams cams, float orthogrphicSize)
+    {
+
+        if (cams != null)
+        {
+            HitBoxZoom.gameObject.layer = 9;
+        }
+
+    }
 
     public void ChoseToZoom( out Cams cams)
     {
@@ -91,6 +101,10 @@ public class ObjectHandler : MonoBehaviour
             }
            
         }
+        if (interactifElement.zoom)
+        {
+            HitBoxZoom.gameObject.layer = 8;
+        }
     }
 
 
@@ -143,7 +157,8 @@ public class ObjectHandler : MonoBehaviour
                 HitBoxZoom.enabled = false;
                 interactifElement.spawnNewTrial = false;
                 trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform.position,Quaternion.identity);
-                trialInstantiate.transform.SetParent(transform);
+
+                    trialInstantiate.transform.SetParent(transform);
             }
         }
     }
