@@ -60,8 +60,8 @@ public class SaveManager : MonoBehaviour
 
 
         xmlDocument.AppendChild(rooot);
-        xmlDocument.Save(Application.dataPath + "/DataXML.text");
-        if (File.Exists(Application.dataPath + "/DataXML.text"))
+        xmlDocument.Save(Application.persistentDataPath + "/DataXML.text");
+        if (File.Exists(Application.persistentDataPath + "/DataXML.text"))
         {
             Debug.Log("file save");
         }
@@ -69,13 +69,13 @@ public class SaveManager : MonoBehaviour
     }
     private void LoadByXML()
     {
-        if (File.Exists(Application.dataPath + "/DataXML.text"))
+        if (File.Exists(Application.persistentDataPath + "/DataXML.text"))
         {
-            path = Application.dataPath;
+            path = Application.persistentDataPath;
             Save save = new Save();
 
             XmlDocument xmlDocument = new XmlDocument();
-            xmlDocument.Load(Application.dataPath + "/DataXML.text");
+            xmlDocument.Load(Application.persistentDataPath + "/DataXML.text");
 
             // set chapter1 index
             XmlNodeList chapterIndex = xmlDocument.GetElementsByTagName("Chapter1Index");
@@ -116,7 +116,7 @@ public class SaveManager : MonoBehaviour
 
     public void SaveChapter2()
     {
-       
+        if (SceneManager.GetActiveScene().buildIndex != 8)
             chapter2Number = SceneManager.GetActiveScene().buildIndex+1 ;
 
         SaveByXML();
@@ -144,7 +144,7 @@ public class SaveManager : MonoBehaviour
         LoadByXML();
         for (int i = 1; i < chap2Button.Length; i++)
         {
-            if (i != chapter2Number + 5)
+            if (i != chapter2Number -5)
             {
                 chap2Button[i].interactable = false;
             }
