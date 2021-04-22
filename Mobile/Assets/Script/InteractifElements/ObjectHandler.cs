@@ -165,7 +165,7 @@ public class ObjectHandler : MonoBehaviour
     }
     public virtual void CollectObject(GameObject currentGameObject)
     {
-        if (currentGameObject == HitBoxZoom.gameObject && interactifElement.inventory)
+        if (HitBoxZoom != null&& currentGameObject == HitBoxZoom.gameObject && interactifElement.inventory)
         {
             InventoryManager.Instance.AddList(gameObject, interactifElement.nameInventory, interactifElement.inventoryTexture);
             EventManager.instance.CollectObject -= CollectObject;

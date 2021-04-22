@@ -12,6 +12,8 @@ public class ChestManager : MonoBehaviour
     public float sensibilty = 0.5f;
     private bool[] results;
     public bool save;
+    public bool destroyHitBoxParent;
+    public GameObject collider;
     void Start()
     {
         for (int i = 0; i < chests.Length; i++)
@@ -20,6 +22,8 @@ public class ChestManager : MonoBehaviour
         }
         results = new bool[chests.Length];
         EventManager.instance.ZoomOut += Unzoom;
+        if(destroyHitBoxParent)
+            GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject.SetActive(false);
     }
 
  
@@ -47,14 +51,27 @@ public class ChestManager : MonoBehaviour
         }
         if (save)
             SaveManager.instance.SaveChapter2();
-         GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
-         Destroy(transform.parent.gameObject);
+        if (destroyHitBoxParent)
+        {
+            GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject.SetActive(true);
+            Destroy(GetComponentInParent<ObjectHandler>().HitBoxZoom);
+
+        }
+        GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
+        EventManager.instance.ZoomOut -= Unzoom;
+       
+        Destroy(transform.parent.gameObject);
     }
 
     private void Unzoom()
     {
         var parent = GetComponentInParent<ObjectHandler>();
         parent.interactifElement.onlyZoom = false;
+        if (destroyHitBoxParent)
+        {
+            GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject.SetActive(true);
+
+        }
         parent.HitBoxZoom.enabled = true;
         parent.interactifElement.spawnNewTrial = true;
         Destroy(parent.trialInstantiate);
