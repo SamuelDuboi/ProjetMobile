@@ -25,6 +25,7 @@ public class Statue : ObjectHandler
                 index++;
                 if(index == partsName.Length)
                 {
+                    InteractActiveObject(true);
                     UnZoom();
                 }
             }

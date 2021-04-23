@@ -76,6 +76,7 @@ public class ChestManager : MonoBehaviour
         parent.HitBoxZoom.enabled = true;
         parent.interactifElement.spawnNewTrial = true;
         EventManager.instance.ZoomOut -= Unzoom;
+        EventManager.instance.OnDestroyTrial();
         Destroy(parent.trialInstantiate);
     }
 }
