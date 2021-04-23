@@ -26,6 +26,8 @@ public class CompteurManager : MonoBehaviour
             // to anyone who read, I'm sorry for your eyes loss but I'm super lazy
             var _objectHandler = GetComponentInParent<ObjectHandler>();
             _objectHandler.trialInstantiate = null;
+            EventManager.instance.OnDestroyTrial();
+
             _objectHandler.interactifElement.spawnNewTrial = false;
             _objectHandler.Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
           //  EventManager.instance.OnZoomOut();

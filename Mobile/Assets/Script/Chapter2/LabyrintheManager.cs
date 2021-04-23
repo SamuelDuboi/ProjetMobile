@@ -66,6 +66,8 @@ public class LabyrintheManager : MonoBehaviour
 
         if (labyrintheResolved)
         {
+            EventManager.instance.OnDestroyTrial();
+
             GetComponentInParent<ObjectHandler>().trialInstantiate = null;
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             InventoryManager.Instance.AddList(gameObject, "LevierJaune", default, 0);

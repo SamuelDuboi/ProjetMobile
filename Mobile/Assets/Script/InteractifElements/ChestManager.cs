@@ -22,8 +22,8 @@ public class ChestManager : MonoBehaviour
         }
         results = new bool[chests.Length];
         EventManager.instance.ZoomOut += Unzoom;
-        if(destroyHitBoxParent)
-            GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject.SetActive(false);
+      /*  if(destroyHitBoxParent)
+            GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject.SetActive(false);*/
     }
 
  
@@ -51,15 +51,16 @@ public class ChestManager : MonoBehaviour
         }
         if (save)
             SaveManager.instance.SaveChapter2();
-        if (destroyHitBoxParent)
+      /*  if (destroyHitBoxParent)
         {
             GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject.SetActive(true);
             Destroy(GetComponentInParent<ObjectHandler>().HitBoxZoom);
 
-        }
+        }*/
         GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
         EventManager.instance.ZoomOut -= Unzoom;
-       
+        EventManager.instance.OnDestroyTrial();
+
         Destroy(transform.parent.gameObject);
     }
 
@@ -67,13 +68,14 @@ public class ChestManager : MonoBehaviour
     {
         var parent = GetComponentInParent<ObjectHandler>();
         parent.interactifElement.onlyZoom = false;
-        if (destroyHitBoxParent)
+        /*if (destroyHitBoxParent)
         {
             GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject.SetActive(true);
 
-        }
+        }*/
         parent.HitBoxZoom.enabled = true;
         parent.interactifElement.spawnNewTrial = true;
+        EventManager.instance.ZoomOut -= Unzoom;
         Destroy(parent.trialInstantiate);
     }
 }

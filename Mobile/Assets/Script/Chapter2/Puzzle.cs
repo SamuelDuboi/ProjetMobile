@@ -68,6 +68,8 @@ public class Puzzle : MonoBehaviour
             puzzleResolved = true;
             Debug.Log("Gagné");
             GetComponentInParent<ObjectHandler>().trialInstantiate = null;
+            EventManager.instance.OnDestroyTrial();
+
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             InventoryManager.Instance.AddList(GetComponentInParent<ObjectHandler>().gameObject, GetComponentInParent<ObjectHandler>().NameToAddIfAnimToAdd, default, 1);
             GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);

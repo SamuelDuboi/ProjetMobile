@@ -27,6 +27,7 @@ public class ObjectHandlerActiveWater : ObjectHandler
             {
                 interactifElement.onlyZoom = true;
                 HitBoxZoom.enabled = false;
+                EventManager.instance.OnInstantiateTrial();
                 interactifElement.spawnNewTrial = false;
                 trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform.position, Quaternion.identity);
                 trialInstantiate.transform.SetParent(transform);

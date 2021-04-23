@@ -99,6 +99,7 @@ public class Gear : MonoBehaviour
                     
                 }
                 GetComponentInParent<ObjectHandler>().trialInstantiate = null;
+                EventManager.instance.OnDestroyTrial();
                 GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
                 GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
                 Destroy(gameObject);

@@ -13,6 +13,7 @@ public class DestroyOnInteract : MonoBehaviour
 
     private void Interact()
     {
+        EventManager.instance.ZoomOut -= Interact;
         gameObject.SetActive(false);
     }
 }

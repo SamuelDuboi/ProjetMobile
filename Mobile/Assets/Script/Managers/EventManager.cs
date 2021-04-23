@@ -28,6 +28,8 @@ public class EventManager : MonoBehaviour
 
     public event Action<Cams,  float> ZoomIn;
     public event Action  ZoomOut;
+    public event Action  InstantiateTrial;
+    public event Action  DestroyTrial;
 
     public event Action<GameObject> CollectObject;
     public event Action<GameObject> InteractObject;
@@ -84,6 +86,15 @@ public class EventManager : MonoBehaviour
             returnButton.SetActive(false);
             ZoomOut.Invoke();
         }
+    }
+    public void OnInstantiateTrial()
+    {
+            InstantiateTrial.Invoke();
+    }
+
+    public void OnDestroyTrial()
+    {
+        DestroyTrial.Invoke();
     }
     public void OnCollect(GameObject currentObjects)
     {

@@ -58,6 +58,7 @@ public class ObjectStartWater : ObjectHandler
                 HitBoxZoom.enabled = false;
                 interactifElement.spawnNewTrial = false;
                 trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform.position, Quaternion.identity);
+                EventManager.instance.OnInstantiateTrial();
                 trialInstantiate.transform.SetParent(transform);
             }
         }

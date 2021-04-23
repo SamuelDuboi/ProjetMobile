@@ -37,6 +37,8 @@ public class GreenStickTrial : MonoBehaviour
         if(numberOfGear == 3)
         {
             GetComponentInParent<ObjectHandler>().trialInstantiate = null;
+            EventManager.instance.OnDestroyTrial();
+
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             InventoryManager.Instance.AddList(gameObject, "LevierVert", default, 0);
             StartCoroutine(GetComponentInParent<ActivateStick>().ActivateWaterStick());

@@ -39,6 +39,7 @@ public class LabyrinthDragDrop : MonoBehaviour, IDragHandler
         }
         if (RectTransformUtility.RectangleContainsScreenPoint(endRect, thisRect.position))
         {
+            EventManager.instance.OnDestroyTrial();
             GetComponentInParent<ObjectHandler>().trialInstantiate = null;
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);

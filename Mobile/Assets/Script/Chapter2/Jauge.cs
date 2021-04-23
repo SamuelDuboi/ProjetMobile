@@ -62,6 +62,8 @@ public class Jauge : MonoBehaviour
         if(jaugeIndex[0] == 4 && jaugeIndex[1] == 2 && jaugeIndex[2] == 7)
         {
             GetComponentInParent<ObjectHandler>().trialInstantiate = null;
+            EventManager.instance.OnDestroyTrial();
+
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             InventoryManager.Instance.AddList(gameObject, "LevierBleu", default, 0);
             StartCoroutine(GetComponentInParent<ActivateStick>().ActivateWaterStick());

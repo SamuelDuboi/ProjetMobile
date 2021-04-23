@@ -11,6 +11,7 @@ public class ObjectHandler : MonoBehaviour
 
     [HideInInspector] public GameObject trialInstantiate;
     public string NameToAddIfAnimToAdd;
+    private int tempLayer;
   public  virtual void Start()
     {
         interactifElement = GetComponent<InteractifElement>();
@@ -21,6 +22,8 @@ public class ObjectHandler : MonoBehaviour
         EventManager.instance.CollectObject += CollectObject;
         EventManager.instance.InteractObject += Interact;
         EventManager.instance.ZoomIn += MoveCam;
+        EventManager.instance.InstantiateTrial += SpwanTrial;
+        EventManager.instance.DestroyTrial+= DestroyTrial;
 
         if (interactifElement.zoom)
             HitBoxZoom.gameObject.layer = 8;
@@ -35,6 +38,22 @@ public class ObjectHandler : MonoBehaviour
         }
 
         InteractActiveObject(false);
+    }
+
+    private void SpwanTrial()
+    {
+        if(HitBoxZoom != null)
+        {
+            tempLayer = HitBoxZoom.gameObject.layer;
+            HitBoxZoom.gameObject.layer = 0;
+        }
+    }
+    private void DestroyTrial()
+    {
+        if (HitBoxZoom != null)
+        {
+            HitBoxZoom.gameObject.layer = tempLayer;
+        }
     }
 
     private void MoveCam(Cams cams, float orthogrphicSize)
@@ -95,6 +114,7 @@ public class ObjectHandler : MonoBehaviour
             if(trialInstantiate != null)
             {
                 interactifElement.onlyZoom = false;
+                EventManager.instance.OnDestroyTrial();
                 HitBoxZoom.enabled = true;
                 interactifElement.spawnNewTrial = true;
                 Destroy(trialInstantiate);
@@ -142,6 +162,7 @@ public class ObjectHandler : MonoBehaviour
                 }
                 interactifElement.interactionAnimator.SetLayerWeight(1, 0);
                 interactifElement.interactionAnimator.SetLayerWeight(2, 1);
+                interactifElement.hasLinkGameObject = false;
             }
             InteractActiveObject(true);
             if (!interactifElement.spawnNewTrial)
@@ -158,7 +179,7 @@ public class ObjectHandler : MonoBehaviour
                 HitBoxZoom.enabled = false;
                 interactifElement.spawnNewTrial = false;
                 trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform.position,Quaternion.identity);
-
+                EventManager.instance.OnInstantiateTrial();
                     trialInstantiate.transform.SetParent(transform);
             }
         }

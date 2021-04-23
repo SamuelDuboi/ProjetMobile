@@ -50,6 +50,7 @@ public class burningOil : ObjectHandler
                 interactifElement.onlyZoom = true;
                 HitBoxZoom.enabled = false;
                 interactifElement.spawnNewTrial = false;
+                EventManager.instance.OnInstantiateTrial();
                 trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform.position, Quaternion.identity);
                 trialInstantiate.transform.SetParent(transform);
             }
