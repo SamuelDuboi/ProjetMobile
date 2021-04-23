@@ -9,8 +9,10 @@ public class EventManager : MonoBehaviour
      [HideInInspector] public CamDirection cuurrentCamDirection;
     [HideInInspector] public bool cantDoZoom;
     [HideInInspector] public bool isZoomed;
+    [HideInInspector] public GameObject zoomObject;
 
     public GameObject returnButton;
+    
     // Start is called before the first frame update
     private void Awake()
     {
