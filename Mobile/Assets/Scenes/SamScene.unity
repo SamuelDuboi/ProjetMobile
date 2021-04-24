@@ -2127,6 +2127,7 @@ MonoBehaviour:
   cuurrentCamDirection: 0
   cantDoZoom: 0
   isZoomed: 0
+  zoomObject: {fileID: 0}
   returnButton: {fileID: 1924717381}
 --- !u!4 &539829919
 Transform:
@@ -2540,7 +2541,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616af1a0b0ffd324787e7c59f7de6cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 775807108}
+  main: {fileID: 0}
+  bookHandler: {fileID: 0}
+  newMat: {fileID: 0}
   cristals:
   - {fileID: 950815463}
   - {fileID: 219033223}
@@ -8354,7 +8357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b66f59a698bd2c4b9f84ba90e6a1cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lustreReception: {fileID: 775807106}
 --- !u!1 &919132148473434782
 GameObject:
   m_ObjectHideFlags: 0
@@ -11872,7 +11874,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018491661396130714}
-  m_LocalRotation: {x: -0.27059802, y: -0.6532815, z: -0.6532815, w: 0.27059802}
+  m_LocalRotation: {x: 0.27059805, y: 0.6532815, z: 0.6532815, w: -0.27059805}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11901,7 +11903,7 @@ Transform:
   - {fileID: 1664443618}
   m_Father: {fileID: 543450652141340708}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 180, z: 45}
 --- !u!23 &5861742154781765208
 MeshRenderer:
   m_ObjectHideFlags: 0
