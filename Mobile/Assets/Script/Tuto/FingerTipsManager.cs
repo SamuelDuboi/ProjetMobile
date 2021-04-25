@@ -197,6 +197,7 @@ public class FingerTipsManager : MonoBehaviour
             tutoDeviceManager.stopAnim = true;
             textMeshPro.gameObject.SetActive(true);
             textMeshPro.text = "Le code doit se trouver dans la pièce";
+            zoomBack = false;
             EventManager.instance.InteractObject -= OpenChest;
         }
     }

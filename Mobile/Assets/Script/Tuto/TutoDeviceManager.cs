@@ -125,6 +125,7 @@ public class TutoDeviceManager : MonoBehaviour
 
                                     if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Valise" && phase == 4)
                                     {
+                                        FingerTipsManager.instance.zoomBack = true;
                                         stopAnim = false;
                                         EventManager.instance.OnZoomIn(cams, orthographicSize);
                                     }
@@ -137,6 +138,17 @@ public class TutoDeviceManager : MonoBehaviour
                                     {
                                         stopAnim = false;
                                         EventManager.instance.OnZoomIn(cams, orthographicSize);
+                                    }
+                                    else if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Poignée" )
+                                    {
+                                        int number = 0;
+                                        var _item = InventoryManager.Instance.FindObject("Part 2", out number);
+                                        var _item2 = InventoryManager.Instance.FindObject("Part 1", out number);
+                                        if(_item!= null && _item != null)
+                                        {
+                                            stopAnim = false;
+                                            EventManager.instance.OnZoomIn(cams, orthographicSize);
+                                        }
                                     }
                                     else if(phase>6 && phase != 9 && phase !=12)
                                         EventManager.instance.OnZoomIn(cams, orthographicSize);
