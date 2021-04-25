@@ -85,9 +85,21 @@ public class EventManager : MonoBehaviour
     {
         if (!cantDoZoom)
         {
-            cantDoZoom = true;
-            returnButton.SetActive(false);
-            ZoomOut.Invoke();
+            if(FingerTipsManager.instance != null  )
+            {
+                if (!FingerTipsManager.instance.zoomBack)
+                {
+                    cantDoZoom = true;
+                    returnButton.SetActive(false);
+                    ZoomOut.Invoke();
+                }
+            }
+            else
+            {
+                cantDoZoom = true;
+                returnButton.SetActive(false);
+                ZoomOut.Invoke();
+            }
         }
     }
     public void OnInstantiateTrial()

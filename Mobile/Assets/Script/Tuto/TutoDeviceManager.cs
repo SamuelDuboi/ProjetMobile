@@ -48,14 +48,14 @@ public class TutoDeviceManager : MonoBehaviour
                                     EventManager.instance.OnSwipeLeft();
 
                                 }
-                                else if (phase > 3 && phase != 8)
+                                else if (phase > 3 && phase != 8 )
                                     EventManager.instance.OnSwipeLeft();
                                 return;
                             }
                             else if (direction.x < -deadZone)
                             {
 
-                                if (phase > 3)
+                                if (phase > 3 && phase != 8 )
                                     EventManager.instance.OnSwipeRight();
                                 return;
                             }
@@ -64,7 +64,7 @@ public class TutoDeviceManager : MonoBehaviour
                     }
                     else
                     {
-                        if (phase ==6 || phase>7)
+                        if (phase ==6 || phase>7 && phase != 9)
                         {
                             if (direction.y > deadZone)
                             {
@@ -128,7 +128,17 @@ public class TutoDeviceManager : MonoBehaviour
                                         stopAnim = false;
                                         EventManager.instance.OnZoomIn(cams, orthographicSize);
                                     }
-                                    else if(phase>6 && phase != 8)
+                                    else if  (hit.collider.GetComponentInParent<ObjectHandler>().name == "Valise" && phase == 9)
+                                    {
+                                        stopAnim = false;
+                                        EventManager.instance.OnZoomIn(cams, orthographicSize);
+                                    }
+                                    else if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Commode" && phase == 11)
+                                    {
+                                        stopAnim = false;
+                                        EventManager.instance.OnZoomIn(cams, orthographicSize);
+                                    }
+                                    else if(phase>6 && phase != 9 && phase !=12)
                                         EventManager.instance.OnZoomIn(cams, orthographicSize);
                                 }
                             }
@@ -140,7 +150,17 @@ public class TutoDeviceManager : MonoBehaviour
                                     if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
                                     {
                                         if (hit.collider.gameObject.tag == "Collectable")
+                                        {
                                             EventManager.instance.OnCollect(hit.collider.gameObject);
+                                            if(hit.collider.GetComponentInParent<ObjectHandler>().name == "Poignée 1")
+                                            {
+                                                EventManager.instance.ZoomOut += FingerTipsManager.instance.ZoomOutDoor;
+                                            }
+                                            else 
+                                            {
+                                                FingerTipsManager.instance.zoomBack = false;
+                                            }
+                                        }
                                         else
                                         {
                                             if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Valise" && phase == 5)
@@ -148,7 +168,12 @@ public class TutoDeviceManager : MonoBehaviour
                                                 stopAnim = false;
                                                 EventManager.instance.OnInteract(hit.collider.gameObject);
                                             }
-                                            else if (phase > 5)
+                                            else if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Valise" && phase == 9)
+                                            {
+                                                stopAnim = false;
+                                                EventManager.instance.OnInteract(hit.collider.gameObject);
+                                            }
+                                            else if (phase > 5 && phase != 11 && phase != 10 && phase != 9)
                                             {
                                                 EventManager.instance.OnInteract(hit.collider.gameObject);
                                             }
@@ -165,9 +190,19 @@ public class TutoDeviceManager : MonoBehaviour
                             {
                                 if (hit.collider.gameObject.tag == "Collectable")
                                 {
-
-                                    if (phase > 8)
+                                    if(phase == 10 && hit.collider.GetComponentInParent<ObjectHandler>().name == "Poignée 2")
+                                    {
+                                        phase++;
+                                        stopAnim = true;
                                         EventManager.instance.OnCollect(hit.collider.gameObject);
+                                        FingerTipsManager.instance.zoomBack = false;
+                                    }
+                                    if (phase > 11)
+                                    {
+                                        phase++;
+                                        stopAnim = true;
+                                        EventManager.instance.OnCollect(hit.collider.gameObject);
+                                    }
                                 }
                                 else
                                 {
@@ -176,7 +211,12 @@ public class TutoDeviceManager : MonoBehaviour
                                         stopAnim = false;
                                         EventManager.instance.OnInteract(hit.collider.gameObject);
                                     }
-                                    else if (phase !=8 && phase>6)
+                                    if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Valise" && phase == 9)
+                                    {
+                                        stopAnim = false;
+                                        EventManager.instance.OnInteract(hit.collider.gameObject);
+                                    }
+                                    else if (phase !=8 && phase>6  && phase != 10 && phase !=9 )
                                     {
                                         EventManager.instance.OnInteract(hit.collider.gameObject);
                                     }

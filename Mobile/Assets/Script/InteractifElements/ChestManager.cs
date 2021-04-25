@@ -60,7 +60,10 @@ public class ChestManager : MonoBehaviour
         GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
         EventManager.instance.ZoomOut -= Unzoom;
         EventManager.instance.OnDestroyTrial();
-
+        if (FingerTipsManager.instance != null)
+        {
+            FingerTipsManager.instance.startCollect();
+        }
         Destroy(transform.parent.gameObject);
     }
 

@@ -11,7 +11,7 @@ public class PaintingMove : StateMachineBehaviour
         if (!doOnce)
         {
             doOnce = true;
-            FingerTipsManager.instance.paintingNumber++;
+            FingerTipsManager.instance.numberUp();
         }
     }
 
