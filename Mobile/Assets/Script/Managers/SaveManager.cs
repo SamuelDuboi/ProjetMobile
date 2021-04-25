@@ -10,12 +10,12 @@ public class SaveManager : MonoBehaviour
 
     public bool hasDoneTuto;
     public int chapter1Number =1;
-   public int chapter2Number = 5;
+    public int chapter2Number = 5;
     public static SaveManager instance;
     public string path;
-
-    public Button[] chap1Button;
-    public Button[] chap2Button;
+    public bool debug;
+    public GameObject[] chap1Button;
+    public GameObject[] chap2Button;
     private void Awake()
     {
         if(instance== null)
@@ -128,25 +128,42 @@ public class SaveManager : MonoBehaviour
         SaveByXML();
     }
 
-    public void LoadChapter1()
+    public void LoadChapter1( GameObject[] listChap1)
     {
         LoadByXML();
-        for (int i = 1; i < chap1Button.Length; i++)
+        if (debug)
+        {
+            for (int i = 0; i < listChap1.Length - 1; i++)
+            {
+                listChap1[i].SetActive(false);
+                
+            }
+            return;
+        }
+        for (int i = 1; i < listChap1.Length; i++)
         {
             if(i != chapter1Number - 1)
             {
-                chap1Button[i].interactable = false;
+                listChap1[i].SetActive(false); ;
             }
         }
     }
-    public void LoadChapter2()
+    public void LoadChapter2(GameObject[] listChap2)
     {
         LoadByXML();
-        for (int i = 1; i < chap2Button.Length; i++)
+        if (debug)
+        {
+            for (int i = 0; i < listChap2.Length-1; i++)
+            {
+                listChap2[i].SetActive(false);
+            }
+            return;
+        }
+        for (int i = 1; i < listChap2.Length; i++)
         {
             if (i != chapter2Number -5)
             {
-                chap2Button[i].interactable = false;
+                listChap2[i].SetActive(false);
             }
         }
     }
