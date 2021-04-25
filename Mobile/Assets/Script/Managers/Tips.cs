@@ -25,7 +25,6 @@ public class Tips : ScriptableObject
         {
             if (!tips[i].done)
             {
-                if(EventManager.instance.)
                 return;
             }
         }

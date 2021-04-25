@@ -52,6 +52,9 @@ public class ObjectHandler : MonoBehaviour
     {
         if (HitBoxZoom != null)
         {
+            if (interactifElement.zoom)
+                HitBoxZoom.gameObject.layer = 8;
+            else
             HitBoxZoom.gameObject.layer = tempLayer;
         }
     }
