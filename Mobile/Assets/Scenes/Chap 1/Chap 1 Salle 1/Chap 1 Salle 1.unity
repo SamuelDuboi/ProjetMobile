@@ -794,6 +794,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1001 &52356435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1261,6 +1263,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!114 &213821057 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4849955560333499688, guid: 15d8d9c23e639d74fa315c4cf915ce40,
@@ -1349,6 +1353,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &247805961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,6 +1638,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &285175456
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,6 +2656,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1001 &566133925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2887,6 +2897,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &598568607
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,6 +3074,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1001 &668178481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3360,6 +3374,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1001 &739551364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3502,6 +3518,7 @@ MonoBehaviour:
   bookHandler: {fileID: 0}
   newMat: {fileID: 0}
   cristals: []
+  tipsIndex: 0
 --- !u!120 &775807108
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -3945,6 +3962,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &842544777 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8449267681087476992, guid: a2c33b5ce6b40494a960a3b45f719ee7,
@@ -4021,6 +4040,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &858769445 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1802651545360449939, guid: 3edc63853501fd04a8246f3d92e09077,
@@ -4226,6 +4247,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &901150455
 GameObject:
   m_ObjectHideFlags: 0
@@ -4313,6 +4336,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &908406747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7441077262426844724, guid: 19ea08e80249bcd4a98b866bbc65d863,
@@ -4478,6 +4503,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &976586396
 GameObject:
   m_ObjectHideFlags: 0
@@ -4644,6 +4671,7 @@ MonoBehaviour:
   - {fileID: 930304726}
   - {fileID: 1267015548}
   - {fileID: 380543558}
+  tipsIndex: 4
 --- !u!65 &986077382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5545,6 +5573,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &1185171041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3814730500141105038, guid: 37f36054ea661974cb8cdcf73bf326f0,
@@ -6128,6 +6158,71 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6647724543910840236}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1288203742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1288203743}
+  - component: {fileID: 1288203744}
+  m_Layer: 0
+  m_Name: TipsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1288203743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288203742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1485865435}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1288203744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288203742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20349c0086875f74690d6899a66f09ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  urls:
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  index: 0
+  text:
+  - "Faites <b>tomber le tableaux</b> pour faire sortir la lumi\xE8re."
+  - "<b>Taper sur le vase</b> pour le faire tomber et laisser la lumi\xE8re passer. "
+  - <b>Cliquez sur la trappe </b> au plafond</b> et ouvrez son loquet
+  - "<b>Cliquez sur les cristaux </b> afin de faire r\xE9fl\xE9chir sur le dernier
+    miroir."
+  - <b>Cliquez sur le livre</b> pour ouvrir le <b>passage secret</b>.
+  images:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 8e0682e8887dacf4e814cf4696312b57, type: 3}
+  - {fileID: 0}
+  textRenderer: {fileID: 1884937927}
+  image: {fileID: 1338819835}
 --- !u!1 &1290760466
 GameObject:
   m_ObjectHideFlags: 0
@@ -7018,6 +7113,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1327005841}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1338819835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7295998212481237013, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+    type: 3}
+  m_PrefabInstance: {fileID: 2122441628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1338992633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5927239901853885881, guid: a2c33b5ce6b40494a960a3b45f719ee7,
@@ -7094,6 +7201,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &1355602600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7747719173135236286, guid: 19ea08e80249bcd4a98b866bbc65d863,
@@ -7955,6 +8064,7 @@ Transform:
   - {fileID: 1384466833}
   - {fileID: 2015251667}
   - {fileID: 873472710}
+  - {fileID: 1288203743}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8291,6 +8401,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1001 &1717553293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9290,6 +9402,18 @@ Transform:
   m_Father: {fileID: 1766587880578674114}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1884937927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1132802094484389545, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+    type: 3}
+  m_PrefabInstance: {fileID: 2122441628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1885668603 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5780638532609683015, guid: 0a0ce9e622a27884db4fe752628999f3,
@@ -9663,6 +9787,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!65 &1966121062
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10544,16 +10670,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2002014217945117043, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002014217945117043, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2543635522957190562, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 873472709}
-    - target: {fileID: 2543635522957190562, guid: 15d8d9c23e639d74fa315c4cf915ce40,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 2543635522986409760, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
@@ -10684,6 +10815,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[9].m_MethodName
       value: ReloadScene
       objectReference: {fileID: 0}
+    - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 1288203744}
+    - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2543635523916452003, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -10731,11 +10872,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -10769,6 +10905,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5204497880621563306, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1288203744}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d8d9c23e639d74fa315c4cf915ce40, type: 3}
 --- !u!4 &2129389167 stripped
@@ -10864,6 +11005,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &2134118794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3814730500141105038, guid: 37f36054ea661974cb8cdcf73bf326f0,
@@ -10936,6 +11079,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &572615945755473047
 Transform:
   m_ObjectHideFlags: 0
@@ -11152,6 +11297,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!114 &712320114395464494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12381,6 +12528,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &1594253202783968567
 Transform:
   m_ObjectHideFlags: 0
@@ -12504,6 +12653,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &1622882511171381737
 Transform:
   m_ObjectHideFlags: 0
@@ -12888,6 +13039,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &1840820073172762988
 GameObject:
   m_ObjectHideFlags: 0
@@ -13156,6 +13309,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 2
 --- !u!4 &2105815530215142799
 Transform:
   m_ObjectHideFlags: 0
@@ -13589,6 +13744,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &3572887512015963201
 Transform:
   m_ObjectHideFlags: 0
@@ -14572,6 +14729,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 1
 --- !u!4 &5287523500290973487
 Transform:
   m_ObjectHideFlags: 0
@@ -14971,6 +15130,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &6121659123107183499
 Transform:
   m_ObjectHideFlags: 0
@@ -15058,6 +15219,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &6147961124238273661
 Transform:
   m_ObjectHideFlags: 0
@@ -17225,6 +17388,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!114 &8150195292033395086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18009,6 +18174,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 3
 --- !u!4 &8716563636708951513
 Transform:
   m_ObjectHideFlags: 0
@@ -18135,6 +18302,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &9148966947421150703
 Transform:
   m_ObjectHideFlags: 0

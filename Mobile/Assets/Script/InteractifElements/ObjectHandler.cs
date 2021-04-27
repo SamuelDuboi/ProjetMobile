@@ -12,6 +12,7 @@ public class ObjectHandler : MonoBehaviour
     [HideInInspector] public GameObject trialInstantiate;
     public string NameToAddIfAnimToAdd;
     private int tempLayer;
+    [HideInInspector] public bool doOnce;
   public  virtual void Start()
     {
         interactifElement = GetComponent<InteractifElement>();
@@ -171,6 +172,11 @@ public class ObjectHandler : MonoBehaviour
             if (!interactifElement.spawnNewTrial)
             {
                 interactifElement.interactionAnimator.SetTrigger("Interact");
+                if (interactifElement.activateTips && !doOnce)
+                {
+                    doOnce = true;
+                    TipsManager.instance.changeIndex(interactifElement.indexOfTip);
+                }
                 if (interactifElement.PopupAfterAnim)
                 {
                     StartCoroutine(WaitToPopUp(interactifElement.interactionAnimator.GetCurrentAnimatorClipInfo(0).Length));
@@ -193,6 +199,11 @@ public class ObjectHandler : MonoBehaviour
         {
             InventoryManager.Instance.AddList(gameObject, interactifElement.nameInventory, interactifElement.inventoryTexture);
             EventManager.instance.CollectObject -= CollectObject;
+            if (interactifElement.activateTips && !doOnce)
+            {
+                doOnce = true;
+                TipsManager.instance.changeIndex( interactifElement.indexOfTip);
+            }
             gameObject.SetActive(false);
 
             //Destroy(gameObject);

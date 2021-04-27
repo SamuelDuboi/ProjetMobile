@@ -25,6 +25,11 @@ public class Statue : ObjectHandler
                 index++;
                 if(index == partsName.Length)
                 {
+                    if (interactifElement.activateTips && !doOnce)
+                    {
+                        doOnce = true;
+                        TipsManager.instance.changeIndex( interactifElement.indexOfTip);
+                    }
                     InteractActiveObject(true);
                     UnZoom();
                 }

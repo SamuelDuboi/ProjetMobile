@@ -1642,6 +1642,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &410747199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1687,6 +1688,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!114 &417455776 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4849955560333499688, guid: 15d8d9c23e639d74fa315c4cf915ce40,
@@ -2673,6 +2676,7 @@ MonoBehaviour:
   cuurrentCamDirection: 0
   cantDoZoom: 0
   isZoomed: 0
+  zoomObject: {fileID: 0}
   returnButton: {fileID: 2138159747}
 --- !u!4 &539829919
 Transform:
@@ -3673,6 +3677,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &705412705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3719,6 +3724,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 3
 --- !u!1 &736404879
 GameObject:
   m_ObjectHideFlags: 0
@@ -4020,6 +4027,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &766730000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4057,6 +4065,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &780534239
 GameObject:
   m_ObjectHideFlags: 0
@@ -4852,6 +4862,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d8d9c23e639d74fa315c4cf915ce40, type: 3}
+--- !u!114 &857344063 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7295998212481237013, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+    type: 3}
+  m_PrefabInstance: {fileID: 857344062}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &857344064 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1132802094484389545, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+    type: 3}
+  m_PrefabInstance: {fileID: 857344062}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &865124534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6004,6 +6038,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033229572}
   m_Mesh: {fileID: 0}
+--- !u!1 &1050919238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1050919239}
+  - component: {fileID: 1050919240}
+  m_Layer: 0
+  m_Name: TipManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1050919239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050919238}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1485865435}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1050919240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050919238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20349c0086875f74690d6899a66f09ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  urls:
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  text:
+  - "Trouvez <b> l\u2019arc \xE0 feu </b> dans l\u2019une des biblioth\xE8ques, cach\xE9
+    <b> derri\xE8re un parchemin. </b> Utilisez-le pour enflammer <b> la planche
+    s\u2019\xE9tant d\xE9tach\xE9e de la biblioth\xE8que </b> tomb\xE9e au sol en
+    effectuant <b> un mouvement de vas et viens \xE0 l\u2019\xE9cran. </b>"
+  - "R\xE9cup\xE9rez <b> la torche \xE9teinte </b> plac\xE9e sur l\u2019un des murs
+    et <b> allumez-la </b> en <b> l\u2019approchant du feu </b> allum\xE9 pr\xE9c\xE9demment."
+  - "<b> Lisez l'\xE9criteau situ\xE9 sur l\u2019un des murs du plafond </b> retra\xE7ant
+    un mythe sur lequel <b> quatres lieux </b> sont indiqu\xE9s. Retrouvez ces lieux,
+    combin\xE9s \xE0 des chiffres sur <b> une carte </b> accroch\xE9e \xE0 l\u2019un
+    des murs de la pi\xE8ce. Ces chiffres devront \xEAtre rentr\xE9s dans l'ordre
+    des lieux donn\xE9s par le mythe sur <b> un coffre \xE0 code. </b>"
+  - 
+  images:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  textRenderer: {fileID: 857344064}
+  image: {fileID: 857344063}
 --- !u!1 &1088240032
 GameObject:
   m_ObjectHideFlags: 0
@@ -7392,6 +7494,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &1329615314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7437,6 +7540,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &1336048143 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5228074104704010180, guid: 0dbf9d10bb66ab54fba2c6acc6d87b35,
@@ -8107,6 +8212,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &1422771282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8145,6 +8251,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 2
 --- !u!1 &1426458782
 GameObject:
   m_ObjectHideFlags: 0
@@ -8226,6 +8334,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &1438919515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8263,6 +8372,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1001 &1440963177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8759,6 +8870,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
   objects:
   - {fileID: 1357167067}
   - {fileID: 1645944169}
@@ -8815,6 +8927,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &1465207927
 GameObject:
   m_ObjectHideFlags: 0
@@ -8879,6 +8993,7 @@ Transform:
   - {fileID: 1384466833}
   - {fileID: 2015251667}
   - {fileID: 1440963179}
+  - {fileID: 1050919239}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9312,6 +9427,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &1645944172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9350,6 +9466,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &1651721591
 GameObject:
   m_ObjectHideFlags: 0
@@ -9911,6 +10029,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &1743909803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9957,6 +10076,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &1746323747
 GameObject:
   m_ObjectHideFlags: 0
@@ -10317,6 +10438,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &1848051237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10354,6 +10476,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &1873043975
 GameObject:
   m_ObjectHideFlags: 0
@@ -11102,6 +11226,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &2019226865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11139,6 +11264,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &2029270165
 GameObject:
   m_ObjectHideFlags: 0
@@ -12256,6 +12383,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &498469104959834316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12304,6 +12432,8 @@ MonoBehaviour:
   text: "Cette porte semblait \xEAtre la seule issue. Il va falloir trouver un moyen
     de passer. "
   timePopup: 5
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &498469104959834317
 Transform:
   m_ObjectHideFlags: 0
@@ -15354,6 +15484,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!1 &2544798597451645251
 GameObject:
   m_ObjectHideFlags: 0
@@ -15433,6 +15564,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!23 &2550705063450913979
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15997,6 +16130,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!1 &2951848871437401665
 GameObject:
   m_ObjectHideFlags: 0
@@ -16089,6 +16223,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &2991002778237397036
 Transform:
   m_ObjectHideFlags: 0
@@ -16796,6 +16932,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!1 &3267643495436544055
 GameObject:
   m_ObjectHideFlags: 0
@@ -16867,6 +17004,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!95 &3267643495436544058
 Animator:
   serializedVersion: 3
@@ -17851,6 +17990,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &3820332400890088181
 Transform:
   m_ObjectHideFlags: 0
@@ -17901,6 +18042,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!1 &3835504128107551387
 GameObject:
   m_ObjectHideFlags: 0
@@ -18434,6 +18576,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!1 &4178338649815380021
 GameObject:
   m_ObjectHideFlags: 0
@@ -18514,6 +18657,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &4201069288829330781
 GameObject:
   m_ObjectHideFlags: 0
@@ -20513,6 +20658,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!114 &5481945689410861802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20530,6 +20677,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!1 &5481945689410861803
 GameObject:
   m_ObjectHideFlags: 0
@@ -20645,6 +20793,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &5537188337334451912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20687,6 +20836,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &5537188337334451913
 Transform:
   m_ObjectHideFlags: 0
@@ -21060,6 +21211,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 1
 --- !u!4 &5752399146527516833
 Transform:
   m_ObjectHideFlags: 0
@@ -21110,6 +21263,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!1 &5752399147075945458
 GameObject:
   m_ObjectHideFlags: 0
@@ -21941,6 +22095,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!114 &6180648555060561134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21958,6 +22114,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!1 &6180648555060561135
 GameObject:
   m_ObjectHideFlags: 0
@@ -24293,6 +24450,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &7815008085374884251
 GameObject:
   m_ObjectHideFlags: 0
@@ -24328,6 +24487,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!4 &7815008086495637508
 Transform:
   m_ObjectHideFlags: 0
@@ -25918,6 +26078,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!114 &8961529375222148318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25935,6 +26097,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!1 &8961529375222148319
 GameObject:
   m_ObjectHideFlags: 0
@@ -26152,6 +26315,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &9085248809685891704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26197,6 +26361,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &9085248809685891705
 Transform:
   m_ObjectHideFlags: 0

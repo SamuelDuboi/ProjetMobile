@@ -9,6 +9,7 @@ public class LustreReception : MonoBehaviour
     public ObjectHandler bookHandler;
     public Material newMat;
     public Cristal[] cristals;
+    public int tipsIndex;
     private void Start()
     {
         EventManager.instance.LightObject += LightOn;
@@ -29,6 +30,7 @@ public class LustreReception : MonoBehaviour
                 cristal.enabled = false;
             }
             bookHandler.enabled = true;
+            TipsManager.instance.changeIndex( tipsIndex);
         }
     }
 }

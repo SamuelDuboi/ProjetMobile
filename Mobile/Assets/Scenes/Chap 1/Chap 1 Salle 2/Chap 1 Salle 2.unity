@@ -1506,6 +1506,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 263660141}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &272825053 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1132802094484389545, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+    type: 3}
+  m_PrefabInstance: {fileID: 315786535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &276556167 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8413717371077032452, guid: 15d8d9c23e639d74fa315c4cf915ce40,
@@ -1664,16 +1676,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2002014217945117043, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002014217945117043, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2543635522957190562, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1174972406}
-    - target: {fileID: 2543635522957190562, guid: 15d8d9c23e639d74fa315c4cf915ce40,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 2543635522986409762, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1789,55 +1806,25 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[9].m_Target
       value: 
       objectReference: {fileID: 1174972406}
-    - target: {fileID: 2543635523055505738, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+    - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[9].m_MethodName
-      value: ReloadScene
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 1663562175}
+    - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: DisplayText
       objectReference: {fileID: 0}
     - target: {fileID: 2543635523916452003, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 539829918}
-    - target: {fileID: 2543635523916452003, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+    - target: {fileID: 9043702626699668581, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnZoomOut
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
-      value: 
-      objectReference: {fileID: 1174972406}
-    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
-      value: LoadMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d8d9c23e639d74fa315c4cf915ce40, type: 3}
@@ -3269,6 +3256,7 @@ MonoBehaviour:
   cuurrentCamDirection: 0
   cantDoZoom: 0
   isZoomed: 0
+  zoomObject: {fileID: 0}
   returnButton: {fileID: 1393261933}
 --- !u!4 &539829919
 Transform:
@@ -4741,6 +4729,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734355838}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &814789903 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7295998212481237013, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+    type: 3}
+  m_PrefabInstance: {fileID: 315786535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &894078387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6872,6 +6872,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &1295909376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6917,6 +6918,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 1
 --- !u!95 &1295909377
 Animator:
   serializedVersion: 3
@@ -7478,6 +7481,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &1377668018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7523,6 +7527,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &1384466832
 GameObject:
   m_ObjectHideFlags: 0
@@ -7967,6 +7973,7 @@ Transform:
   - {fileID: 1384466833}
   - {fileID: 2015251667}
   - {fileID: 1174972407}
+  - {fileID: 1663562174}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8522,6 +8529,84 @@ Transform:
   m_Father: {fileID: 5537188337334451913}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1663562173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1663562174}
+  - component: {fileID: 1663562175}
+  m_Layer: 0
+  m_Name: TipsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1663562174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663562173}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1485865435}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1663562175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663562173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20349c0086875f74690d6899a66f09ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  urls:
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  index: 0
+  text:
+  - "<b>Cliquez sur l'armoire</b> \xE0 c\xF4t\xE9 de la porte afin de la placer <b>en
+    face du rayon</b> de lumi\xE8re ."
+  - "<b>Ouvrez la grande armoire </b> pour r\xE9cup\xE9rer le <b>buste</b> de la
+    statue."
+  - "R\xE9cup\xE9rez les <b> bras </b> de la statue situ\xE9 <b>derri\xE8re une biblioth\xE8que.
+    </b>"
+  - "<b>Ouvrez la commode </b> pour r\xE9cup\xE9rer le <b>prisme </b> de lumi\xE8re."
+  - <b>Cliquez sur la statue</b> afin de la <b>reconstituer</b>
+  - "<b>D\xE9placez l\u2019armoire</b> afin que le rayon r\xE9fl\xE9chisse sur le
+    prisme."
+  - "<b>Pivotez le prisme</b> afin que le rayon de lumi\xE8re se r\xE9fl\xE9chisse
+    sur la statuette de la commode."
+  - "<b>Pivotez la statuette</b> de fa\xE7on \xE0 ce que le <b>rayon la traverse.</b>"
+  images:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 1dacc9d450bf60348b420fa5c19f1655, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  textRenderer: {fileID: 272825053}
+  image: {fileID: 814789903}
 --- !u!1 &1690178573
 GameObject:
   m_ObjectHideFlags: 0
@@ -9121,6 +9206,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 7
 --- !u!65 &1839765859
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9151,6 +9238,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!23 &1839765861
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9445,6 +9533,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &1957358069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9482,6 +9571,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1001 &1991725149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10439,6 +10530,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 4
 --- !u!114 &113078149333335013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10456,6 +10549,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!65 &113078149333335014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10577,6 +10671,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &293492493009109124
 GameObject:
   m_ObjectHideFlags: 0
@@ -10612,6 +10708,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!4 &293492493009109127
 Transform:
   m_ObjectHideFlags: 0
@@ -10804,6 +10901,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!114 &293492493926824123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10821,6 +10920,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!33 &293492493970135012
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11068,6 +11168,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!4 &293492494681992465
 Transform:
   m_ObjectHideFlags: 0
@@ -11120,6 +11221,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &293492494681992470
 GameObject:
   m_ObjectHideFlags: 0
@@ -11300,6 +11403,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &717966209021126822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11337,6 +11441,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 2
 --- !u!65 &717966209021126823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11825,6 +11931,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &2114252923842530755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11862,6 +11969,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 3
 --- !u!65 &2114252923842530756
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12468,6 +12577,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &3820332399718755880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12505,6 +12615,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &3820332399718755881
 Transform:
   m_ObjectHideFlags: 0
@@ -12669,6 +12781,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &3820332400668402814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12706,6 +12819,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &3820332400668402815
 Transform:
   m_ObjectHideFlags: 0
@@ -13016,6 +13131,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
   parts:
   - {fileID: 950249319}
   - {fileID: 1576320574}
@@ -13069,6 +13185,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 6
 --- !u!4 &4467787302725697503
 Transform:
   m_ObjectHideFlags: 0
@@ -13162,6 +13280,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &5005540630084824711
 Transform:
   m_ObjectHideFlags: 0
@@ -13212,6 +13332,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!95 &5005540630689892116
 Animator:
   serializedVersion: 3
@@ -13802,6 +13923,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &5405768361840095639
 Transform:
   m_ObjectHideFlags: 0
@@ -13852,6 +13975,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!95 &5405768363365750788
 Animator:
   serializedVersion: 3
@@ -14041,6 +14165,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &5537188337334451912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14086,6 +14211,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &5537188337334451913
 Transform:
   m_ObjectHideFlags: 0
@@ -14668,6 +14795,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!114 &7588932853752663976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14685,6 +14814,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!1 &7588932853752663977
 GameObject:
   m_ObjectHideFlags: 0

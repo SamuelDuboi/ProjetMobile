@@ -35,6 +35,8 @@ public class InteractifElementEditor : Editor
             PickUp();
 
               Links();
+
+
         EditorUtility.SetDirty(interactifElements);
         serializedObject.ApplyModifiedProperties();
         Repaint();
@@ -131,6 +133,12 @@ public class InteractifElementEditor : Editor
             
         }
 
+
+        interactifElements.activateTips = EditorGUILayout.Toggle("Activate next Tips", interactifElements.activateTips);
+        if (interactifElements.activateTips)
+        {
+            interactifElements.indexOfTip = EditorGUILayout.IntField("Index", interactifElements.indexOfTip);
+        }
         EditorGUILayout.Space(20);
     }
 

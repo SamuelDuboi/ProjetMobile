@@ -37,6 +37,9 @@ public class InteractifElement : MonoBehaviour
     public bool popup, popInteract, PopupAfterAnim;
     public string text;
     public float timePopup;
+
+    public bool activateTips;
+    public int indexOfTip;
     public void AddList<T>(List<T> list)
     {
         if (list == null)
