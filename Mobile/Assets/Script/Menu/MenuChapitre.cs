@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuChapitre : ObjectHandler
 {
     public int index;
-
+    public bool quit;
 
     public override void Start()
     {
@@ -16,6 +16,9 @@ public class MenuChapitre : ObjectHandler
     {
         if (HitBoxZoom != null && currentGameObject == HitBoxZoom.gameObject)
         {
+            if (quit)
+                Application.Quit();
+
                 SceneManager.LoadScene(index);
         }
     }

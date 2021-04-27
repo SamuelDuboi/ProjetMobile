@@ -428,6 +428,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &122705302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,6 +475,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 1
 --- !u!1001 &129652168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1290,6 +1293,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1001 &223629924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1458,6 +1463,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &251854301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1495,6 +1501,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &263587151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,6 +1731,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &289369805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1768,6 +1777,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &319258779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2390,6 +2401,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &500078075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2736,6 +2749,7 @@ MonoBehaviour:
   cuurrentCamDirection: 0
   cantDoZoom: 0
   isZoomed: 0
+  zoomObject: {fileID: 0}
   returnButton: {fileID: 992218369}
 --- !u!4 &539829919
 Transform:
@@ -3111,6 +3125,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: Manivelle2
+  doOnce: 0
 --- !u!114 &596974790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3158,6 +3173,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!95 &596974791
 Animator:
   serializedVersion: 3
@@ -3421,6 +3438,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &639408236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3458,6 +3476,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &657321327
 GameObject:
   m_ObjectHideFlags: 0
@@ -3744,6 +3764,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &779055474
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,6 +3858,72 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &779524093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 779524095}
+  - component: {fileID: 779524094}
+  m_Layer: 0
+  m_Name: TipsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &779524094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779524093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20349c0086875f74690d6899a66f09ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  urls:
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
+  text:
+  - "Emp\xEAchez la vapeur de s'\xE9chapper du tuyau en <b> tournant la manivelle.
+    </b>"
+  - "<b> Tournez la seconde manivelle </b> pour cr\xE9er une pression si forte qu\u2019elle
+    <b> rejette une plaque en m\xE9tal au sol. </b>"
+  - "<b> R\xE9cup\xE9rez la plaque de m\xE9tal </b> et <b> placez-la au-dessus d\u2019un
+    conteneur </b> pour emp\xEAcher l\u2019eau de couler lorsque vous retournerez
+    la salle."
+  - "<b> Lisez le code \xE0 4 chiffres </b> \xE0 l'int\xE9rieur du conteneur vide.
+    Ce code pourra \xEAtre <b> utilis\xE9 sur la porte </b> afin de sortir de la
+    salle."
+  images:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  textRenderer: {fileID: 1269951521}
+  image: {fileID: 1269951520}
+--- !u!4 &779524095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779524093}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1485865435}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &786140457 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8454575107195006960, guid: dad55dcd324acad4fa7865fe37456c77,
@@ -5234,6 +5322,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
   water: {fileID: 33089553}
 --- !u!114 &1052277646
 MonoBehaviour:
@@ -5290,6 +5379,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 3
 --- !u!4 &1066564673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8454575107195006960, guid: dad55dcd324acad4fa7865fe37456c77,
@@ -5506,6 +5597,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &1136948693
 GameObject:
   m_ObjectHideFlags: 0
@@ -5903,6 +5996,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: Manivelle
+  doOnce: 0
 --- !u!114 &1179682648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5949,6 +6043,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!95 &1179682649
 Animator:
   serializedVersion: 3
@@ -6315,6 +6411,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1001 &1269951519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6457,6 +6555,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[9].m_MethodName
       value: ReloadScene
       objectReference: {fileID: 0}
+    - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 779524094}
+    - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: DisplayText
+      objectReference: {fileID: 0}
     - target: {fileID: 2543635523916452003, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6467,8 +6575,42 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnZoomOut
       objectReference: {fileID: 0}
+    - target: {fileID: 5204497880621563306, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 779524094}
+    - target: {fileID: 5204497880621563306, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayUrl
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d8d9c23e639d74fa315c4cf915ce40, type: 3}
+--- !u!114 &1269951520 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7295998212481237013, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+    type: 3}
+  m_PrefabInstance: {fileID: 1269951519}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1269951521 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1132802094484389545, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+    type: 3}
+  m_PrefabInstance: {fileID: 1269951519}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1287373840
 GameObject:
   m_ObjectHideFlags: 0
@@ -12059,6 +12201,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &1396785564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12105,6 +12248,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 1
+  indexOfTip: 2
 --- !u!1 &1398891886
 GameObject:
   m_ObjectHideFlags: 0
@@ -12200,6 +12345,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: Manivelle2
+  doOnce: 0
 --- !u!114 &1405258502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12238,6 +12384,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &1453434751
 GameObject:
   m_ObjectHideFlags: 0
@@ -12444,6 +12592,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &1484569584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12490,6 +12639,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &1485865434
 GameObject:
   m_ObjectHideFlags: 0
@@ -12524,6 +12675,7 @@ Transform:
   - {fileID: 358192591}
   - {fileID: 1384466833}
   - {fileID: 2015251667}
+  - {fileID: 779524095}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12906,6 +13058,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1001 &1669040692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13225,6 +13379,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &1820661472
 GameObject:
   m_ObjectHideFlags: 0
@@ -13776,6 +13932,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!114 &2024775219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13813,6 +13970,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!1 &2029270165
 GameObject:
   m_ObjectHideFlags: 0
@@ -15513,6 +15672,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
+  activateTips: 0
+  indexOfTip: 0
 --- !u!4 &4488210483138916101
 Transform:
   m_ObjectHideFlags: 0
@@ -15564,6 +15725,7 @@ MonoBehaviour:
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
+  doOnce: 0
 --- !u!33 &4488210484559742612
 MeshFilter:
   m_ObjectHideFlags: 0
