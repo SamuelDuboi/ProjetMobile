@@ -1,49 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
+public class Chest : MonoBehaviour
 {
 
     public Transform childTransform;
     private int index;
-    private int initialIndex;
     private float initialPos;
     private float positionMovement;
-    private float sensibility;
-    private float previusXPos;
-    private float currentEventDataX;
+
 
     private int inedxInArray;
     private ChestManager chestManager;
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (Input.touchCount > 0)
-        {
-            currentEventDataX = eventData.delta.x;
-            childTransform.position = new Vector3(childTransform.position.x+ eventData.delta.x*sensibility, childTransform.position.y, childTransform.position.z);
-            if( Mathf.Abs(childTransform.position.x - initialPos )> positionMovement)
-            {
-                childTransform.position = new Vector3(initialPos, childTransform.position.y);
-                index = initialIndex;
-            }
-            if(childTransform.position.x>= initialPos + (1 + Mathf.Abs(index - initialIndex)) *positionMovement / 10)
-            {
-                previusXPos = initialPos + ( 1 +Mathf.Abs(index - initialIndex)) * positionMovement / 10;                
-                    index--;
-                    if (index == -1)
-                        index = 9;
-                
-            }
-            else if (childTransform.position.x<= initialPos- (1 + Mathf.Abs(index - initialIndex)) * positionMovement / 10)
-            {
-                previusXPos = initialPos - (1 + Mathf.Abs(index - initialIndex)) * positionMovement / 10;
-                index++;
-                if (index == 10)
-                    index = 0;
-
-            }
-        }
-    }
+ 
 
 
     public void Init(int _index, float _sensibility, int indexInArray, ChestManager chestManager)
@@ -51,51 +20,30 @@ public class Chest : MonoBehaviour, IDragHandler, IEndDragHandler
         this.chestManager = chestManager;
         inedxInArray = indexInArray;
         index = _index;
-        sensibility = _sensibility;
         var rect = childTransform as RectTransform;
         positionMovement = rect.sizeDelta.x / 3 * Screen.width/1080;
-        childTransform.position = new Vector3(childTransform.position.x - index * positionMovement / 10, childTransform.position.y, childTransform.position.z);
         initialPos = childTransform.position.x;
-        previusXPos = initialPos;
-        initialIndex = index;
+        childTransform.position = new Vector3(childTransform.position.x - index * positionMovement / 10, childTransform.position.y, childTransform.position.z);
     }
 
 
-    public void OnEndDrag(PointerEventData eventData)
+  
+
+
+    public void MoveUp()
     {
-        if (currentEventDataX < 0)
-        {
-            if (Mathf.Abs(childTransform.position.x) > Mathf.Abs(previusXPos) - positionMovement / 20)
-            {
-                childTransform.position = new Vector2(previusXPos, childTransform.position.y);
-            }
-            else
-            {
-                index++;
-                childTransform.position = new Vector2(previusXPos - positionMovement / 10, childTransform.position.y);
-                previusXPos = childTransform.position.x;
-                if (index == 10)
-                    index = 0;
-            }
-        }
-        else
-        {
-            if (Mathf.Abs(childTransform.position.x) < Mathf.Abs(previusXPos) + positionMovement / 20)
-            {
-                childTransform.position = new Vector2(previusXPos, childTransform.position.y);
-            }
-            else
-            {
-                index--;
-                childTransform.position = new Vector2(previusXPos + positionMovement / 10, childTransform.position.y);
-                previusXPos = childTransform.position.x;
-                if (index == -1)
-                    index = 9;
-
-            }
-
-        }
+        index++;
+        if (index == 10)
+            index = 0;
+        childTransform.position = new Vector3(initialPos - index * positionMovement / 10, childTransform.position.y, childTransform.position.z);
         chestManager.TryValidate(index, inedxInArray);
-      
+    }
+    public void MoveDown()
+    {
+        index--;
+        if (index == -1)
+            index = 9;
+        childTransform.position = new Vector3(initialPos - index * positionMovement / 10, childTransform.position.y, childTransform.position.z);
+        chestManager.TryValidate(index, inedxInArray);
     }
 }

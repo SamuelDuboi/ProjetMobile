@@ -140,11 +140,12 @@ public class SaveManager : MonoBehaviour
             }
             return;
         }
+        listChap1[0].SetActive(true);
         for (int i = 1; i < listChap1.Length; i++)
         {
-            if(i != chapter1Number - 1)
+            if(i < chapter1Number - 1)
             {
-                listChap1[i].SetActive(false); ;
+                listChap1[i].SetActive(true); ;
             }
         }
     }
@@ -159,11 +160,12 @@ public class SaveManager : MonoBehaviour
             }
             return;
         }
+        listChap2[0].SetActive(true);
         for (int i = 1; i < listChap2.Length; i++)
         {
-            if (i != chapter2Number -5)
+            if (i < chapter2Number -5)
             {
-                listChap2[i].SetActive(false);
+                listChap2[i].SetActive(true);
             }
         }
     }
