@@ -133,9 +133,9 @@ public class SaveManager : MonoBehaviour
         LoadByXML();
         if (debug)
         {
-            for (int i = 0; i < listChap1.Length - 1; i++)
+            for (int i = 0; i < listChap1.Length; i++)
             {
-                listChap1[i].SetActive(false);
+                listChap1[i].SetActive(true);
                 
             }
             return;
@@ -154,9 +154,9 @@ public class SaveManager : MonoBehaviour
         LoadByXML();
         if (debug)
         {
-            for (int i = 0; i < listChap2.Length-1; i++)
+            for (int i = 0; i < listChap2.Length; i++)
             {
-                listChap2[i].SetActive(false);
+                listChap2[i].SetActive(true);
             }
             return;
         }

@@ -50,7 +50,9 @@ public class ChestManager : MonoBehaviour
              GetComponentInParent<ObjectHandler>().HitBoxZoom.enabled= true;
         }
         if (save)
-            SaveManager.instance.SaveChapter2();
+            if (SaveManager.instance != null)
+                SaveManager.instance.SaveChapter2();
+            else Debug.LogError("No instance of save Manager");
       /*  if (destroyHitBoxParent)
         {
             GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject.SetActive(true);
