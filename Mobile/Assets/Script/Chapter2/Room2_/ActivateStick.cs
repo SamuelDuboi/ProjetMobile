@@ -5,6 +5,8 @@ using UnityEngine;
 public class ActivateStick : ObjectHandler
 {
     public WaterStick waterStick;
+    public bool isGreen;
+   
     public IEnumerator ActivateWaterStick()
     {
         interactifElement.onlyZoom = true;
@@ -14,4 +16,7 @@ public class ActivateStick : ObjectHandler
         UnZoom();
         HitBoxZoom.enabled = false;
     }
+
+
+
 }

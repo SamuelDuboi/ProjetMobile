@@ -162,7 +162,7 @@ public class FingerTipsManager : MonoBehaviour
         }
         EventManager.instance.ZoomOut -= ZoomOutDoor;
     }
-    private void MoveCam(Cams cams, float orthogrphicSize)
+    private void MoveCam(Cams cams, float orthogrphicSize, GameObject currentObject)
     {
         if (cams != null && tutoDeviceManager.phase == 4)
         {

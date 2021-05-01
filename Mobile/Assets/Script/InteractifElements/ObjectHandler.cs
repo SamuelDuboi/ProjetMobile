@@ -60,14 +60,28 @@ public class ObjectHandler : MonoBehaviour
         }
     }
 
-    private void MoveCam(Cams cams, float orthogrphicSize)
+    private void MoveCam(Cams cams, float orthogrphicSize,GameObject currentObejct)
     {
 
-        if (cams != null)
+        if (cams != null  )
         {
-            if(HitBoxZoom != null && HitBoxZoom.gameObject != null)
-            HitBoxZoom.gameObject.layer = 9;
+            if(currentObejct == gameObject)
+            {
+                if(HitBoxZoom != null && HitBoxZoom.gameObject != null)
+                    HitBoxZoom.gameObject.layer = 9;
+            }
+            else
+            {
+                if (interactifElement.zoom)
+                {
+                    HitBoxZoom.gameObject.layer = 8;
+                    isZoomed = false;
+                    if (interactifElement.onlyZoom)
+                        HitBoxZoom.enabled = true;
+                }
+            }
         }
+
 
     }
 
@@ -120,8 +134,7 @@ public class ObjectHandler : MonoBehaviour
                 interactifElement.onlyZoom = false;
                 EventManager.instance.OnDestroyTrial();
                 HitBoxZoom.enabled = true;
-                interactifElement.spawnNewTrial = true;
-                Destroy(trialInstantiate);
+                interactifElement.spawnNewTrial = true;                
             }
            
         }

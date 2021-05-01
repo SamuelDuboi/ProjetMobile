@@ -2129,7 +2129,8 @@ MonoBehaviour:
   uspideDown: 0
   cuurrentCamDirection: 0
   cantDoZoom: 0
-  isZoomed: 0
+  zoomedOnce: 0
+  hisZooming: 0
   zoomObject: {fileID: 0}
   returnButton: {fileID: 2543635524534309044}
 --- !u!4 &539829919
@@ -16052,14 +16053,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9026f22dd4c1a314b8dfd31a1647bb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionAnimator: {fileID: 0}
+  interactionAnimator: {fileID: 6710687460843037084}
   isLInkedToWall: 0
   wallLinked: {fileID: 0}
-  zoom: 0
+  zoom: 1
   onlyZoom: 0
   UpsideDown: 0
-  cams: []
-  orthoGraphicSize: 3
+  cams:
+  - camDirection: 0
+    cam: {fileID: 6020420135669244958}
+    current: {fileID: 0}
+    upsideDown: 0
+  - camDirection: 3
+    cam: {fileID: 6020420135669244958}
+    current: {fileID: 0}
+    upsideDown: 0
+  orthoGraphicSize: 1
   hasLinkGameObject: 0
   ObjectoOpen: []
   spawnNewTrial: 1
@@ -16894,7 +16903,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6020420135669244958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.251, y: 0, z: 0.401}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6710687460843037077}

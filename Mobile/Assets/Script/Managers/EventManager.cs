@@ -9,7 +9,8 @@ public class EventManager : MonoBehaviour
      [HideInInspector] public bool uspideDown;
      [HideInInspector] public CamDirection cuurrentCamDirection;
     [HideInInspector] public bool cantDoZoom;
-    [HideInInspector] public bool isZoomed;
+    [HideInInspector] public bool zoomedOnce;
+    [HideInInspector] public bool hisZooming;
     [HideInInspector] public GameObject zoomObject;
 
     public GameObject returnButton;
@@ -29,7 +30,7 @@ public class EventManager : MonoBehaviour
     public event Action SwipeLeft;
     public event Action SwipeRight;
 
-    public event Action<Cams,  float> ZoomIn;
+    public event Action<Cams,  float, GameObject> ZoomIn;
     public event Action  ZoomOut;
     public event Action  InstantiateTrial;
     public event Action  DestroyTrial;
@@ -45,7 +46,7 @@ public class EventManager : MonoBehaviour
     #region Invoke
     public void OnSwipeUp(bool up)
     {
-        if (!cantDoZoom && !isZoomed)
+        if (!cantDoZoom && !hisZooming)
         {
             uspideDown = !uspideDown;
             cantDoZoom = true;
@@ -55,7 +56,7 @@ public class EventManager : MonoBehaviour
     }
     public void OnSwipeLeft()
     {
-        if (!cantDoZoom && !isZoomed)
+        if (!cantDoZoom && !hisZooming)
         {
             cantDoZoom = true;
 
@@ -64,20 +65,20 @@ public class EventManager : MonoBehaviour
     }
     public void OnSwipeRight()
     {
-        if (!cantDoZoom && !isZoomed)
+        if (!cantDoZoom && !hisZooming)
         {
             cantDoZoom = true;
 
             SwipeRight.Invoke();
         }
     }
-    public void OnZoomIn( Cams cam, float orthographicSize)
+    public void OnZoomIn(Cams cam, float orthographicSize, GameObject current)
     {
-        if (!cantDoZoom && !isZoomed)
+        if (!cantDoZoom )
         {
             cantDoZoom = true;
             returnButton.SetActive(true);
-            ZoomIn.Invoke( cam, orthographicSize);
+            ZoomIn.Invoke( cam, orthographicSize, current);
         }
     }
 

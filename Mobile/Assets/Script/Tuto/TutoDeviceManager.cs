@@ -103,11 +103,11 @@ public class TutoDeviceManager : MonoBehaviour
                         {
                             Cams cams = null;
 
-                            float orthographicSize = hit.collider.GetComponentInParent<ObjectHandler>().interactifElement.orthoGraphicSize;
-                            if (!EventManager.instance.isZoomed)
-                            {
-                                hit.collider.GetComponentInParent<ObjectHandler>().ChoseToZoom(out cams);
-                            }
+                            var _objecthandler = hit.collider.GetComponentInParent<ObjectHandler>();
+                            float orthographicSize = _objecthandler.interactifElement.orthoGraphicSize;
+                            
+                                _objecthandler.ChoseToZoom(out cams);
+                            
                             if (cams != null)
                             {
                                 if(phase == 2 )
@@ -115,7 +115,7 @@ public class TutoDeviceManager : MonoBehaviour
                                     if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Poignée")
                                     {
                                         stopAnim = true;
-                                        EventManager.instance.OnZoomIn(cams, orthographicSize);
+                                        EventManager.instance.OnZoomIn(cams, orthographicSize,_objecthandler.gameObject);
                                         phase++;
                                     }
 
@@ -127,17 +127,17 @@ public class TutoDeviceManager : MonoBehaviour
                                     {
                                         FingerTipsManager.instance.zoomBack = true;
                                         stopAnim = false;
-                                        EventManager.instance.OnZoomIn(cams, orthographicSize);
+                                        EventManager.instance.OnZoomIn(cams, orthographicSize,_objecthandler.gameObject);
                                     }
                                     else if  (hit.collider.GetComponentInParent<ObjectHandler>().name == "Valise" && phase == 9)
                                     {
                                         stopAnim = false;
-                                        EventManager.instance.OnZoomIn(cams, orthographicSize);
+                                        EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
                                     }
                                     else if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Commode" && phase == 11)
                                     {
                                         stopAnim = false;
-                                        EventManager.instance.OnZoomIn(cams, orthographicSize);
+                                        EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
                                     }
                                     else if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Poignée" )
                                     {
@@ -147,11 +147,11 @@ public class TutoDeviceManager : MonoBehaviour
                                         if(_item!= null && _item != null)
                                         {
                                             stopAnim = false;
-                                            EventManager.instance.OnZoomIn(cams, orthographicSize);
+                                            EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
                                         }
                                     }
                                     else if(phase>6 && phase != 9 && phase !=12)
-                                        EventManager.instance.OnZoomIn(cams, orthographicSize);
+                                        EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
                                 }
                             }
                             else

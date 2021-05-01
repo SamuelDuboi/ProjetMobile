@@ -20,6 +20,7 @@ public class CamBehavior : MonoBehaviour
 
     public CinemachineVirtualCamera vcam1;
     public CinemachineVirtualCamera vcam2;
+    public CinemachineVirtualCamera vcam3;
 
     private void Start()
     {
@@ -41,10 +42,10 @@ public class CamBehavior : MonoBehaviour
 
         cam.orthographicSize = verticalFoV;
     }
-    private void MoveCam(Cams cams, float orthogrphicSize)
+    private void MoveCam(Cams cams, float orthogrphicSize, GameObject currentObject)
     {
 
-        if (!cantRotate && cams != null && !EventManager.instance.isZoomed)
+        if (!cantRotate && cams != null )
         {           
             StartCoroutine( ZoomLunch(cams, orthogrphicSize));
         }
@@ -53,7 +54,7 @@ public class CamBehavior : MonoBehaviour
     }
     private void UnZoom()
     {
-        if (EventManager.instance.isZoomed)
+        if (EventManager.instance.hisZooming)
         {
             StartCoroutine(Unzoom());
         }
@@ -64,33 +65,64 @@ public class CamBehavior : MonoBehaviour
     private IEnumerator Unzoom()
     {
         vcam2.Priority = 0;
+        vcam3.Priority = 0;
         vcam1.Priority = 1;
         yield return new WaitForSeconds(1.0f);
         EventManager.instance.cantDoZoom = false;
-        EventManager.instance.isZoomed= false;
+        EventManager.instance.zoomedOnce= false;
+        EventManager.instance.hisZooming= false;
     }
 
     private IEnumerator ZoomLunch(Cams cams, float orthogrphicSize)
     {
-        vcam2.transform.position = cams.cam.transform.position;
-        vcam2.m_Lens.OrthographicSize = orthogrphicSize;
-        vcam2.LookAt = cams.current.transform;
-        if (cams.upsideDown)
+        if (!EventManager.instance.zoomedOnce)
         {
-            vcam2.transform.rotation = cams.cam.transform.rotation;
-            vcam2.LookAt = null;
+            vcam2.transform.position = cams.cam.transform.position;
+            vcam2.m_Lens.OrthographicSize = orthogrphicSize;
+            vcam2.LookAt = cams.current.transform;
+            if (cams.upsideDown)
+            {
+                vcam2.transform.rotation = cams.cam.transform.rotation;
+                vcam2.LookAt = null;
+            }
+            else
+            {
+                vcam2.LookAt = cams.current.transform;
+            }
+
+            vcam2.Priority = 1;
+            vcam1.Priority = 0;
+            vcam3.Priority = 0;
+            EventManager.instance.zoomedOnce = !EventManager.instance.zoomedOnce;
+            EventManager.instance.hisZooming = true;
+            yield return new WaitForSeconds(1.0f);
+            EventManager.instance.cantDoZoom = false;
         }
         else
         {
-            vcam2.LookAt = cams.current.transform;
-        }
+            vcam3.transform.position = cams.cam.transform.position;
+            vcam3.m_Lens.OrthographicSize = orthogrphicSize;
+            vcam3.LookAt = cams.current.transform;
+            if (cams.upsideDown)
+            {
+                vcam3.transform.rotation = cams.cam.transform.rotation;
+                vcam3.LookAt = null;
+            }
+            else
+            {
+                vcam3.LookAt = cams.current.transform;
+            }
 
-        vcam2.Priority = 1;
-        vcam1.Priority = 0;
-        EventManager.instance.isZoomed = !EventManager.instance.isZoomed;
-        yield return new WaitForSeconds(1.0f);
+            vcam3.Priority = 1;
+            vcam1.Priority = 0;
+            vcam2.Priority = 0;
+            EventManager.instance.zoomedOnce = !EventManager.instance.zoomedOnce;
+            EventManager.instance.hisZooming = true;
+
+            yield return new WaitForSeconds(1.0f);
+            EventManager.instance.cantDoZoom = false;
+        }
         
-        EventManager.instance.cantDoZoom = false;
 
     }
 
