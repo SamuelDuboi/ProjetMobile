@@ -10,6 +10,7 @@ public class LightManager : MonoBehaviour
     public int maxReflectionCount = 5;
     private LineRenderer lineRenderer;
     private float timer;
+    public bool ignoreZoom;
 
     // Start is called before the first frame update
     void Start()
@@ -85,8 +86,10 @@ public class LightManager : MonoBehaviour
 
         Ray ray = new Ray(position, direction);
         RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, maxStepDistance))
+        LayerMask layer = ~ (1 << 8);
+        if (!ignoreZoom)
+            layer = ~(1<<2);
+        if (Physics.Raycast(ray, out hit, maxStepDistance,layer))
         {
             if (hit.collider.gameObject.tag == "Miror")
             {

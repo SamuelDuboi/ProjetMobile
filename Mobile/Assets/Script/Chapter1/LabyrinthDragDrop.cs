@@ -24,6 +24,8 @@ public class LabyrinthDragDrop : MonoBehaviour, IDragHandler
             wallRect[i] = walls[i].transform as RectTransform;
         }
         endRect = end.transform as RectTransform;
+
+        EventManager.instance.ZoomOut += Unzoom;
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -46,6 +48,26 @@ public class LabyrinthDragDrop : MonoBehaviour, IDragHandler
             Destroy(canvas);
             return;
         }
+    }
+
+    private void Unzoom()
+    {
+        var parent = GetComponentInParent<ObjectHandler>();
+        if (parent)
+        {
+            parent.interactifElement.onlyZoom = false;
+            /*if (destroyHitBoxParent)
+            {
+                GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject.SetActive(true);
+
+            }*/
+            parent.HitBoxZoom.enabled = true;
+            parent.interactifElement.spawnNewTrial = true;
+
+        }
+        EventManager.instance.ZoomOut -= Unzoom;
+        EventManager.instance.OnDestroyTrial();
+        Destroy(parent.trialInstantiate);
     }
 
 }
