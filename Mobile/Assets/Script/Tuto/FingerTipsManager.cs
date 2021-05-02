@@ -118,7 +118,7 @@ public class FingerTipsManager : MonoBehaviour
         tutoDeviceManager.stopAnim = false;
 
         textMeshPro.gameObject.SetActive(true);
-        textMeshPro.text = "La porte de possède pas de poignée, il va falloir la trouver";
+        textMeshPro.text = "La porte ne possède pas de poignée, il va falloir la trouver";
         returnFinger.gameObject.SetActive(true);
 
         while (!tutoDeviceManager.stopAnim)
@@ -147,13 +147,13 @@ public class FingerTipsManager : MonoBehaviour
         {
             canSwipDown = true;
         }
-        else if (tutoDeviceManager.phase == 10)
+        else if (tutoDeviceManager.phase == 12)
         {
             tutoDeviceManager.phase++;
             textMeshPro.gameObject.SetActive(true);
             textMeshPro.text = "Il faut maintenant retrouver la deuxième partie de la poignée";
         }
-        else if (tutoDeviceManager.phase == 13)
+        else if (tutoDeviceManager.phase == 14)
         {
 
             tutoDeviceManager.phase++;

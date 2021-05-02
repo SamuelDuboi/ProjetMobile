@@ -48,14 +48,14 @@ public class TutoDeviceManager : MonoBehaviour
                                     EventManager.instance.OnSwipeLeft();
 
                                 }
-                                else if (phase > 3 && phase != 8 )
+                                else if (phase > 3  )
                                     EventManager.instance.OnSwipeLeft();
                                 return;
                             }
                             else if (direction.x < -deadZone)
                             {
 
-                                if (phase > 3 && phase != 8 )
+                                if (phase > 3  )
                                     EventManager.instance.OnSwipeRight();
                                 return;
                             }
@@ -64,7 +64,7 @@ public class TutoDeviceManager : MonoBehaviour
                     }
                     else
                     {
-                        if (phase ==6 || phase>7 && phase != 9)
+                        if (phase ==6 || phase>7 )
                         {
                             if (direction.y > deadZone)
                             {
@@ -134,7 +134,7 @@ public class TutoDeviceManager : MonoBehaviour
                                         stopAnim = false;
                                         EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
                                     }
-                                    else if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Commode" && phase == 11)
+                                    else if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Commode" && phase == 12)
                                     {
                                         stopAnim = false;
                                         EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
