@@ -36,7 +36,7 @@ public class FingerTipsManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         textMeshPro.gameObject.SetActive(false);
         tutoDeviceManager.phase++;
-        MoveLeftRight("Balayez l’écran de droite à gauche pour faire pivoter la salle");
+        MoveLeftRight("Balayez l’écran de gauche à droite pour faire pivoter la salle.");
     }
 
 
@@ -61,7 +61,7 @@ public class FingerTipsManager : MonoBehaviour
             {
                 leftRightFinger[0].transform.position = initialPos;
             }
-            if(timer>15f && !doOnce)
+            if(timer>5f && !doOnce)
             {
                 textMeshPro.gameObject.SetActive(true);
                 textMeshPro.text = text;
@@ -76,7 +76,7 @@ public class FingerTipsManager : MonoBehaviour
         yield return new  WaitUntil(() => !EventManager.instance.cantDoZoom);
         if(tutoDeviceManager.phase == 2)
         {
-           StartCoroutine( DoorPopup("Je peux sortir par cette porte"));
+           StartCoroutine( DoorPopup("Il faut sortir par cette porte."));
         }
     }
 
@@ -93,15 +93,14 @@ public class FingerTipsManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.3f);
             timer += 0.3f;
-            doorFinger.color = Color.red;
             yield return new WaitForSeconds(0.3f);
             timer += 0.3f;
-            doorFinger.color = Color.white;
-            if (timer > 15f && !doOnce)
+         
+            if (timer > 5f && !doOnce)
             {
                 textMeshPro.gameObject.SetActive(true);
                 textMeshPro.text += "\n\n\n" +
-                    "Touchez la porte pour zoomer";
+                    "Touchez la porte pour zoomer.";
                 doOnce = true;
             }
         }
@@ -118,22 +117,19 @@ public class FingerTipsManager : MonoBehaviour
         tutoDeviceManager.stopAnim = false;
 
         textMeshPro.gameObject.SetActive(true);
-        textMeshPro.text = "La porte ne possède pas de poignée, il va falloir la trouver";
+        textMeshPro.text = "La porte ne possède pas de poignée, il va falloir la trouver.";
         returnFinger.gameObject.SetActive(true);
 
         while (!tutoDeviceManager.stopAnim)
         {
             yield return new WaitForSeconds(0.3f);
-            returnFinger.color = Color.red;
-            yield return new WaitForSeconds(0.3f);
-            returnFinger.color = Color.white;
         }
         returnFinger.gameObject.SetActive(false);
         textMeshPro.gameObject.SetActive(false);
         yield return new WaitUntil(() => !EventManager.instance.cantDoZoom);
         textMeshPro.gameObject.SetActive(true);
         tutoDeviceManager.stopAnim = false;
-        textMeshPro.text = "Quelque chose se trouve sûrement dans la valise posée sur le lit";
+        textMeshPro.text = "Quelque chose se trouve sûrement dans la valise posée sur le lit.";
 
     }
 
@@ -151,14 +147,14 @@ public class FingerTipsManager : MonoBehaviour
         {
             tutoDeviceManager.phase++;
             textMeshPro.gameObject.SetActive(true);
-            textMeshPro.text = "Il faut maintenant retrouver la deuxième partie de la poignée";
+            textMeshPro.text = "Il faut maintenant retrouver la deuxième partie de la poignée.";
         }
         else if (tutoDeviceManager.phase == 14)
         {
 
             tutoDeviceManager.phase++;
             textMeshPro.gameObject.SetActive(true);
-            textMeshPro.text = "Je peux maintenant ouvrir la porte pour me sortir d’ici";
+            textMeshPro.text = "Vous pouvez maintenant ouvrir la porte pour sortir d’ici.";
         }
         EventManager.instance.ZoomOut -= ZoomOutDoor;
     }
@@ -182,9 +178,6 @@ public class FingerTipsManager : MonoBehaviour
         while (!tutoDeviceManager.stopAnim)
         {
             yield return new WaitForSeconds(0.3f);
-            chestFinger.color = Color.red;
-            yield return new WaitForSeconds(0.3f);
-            chestFinger.color = Color.white;
         }
         chestFinger.gameObject.SetActive(false);
     }
@@ -196,7 +189,7 @@ public class FingerTipsManager : MonoBehaviour
             EventManager.instance.ZoomOut += ZoomOutDoor;
             tutoDeviceManager.stopAnim = true;
             textMeshPro.gameObject.SetActive(true);
-            textMeshPro.text = "Le code doit se trouver dans la pièce";
+            textMeshPro.text = "Le code doit se trouver dans la pièce.";
             zoomBack = false;
             EventManager.instance.InteractObject -= OpenChest;
         }
@@ -219,10 +212,10 @@ public class FingerTipsManager : MonoBehaviour
             {
                 upDownFinger[0].transform.position = initialPos;
             }
-            if (timer > 15f && !doOnce)
+            if (timer > 5f && !doOnce)
             {
                 textMeshPro.gameObject.SetActive(true);
-                textMeshPro.text = "Balayez l'écran de haut en bas pour retourner la salle";
+                textMeshPro.text = "Balayez l'écran de haut en bas pour retourner la salle.";
                 doOnce = true;
             }
         }
@@ -250,7 +243,7 @@ public class FingerTipsManager : MonoBehaviour
     IEnumerator SwipDown()
     {
         textMeshPro.gameObject.SetActive(true);
-        textMeshPro.text = "Des chiffres sont écrits sur les murs mais semble en manquer deux";
+        textMeshPro.text = "Des chiffres sont écrits sur les murs mais il semble en manquer deux.";
         yield return new WaitUntil(() => canSwipDown);
         tutoDeviceManager.stopAnim = false;
         var initialPos = upDownFinger[1].transform.position;
@@ -267,10 +260,10 @@ public class FingerTipsManager : MonoBehaviour
             {
                 upDownFinger[1].transform.position = initialPos;
             }
-            if (timer > 15f && !doOnce)
+            if (timer > 5f && !doOnce)
             {
                 textMeshPro.gameObject.SetActive(true);
-                textMeshPro.text = "Balayez l'écran de haut en bas pour retourner la salle";
+                textMeshPro.text = "Balayez l'écran de haut en bas pour retourner la salle.";
                 doOnce = true;
             }
         }
@@ -289,15 +282,12 @@ public class FingerTipsManager : MonoBehaviour
         tutoDeviceManager.stopAnim = false;
         tutoDeviceManager.phase++;
         textMeshPro.gameObject.SetActive(true);
-        textMeshPro.text = "Touchez l’objet pour le récupérer";
+        textMeshPro.text = "Touchez l’objet pour le récupérer.";
         item1Finger.gameObject.SetActive(true);
 
         while (!tutoDeviceManager.stopAnim)
         {
             yield return new WaitForSeconds(0.3f);
-            item1Finger.color = Color.red;
-            yield return new WaitForSeconds(0.3f);
-            item1Finger.color = Color.white;
         }
         item1Finger.gameObject.SetActive(false);
         textMeshPro.gameObject.SetActive(false);
@@ -305,7 +295,7 @@ public class FingerTipsManager : MonoBehaviour
         textMeshPro.gameObject.SetActive(true);
         tutoDeviceManager.stopAnim = false;
         EventManager.instance.ZoomOut += ZoomOutDoor;
-        textMeshPro.text = "L’objet se trouve maintenant dans l’inventaire";
+        textMeshPro.text = "L’objet se trouve maintenant dans l’inventaire.";
     }
 }
 

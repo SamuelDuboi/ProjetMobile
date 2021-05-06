@@ -27,6 +27,7 @@ public class TutoDeviceManager : MonoBehaviour
                 {
                     startPos = touch.position;
                     endPos = touch.position;
+                    
                 }
 
                 if (touch.phase == TouchPhase.Ended)
@@ -70,8 +71,11 @@ public class TutoDeviceManager : MonoBehaviour
                             {
                                 if(phase == 6|| phase== 8)
                                 {
-                                    stopAnim = true;
-                                    phase++;
+                                    if(!EventManager.instance.cantDoZoom && !EventManager.instance.hisZooming)
+                                    {
+                                        stopAnim = true;
+                                        phase++;
+                                    }
                                 }
                                 EventManager.instance.OnSwipeUp(true);
                                 return;
@@ -89,6 +93,9 @@ public class TutoDeviceManager : MonoBehaviour
                         }
 
                     }
+
+
+
                     if (phase > 1)
                     {
                         #region RayCast
@@ -134,12 +141,12 @@ public class TutoDeviceManager : MonoBehaviour
                                         stopAnim = false;
                                         EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
                                     }
-                                    else if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Commode" && phase == 12)
+                                    else if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Commode" && phase == 13)
                                     {
                                         stopAnim = false;
                                         EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
                                     }
-                                    else if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Poignée" )
+                                    else if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Poignée" && phase != 13)
                                     {
                                         int number = 0;
                                         var _item = InventoryManager.Instance.FindObject("Part 2", out number);
@@ -150,7 +157,7 @@ public class TutoDeviceManager : MonoBehaviour
                                             EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
                                         }
                                     }
-                                    else if(phase>6 && phase != 9 && phase !=12)
+                                    else if(phase>6 && phase != 9 && phase != 12 && phase != 13)
                                         EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
                                 }
                             }
