@@ -22,6 +22,7 @@ public class FingerTipsManager : MonoBehaviour
     public float mindistance =10;
     public TutoDeviceManager tutoDeviceManager;
     public bool zoomBack;
+    public bool canStart;
     private void Awake()
     {
         instance = this;
@@ -32,6 +33,7 @@ public class FingerTipsManager : MonoBehaviour
         EventManager.instance.ZoomOut += ZoomOutDoor;
         EventManager.instance.ZoomIn += MoveCam;
         yield return new WaitForSeconds(0.5f);
+        yield return new WaitUntil(() => canStart);
         textMeshPro.gameObject.SetActive(true);
         yield return new WaitForSeconds(5f);
         textMeshPro.gameObject.SetActive(false);

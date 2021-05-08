@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IntroBehavor : MonoBehaviour
 {
+    public FingerTipsManager tipsManager;
 
     public void Quite()
     {
@@ -11,6 +12,7 @@ public class IntroBehavor : MonoBehaviour
     }
     public void PlayeTuto()
     {
+        tipsManager.canStart = true;
         SaveManager.instance.LoadTuto(gameObject);
     }
 
