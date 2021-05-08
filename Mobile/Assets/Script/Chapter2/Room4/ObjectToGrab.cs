@@ -19,13 +19,14 @@ public class ObjectToGrab : ObjectHandler
         if (currentGameObject == HitBoxZoom.gameObject && interactifElement.inventory)
         {
             cpt++;
+            var main = waterSystem.main;
+            main.startSize = new ParticleSystem.MinMaxCurve(cpt*0.5f+0.2f, cpt*0.5f+0.2f);
             interactifElement.interactionAnimator.SetTrigger("Shake");
             if (cpt > 4)
             {
                 interactifElement.interactionAnimator.SetTrigger("Interact");
                 InventoryManager.Instance.AddList(gameObject, interactifElement.nameInventory, interactifElement.inventoryTexture);
                 TheWaterManager.instance.WaterUp();
-                var main = waterSystem.main;
                 var speed = waterSystem.main.startSpeed;
                 main.startSize = new ParticleSystem.MinMaxCurve(2f, 2f);
                 HitBoxZoom.gameObject.SetActive(false);

@@ -14,6 +14,10 @@ public class InventoryManager : Singleton<InventoryManager>
     private void Start()
     {
         initialSprite = inventoryImages[0].sprite;
+        foreach (Image image in inventoryImages)
+        {
+            image.transform.parent.gameObject.SetActive( false);
+        }
     }
     public GameObject FindObject(string name, out int number)
     {
@@ -51,7 +55,11 @@ public class InventoryManager : Singleton<InventoryManager>
             {
                 item.number+= number;
                 if (item.imageIndex != 1000)
+                {
                     inventoryImages[item.imageIndex].GetComponentInChildren<TextMeshProUGUI>().text = item.number.ToString();
+                    if (!inventoryImages[item.imageIndex].transform.parent.gameObject.activeSelf)
+                        inventoryImages[item.imageIndex].transform.parent.gameObject.SetActive(true);
+                }
                 return;
             }
         }
@@ -63,8 +71,11 @@ public class InventoryManager : Singleton<InventoryManager>
             int _index = interactifElementsList.Count - 1;
             interactifElementsList[_index].imageIndex = globalIndex;
             inventoryImages[globalIndex].sprite = image;
-          //  inventoryImages[globalIndex].SetNativeSize();
+            //  inventoryImages[globalIndex].SetNativeSize();
             inventoryImages[globalIndex].GetComponentInChildren<TextMeshProUGUI>().text = interactifElementsList[_index].number.ToString();
+            if (!inventoryImages[globalIndex].transform.parent.gameObject.activeSelf)
+                inventoryImages[globalIndex].transform.parent.gameObject.SetActive(true);
+
             globalIndex++;
         }
     }
@@ -101,6 +112,7 @@ public class InventoryManager : Singleton<InventoryManager>
                // inventoryImages[i].SetNativeSize();
 
                 inventoryImages[i].GetComponentInChildren<TextMeshProUGUI>().text="0";
+                inventoryImages[i].transform.parent.gameObject.SetActive(false); 
             }
             foreach (var item in interactifElementsList)
             {
@@ -109,7 +121,8 @@ public class InventoryManager : Singleton<InventoryManager>
                     item.imageIndex = globalIndex;
                     inventoryImages[globalIndex].GetComponentInChildren<TextMeshProUGUI>().text = item.number.ToString();
                     inventoryImages[globalIndex].sprite= item.image;
-                 //   inventoryImages[globalIndex].SetNativeSize();
+                    inventoryImages[globalIndex].transform.parent.gameObject.SetActive(true);
+                    //   inventoryImages[globalIndex].SetNativeSize();
 
                     globalIndex++;
                 }
