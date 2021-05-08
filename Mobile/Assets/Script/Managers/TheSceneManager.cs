@@ -7,17 +7,17 @@ public class TheSceneManager : MonoBehaviour
 {
     public void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SaveManager.instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LoadScene(int index)
     {
-        SceneManager.LoadScene(index);
+        SaveManager.instance.LoadScene(index);
     }
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene(1);
+        SaveManager.instance.LoadScene(1);
     }
 
     public void Quite()

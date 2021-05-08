@@ -1,6 +1,6 @@
 ﻿
 using UnityEngine;
-
+using System.Collections;
 using System.Xml;
 using UnityEngine.SceneManagement;
 using System.IO;
@@ -16,6 +16,7 @@ public class SaveManager : MonoBehaviour
     public bool debug;
     public GameObject[] chap1Button;
     public GameObject[] chap2Button;
+    public Image FadePanel;
     private void Awake()
     {
         if(instance== null)
@@ -25,10 +26,7 @@ public class SaveManager : MonoBehaviour
         }
         else
         {
-            Destroy(SaveManager.instance);
-            instance = this;
-            DontDestroyOnLoad(instance);
-
+            Destroy(gameObject);
             Debug.LogError("Instance Already existe");
         }
     }
@@ -122,9 +120,9 @@ public class SaveManager : MonoBehaviour
         SaveByXML();
     }
 
-    public void SaveTuto()
+    public void SaveTuto(bool save = true)
     {
-        hasDoneTuto = true;
+        hasDoneTuto = save;
         SaveByXML();
     }
 
@@ -169,13 +167,80 @@ public class SaveManager : MonoBehaviour
             }
         }
     }
-    public void LoadTuto()
+
+    public void LoadScene(int index)
+    {
+        FadePanel.gameObject.SetActive(true);
+        StartCoroutine(LoadSceneCoroutine(index));
+    }
+    public void LoadScene(string name)
+    {
+        FadePanel.gameObject.SetActive(true);
+        StartCoroutine(LoadSceneCoroutine(name));
+    }
+    IEnumerator LoadSceneCoroutine(int index)
+    {
+        float timer = 0;
+        while (timer < 0.5f)
+        {
+            FadePanel.color += new Color(0, 0, 0, 0.02f);
+            timer += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        var scen = SceneManager.LoadSceneAsync(index);
+        scen.completed += LoadScenCompleted;
+
+    }
+    IEnumerator LoadSceneCoroutine(string name)
+    {
+        float timer = 0;
+        FadePanel.color = new Color(0,0,0,0);
+
+        while (timer < 0.5f)
+        {
+            FadePanel.color += new Color(0, 0, 0, 0.02f);
+            timer += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        var scen = SceneManager.LoadSceneAsync(name);
+        scen.completed += LoadScenCompleted;
+
+    }
+    public void LoadTuto(GameObject pannel)
     {
         LoadByXML();
         if (hasDoneTuto)
-            SceneManager.LoadScene("Menu");
+            LoadScene("Menu3D");
         else
-            SceneManager.LoadScene("Tuto");
+        {
+            pannel.SetActive(false);
+            AsyncOperation defaut = default;
+            FadePanel.gameObject.SetActive(true);
+            LoadScenCompleted(defaut);
+        }
+            
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    void LoadScenCompleted( AsyncOperation operation)
+    {
+        StartCoroutine(LoadScenCompledtedCooutine());
+    }
+    IEnumerator LoadScenCompledtedCooutine()
+    {
+        float timer = 0.5f;
+        FadePanel.color = Color.black;
+        while (timer > 0)
+        {
+            FadePanel.color -= new Color(0, 0, 0, 0.02f);
+            timer -= 0.01f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        FadePanel.gameObject.SetActive(false);
     }
 }
 

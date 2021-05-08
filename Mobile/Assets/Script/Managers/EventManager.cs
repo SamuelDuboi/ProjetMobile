@@ -6,8 +6,8 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager instance;
    // [HideInInspector] public bool cantRotate;
-     [HideInInspector] public bool uspideDown;
-     [HideInInspector] public CamDirection cuurrentCamDirection;
+    [HideInInspector] public bool uspideDown;
+    [HideInInspector] public CamDirection cuurrentCamDirection;
     [HideInInspector] public bool cantDoZoom;
     [HideInInspector] public bool zoomedOnce;
     [HideInInspector] public bool hisZooming;
@@ -41,6 +41,7 @@ public class EventManager : MonoBehaviour
     public event Action<GameObject> LightObject;
 
     public event Action<string, float> Popup;
+    public event Action<int> LoadScene;
 #endregion
 
     #region Invoke
@@ -129,5 +130,7 @@ public class EventManager : MonoBehaviour
     {
         Popup.Invoke(text, time);
     }
+
+
     #endregion
 }

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class MenuChapitre : ObjectHandler
 {
@@ -18,8 +15,9 @@ public class MenuChapitre : ObjectHandler
         {
             if (quit)
                 Application.Quit();
-
-                SceneManager.LoadScene(index);
+            if (index == 0)
+                SaveManager.instance.SaveTuto(false);
+            SaveManager.instance.LoadScene(index);
         }
     }
 }

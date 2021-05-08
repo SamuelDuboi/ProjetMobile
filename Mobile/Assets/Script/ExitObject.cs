@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ExitObject : MonoBehaviour
 {
     public GameObject text;
+    public bool isTuto;
     private void Start()
     {
         EventManager.instance.InteractObject += Interact;
@@ -17,9 +15,11 @@ public class ExitObject : MonoBehaviour
         {
             if(SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 9 || SceneManager.GetActiveScene().buildIndex ==0)
             {
-                SceneManager.LoadScene(1);
+                if (isTuto)
+                    SaveManager.instance.SaveTuto();
+                SaveManager.instance.LoadScene(1);
             }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SaveManager.instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
