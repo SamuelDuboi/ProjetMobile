@@ -235,6 +235,13 @@ public class TutoDeviceManager : MonoBehaviour
                                         stopAnim = false;
                                         EventManager.instance.OnInteract(hit.collider.gameObject);
                                     }
+                                    else if (hit.collider.GetComponentInParent<ObjectHandler>().name == "Poignée" )
+                                    {
+                                        if (phase > 13)
+                                        {
+                                            EventManager.instance.OnInteract(hit.collider.gameObject);
+                                        }
+                                    }
                                     else if (phase !=8 && phase>6  && phase != 10 && phase !=9 )
                                     {
                                         EventManager.instance.OnInteract(hit.collider.gameObject);

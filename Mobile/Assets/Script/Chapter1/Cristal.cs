@@ -21,7 +21,7 @@ public class Cristal : ObjectHandler
         { 
             
             currentRotation += (int)multiplicator;
-            transform.Rotate(new Vector3(0, 0, -90));
+            transform.Rotate(new Vector3(0, 0, -90)); 
             if (currentRotation == rotation)
             {
                 isGood = true;
