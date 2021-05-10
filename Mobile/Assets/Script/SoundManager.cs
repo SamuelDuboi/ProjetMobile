@@ -67,6 +67,7 @@ public class SoundManager : MonoBehaviour
 
     public void ClearSound()
     {
+        if(sources != null)
         sources.Clear();
     }
 }

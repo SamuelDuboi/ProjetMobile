@@ -16,6 +16,7 @@ public class InventoryManager : Singleton<InventoryManager>
     public bool Moving;
     private void Start()
     {
+        if(inventoryImages.Length>0)
         initialSprite = inventoryImages[0].sprite;
         foreach (Image image in inventoryImages)
         {
