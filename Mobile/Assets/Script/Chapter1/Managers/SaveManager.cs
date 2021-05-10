@@ -17,6 +17,7 @@ public class SaveManager : MonoBehaviour
     public GameObject[] chap1Button;
     public GameObject[] chap2Button;
     public Image FadePanel;
+    public GameObject loading;
     private void Awake()
     {
         if(instance== null)
@@ -187,6 +188,9 @@ public class SaveManager : MonoBehaviour
             timer += 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
+        loading.SetActive(true);
+        SoundManager.instance.ClearSound();
+
         var scen = SceneManager.LoadSceneAsync(index);
         scen.completed += LoadScenCompleted;
 
@@ -202,6 +206,8 @@ public class SaveManager : MonoBehaviour
             timer += 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
+        loading.SetActive(true);
+        SoundManager.instance.ClearSound();
         var scen = SceneManager.LoadSceneAsync(name);
         scen.completed += LoadScenCompleted;
 
@@ -228,10 +234,13 @@ public class SaveManager : MonoBehaviour
 
     void LoadScenCompleted( AsyncOperation operation)
     {
+        operation.completed -= LoadScenCompleted;
         StartCoroutine(LoadScenCompledtedCooutine());
     }
     IEnumerator LoadScenCompledtedCooutine()
     {
+        yield return new WaitForSeconds(1);
+        loading.SetActive(false);
         float timer = 0.5f;
         FadePanel.color = Color.black;
         while (timer > 0)
@@ -241,6 +250,7 @@ public class SaveManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         FadePanel.gameObject.SetActive(false);
+        
     }
 }
 

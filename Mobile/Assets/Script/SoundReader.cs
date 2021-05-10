@@ -9,14 +9,14 @@ public class SoundReader : MonoBehaviour
     private void Start()
     {
         source = GetComponent<AudioSource>();
-        SoundManager.instance.ApplyAudioClip(name, source);
+        SoundManager.instance.ApplyAudioClip(clipName, source);
         if (applyAudioOnStart)
             source.Play();
     }
 
     public void Play()
     {
-        SoundManager.instance.ApplyAudioClip(name, source);
+        SoundManager.instance.ApplyAudioClip(clipName, source);
         source.Play();
     }
 }

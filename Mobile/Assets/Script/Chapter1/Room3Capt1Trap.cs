@@ -6,5 +6,5 @@ public class Room3Capt1Trap : ObjectHandler
 {
     public GameObject light;
     public GameObject numbers;
-
+    public lightSwitch lightSwitch;
 }
