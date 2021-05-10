@@ -17,6 +17,7 @@ public class Chapt1TrapOpen : StateMachineBehaviour
         if (activeNumber)
             number.enabled =true;
         animator.GetComponentInParent<Room3Capt1Trap>().lightSwitch.ActiveLight();
+        EventManager.instance.cantDoZoom = false;
         EventManager.instance.OnZoomOut();
     }
 
@@ -35,6 +36,7 @@ public class Chapt1TrapOpen : StateMachineBehaviour
             number.enabled = false;
         }
         animator.GetComponentInParent<Room3Capt1Trap>().lightSwitch.UnactiveLight();
+        EventManager.instance.cantDoZoom = false;
         EventManager.instance.OnZoomOut();
 
     }
