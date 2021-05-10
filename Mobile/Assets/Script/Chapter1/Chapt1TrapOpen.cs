@@ -16,6 +16,8 @@ public class Chapt1TrapOpen : StateMachineBehaviour
         number = animator.GetComponentInParent<Room3Capt1Trap>().numbers.GetComponent<MeshRenderer>();
         if (activeNumber)
             number.enabled =true;
+        animator.GetComponentInParent<Room3Capt1Trap>().lightSwitch.ActiveLight();
+        EventManager.instance.OnZoomOut();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -32,17 +34,10 @@ public class Chapt1TrapOpen : StateMachineBehaviour
             activeNumber = true;
             number.enabled = false;
         }
+        animator.GetComponentInParent<Room3Capt1Trap>().lightSwitch.UnactiveLight();
+        EventManager.instance.OnZoomOut();
+
     }
 
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
 
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }
