@@ -234,6 +234,7 @@ public class SaveManager : MonoBehaviour
 
     void LoadScenCompleted( AsyncOperation operation)
     {
+        if(operation!= null)
         operation.completed -= LoadScenCompleted;
         StartCoroutine(LoadScenCompledtedCooutine());
     }
