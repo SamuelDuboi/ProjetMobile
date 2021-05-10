@@ -12,7 +12,7 @@ public class EventManager : MonoBehaviour
     [HideInInspector] public bool zoomedOnce;
     [HideInInspector] public bool hisZooming;
     [HideInInspector] public GameObject zoomObject;
-
+    private bool isActiveSound;
     public GameObject returnButton;
     
     // Start is called before the first frame update
@@ -42,6 +42,7 @@ public class EventManager : MonoBehaviour
 
     public event Action<string, float> Popup;
     public event Action<int> LoadScene;
+    public event Action<bool> ActiveSound;
 #endregion
 
     #region Invoke
@@ -131,6 +132,10 @@ public class EventManager : MonoBehaviour
         Popup.Invoke(text, time);
     }
 
-
+    public void OnActiveSound()
+    {
+        isActiveSound = !isActiveSound;
+        ActiveSound.Invoke(isActiveSound);
+    }
     #endregion
 }

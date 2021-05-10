@@ -280,6 +280,7 @@ public class FingerTipsManager : MonoBehaviour
     {
         yield return new WaitForSeconds(5.0f);
         textMeshPro.text = string.Empty;
+        textMeshPro.gameObject.SetActive(false);
     }
     public void startCollect()
     {
