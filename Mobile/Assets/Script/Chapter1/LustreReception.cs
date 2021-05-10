@@ -31,6 +31,7 @@ public class LustreReception : MonoBehaviour
             }
             bookHandler.enabled = true;
             TipsManager.instance.changeIndex( tipsIndex);
+            EventManager.instance.OnZoomOut();
         }
     }
 }
