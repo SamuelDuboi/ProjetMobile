@@ -12,6 +12,7 @@ public class FingerTipsManager : MonoBehaviour
     public Image returnFinger;
     public Image chestFinger;
     public Image item1Finger;
+    public Image paintingFinger;
     public ObjectHandler chest;
 
     public bool canSwipDown;
@@ -189,9 +190,7 @@ public class FingerTipsManager : MonoBehaviour
         if (currentObject == chest.HitBoxZoom.gameObject && tutoDeviceManager.phase == 5)
         {
             EventManager.instance.ZoomOut += ZoomOutDoor;
-            tutoDeviceManager.stopAnim = true;
-            textMeshPro.gameObject.SetActive(true);
-            textMeshPro.text = "Le code doit se trouver dans la pièce.";
+            tutoDeviceManager.stopAnim = true;           
             zoomBack = false;
             EventManager.instance.InteractObject -= OpenChest;
         }
@@ -199,11 +198,13 @@ public class FingerTipsManager : MonoBehaviour
 
     private IEnumerator SwipeUp()
     {
+
         tutoDeviceManager.stopAnim = false;
         var initialPos = upDownFinger[0].transform.position;
         upDownFinger[0].SetActive(true);
         float timer = 0;
-        textMeshPro.gameObject.SetActive(false);
+        textMeshPro.gameObject.SetActive(true);
+        textMeshPro.text = "Le code doit se trouver dans la pièce."; 
         bool doOnce = false;
         while (!tutoDeviceManager.stopAnim)
         {
@@ -246,6 +247,7 @@ public class FingerTipsManager : MonoBehaviour
     {
         textMeshPro.gameObject.SetActive(true);
         textMeshPro.text = "Des chiffres sont écrits sur les murs mais il semble en manquer deux.";
+        StartCoroutine(TextDesapear());
         yield return new WaitUntil(() => canSwipDown);
         tutoDeviceManager.stopAnim = false;
         var initialPos = upDownFinger[1].transform.position;
@@ -273,6 +275,11 @@ public class FingerTipsManager : MonoBehaviour
         upDownFinger[1].SetActive(false);
         if (doOnce)
             textMeshPro.gameObject.SetActive(false);
+    }
+    IEnumerator TextDesapear()
+    {
+        yield return new WaitForSeconds(5.0f);
+        textMeshPro.text = string.Empty;
     }
     public void startCollect()
     {
