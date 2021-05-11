@@ -234,6 +234,7 @@ public class SaveManager : MonoBehaviour
 
     void LoadScenCompleted( AsyncOperation operation)
     {
+        if(operation!= null)
         operation.completed -= LoadScenCompleted;
         StartCoroutine(LoadScenCompledtedCooutine());
     }
@@ -242,7 +243,7 @@ public class SaveManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         loading.SetActive(false);
         float timer = 0.5f;
-        FadePanel.color = Color.black;
+       // FadePanel.color = Color.black;
         while (timer > 0)
         {
             FadePanel.color -= new Color(0, 0, 0, 0.02f);

@@ -11,8 +11,12 @@ public class InventoryManager : Singleton<InventoryManager>
     public Image[] inventoryImages;
     private int globalIndex;
     private Sprite initialSprite;
+    public Image panel;
+    Vector3 initPos;
+    public bool Moving;
     private void Start()
     {
+        if(inventoryImages.Length>0)
         initialSprite = inventoryImages[0].sprite;
         foreach (Image image in inventoryImages)
         {
@@ -71,15 +75,80 @@ public class InventoryManager : Singleton<InventoryManager>
             int _index = interactifElementsList.Count - 1;
             interactifElementsList[_index].imageIndex = globalIndex;
             inventoryImages[globalIndex].sprite = image;
-              inventoryImages[globalIndex].SetNativeSize();
+             // inventoryImages[globalIndex].SetNativeSize();
             inventoryImages[globalIndex].GetComponentInChildren<TextMeshProUGUI>().text = interactifElementsList[_index].number.ToString();
             if (!inventoryImages[globalIndex].transform.parent.gameObject.activeSelf)
                 inventoryImages[globalIndex].transform.parent.gameObject.SetActive(true);
-
+            StartCoroutine(ItemAnim(globalIndex));
             globalIndex++;
+
+
         }
     }
+    IEnumerator ItemAnim(int index)
+    {
+       
+        inventoryImages[index].gameObject.SetActive(false);
+        inventoryImages[index].transform.GetChild(0).gameObject.SetActive(false);
+        initPos  = inventoryImages[index].transform.position;
+        panel.gameObject.SetActive(true);
+        panel.color = new Color(0, 0, 0, 0);
+        float timer = 0;
+        inventoryImages[index].color = Color.white;
+        while (timer < 0.3f)
+        {
+            inventoryImages[index].transform.position = new Vector3(Screen.width/2, Screen.height/2);
+            panel.color += new Color(0, 0, 0, 0.02f);
+            inventoryImages[index].gameObject.SetActive(true);
 
+            inventoryImages[index].transform.localScale += Vector3.one*0.1f;
+            timer += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        Moving = true;
+        StartCoroutine(WaitToMove());
+    }
+    public void SkipeMove()
+    {
+        if (Moving)
+        {
+            StartCoroutine(MoveBack());
+        }
+        
+    }
+    IEnumerator WaitToMove()
+    {
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(MoveBack());
+    }
+    bool isMovingBack;
+    IEnumerator MoveBack()
+    {
+        if (!isMovingBack)
+        {
+            Moving = false;
+
+            isMovingBack = true;
+            float timer = 0;
+            float step = Vector2.Distance(initPos, inventoryImages[globalIndex - 1].transform.position) / 30;
+            while (timer < 0.3f)
+            {
+
+                inventoryImages[globalIndex - 1].transform.position = Vector3.MoveTowards(inventoryImages[globalIndex - 1].transform.position, initPos, step);
+                panel.color -= new Color(0, 0, 0, 0.02f);
+                inventoryImages[globalIndex - 1].gameObject.SetActive(true);
+
+                inventoryImages[globalIndex - 1].transform.localScale -= Vector3.one * 0.1f;
+                timer += 0.01f;
+                yield return new WaitForSeconds(0.01f);
+            }
+            isMovingBack = false;
+
+            panel.gameObject.SetActive(false);
+            inventoryImages[globalIndex-1].transform.GetChild(0).gameObject.SetActive(true);
+        }
+
+    }
     public void RemoveFromList(string name, int numberToRemove)
     {
         int index = 1000;
@@ -109,7 +178,7 @@ public class InventoryManager : Singleton<InventoryManager>
             for (int i = 0; i < inventoryImages.Length; i++)
             {
                 inventoryImages[i].sprite = initialSprite;
-                inventoryImages[i].SetNativeSize();
+                //inventoryImages[i].SetNativeSize();
 
                 inventoryImages[i].GetComponentInChildren<TextMeshProUGUI>().text="0";
                 inventoryImages[i].transform.parent.gameObject.SetActive(false); 
@@ -122,7 +191,7 @@ public class InventoryManager : Singleton<InventoryManager>
                     inventoryImages[globalIndex].GetComponentInChildren<TextMeshProUGUI>().text = item.number.ToString();
                     inventoryImages[globalIndex].sprite= item.image;
                     inventoryImages[globalIndex].transform.parent.gameObject.SetActive(true);
-                       inventoryImages[globalIndex].SetNativeSize();
+                       //inventoryImages[globalIndex].SetNativeSize();
 
                     globalIndex++;
                 }
