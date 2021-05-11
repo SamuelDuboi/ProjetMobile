@@ -135,7 +135,7 @@ public class InventoryManager : Singleton<InventoryManager>
             {
 
                 inventoryImages[globalIndex - 1].transform.position = Vector3.MoveTowards(inventoryImages[globalIndex - 1].transform.position, initPos, step);
-                panel.color += new Color(0, 0, 0, 0.02f);
+                panel.color -= new Color(0, 0, 0, 0.02f);
                 inventoryImages[globalIndex - 1].gameObject.SetActive(true);
 
                 inventoryImages[globalIndex - 1].transform.localScale -= Vector3.one * 0.1f;
