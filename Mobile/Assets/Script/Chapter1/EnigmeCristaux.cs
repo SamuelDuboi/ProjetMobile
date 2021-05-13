@@ -18,6 +18,7 @@ public class EnigmeCristaux : MonoBehaviour
     public string cristalName;
     public Sprite inventorySprite;
 
+    public SoundReader sound;
     public ObjectHandler exitDoor;
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,7 @@ public class EnigmeCristaux : MonoBehaviour
         }
         if(index != 1000)
         {
+            sound.Play();
             if (cristalActif[index] == true && lockCristaux[index] == false)
             {
                 cristaux[index].GetComponent<MeshRenderer>().enabled = false;

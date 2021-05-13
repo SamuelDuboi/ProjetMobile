@@ -16,6 +16,7 @@ public class ObjectHandler : MonoBehaviour
     public SoundReader soundR;
     public bool ApplyOnInteractIfHAsObject;
     public bool ApplyOnInteract;
+    public bool ApplyOnCollect;
   public  virtual void Start()
     {
         interactifElement = GetComponent<InteractifElement>();
@@ -217,6 +218,8 @@ public class ObjectHandler : MonoBehaviour
     {
         if (HitBoxZoom != null&& currentGameObject == HitBoxZoom.gameObject && interactifElement.inventory)
         {
+            if (ApplyOnCollect)
+                soundR.Play();
             InventoryManager.Instance.AddList(gameObject, interactifElement.nameInventory, interactifElement.inventoryTexture);
             EventManager.instance.CollectObject -= CollectObject;
             if (interactifElement.activateTips && !doOnce)
