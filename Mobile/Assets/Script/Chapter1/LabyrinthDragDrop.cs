@@ -9,10 +9,12 @@ public class LabyrinthDragDrop : MonoBehaviour
     private int deadZone = 100;
     private Vector2 rayDirection;
 
-    RaycastHit2D hit;
     public float distance;
     bool cantMove;
     public GameObject canvas;
+    bool IsMovingX;
+    bool IsMovingY;
+    Vector2 currentDirection;
 
     private void Start()
     {
@@ -68,41 +70,25 @@ public class LabyrinthDragDrop : MonoBehaviour
 
             }
         }
-    }
-    private void RayCast(Vector2 direction)
-    {
-        hit=  Physics2D.Raycast(transform.position, direction);
-        if (hit && !cantMove)
+        if (IsMovingX)
         {
-            if (direction.x != 0)
-                StartCoroutine(MoveX(direction, hit));
-            else
-            {
-                 StartCoroutine(MoveY(direction, hit));
-            }
+            cantMove = true;
+            transform.Translate(currentDirection * 80*Time.deltaTime);
+           
         }
-    }
-    IEnumerator MoveX(Vector2 direction, RaycastHit2D hit)
-    {
-        cantMove = true;
-        while(Mathf.Abs( Mathf.Abs(transform.position.x) - Mathf.Abs( hit.collider.transform.position.x)) > distance)
+        else if (IsMovingY)
         {
-            transform.Translate(direction*15);
-            yield return new WaitForSeconds(0.01f);
-        }
-        cantMove = false;
-    }
-    IEnumerator MoveY(Vector2 direction, RaycastHit2D hit)
-    {
-        cantMove = true;
-
-        while (Mathf.Abs( Mathf.Abs(transform.position.y) - Mathf.Abs(hit.point.y)) > distance)
-        {
+            cantMove = true;
+            transform.Translate(currentDirection * 80 * Time.deltaTime);                 
             
-            transform.Translate(direction*15);
-            yield return new WaitForSeconds(0.01f);
         }
-        if(hit.collider.gameObject.name == "Win")
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        IsMovingX = false;
+        IsMovingY = false;
+        cantMove = false;
+        if (collision.gameObject.name == "Win")
         {
             EventManager.instance.OnDestroyTrial();
             GetComponentInParent<ObjectHandler>().trialInstantiate = null;
@@ -111,7 +97,24 @@ public class LabyrinthDragDrop : MonoBehaviour
             EventManager.instance.ZoomOut -= Unzoom;
             Destroy(canvas);
         }
-        cantMove = false;
+    }
+    private void RayCast(Vector2 direction)
+    {
+        if (!cantMove)
+        {
+            
+                currentDirection = direction;
+                if (direction.x != 0)
+                {
+                    IsMovingX = true;
+                }
+                else
+                {
+                    IsMovingY = true;
+                }
+            
+        }
+        
     }
 
     private void Unzoom()
