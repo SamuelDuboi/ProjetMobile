@@ -6,7 +6,8 @@ public class ObjectHandlerActiveWater : ObjectHandler
 {
   public  TheWaterManager waterManager;
    
-    private bool doOnce;
+    private bool doOnceWater;
+    public bool ActiveSoundOnInteract;
     override public void  Interact(GameObject currentGameObject)
     {
 
@@ -33,10 +34,13 @@ public class ObjectHandlerActiveWater : ObjectHandler
                 trialInstantiate.transform.SetParent(transform);
                 return;
             }
-            if (!doOnce)
+            if (!doOnceWater)
             {
-                doOnce = true;
+                doOnceWater = true;
                 interactifElement.interactionAnimator.SetTrigger("Interact");
+                if (ActiveSoundOnInteract)
+                    soundR.Play();
+
                 if(interactifElement.objectToActive.Count>0)
                 {
                     interactifElement.objectToActive[0].SetActive(true);

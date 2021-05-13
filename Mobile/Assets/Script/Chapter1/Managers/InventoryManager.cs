@@ -16,11 +16,13 @@ public class InventoryManager : Singleton<InventoryManager>
     public bool Moving;
     private void Start()
     {
-        if(inventoryImages.Length>0)
-        initialSprite = inventoryImages[0].sprite;
-        foreach (Image image in inventoryImages)
+        if(inventoryImages.Length>0 && inventoryImages[0]!= null)
         {
-            image.transform.parent.gameObject.SetActive( false);
+            initialSprite = inventoryImages[0].sprite;
+            foreach (Image image in inventoryImages)
+            {
+                image.transform.parent.gameObject.SetActive( false);
+            }
         }
     }
     public GameObject FindObject(string name, out int number)

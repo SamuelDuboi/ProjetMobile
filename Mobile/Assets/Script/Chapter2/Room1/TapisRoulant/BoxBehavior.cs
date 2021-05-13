@@ -9,6 +9,7 @@ public class BoxBehavior : MonoBehaviour
     private LayerMask mask;
     private float speed;
     private LevelManager levelManager;
+    public SoundReader soundReader;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,12 +39,12 @@ public class BoxBehavior : MonoBehaviour
                 {
                     InventoryManager.Instance.AddList(gameObject, levelManager.name, default, 1);
                     levelManager.DestroyAll();
-                    Destroy(gameObject);
+                    StartCoroutine(WaitForSound());
                 }
             }
             else 
             {
-                Destroy(gameObject);
+                StartCoroutine(WaitForSound());
             }
         }
         else if (goDown)
@@ -60,6 +61,11 @@ public class BoxBehavior : MonoBehaviour
             }
         }
     }
-
+    IEnumerator WaitForSound()
+    {
+        soundReader.Play();
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
+    }
    
 }

@@ -4,6 +4,7 @@ public class ExitObject : MonoBehaviour
 {
     public GameObject text;
     public bool isTuto;
+    public SoundReader soundReader;
     private void Start()
     {
         EventManager.instance.InteractObject += Interact;
@@ -13,6 +14,8 @@ public class ExitObject : MonoBehaviour
     {
         if(currentObject == gameObject || currentObject== transform.GetChild(0).gameObject)
         {
+            if (soundReader != null)
+                soundReader.Play();
             if(SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 9 || SceneManager.GetActiveScene().buildIndex ==0)
             {
                 if (isTuto)

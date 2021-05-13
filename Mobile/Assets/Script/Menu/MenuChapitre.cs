@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections;
 public class MenuChapitre : ObjectHandler
 {
     public int index;
@@ -13,12 +13,19 @@ public class MenuChapitre : ObjectHandler
     {
         if (HitBoxZoom != null && currentGameObject == HitBoxZoom.gameObject)
         {
-            if (quit)
-                Application.Quit();
-            if (index == 0)
-                SaveManager.instance.SaveTuto(false);
-            SaveManager.instance.LoadScene(index);
+            soundR.Play();
+            StartCoroutine(WaitForSound());
         }
+    }
+
+    IEnumerator WaitForSound()
+    {
+        yield return new WaitForSeconds(1f);
+        if (quit)
+            Application.Quit();
+        if (index == 0)
+            SaveManager.instance.SaveTuto(false);
+        SaveManager.instance.LoadScene(index);
     }
 }
 

@@ -12,6 +12,7 @@ public class WaterRoom2 : MonoBehaviour
     public Collider exitCollider;
     public GameObject hundredKG;
     public int[] numbers;
+    public SoundReader soundReader;
     void Start()
     {
         EventManager.instance.SwipeUp += UpsideDown;
@@ -24,8 +25,10 @@ public class WaterRoom2 : MonoBehaviour
 
     public virtual void UpsideDown(bool up)
     {
+        soundReader.Play();
         if (EventManager.instance.uspideDown)
         {
+            
             for (int i = 0; i < 2; i++)
             {
                 if (open[i])

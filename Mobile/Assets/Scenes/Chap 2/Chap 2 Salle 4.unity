@@ -186,6 +186,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &82379473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2450,6 +2452,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &672042173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3421,7 +3425,10 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 1994686276}
+  ApplyOnInteractIfHAsObject: 0
   waterManager: {fileID: 1018491661396130716}
+  ActiveSoundOnInteract: 1
 --- !u!1 &918390383
 GameObject:
   m_ObjectHideFlags: 0
@@ -4381,6 +4388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   isTuto: 0
+  soundReader: {fileID: 0}
 --- !u!1 &1200016449
 GameObject:
   m_ObjectHideFlags: 0
@@ -6574,6 +6582,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &1752030214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7940,6 +7950,8 @@ GameObject:
   - component: {fileID: 1994686275}
   - component: {fileID: 1994686274}
   - component: {fileID: 1994686273}
+  - component: {fileID: 1994686277}
+  - component: {fileID: 1994686276}
   m_Layer: 0
   m_Name: Waterbaignoire
   m_TagString: Untagged
@@ -8027,6 +8039,118 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994686271}
   m_Mesh: {fileID: -6039022339158129212, guid: d11e6c97731326348abae3ece7b87694, type: 3}
+--- !u!114 &1994686276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994686271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: Baignoire
+  secondClipName: 
+  applyAudioOnStart: 0
+  doOnce: 0
+--- !u!82 &1994686277
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994686271}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2008204419
 GameObject:
   m_ObjectHideFlags: 0
@@ -8631,7 +8755,10 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
   waterManager: {fileID: 1018491661396130716}
+  ActiveSoundOnInteract: 0
 --- !u!4 &378772143906752334
 Transform:
   m_ObjectHideFlags: 0
@@ -9379,6 +9506,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
   waterSystem: {fileID: 32053282}
 --- !u!1001 &1550784669711412817
 PrefabInstance:
@@ -12919,6 +13048,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!33 &3000420002905739779
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13121,6 +13252,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!1 &3151499935445220751
 GameObject:
   m_ObjectHideFlags: 0
@@ -13894,6 +14027,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!1 &4294492205633567709
 GameObject:
   m_ObjectHideFlags: 0
@@ -14055,6 +14190,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!1 &4294492205832766367
 GameObject:
   m_ObjectHideFlags: 0
@@ -14091,6 +14228,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!1 &4294492205868739961
 GameObject:
   m_ObjectHideFlags: 0
@@ -14404,6 +14543,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: Toilettes
   doOnce: 0
+  soundR: {fileID: 4404285513627671578}
+  ApplyOnInteractIfHAsObject: 1
 --- !u!1 &4404285513627671577
 GameObject:
   m_ObjectHideFlags: 0
@@ -14415,6 +14556,8 @@ GameObject:
   - component: {fileID: 4404285513627671574}
   - component: {fileID: 4404285513627671575}
   - component: {fileID: 4404285513627671576}
+  - component: {fileID: 4404285513627671579}
+  - component: {fileID: 4404285513627671578}
   m_Layer: 0
   m_Name: Toilette
   m_TagString: Untagged
@@ -14422,6 +14565,118 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
   m_IsActive: 1
+--- !u!114 &4404285513627671578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4404285513627671577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: ChasseEau
+  secondClipName: 
+  applyAudioOnStart: 0
+  doOnce: 0
+--- !u!82 &4404285513627671579
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4404285513627671577}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4522451701009515505
 GameObject:
   m_ObjectHideFlags: 0
@@ -14719,6 +14974,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &4852323165895626028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14896,6 +15153,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: CoffreDone
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!1 &4908088709313063441
 GameObject:
   m_ObjectHideFlags: 0
@@ -15296,6 +15555,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
   meuble: {fileID: 8515672066726489780}
 --- !u!95 &5152569894026394228
 Animator:
@@ -15514,6 +15775,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!1 &5459568383077565575
 GameObject:
   m_ObjectHideFlags: 0
@@ -16012,7 +16275,10 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
   waterManager: {fileID: 1018491661396130716}
+  ActiveSoundOnInteract: 0
 --- !u!1 &5999122124030831588
 GameObject:
   m_ObjectHideFlags: 0
@@ -16418,6 +16684,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!95 &6710687460843037084
 Animator:
   serializedVersion: 3
@@ -16781,6 +17049,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &7411396061107304410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17066,6 +17336,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!1 &8342806636339534161
 GameObject:
   m_ObjectHideFlags: 0
@@ -17850,6 +18122,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: Meuble
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 1
 --- !u!1 &8515672066726489781
 GameObject:
   m_ObjectHideFlags: 0
@@ -17862,6 +18136,8 @@ GameObject:
   - component: {fileID: 8515672066726489787}
   - component: {fileID: 8515672066726489780}
   - component: {fileID: 8515672066726489782}
+  - component: {fileID: 8515672066726489784}
+  - component: {fileID: 8515672066726489783}
   m_Layer: 0
   m_Name: Haut Meuble
   m_TagString: Untagged
@@ -17888,6 +18164,118 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8515672066726489783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515672066726489781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: ArmoirTitanic
+  secondClipName: 
+  applyAudioOnStart: 0
+  doOnce: 0
+--- !u!82 &8515672066726489784
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515672066726489781}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &8515672066726489786
 Transform:
   m_ObjectHideFlags: 0

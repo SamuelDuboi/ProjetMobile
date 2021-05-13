@@ -14,6 +14,7 @@ public class ChestManager : MonoBehaviour
     public bool save;
     public bool destroyHitBoxParent;
     public GameObject collider;
+    public SoundReader soundReader;
     void Start()
     {
         for (int i = 0; i < chests.Length; i++)
@@ -42,23 +43,31 @@ public class ChestManager : MonoBehaviour
             if (!result)
                 return;
         }
-         GetComponentInParent<ObjectHandler>().trialInstantiate = null;
-         GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
+        if(soundReader!= null)
+        soundReader.Play();
+        StartCoroutine(waitForSoun());
+    }
+
+    IEnumerator waitForSoun()
+    {
+        yield return new WaitForSeconds (1f);
+        GetComponentInParent<ObjectHandler>().trialInstantiate = null;
+        GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
         if (dontDestroyHitBox)
         {
-             GetComponentInParent<ObjectHandler>().interactifElement.onlyZoom = false;
-             GetComponentInParent<ObjectHandler>().HitBoxZoom.enabled= true;
+            GetComponentInParent<ObjectHandler>().interactifElement.onlyZoom = false;
+            GetComponentInParent<ObjectHandler>().HitBoxZoom.enabled = true;
         }
         if (save)
             if (SaveManager.instance != null)
                 SaveManager.instance.SaveChapter2();
             else Debug.LogError("No instance of save Manager");
-      /*  if (destroyHitBoxParent)
-        {
-            GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject.SetActive(true);
-            Destroy(GetComponentInParent<ObjectHandler>().HitBoxZoom);
+        /*  if (destroyHitBoxParent)
+          {
+              GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject.SetActive(true);
+              Destroy(GetComponentInParent<ObjectHandler>().HitBoxZoom);
 
-        }*/
+          }*/
         GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
         EventManager.instance.ZoomOut -= Unzoom;
         EventManager.instance.OnDestroyTrial();

@@ -6,7 +6,7 @@ public class BoutonTapis : ObjectHandler
 {
     public BarrierManager barrierManager;
     public int index;
-
+    public SoundReader soundReader;
     public override void Start()
     {
         base.Start();
@@ -17,6 +17,7 @@ public class BoutonTapis : ObjectHandler
         if (HitBoxZoom != null && currentGameObject == HitBoxZoom.gameObject)
         {
             barrierManager.PressButon(index);
+            soundReader.Play();
         }
     }
 }

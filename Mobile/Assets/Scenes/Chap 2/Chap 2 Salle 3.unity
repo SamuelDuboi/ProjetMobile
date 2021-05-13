@@ -1084,6 +1084,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &267563592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1628,6 +1630,8 @@ GameObject:
   - component: {fileID: 487538066}
   - component: {fileID: 487538065}
   - component: {fileID: 487538064}
+  - component: {fileID: 487538069}
+  - component: {fileID: 487538068}
   m_Layer: 9
   m_Name: PorteSortie
   m_TagString: Untagged
@@ -1664,6 +1668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   isTuto: 0
+  soundReader: {fileID: 487538068}
 --- !u!65 &487538065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1724,6 +1729,118 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487538062}
   m_Mesh: {fileID: 8377211728942078173, guid: c6a985896d9dcd947a4e215cd7d0d98a, type: 3}
+--- !u!114 &487538068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487538062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: Porte
+  secondClipName: 
+  applyAudioOnStart: 0
+  doOnce: 0
+--- !u!82 &487538069
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487538062}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &500078075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2653,6 +2770,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &620688472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2981,6 +3100,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &704925969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3088,6 +3209,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &725944149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3923,6 +4046,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: WaterForTrapp
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &1045391303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4413,6 +4538,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &1161208541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5421,6 +5548,124 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1369769035}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1369769037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1839077433862502576, guid: 23fc95d9c8a484342831869064685ef2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1369769035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1369769038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369769037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: Baignoire
+  secondClipName: 
+  applyAudioOnStart: 1
+  doOnce: 0
+--- !u!82 &1369769039
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369769037}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1395176208
 GameObject:
   m_ObjectHideFlags: 0
@@ -5956,6 +6201,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &1497033091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6454,6 +6701,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &1573099924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6671,6 +6920,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &1667642017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7631,6 +7882,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
   waterWall: {fileID: 255743386513167511}
   goodSide: 0
   angleToTurn: 135
@@ -8601,6 +8854,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &2119872904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9274,6 +9529,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
   waterWall: {fileID: 255743386513167511}
   goodSide: 0
   angleToTurn: 130
@@ -9565,6 +9822,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
   waterWall: {fileID: 255743386513167511}
   goodSide: 0
   angleToTurn: 135
@@ -10117,6 +10376,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
   waterWall: {fileID: 255743386513167511}
   goodSide: 0
   angleToTurn: 145
@@ -10685,6 +10946,8 @@ GameObject:
   - component: {fileID: 459658531902736510}
   - component: {fileID: 459658531902736509}
   - component: {fileID: 459658531902736508}
+  - component: {fileID: 459658531902736513}
+  - component: {fileID: 459658531902736512}
   m_Layer: 0
   m_Name: WaterActiavtedWithKey
   m_TagString: Untagged
@@ -10692,6 +10955,118 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
   m_IsActive: 1
+--- !u!114 &459658531902736512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459658531902736511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: EauTombe
+  secondClipName: 
+  applyAudioOnStart: 0
+  doOnce: 0
+--- !u!82 &459658531902736513
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459658531902736511}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &459658532168599876
 Transform:
   m_ObjectHideFlags: 0
@@ -10724,6 +11099,8 @@ GameObject:
   - component: {fileID: 459658532168599881}
   - component: {fileID: 459658532168599882}
   - component: {fileID: 459658532168599883}
+  - component: {fileID: 459658532168599879}
+  - component: {fileID: 459658532168599878}
   m_Layer: 0
   m_Name: WaterUp
   m_TagString: Untagged
@@ -10731,6 +11108,118 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
   m_IsActive: 1
+--- !u!114 &459658532168599878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459658532168599877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: CadenasTuto
+  secondClipName: 
+  applyAudioOnStart: 0
+  doOnce: 0
+--- !u!82 &459658532168599879
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459658532168599877}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &459658532168599881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10749,6 +11238,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 459658532168599878}
+  ApplyOnInteractIfHAsObject: 1
   waterWall: {fileID: 255743386513167511}
 --- !u!65 &459658532168599882
 BoxCollider:
@@ -15792,6 +16283,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!33 &1049573928443824800
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16044,6 +16537,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!33 &1198851121563794416
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19876,6 +20371,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &3515487769820130076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20061,6 +20558,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!1 &3585278627025866897
 GameObject:
   m_ObjectHideFlags: 0
@@ -20256,6 +20755,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!1 &3689126938192808393
 GameObject:
   m_ObjectHideFlags: 0
@@ -20621,6 +21122,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!1 &4629343308734142873
 GameObject:
   m_ObjectHideFlags: 0
@@ -21225,6 +21728,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!114 &5354231074937714858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21884,6 +22389,8 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: TuayauxCasseCoyuille
   doOnce: 0
+  soundR: {fileID: 0}
+  ApplyOnInteractIfHAsObject: 0
 --- !u!1 &9165207425564993837
 GameObject:
   m_ObjectHideFlags: 0

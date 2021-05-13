@@ -13,6 +13,8 @@ public class ObjectHandler : MonoBehaviour
     public string NameToAddIfAnimToAdd;
     private int tempLayer;
     [HideInInspector] public bool doOnce;
+    public SoundReader soundR;
+    public bool ApplyOnInteractIfHAsObject;
   public  virtual void Start()
     {
         interactifElement = GetComponent<InteractifElement>();
@@ -177,6 +179,8 @@ public class ObjectHandler : MonoBehaviour
                     interactifElement.interactionAnimator.SetTrigger("Interact");
                     return;
                 }
+               if (ApplyOnInteractIfHAsObject)
+                    soundR.Play();
                 interactifElement.interactionAnimator.SetLayerWeight(1, 0);
                 interactifElement.interactionAnimator.SetLayerWeight(2, 1);
                 interactifElement.hasLinkGameObject = false;

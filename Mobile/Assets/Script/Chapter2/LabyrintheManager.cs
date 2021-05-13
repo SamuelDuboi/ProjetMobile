@@ -9,7 +9,7 @@ public class LabyrintheManager : MonoBehaviour
     public int[] indexRotate;
     public float timer = 0;
     private bool labyrintheResolved = false;
-
+    public SoundReader soundReader;
     public void Start()
     {
         for (int i = 0; i < indexRotate.Length; i++)
@@ -25,6 +25,7 @@ public class LabyrintheManager : MonoBehaviour
     }
     private IEnumerator RotateTouche(GameObject button)
     {
+        soundReader.Play();
         for (int i = 0; i < tuiles.Length; i++)
         {
             if (tuiles[i] == button)
