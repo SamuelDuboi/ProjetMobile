@@ -108,6 +108,7 @@ public class LabyrinthDragDrop : MonoBehaviour
             GetComponentInParent<ObjectHandler>().trialInstantiate = null;
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
+            EventManager.instance.ZoomOut -= Unzoom;
             Destroy(canvas);
         }
         cantMove = false;

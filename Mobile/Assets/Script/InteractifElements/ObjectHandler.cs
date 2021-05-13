@@ -15,6 +15,7 @@ public class ObjectHandler : MonoBehaviour
     [HideInInspector] public bool doOnce;
     public SoundReader soundR;
     public bool ApplyOnInteractIfHAsObject;
+    public bool ApplyOnInteract;
   public  virtual void Start()
     {
         interactifElement = GetComponent<InteractifElement>();
@@ -188,6 +189,8 @@ public class ObjectHandler : MonoBehaviour
             InteractActiveObject(true);
             if (!interactifElement.spawnNewTrial)
             {
+                if (ApplyOnInteract)
+                    soundR.Play();
                 interactifElement.interactionAnimator.SetTrigger("Interact");
                 if (interactifElement.activateTips && !doOnce)
                 {

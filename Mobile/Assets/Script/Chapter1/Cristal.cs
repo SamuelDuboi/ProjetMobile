@@ -21,8 +21,8 @@ public class Cristal : ObjectHandler
     public override void Interact(GameObject currentGameObject)
     {
         if ( currentGameObject == gameObject)
-        { 
-            
+        {
+            soundR.Play();
             currentRotation += 1;
             if (currentRotation == 4)
                 currentRotation = 0;
