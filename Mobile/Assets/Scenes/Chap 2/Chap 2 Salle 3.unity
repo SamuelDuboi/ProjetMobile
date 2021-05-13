@@ -1087,6 +1087,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &267563592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2774,6 +2775,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &620688472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3107,6 +3109,7 @@ MonoBehaviour:
   soundR: {fileID: 704925970}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 1
+  ApplyOnCollect: 0
 --- !u!114 &704925969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3286,6 +3289,8 @@ GameObject:
   - component: {fileID: 725944147}
   - component: {fileID: 725944149}
   - component: {fileID: 725944148}
+  - component: {fileID: 725944151}
+  - component: {fileID: 725944150}
   m_Layer: 0
   m_Name: "Cl\xE9"
   m_TagString: Untagged
@@ -3326,9 +3331,10 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
-  soundR: {fileID: 0}
+  soundR: {fileID: 725944150}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 1
 --- !u!114 &725944149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3384,6 +3390,118 @@ MonoBehaviour:
   timePopup: 0
   activateTips: 1
   indexOfTip: 1
+--- !u!114 &725944150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725944146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: LustreCristal
+  secondClipName: 
+  applyAudioOnStart: 0
+  doOnce: 0
+--- !u!82 &725944151
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725944146}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &727388768
 GameObject:
   m_ObjectHideFlags: 0
@@ -4167,6 +4285,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &1045391303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4660,6 +4779,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &1161208541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6324,6 +6444,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &1497033091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6825,6 +6946,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &1573099924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7045,6 +7167,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &1667642017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8008,6 +8131,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
   waterWall: {fileID: 255743386513167511}
   goodSide: 0
   angleToTurn: 135
@@ -8981,6 +9105,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &2119872904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9657,6 +9782,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
   waterWall: {fileID: 255743386513167511}
   goodSide: 0
   angleToTurn: 130
@@ -9951,6 +10077,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
   waterWall: {fileID: 255743386513167511}
   goodSide: 0
   angleToTurn: 135
@@ -10506,6 +10633,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
   waterWall: {fileID: 255743386513167511}
   goodSide: 0
   angleToTurn: 145
@@ -11369,6 +11497,7 @@ MonoBehaviour:
   soundR: {fileID: 459658532168599878}
   ApplyOnInteractIfHAsObject: 1
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
   waterWall: {fileID: 255743386513167511}
 --- !u!65 &459658532168599882
 BoxCollider:
@@ -16415,6 +16544,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!33 &1049573928443824800
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16670,6 +16800,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!33 &1198851121563794416
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20505,6 +20636,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &3515487769820130076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20693,6 +20825,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!1 &3585278627025866897
 GameObject:
   m_ObjectHideFlags: 0
@@ -20891,6 +21024,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!1 &3689126938192808393
 GameObject:
   m_ObjectHideFlags: 0
@@ -21259,6 +21393,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!1 &4629343308734142873
 GameObject:
   m_ObjectHideFlags: 0
@@ -21866,6 +22001,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &5354231074937714858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22528,6 +22664,7 @@ MonoBehaviour:
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!1 &9165207425564993837
 GameObject:
   m_ObjectHideFlags: 0

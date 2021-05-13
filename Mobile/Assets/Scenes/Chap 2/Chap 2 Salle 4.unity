@@ -188,6 +188,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &82379473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2454,6 +2456,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &672042173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3427,6 +3431,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 1994686276}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
   waterManager: {fileID: 1018491661396130716}
   ActiveSoundOnInteract: 1
 --- !u!1 &918390383
@@ -6584,6 +6590,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &1752030214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7637,6 +7645,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 9375e86579f4a274db4e3706e3b759ef,
         type: 3}
+    - target: {fileID: 4294492205994440670, guid: 832d0ba73d91bd24da084cf3eec28acc,
+        type: 3}
+      propertyPath: soundR
+      value: 
+      objectReference: {fileID: 1938240841}
+    - target: {fileID: 4294492205994440670, guid: 832d0ba73d91bd24da084cf3eec28acc,
+        type: 3}
+      propertyPath: ApplyOnCollect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4294492205994440671, guid: 832d0ba73d91bd24da084cf3eec28acc,
         type: 3}
       propertyPath: m_Name
@@ -7654,6 +7672,124 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 832d0ba73d91bd24da084cf3eec28acc, type: 3}
+--- !u!1 &1938240840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4294492205994440671, guid: 832d0ba73d91bd24da084cf3eec28acc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1938240839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1938240841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938240840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: LustreCristal
+  secondClipName: 
+  applyAudioOnStart: 0
+  doOnce: 0
+--- !u!82 &1938240842
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938240840}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1944396832
 GameObject:
   m_ObjectHideFlags: 0
@@ -8757,6 +8893,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
   waterManager: {fileID: 1018491661396130716}
   ActiveSoundOnInteract: 0
 --- !u!4 &378772143906752334
@@ -9508,6 +9646,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
   waterSystem: {fileID: 32053282}
 --- !u!1001 &1550784669711412817
 PrefabInstance:
@@ -13050,6 +13190,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!33 &3000420002905739779
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13254,6 +13396,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!1 &3151499935445220751
 GameObject:
   m_ObjectHideFlags: 0
@@ -14029,6 +14173,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!1 &4294492205633567709
 GameObject:
   m_ObjectHideFlags: 0
@@ -14190,8 +14336,10 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
-  soundR: {fileID: 0}
+  soundR: {fileID: 4294492205832766368}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 1
 --- !u!1 &4294492205832766367
 GameObject:
   m_ObjectHideFlags: 0
@@ -14203,6 +14351,8 @@ GameObject:
   - component: {fileID: 4294492205832766364}
   - component: {fileID: 4294492205832766365}
   - component: {fileID: 4294492205832766366}
+  - component: {fileID: 4294492205832766369}
+  - component: {fileID: 4294492205832766368}
   m_Layer: 0
   m_Name: FishHead
   m_TagString: Untagged
@@ -14210,6 +14360,118 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
   m_IsActive: 1
+--- !u!114 &4294492205832766368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294492205832766367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: LustreCristal
+  secondClipName: 
+  applyAudioOnStart: 0
+  doOnce: 0
+--- !u!82 &4294492205832766369
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294492205832766367}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &4294492205868739960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14228,8 +14490,10 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
-  soundR: {fileID: 0}
+  soundR: {fileID: 4294492205868739964}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 1
 --- !u!1 &4294492205868739961
 GameObject:
   m_ObjectHideFlags: 0
@@ -14241,6 +14505,8 @@ GameObject:
   - component: {fileID: 4294492205868739962}
   - component: {fileID: 4294492205868739963}
   - component: {fileID: 4294492205868739960}
+  - component: {fileID: 4294492205868739965}
+  - component: {fileID: 4294492205868739964}
   m_Layer: 0
   m_Name: Maillet
   m_TagString: Untagged
@@ -14303,6 +14569,118 @@ MonoBehaviour:
   timePopup: 0
   activateTips: 1
   indexOfTip: 6
+--- !u!114 &4294492205868739964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294492205868739961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: LustreCristal
+  secondClipName: 
+  applyAudioOnStart: 0
+  doOnce: 0
+--- !u!82 &4294492205868739965
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294492205868739961}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!23 &4329100092706554650
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14545,6 +14923,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 4404285513627671578}
   ApplyOnInteractIfHAsObject: 1
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!1 &4404285513627671577
 GameObject:
   m_ObjectHideFlags: 0
@@ -14976,6 +15356,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &4852323165895626028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15155,6 +15537,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!1 &4908088709313063441
 GameObject:
   m_ObjectHideFlags: 0
@@ -15557,6 +15941,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
   meuble: {fileID: 8515672066726489780}
 --- !u!95 &5152569894026394228
 Animator:
@@ -15777,6 +16163,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!1 &5459568383077565575
 GameObject:
   m_ObjectHideFlags: 0
@@ -16277,6 +16665,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
   waterManager: {fileID: 1018491661396130716}
   ActiveSoundOnInteract: 0
 --- !u!1 &5999122124030831588
@@ -16686,6 +17076,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!95 &6710687460843037084
 Animator:
   serializedVersion: 3
@@ -17051,6 +17443,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!114 &7411396061107304410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17338,6 +17732,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 0
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!1 &8342806636339534161
 GameObject:
   m_ObjectHideFlags: 0
@@ -18124,6 +18520,8 @@ MonoBehaviour:
   doOnce: 0
   soundR: {fileID: 0}
   ApplyOnInteractIfHAsObject: 1
+  ApplyOnInteract: 0
+  ApplyOnCollect: 0
 --- !u!1 &8515672066726489781
 GameObject:
   m_ObjectHideFlags: 0
