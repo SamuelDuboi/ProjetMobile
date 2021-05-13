@@ -21,6 +21,8 @@ public class Statue : ObjectHandler
             if(gameObject!= null)
             {
                 parts[index].SetActive(true);
+                if (ApplyOnInteract)
+                    soundR.Play();
                 InventoryManager.Instance.RemoveFromList(partsName[index], 1);
                 index++;
                 if(index == partsName.Length)
