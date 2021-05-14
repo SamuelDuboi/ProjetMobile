@@ -10,6 +10,7 @@ public class ArcAFeuSetup : ObjectHandler
     public override void Start()
     {
         base.Start();
+        EventManager.instance.LightObject += OnLightOn;
     }
 
     public override void Interact(GameObject currentGameObject)
@@ -17,25 +18,14 @@ public class ArcAFeuSetup : ObjectHandler
         if (HitBoxZoom != null && currentGameObject == HitBoxZoom.gameObject)
         {
             int random;
-            if (!canPutTorche)
+            if (canPutTorche)
             {
+               
                 var gameObject = InventoryManager.Instance.FindObject(names[0], out random);
                 if (gameObject != null)
                 {
                     InventoryManager.Instance.RemoveFromList(names[0], 1);
                     objects[0].SetActive(true);
-                    interactifElement.onlyZoom = true;
-                    HitBoxZoom.enabled = false;
-                }
-            }
-
-            else
-            {
-                var gameObject = InventoryManager.Instance.FindObject(names[1], out random);
-                if (gameObject != null)
-                {
-                    InventoryManager.Instance.RemoveFromList(names[1], 1);
-                    objects[1].SetActive(true);
                     interactifElement.onlyZoom = true;
                     HitBoxZoom.enabled = false;
                 }
@@ -48,11 +38,22 @@ public class ArcAFeuSetup : ObjectHandler
     {
         return base.Zoom(currentDirection);
     }
-    public void CanPutTorche()
-    {
-        interactifElement.onlyZoom = false;
-        HitBoxZoom.enabled = true;
-        canPutTorche = true;
-    }
 
+    public bool doOnceLight;
+    public void OnLightOn(GameObject currentObject)
+    {
+
+        if (gameObject == currentObject.GetComponentInParent<ObjectHandler>().gameObject)
+        {
+
+            if (!doOnceLight)
+            {
+                doOnceLight = true;
+                interactifElement.onlyZoom = false;
+                HitBoxZoom.enabled = true;
+                canPutTorche = true;
+                interactifElement.interactionAnimator.SetInteger("FlammeNumber",4);
+            }
+        }
+    }
 }

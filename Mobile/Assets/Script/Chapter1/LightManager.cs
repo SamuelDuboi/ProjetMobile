@@ -22,7 +22,7 @@ public class LightManager : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         LunchCastLight(gameObject);
     }
-    /*
+    
     private void OnDrawGizmos()
     {
         Handles.color = Color.red;
@@ -31,7 +31,7 @@ public class LightManager : MonoBehaviour
         Gizmos.DrawWireSphere(this.transform.position, 0.25f);
         DrawPattern(this.transform.position + this.transform.forward * .75f, this.transform.forward, maxReflectionCount);
     }
-    */
+    
     private void Update()
     {
         if (!cantCast )
