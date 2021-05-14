@@ -26,7 +26,6 @@ public class TheWaterManager : MonoBehaviour
     void Start()
     {
         EventManager.instance.SwipeUp += UpsideDown;
-
     }
 
     public virtual void UpsideDown(bool up)
@@ -40,7 +39,8 @@ public class TheWaterManager : MonoBehaviour
         waterAnim.SetInteger("Level", currentLevel);
         if(currentLevel > 4)
         {
-            
+            SaveManager.instance.SaveChapter2();
+            SaveManager.instance.LoadScene(1);
         }
     }
 

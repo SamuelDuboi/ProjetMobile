@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class InteractAfterAnim : StateMachineBehaviour
 {
-    
+    public bool Unzoom;
+
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if (Unzoom)
+            EventManager.instance.OnZoomOut();
+    }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         var gameObject = animator.gameObject.GetComponentInParent<ObjectHandler>();
@@ -16,9 +22,10 @@ public class InteractAfterAnim : StateMachineBehaviour
                     objet.SetActive(true);
                 if (objet.GetComponent<ObjectHandler>())
                 {
-                    if (objet.GetComponent<ObjectHandler>().interactifElement.hasLinkGameObject)
+                  if (objet.GetComponent<ObjectHandler>().interactifElement.hasLinkGameObject)
                         InventoryManager.Instance.AddList(gameObject.gameObject, objet.GetComponent<ObjectHandler>().NameToAddIfAnimToAdd, default);
                     objet.GetComponent<ObjectHandler>().Interact(objet.GetComponent<ObjectHandler>().HitBoxZoom.gameObject);
+                   
                 }
             }
         }
