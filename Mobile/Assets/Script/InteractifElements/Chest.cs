@@ -32,18 +32,24 @@ public class Chest : MonoBehaviour
 
     public void MoveUp()
     {
-        index++;
-        if (index == 10)
-            index = 0;
-        childTransform.position = new Vector3(initialPos - index * positionMovement / 10, childTransform.position.y, childTransform.position.z);
-        chestManager.TryValidate(index, inedxInArray);
+        if (!chestManager.cantAct)
+        {
+            index++;
+            if (index == 10)
+                index = 0;
+            childTransform.position = new Vector3(initialPos - index * positionMovement / 10, childTransform.position.y, childTransform.position.z);
+            chestManager.TryValidate(index, inedxInArray);
+        }
     }
     public void MoveDown()
     {
-        index--;
-        if (index == -1)
-            index = 9;
-        childTransform.position = new Vector3(initialPos - index * positionMovement / 10, childTransform.position.y, childTransform.position.z);
-        chestManager.TryValidate(index, inedxInArray);
+        if (!chestManager.cantAct)
+        {
+            index--;
+            if (index == -1)
+                index = 9;
+            childTransform.position = new Vector3(initialPos - index * positionMovement / 10, childTransform.position.y, childTransform.position.z);
+            chestManager.TryValidate(index, inedxInArray);
+        }
     }
 }

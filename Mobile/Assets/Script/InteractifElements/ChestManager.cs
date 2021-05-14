@@ -15,6 +15,8 @@ public class ChestManager : MonoBehaviour
     public bool destroyHitBoxParent;
     public GameObject collider;
     public SoundReader soundReader;
+    public bool isTuto;
+    [HideInInspector] public bool cantAct;
     void Start()
     {
         for (int i = 0; i < chests.Length; i++)
@@ -23,6 +25,11 @@ public class ChestManager : MonoBehaviour
         }
         results = new bool[chests.Length];
         EventManager.instance.ZoomOut += Unzoom;
+        if (isTuto)
+            if (FingerTipsManager.instance.tutoDeviceManager.phase > 8)
+                cantAct = false;
+            else
+                cantAct = true;
       /*  if(destroyHitBoxParent)
             GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject.SetActive(false);*/
     }
@@ -30,22 +37,25 @@ public class ChestManager : MonoBehaviour
  
     public void TryValidate(int index, int indexInArray)
     {
-        if(index == int.Parse(finalNumbers[indexInArray].ToString()))
+        if (!cantAct)
         {
-            results[indexInArray] = true;
+            if(index == int.Parse(finalNumbers[indexInArray].ToString()))
+            {
+                results[indexInArray] = true;
+            }
+            else
+            {
+                results[indexInArray] = false;
+            }
+            foreach (var result in results)
+            {
+                if (!result)
+                    return;
+            }
+            if(soundReader!= null)
+            soundReader.Play();
+            StartCoroutine(waitForSoun());
         }
-        else
-        {
-            results[indexInArray] = false;
-        }
-        foreach (var result in results)
-        {
-            if (!result)
-                return;
-        }
-        if(soundReader!= null)
-        soundReader.Play();
-        StartCoroutine(waitForSoun());
     }
 
     IEnumerator waitForSoun()
