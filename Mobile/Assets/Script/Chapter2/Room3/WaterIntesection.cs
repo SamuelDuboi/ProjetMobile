@@ -22,8 +22,6 @@ public class WaterIntesection : ObjectHandler
             initialLeftSize = left.size.y;
         if(right != null)
         initialRightSize = right.size.y;
-        if (number == 1)
-            right.size = new Vector2(right.size.x, 0.1f);
     }
     public override void Interact(GameObject currentGameObject)
     {
@@ -35,8 +33,12 @@ public class WaterIntesection : ObjectHandler
                 if (left != null)
                 {
                     waterWall.ChangeSide(gameObject, goodSide, left, number, angleToTurn, right, initialRightSize, true);
-                    if (right != null)
-                        right.size = new Vector2(right.size.x, initialLeftSize);
+                   /* if (right != null)
+                        right.size = new Vector2(right.size.x, initialLeftSize);*/
+                }
+                else
+                {
+                    waterWall.ChangeSide(gameObject, goodSide, left, 6, angleToTurn, right, initialRightSize, true);
                 }
                
             }
@@ -44,9 +46,13 @@ public class WaterIntesection : ObjectHandler
             {
                 if(right != null)
                 {
-                    waterWall.ChangeSide(gameObject, goodSide, right, number, angleToTurn, null,0, false);
-                    if(left!=null)
-                    left.size = new Vector2(left.size.x, initialLeftSize);
+                    waterWall.ChangeSide(gameObject, goodSide, right, number, angleToTurn, left, initialLeftSize, false);
+                    /*if(left!=null)
+                    left.size = new Vector2(left.size.x, initialLeftSize);*/
+                }
+                else
+                {
+                    waterWall.ChangeSide(gameObject, goodSide, right, 6, angleToTurn, left, initialLeftSize, false);
                 }
             }
             isLeft = !isLeft;
@@ -73,5 +79,36 @@ public class WaterIntesection : ObjectHandler
         }
        
         return null;
+    }
+    public SpriteRenderer CheckIfDontMove(out float size)
+    {
+        if (interSectionParent != null)
+        {
+            if (interSectionParent.isLeft != interactIfLeft)
+            {
+                if (isLeft)
+                {
+                    if (right != null)
+                    {
+                        size = initialRightSize;
+                        return right;
+                    }
+                }
+                else
+                {
+                    if (left != null)
+                    {
+                        size = initialLeftSize;
+                        return left;
+                    }
+                }
+            }
+        }
+        size = 0;
+        return null;
+    }
+    public void Actualise()
+    {
+
     }
 }

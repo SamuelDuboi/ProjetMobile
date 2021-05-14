@@ -11,6 +11,7 @@ public class Music
 {
     public string name = string.Empty;
     public AudioClip clip = default;
+    public float volume = 0.5f;
 }
 
 

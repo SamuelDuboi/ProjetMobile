@@ -32,6 +32,7 @@ public class SoundManager : MonoBehaviour
             if (soundClassic.name == name)
             {
                 audioSource.clip = soundClassic.clip;
+                audioSource.volume = soundClassic.volume;
                 isSelected = true;
                 if (sources == null)
                     sources = new List<AudioSource>();

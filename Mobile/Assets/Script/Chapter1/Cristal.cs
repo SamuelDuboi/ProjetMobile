@@ -7,7 +7,6 @@ public class Cristal : ObjectHandler
     public int rotation;
     private int currentRotation;
     [HideInInspector] public bool isGood;
-    float multiplicator = 1;
     public Cristal previusCristal;
     public Material lightedMat;
     private Material initMat;

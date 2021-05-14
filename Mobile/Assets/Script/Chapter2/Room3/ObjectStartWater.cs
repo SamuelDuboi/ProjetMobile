@@ -42,7 +42,7 @@ public class ObjectStartWater : ObjectHandler
                 }
                 interactifElement.interactionAnimator.SetLayerWeight(1, 0);
                 interactifElement.interactionAnimator.SetLayerWeight(2, 1);
-                waterWall.hasWater = true;
+                waterWall.ActivateWater();
             }
             if (!interactifElement.spawnNewTrial)
             {

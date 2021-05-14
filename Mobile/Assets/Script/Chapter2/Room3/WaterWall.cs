@@ -8,6 +8,8 @@ public class WaterWall : MonoBehaviour
     public bool secondGood;
     public bool thirdGood;
     private List<SpriteRenderer> spritesArray;
+    private List<SpriteRenderer> spritesArrayToClose;
+    private List<float> sizeArrayToClose;
     public WaterIntesection[] waterIntesections;
     public bool hasWater;
     public GameObject water;
@@ -17,10 +19,20 @@ public class WaterWall : MonoBehaviour
     {
         
         spritesArray = new List<SpriteRenderer>();
+        spritesArrayToClose = new List<SpriteRenderer>();
+        sizeArrayToClose = new List<float>();
         spritesArray.Add(spriteToScale);
         for (int i = number; i < waterIntesections.Length; i++)
         {
             spritesArray.Add(waterIntesections[i].CheckIfMove());
+        }
+        spritesArrayToClose.Add(spriteToRestart);
+        sizeArrayToClose.Add(sizeToReceize);
+        for (int i = number; i < waterIntesections.Length; i++)
+        {
+            float outNumber = 0;
+            spritesArrayToClose.Add(waterIntesections[i].CheckIfDontMove(out outNumber));
+            sizeArrayToClose.Add( outNumber);
         }
         switch (number)
         {
@@ -51,6 +63,7 @@ public class WaterWall : MonoBehaviour
                 break;
 
             default:
+                StartCoroutine(Move(self, spritesArray.ToArray(), angle, false, spriteToRestart, sizeToReceize, turnLeft));
                 break;
         }
 
@@ -62,21 +75,24 @@ public class WaterWall : MonoBehaviour
         Debug.Log(_angle);
         float currentAngle = 0;
         float direction = 1;
+        bool doOnce = false;
         if (!turnLeft)
             direction = -1;
         while (currentAngle < angle)
         {
             currentAngle += 1f;
             self.transform.Rotate(Vector3.forward * direction, 1f, Space.Self);
+            if(currentAngle >angle*0.5f && !doOnce)
+            {
+                doOnce = true;
+                StartCoroutine(MoveSpriteUp(spritesArrayToClose.ToArray()));
+            }
             yield return new WaitForSeconds(0.01f);
-        }
-        if (spriteToRestart != null)
-        {
-            spriteToRestart.size = new Vector2(spriteToRestart.size.x, sizeToReceize);
-        }
+        }        
         if (canMoveSprite && hasWater)
         {            
-              StartCoroutine(  MoveSprite(spriteToScale));
+             StartCoroutine(  MoveSprite(spriteToScale));
+           
         }
     }
     private IEnumerator MoveSprite(SpriteRenderer[] spriteToScale)
@@ -90,7 +106,41 @@ public class WaterWall : MonoBehaviour
                     sprite.size -= new Vector2(0, 0.1f);
                     yield return new WaitForSeconds(0.01f);
                 }
-            }            
+            }           
        }
+    }
+    private IEnumerator MoveSpriteUp(SpriteRenderer[] spriteToScale)
+    {
+        for (int i = spriteToScale.Length-1; i >= 0; i--)
+        {
+            if (spriteToScale[i] != null)
+            {
+                while (spriteToScale[i].size.y <= sizeArrayToClose[i])
+                {
+                    spriteToScale[i].size += new Vector2(0, 0.1f);
+                    yield return new WaitForSeconds(0.01f);
+                }
+            }
+        } 
+    }
+    private IEnumerator MoveSprite(SpriteRenderer spriteToScale)
+    {
+
+        if (spriteToScale != null)
+        {
+            while (spriteToScale.size.y > 0.1f)
+            {
+                spriteToScale.size -= new Vector2(0, 0.1f);
+                yield return new WaitForSeconds(0.01f);
+            }
+        }
+
+    }
+    public void ActivateWater()
+    {
+        hasWater = true;
+        if (waterIntesections[0].isLeft)
+           StartCoroutine( MoveSprite(waterIntesections[0].right));
+
     }
 }

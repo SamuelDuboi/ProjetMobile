@@ -40,6 +40,7 @@ public class SoundListEditor : Editor
                 EditorGUILayout.BeginHorizontal();
                 soundClassic.name = EditorGUILayout.TextField(soundClassic.name);
                 soundClassic.clip = (AudioClip)EditorGUILayout.ObjectField(soundClassic.clip, typeof(AudioClip), true);
+                soundClassic.volume = EditorGUILayout.Slider(soundClassic.volume, 0, 1);
                 EditorGUILayout.EndHorizontal();
 
             }
