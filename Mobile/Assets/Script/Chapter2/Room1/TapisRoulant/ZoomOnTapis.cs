@@ -6,7 +6,8 @@ public class ZoomOnTapis : ObjectHandler
 {
     public LevelManager levelManager;
     public WaterStick redStick;
-    public MonoBehaviour[] scriptToActive;
+    public BoutonTapis[] scriptToActive;
+    public MonoBehaviour barrier;
     public bool done;
     public override void Start()
     {
@@ -17,6 +18,7 @@ public class ZoomOnTapis : ObjectHandler
         {
             objectToActive.enabled = false;
         }
+        barrier.enabled = false;
     }
 
     public override Cams Zoom(CamDirection currentDirection)
@@ -69,5 +71,19 @@ public class ZoomOnTapis : ObjectHandler
         yield return new WaitForSeconds(redStick.interactifElement.interactionAnimator.GetCurrentAnimatorClipInfo(0).Length);
         UnZoom();
         HitBoxZoom.enabled = false;
+    }
+
+    public void Destry()
+    {
+        foreach (var bouton in scriptToActive)
+        {
+            bouton.Destry();
+        }
+        EventManager.instance.ZoomOut -= UnZoom;
+        EventManager.instance.CollectObject -= CollectObject;
+        EventManager.instance.InteractObject -= Interact;
+        EventManager.instance.ZoomIn -= MoveCam;
+        EventManager.instance.InstantiateTrial -= SpwanTrial;
+        EventManager.instance.DestroyTrial -= DestroyTrial;
     }
 }

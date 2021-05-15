@@ -20,4 +20,14 @@ public class BoutonTapis : ObjectHandler
             soundReader.Play();
         }
     }
+    public void Destry()
+    {
+        
+        EventManager.instance.ZoomOut -= UnZoom;
+        EventManager.instance.CollectObject -= CollectObject;
+        EventManager.instance.InteractObject -= Interact;
+        EventManager.instance.ZoomIn -= MoveCam;
+        EventManager.instance.InstantiateTrial -= SpwanTrial;
+        EventManager.instance.DestroyTrial -= DestroyTrial;
+    }
 }

@@ -29,10 +29,8 @@ public class LevelManager : MonoBehaviour
 
     public void DestroyAll()
     {
-        foreach (var script in zoomOnTapis.scriptToActive)
-        {
-            Destroy(script);
-        }
+        zoomOnTapis.Destry();
+        Destroy(zoomOnTapis.barrier);
         zoomOnTapis.interactifElement.onlyZoom = true;
         zoomOnTapis.HitBoxZoom.enabled = false;
         zoomOnTapis.done = true;

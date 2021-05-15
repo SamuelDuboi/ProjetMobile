@@ -45,7 +45,7 @@ public class ObjectHandler : MonoBehaviour
         InteractActiveObject(false);
     }
 
-    private void SpwanTrial()
+    public void SpwanTrial()
     {
         if(HitBoxZoom != null)
         {
@@ -53,7 +53,7 @@ public class ObjectHandler : MonoBehaviour
             HitBoxZoom.gameObject.layer = 0;
         }
     }
-    private void DestroyTrial()
+    public void DestroyTrial()
     {
         if (HitBoxZoom != null)
         {
@@ -64,7 +64,7 @@ public class ObjectHandler : MonoBehaviour
         }
     }
 
-    private void MoveCam(Cams cams, float orthogrphicSize,GameObject currentObejct)
+    public void MoveCam(Cams cams, float orthogrphicSize,GameObject currentObejct)
     {
 
         if (cams != null  )

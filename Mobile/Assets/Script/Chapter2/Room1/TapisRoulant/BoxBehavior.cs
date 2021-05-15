@@ -10,6 +10,7 @@ public class BoxBehavior : MonoBehaviour
     private float speed;
     private LevelManager levelManager;
     public SoundReader soundReader;
+    public bool doOnce;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +36,9 @@ public class BoxBehavior : MonoBehaviour
                 {
                     return;
                 }
-                else
+                else if(!doOnce)
                 {
+                    doOnce = true;   
                     InventoryManager.Instance.AddList(gameObject, levelManager.name, default, 1);
                     levelManager.DestroyAll();
                     StartCoroutine(WaitForSound());
