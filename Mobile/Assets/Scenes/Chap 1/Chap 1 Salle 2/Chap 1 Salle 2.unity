@@ -2437,6 +2437,7 @@ MonoBehaviour:
   zoomedOnce: 0
   hisZooming: 0
   zoomObject: {fileID: 0}
+  isMenu: 0
   returnButton: {fileID: 527701578}
 --- !u!4 &539829919
 Transform:
@@ -6396,6 +6397,7 @@ MonoBehaviour:
   - {fileID: 1939794627}
   panel: {fileID: 2122441629}
   Moving: 0
+  isDoingAnim: 0
 --- !u!114 &1338819835 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7295998212481237013, guid: 15d8d9c23e639d74fa315c4cf915ce40,
@@ -9859,8 +9861,28 @@ PrefabInstance:
       objectReference: {fileID: 1288203744}
     - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 539829918}
+    - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: ChangeZoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635523792254127, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 539829918}
+    - target: {fileID: 2543635523792254127, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: ChangeZoom
       objectReference: {fileID: 0}
     - target: {fileID: 2543635523916452003, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
@@ -9909,8 +9931,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
@@ -9919,7 +9951,17 @@ PrefabInstance:
       objectReference: {fileID: 873472709}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
+      value: 
+      objectReference: {fileID: 539829918}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
@@ -9929,13 +9971,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
+      value: ChangeZoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524709917462, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[9].m_Target
+      value: 
+      objectReference: {fileID: 539829918}
+    - target: {fileID: 2543635524709917462, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[9].m_MethodName
+      value: ChangeZoom
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524829175811, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
@@ -10001,6 +10068,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455522632456535237, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 539829918}
+    - target: {fileID: 4455522632456535237, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: ChangeZoom
       objectReference: {fileID: 0}
     - target: {fileID: 5150807059510994569, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}

@@ -106,6 +106,8 @@ public class InventoryManager : Singleton<InventoryManager>
         currentIndex = index;
         while (timer < 0.3f)
         {
+            if (!EventManager.instance.cantDoZoom)
+                EventManager.instance.cantDoZoom = true;
             inventoryImages[index].transform.position = new Vector3(Screen.width/2, Screen.height/2);
             panel.color += new Color(0, 0, 0, 0.02f);
             inventoryImages[index].gameObject.SetActive(true);
@@ -143,7 +145,8 @@ public class InventoryManager : Singleton<InventoryManager>
             float step = Vector2.Distance(initPos, inventoryImages[index].transform.position) / 30;
             while (timer < 0.3f)
             {
-
+                if (!EventManager.instance.cantDoZoom)
+                    EventManager.instance.cantDoZoom = true;
                 inventoryImages[index ].transform.position = Vector3.MoveTowards(inventoryImages[index].transform.position, initPos, step);
                 panel.color -= new Color(0, 0, 0, 0.02f);
                 inventoryImages[index ].gameObject.SetActive(true);
@@ -158,11 +161,14 @@ public class InventoryManager : Singleton<InventoryManager>
             inventoryImages[index ].transform.GetChild(0).gameObject.SetActive(true);
         }
         isDoingAnim = false;
+        if (EventManager.instance.cantDoZoom)
+            EventManager.instance.cantDoZoom = false;
         if (numberOfAnim.Count > 0)
         {
             StartCoroutine(ItemAnim(numberOfAnim[numberOfAnim.Count - 1]));
             numberOfAnim.RemoveAt(numberOfAnim.Count - 1);
         }
+
 
     }
     public void RemoveFromList(string name, int numberToRemove)

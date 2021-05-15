@@ -1027,8 +1027,10 @@ MonoBehaviour:
   soundR: {fileID: 692705880}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
   index: 4
   quit: 0
+  isPlaying: 0
 --- !u!1 &358192590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,8 +1116,10 @@ MonoBehaviour:
   soundR: {fileID: 692705880}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
   index: 11
   quit: 0
+  isPlaying: 0
 --- !u!1 &500078075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,6 +1249,7 @@ MonoBehaviour:
   zoomedOnce: 0
   hisZooming: 0
   zoomObject: {fileID: 0}
+  isMenu: 1
   returnButton: {fileID: 527701578}
 --- !u!4 &539829919
 Transform:
@@ -1337,8 +1342,10 @@ MonoBehaviour:
   soundR: {fileID: 692705880}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
   index: 1
   quit: 0
+  isPlaying: 0
 --- !u!1 &692705877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,8 +1805,10 @@ MonoBehaviour:
   soundR: {fileID: 692705880}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
   index: 3
   quit: 0
+  isPlaying: 0
 --- !u!1001 &974061209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2763,6 +2772,7 @@ MonoBehaviour:
   - {fileID: 1939794627}
   panel: {fileID: 2122441629}
   Moving: 0
+  isDoingAnim: 0
 --- !u!1 &1362358437
 GameObject:
   m_ObjectHideFlags: 0
@@ -3114,8 +3124,10 @@ MonoBehaviour:
   soundR: {fileID: 692705880}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
   index: 5
   quit: 0
+  isPlaying: 0
 --- !u!1 &1485865434
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,8 +3400,10 @@ MonoBehaviour:
   soundR: {fileID: 692705880}
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
+  ApplyOnCollect: 0
   index: 2
   quit: 0
+  isPlaying: 0
 --- !u!1 &2015251666
 GameObject:
   m_ObjectHideFlags: 0
@@ -3936,6 +3950,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[9].m_MethodName
       value: ReloadScene
       objectReference: {fileID: 0}
+    - target: {fileID: 2543635523743038748, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635523792254127, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 539829918}
+    - target: {fileID: 2543635523792254127, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: ChangeZoom
+      objectReference: {fileID: 0}
     - target: {fileID: 2543635523916452003, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3960,7 +3989,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
-      objectReference: {fileID: 873472709}
+      objectReference: {fileID: 0}
     - target: {fileID: 2543635523925896598, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
@@ -3969,7 +3998,7 @@ PrefabInstance:
     - target: {fileID: 2543635523925896598, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
-      value: ReloadScene
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2543635523925896598, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
@@ -3979,23 +4008,23 @@ PrefabInstance:
     - target: {fileID: 2543635523925896598, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
-      objectReference: {fileID: 873472709}
+      objectReference: {fileID: 539829918}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
@@ -4004,7 +4033,7 @@ PrefabInstance:
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
-      value: LoadMenu
+      value: ChangeZoom
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
@@ -4015,6 +4044,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524709917462, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[9].m_Target
+      value: 
+      objectReference: {fileID: 539829918}
+    - target: {fileID: 2543635524709917462, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[9].m_MethodName
+      value: ChangeZoom
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524829175811, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}

@@ -6,13 +6,14 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager instance;
    // [HideInInspector] public bool cantRotate;
-    public bool uspideDown;
-    public CamDirection cuurrentCamDirection;
-    public bool cantDoZoom;
-    public bool zoomedOnce;
-    public bool hisZooming;
-    public GameObject zoomObject;
+   [HideInInspector] public bool uspideDown;
+   [HideInInspector] public CamDirection cuurrentCamDirection;
+   [HideInInspector] public bool cantDoZoom;
+   [HideInInspector] public bool zoomedOnce;
+   [HideInInspector] public bool hisZooming;
+   [HideInInspector] public GameObject zoomObject;
     private bool isActiveSound;
+    public bool isMenu;
     public GameObject returnButton;
     
     // Start is called before the first frame update
@@ -44,11 +45,14 @@ public class EventManager : MonoBehaviour
     public event Action<int> LoadScene;
     public event Action<bool> ActiveSound;
 #endregion
-
+    public void ChangeZoom(bool zoom)
+    {
+        cantDoZoom = zoom;
+    }
     #region Invoke
     public void OnSwipeUp(bool up)
     {
-        if (!cantDoZoom && !hisZooming)
+        if (!cantDoZoom && !hisZooming && !isMenu)
         {
             uspideDown = !uspideDown;
             cantDoZoom = true;

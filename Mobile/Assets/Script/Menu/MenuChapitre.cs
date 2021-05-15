@@ -4,15 +4,16 @@ public class MenuChapitre : ObjectHandler
 {
     public int index;
     public bool quit;
-
+    public bool isPlaying;
     public override void Start()
     {
         base.Start();
     }
     public override void Interact(GameObject currentGameObject)
     {
-        if (HitBoxZoom != null && currentGameObject == HitBoxZoom.gameObject)
+        if (HitBoxZoom != null && currentGameObject == HitBoxZoom.gameObject && !isPlaying)
         {
+            isPlaying = true;
             soundR.Play();
             StartCoroutine(WaitForSound());
         }

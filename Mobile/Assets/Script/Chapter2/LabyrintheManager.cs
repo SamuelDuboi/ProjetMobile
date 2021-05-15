@@ -12,6 +12,8 @@ public class LabyrintheManager : MonoBehaviour
     public SoundReader soundReader;
     public void Start()
     {
+        EventManager.instance.ZoomOut += Unzoom;
+
         for (int i = 0; i < indexRotate.Length; i++)
         {
             indexRotate[i] = 0;
@@ -73,6 +75,8 @@ public class LabyrintheManager : MonoBehaviour
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             InventoryManager.Instance.AddList(gameObject, "LevierJaune", default, 0);
             StartCoroutine( GetComponentInParent<ActivateStick>().ActivateWaterStick());
+            EventManager.instance.ZoomOut -= Unzoom;
+
             Destroy(gameObject);
         }
     }
@@ -81,7 +85,6 @@ public class LabyrintheManager : MonoBehaviour
     {
         if (indexRotate[0] == 0 && indexRotate[1] == 1 && indexRotate[2] == 0 && (indexRotate[3] == 1 || indexRotate[3] == 3) && indexRotate[4] == 3 && indexRotate[5] == 0 && indexRotate[6] == 2 && indexRotate[7] == 0 && indexRotate[8] == 3 && (indexRotate[9] == 1 || indexRotate[9] == 3) && indexRotate[10] == 0 && indexRotate[11] == 0 && indexRotate[12] == 0 && indexRotate[13] == 0 && indexRotate[14] == 1 && indexRotate[15] == 3 && indexRotate[16] == 0 && indexRotate[17] == 2 && indexRotate[18] == 3 && indexRotate[19] == 0 && (indexRotate[20] == 1 || indexRotate[20] == 3) && indexRotate[21] == 0 && indexRotate[22] == 2 && indexRotate[23] == 0 && (indexRotate[24] == 0 || indexRotate[24] == 2) && (indexRotate[25] == 0 || indexRotate[25] == 2))
         {
-            Debug.Log("Gagné");
             labyrintheResolved = true;
         }
     }
@@ -89,7 +92,6 @@ public class LabyrintheManager : MonoBehaviour
     {
         if (indexRotate[0] == 0 && indexRotate[1] == 1 && indexRotate[4] == 0 && indexRotate[7] == 1 && indexRotate[8] == 3 && (indexRotate[9] == 1 || indexRotate[9] == 3) && indexRotate[10] == 1 && indexRotate[11] == 0 && indexRotate[12] == 1 && indexRotate[13] == 0 && indexRotate[14] == 1 && indexRotate[15] == 0 && indexRotate[16] == 0 && indexRotate[17] == 2 && (indexRotate[20] == 1 || indexRotate[20] == 3) && indexRotate[21] == 0 && indexRotate[22] == 2 && indexRotate[23] == 1 && (indexRotate[25] == 0 || indexRotate[25] == 2) && (indexRotate[26] == 0 || indexRotate[26] == 2) && indexRotate[27] == 0 && (indexRotate[28] == 0 || indexRotate[28] == 2) && (indexRotate[29] == 1 || indexRotate[29] == 3) && indexRotate[30] == 0 )
         {
-            Debug.Log("Gagné");
             labyrintheResolved = true;
         }
     }
@@ -98,7 +100,6 @@ public class LabyrintheManager : MonoBehaviour
     {
         if (indexRotate[1] == 2 && indexRotate[2] == 0 && indexRotate[4] == 1 && indexRotate[7] == 1 && indexRotate[8] == 1 && (indexRotate[9] == 1 || indexRotate[9] == 3) && indexRotate[10] == 0 && indexRotate[11] == 0 && indexRotate[12] == 1 && indexRotate[15] == 3 && indexRotate[17] == 3 && indexRotate[18] == 1 && indexRotate[22] == 1 && (indexRotate[24] == 0 || indexRotate[24] == 2) && (indexRotate[26] == 0 || indexRotate[26] == 2) && indexRotate[27] == 1 && (indexRotate[31] == 0 || indexRotate[31] == 1) && (indexRotate[32] == 1 || indexRotate[32] == 3) && indexRotate[33] == 3)
         {
-            Debug.Log("Gagné");
             labyrintheResolved = true;
         }
     }
@@ -106,7 +107,6 @@ public class LabyrintheManager : MonoBehaviour
     {
         if (indexRotate[1] == 2 && indexRotate[2] == 0 && indexRotate[4] == 1 && indexRotate[7] == 1 && indexRotate[8] == 1 && (indexRotate[9] == 1 || indexRotate[9] == 3) && indexRotate[10] == 0 && indexRotate[11] == 0 && indexRotate[12] == 1 && indexRotate[15] == 3 && indexRotate[17] == 2 && indexRotate[21] == 0 && indexRotate[22] == 2 && (indexRotate[24] == 0 || indexRotate[24] == 2) && (indexRotate[26] == 0 || indexRotate[26] == 2) && indexRotate[27] == 1 && (indexRotate[31] == 0 || indexRotate[31] == 1) && (indexRotate[32] == 1 || indexRotate[32] == 3) && indexRotate[16] == 0)
         {
-            Debug.Log("Gagné");
             labyrintheResolved = true;
         }
     }
@@ -115,7 +115,6 @@ public class LabyrintheManager : MonoBehaviour
     {
         if (indexRotate[0] == 0 && indexRotate[1] == 1 && indexRotate[2] == 0 && (indexRotate[3] == 1 || indexRotate[3] == 3) && indexRotate[4] == 3 && indexRotate[5] == 0 && indexRotate[6] == 2 && indexRotate[7] == 0 && indexRotate[8] == 3 && (indexRotate[9] == 1 || indexRotate[9] == 3) && indexRotate[10] == 0 && indexRotate[11] == 0 && indexRotate[12] == 0 && indexRotate[13] == 0 && indexRotate[14] == 1 && indexRotate[15] == 3 && indexRotate[18] == 0 && indexRotate[19] == 0 && (indexRotate[20] == 1 || indexRotate[20] == 3) && indexRotate[22] == 1 && indexRotate[23] == 0 && (indexRotate[24] == 0 || indexRotate[24] == 2) && (indexRotate[25] == 0 || indexRotate[25] == 2) && indexRotate[33] == 3)
         {
-            Debug.Log("Gagné");
             labyrintheResolved = true;
         }
     }
@@ -123,7 +122,6 @@ public class LabyrintheManager : MonoBehaviour
     {
         if (indexRotate[0] == 0 && indexRotate[1] == 1 && indexRotate[27] == 1 && (indexRotate[26] == 0 || indexRotate[26] == 2) && (indexRotate[31] == 0 || indexRotate[31] == 1) && indexRotate[33] == 3 && indexRotate[8] == 3 && (indexRotate[9] == 1 || indexRotate[9] == 3) && indexRotate[10] == 0 && indexRotate[11] == 0 && indexRotate[12] == 0 && indexRotate[13] == 0 && indexRotate[14] == 1 && indexRotate[15] == 3 && indexRotate[18] == 0 && indexRotate[19] == 0 && (indexRotate[20] == 1 || indexRotate[20] == 3) && indexRotate[22] == 1 && indexRotate[23] == 0 && (indexRotate[24] == 0 || indexRotate[24] == 2) && (indexRotate[25] == 0 || indexRotate[25] == 2))
         {
-            Debug.Log("Gagné");
             labyrintheResolved = true;
         }
     }
@@ -134,6 +132,19 @@ public class LabyrintheManager : MonoBehaviour
         {
             Debug.Log("Gagné");
             labyrintheResolved = true;
+        }
+    }
+
+    private void Unzoom()
+    {
+        var parent = GetComponentInParent<ObjectHandler>();
+        if (parent)
+        {
+            parent.interactifElement.onlyZoom = false;
+            parent.HitBoxZoom.enabled = false;
+            parent.interactifElement.spawnNewTrial = true;
+            EventManager.instance.ZoomOut -= Unzoom;
+            Destroy(parent.trialInstantiate);
         }
     }
 }

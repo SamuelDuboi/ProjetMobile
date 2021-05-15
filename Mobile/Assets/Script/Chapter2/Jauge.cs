@@ -9,7 +9,10 @@ public class Jauge : MonoBehaviour
     private bool jaugesResolved = false;
     public int index;
     public int[] jaugeIndex;
-
+    private void Start()
+    {
+        EventManager.instance.ZoomOut += Unzoom;
+    }
     public void AiguilleRotation(GameObject button)
     {
         if (timer == 0 && jaugesResolved == false)
@@ -67,7 +70,22 @@ public class Jauge : MonoBehaviour
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             InventoryManager.Instance.AddList(gameObject, "LevierBleu", default, 0);
             StartCoroutine(GetComponentInParent<ActivateStick>().ActivateWaterStick());
+            EventManager.instance.ZoomOut -= Unzoom;
             Destroy(gameObject);
+
+        }
+    }
+
+    private void Unzoom()
+    {
+        var parent = GetComponentInParent<ObjectHandler>();
+        if (parent)
+        {
+            parent.interactifElement.onlyZoom = false;
+            parent.HitBoxZoom.enabled = true;
+            parent.interactifElement.spawnNewTrial = true;
+            EventManager.instance.ZoomOut -= Unzoom;
+            Destroy(parent.trialInstantiate);
         }
     }
 }
