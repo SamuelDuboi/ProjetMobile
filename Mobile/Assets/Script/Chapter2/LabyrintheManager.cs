@@ -141,7 +141,7 @@ public class LabyrintheManager : MonoBehaviour
         if (parent)
         {
             parent.interactifElement.onlyZoom = false;
-            parent.HitBoxZoom.enabled = false;
+            parent.HitBoxZoom.enabled = true;
             parent.interactifElement.spawnNewTrial = true;
             EventManager.instance.ZoomOut -= Unzoom;
             Destroy(parent.trialInstantiate);
