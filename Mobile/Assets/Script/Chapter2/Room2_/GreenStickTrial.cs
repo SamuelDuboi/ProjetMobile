@@ -25,7 +25,7 @@ public class GreenStickTrial : MonoBehaviour
             InventoryManager.Instance.RemoveFromList("EngrenageGros", 1);
             currentButtons.GetComponent<Image>().sprite = bigGear;
             currentButtons.interactable = false;
-            CheckNumberOfGear(true);
+            CheckNumberOfGear(false);
         }
     }
     public void ClickOnSmallGear(Button currentButtons)
@@ -37,7 +37,7 @@ public class GreenStickTrial : MonoBehaviour
             InventoryManager.Instance.RemoveFromList("EngrenagePetit", 1);
             currentButtons.GetComponent<Image>().sprite = smallgGear;
             currentButtons.interactable = false;
-            CheckNumberOfGear(false);
+            CheckNumberOfGear(true);
         }
     }
 
@@ -55,6 +55,7 @@ public class GreenStickTrial : MonoBehaviour
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             InventoryManager.Instance.AddList(gameObject, "LevierVert", default, 0);
             StartCoroutine(GetComponentInParent<ActivateStick>().ActivateWaterStick());
+            EventManager.instance.ZoomOut -= Unzoom;
             Destroy(gameObject);
         }
     }

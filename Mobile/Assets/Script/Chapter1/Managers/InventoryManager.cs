@@ -14,6 +14,9 @@ public class InventoryManager : Singleton<InventoryManager>
     public Image panel;
     Vector3 initPos;
     public bool Moving;
+    public bool isDoingAnim;
+   List<int>numberOfAnim;
+    int currentIndex;
     private void Start()
     {
         if(inventoryImages.Length>0 && inventoryImages[0]!= null)
@@ -24,6 +27,7 @@ public class InventoryManager : Singleton<InventoryManager>
                 image.transform.parent.gameObject.SetActive( false);
             }
         }
+        numberOfAnim = new List<int>();
     }
     public GameObject FindObject(string name, out int number)
     {
@@ -63,14 +67,12 @@ public class InventoryManager : Singleton<InventoryManager>
                 if (item.imageIndex != 1000)
                 {
                     inventoryImages[item.imageIndex].GetComponentInChildren<TextMeshProUGUI>().text = item.number.ToString();
-                    if (!inventoryImages[item.imageIndex].transform.parent.gameObject.activeSelf)
-                        inventoryImages[item.imageIndex].transform.parent.gameObject.SetActive(true);
                 }
                 return;
             }
         }
         
-        interactifElementsList.Add(new InventoryItem(elementToAdd, name, 1, image));
+        interactifElementsList.Add(new InventoryItem(elementToAdd, name, number, image));
         //add image to ui
         if(image != null && image != default)
         {
@@ -79,9 +81,11 @@ public class InventoryManager : Singleton<InventoryManager>
             inventoryImages[globalIndex].sprite = image;
              // inventoryImages[globalIndex].SetNativeSize();
             inventoryImages[globalIndex].GetComponentInChildren<TextMeshProUGUI>().text = interactifElementsList[_index].number.ToString();
-            if (!inventoryImages[globalIndex].transform.parent.gameObject.activeSelf)
-                inventoryImages[globalIndex].transform.parent.gameObject.SetActive(true);
-            StartCoroutine(ItemAnim(globalIndex));
+          
+            if (!isDoingAnim)
+                StartCoroutine(ItemAnim(globalIndex));
+            else
+                numberOfAnim.Add(globalIndex);
             globalIndex++;
 
 
@@ -89,7 +93,9 @@ public class InventoryManager : Singleton<InventoryManager>
     }
     IEnumerator ItemAnim(int index)
     {
-       
+        if (!inventoryImages[index].transform.parent.gameObject.activeSelf)
+            inventoryImages[index].transform.parent.gameObject.SetActive(true);
+        isDoingAnim = true;
         inventoryImages[index].gameObject.SetActive(false);
         inventoryImages[index].transform.GetChild(0).gameObject.SetActive(false);
         initPos  = inventoryImages[index].transform.position;
@@ -97,6 +103,7 @@ public class InventoryManager : Singleton<InventoryManager>
         panel.color = new Color(0, 0, 0, 0);
         float timer = 0;
         inventoryImages[index].color = Color.white;
+        currentIndex = index;
         while (timer < 0.3f)
         {
             inventoryImages[index].transform.position = new Vector3(Screen.width/2, Screen.height/2);
@@ -108,23 +115,24 @@ public class InventoryManager : Singleton<InventoryManager>
             yield return new WaitForSeconds(0.01f);
         }
         Moving = true;
-        StartCoroutine(WaitToMove());
+
+        StartCoroutine(WaitToMove(index));
     }
     public void SkipeMove()
     {
         if (Moving)
         {
-            StartCoroutine(MoveBack());
+            StartCoroutine(MoveBack(currentIndex));
         }
         
     }
-    IEnumerator WaitToMove()
+    IEnumerator WaitToMove(int index)
     {
         yield return new WaitForSeconds(2f);
-        StartCoroutine(MoveBack());
+        StartCoroutine(MoveBack(index));
     }
     bool isMovingBack;
-    IEnumerator MoveBack()
+    IEnumerator MoveBack(int index)
     {
         if (!isMovingBack)
         {
@@ -132,22 +140,28 @@ public class InventoryManager : Singleton<InventoryManager>
 
             isMovingBack = true;
             float timer = 0;
-            float step = Vector2.Distance(initPos, inventoryImages[globalIndex - 1].transform.position) / 30;
+            float step = Vector2.Distance(initPos, inventoryImages[index].transform.position) / 30;
             while (timer < 0.3f)
             {
 
-                inventoryImages[globalIndex - 1].transform.position = Vector3.MoveTowards(inventoryImages[globalIndex - 1].transform.position, initPos, step);
+                inventoryImages[index ].transform.position = Vector3.MoveTowards(inventoryImages[index].transform.position, initPos, step);
                 panel.color -= new Color(0, 0, 0, 0.02f);
-                inventoryImages[globalIndex - 1].gameObject.SetActive(true);
-                if(inventoryImages[globalIndex - 1].transform.localScale.x>1)
-                    inventoryImages[globalIndex - 1].transform.localScale -= Vector3.one * 0.1f;
+                inventoryImages[index ].gameObject.SetActive(true);
+                if(inventoryImages[index ].transform.localScale.x>1)
+                    inventoryImages[index].transform.localScale -= Vector3.one * 0.1f;
                 timer += 0.01f;
                 yield return new WaitForSeconds(0.01f);
             }
             isMovingBack = false;
 
             panel.gameObject.SetActive(false);
-            inventoryImages[globalIndex-1].transform.GetChild(0).gameObject.SetActive(true);
+            inventoryImages[index ].transform.GetChild(0).gameObject.SetActive(true);
+        }
+        isDoingAnim = false;
+        if (numberOfAnim.Count > 0)
+        {
+            StartCoroutine(ItemAnim(numberOfAnim[numberOfAnim.Count - 1]));
+            numberOfAnim.RemoveAt(numberOfAnim.Count - 1);
         }
 
     }

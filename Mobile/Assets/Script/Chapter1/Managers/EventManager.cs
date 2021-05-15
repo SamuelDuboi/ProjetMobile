@@ -6,12 +6,12 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager instance;
    // [HideInInspector] public bool cantRotate;
-    [HideInInspector] public bool uspideDown;
-    [HideInInspector] public CamDirection cuurrentCamDirection;
-    [HideInInspector] public bool cantDoZoom;
-    [HideInInspector] public bool zoomedOnce;
-    [HideInInspector] public bool hisZooming;
-    [HideInInspector] public GameObject zoomObject;
+    public bool uspideDown;
+    public CamDirection cuurrentCamDirection;
+    public bool cantDoZoom;
+    public bool zoomedOnce;
+    public bool hisZooming;
+    public GameObject zoomObject;
     private bool isActiveSound;
     public GameObject returnButton;
     

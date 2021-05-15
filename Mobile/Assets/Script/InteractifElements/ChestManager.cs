@@ -13,7 +13,7 @@ public class ChestManager : MonoBehaviour
     private bool[] results;
     public bool save;
     public bool destroyHitBoxParent;
-    public GameObject collider;
+    public GameObject colliderGO;
     public SoundReader soundReader;
     public bool isTuto;
     [HideInInspector] public bool cantAct;
