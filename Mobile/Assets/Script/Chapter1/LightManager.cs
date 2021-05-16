@@ -23,7 +23,7 @@ public class LightManager : MonoBehaviour
         LunchCastLight(gameObject);
     }
     
-   /* private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Handles.color = Color.red;
         Handles.ArrowHandleCap(0, this.transform.position + this.transform.forward * 0.25f,this.transform.rotation, 0.5f, EventType.Repaint);
