@@ -70,23 +70,25 @@ public class DeviceManager : MonoBehaviour
                     Cams cams = null;
                     var _objecthandler = hit.collider.GetComponentInParent<ObjectHandler>();
                     float orthographicSize = _objecthandler.interactifElement.orthoGraphicSize;
-                    
+                    if (!EventManager.instance.cantDoZoom)
+                    {
                         _objecthandler.ChoseToZoom(out cams);
                     
-                    if (cams != null)
-                        EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
-                    else
-                    {
-                        mask = 1 << 9;
-                        if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
+                        if (cams != null)
+                            EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
+                        else
                         {
-                            if (hit.collider.gameObject.tag == "Collectable")
-                                EventManager.instance.OnCollect(hit.collider.gameObject);
-                            else
+                            mask = 1 << 9;
+                            if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
                             {
-                                EventManager.instance.OnInteract(hit.collider.gameObject);
-                            }
+                                if (hit.collider.gameObject.tag == "Collectable")
+                                    EventManager.instance.OnCollect(hit.collider.gameObject);
+                                else
+                                {
+                                    EventManager.instance.OnInteract(hit.collider.gameObject);
+                                }
 
+                            }
                         }
                     }
 
@@ -134,22 +136,24 @@ public class DeviceManager : MonoBehaviour
 
                 var _objecthandler = hit.collider.GetComponentInParent<ObjectHandler>();
                 float orthographicSize = _objecthandler.interactifElement.orthoGraphicSize;
-                
-                    _objecthandler.ChoseToZoom(out cams);
-                if (cams != null)
-                    EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
-                else
+                if (!EventManager.instance.cantDoZoom)
                 {
-                    mask = 1 << 9;
-                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
+                        _objecthandler.ChoseToZoom(out cams);
+                    if (cams != null)
+                        EventManager.instance.OnZoomIn(cams, orthographicSize, _objecthandler.gameObject);
+                    else
                     {
-                        if (hit.collider.gameObject.tag == "Collectable")
-                            EventManager.instance.OnCollect(hit.collider.gameObject);
-                        else
+                        mask = 1 << 9;
+                        if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
                         {
-                            EventManager.instance.OnInteract(hit.collider.gameObject);
-                        }
+                            if (hit.collider.gameObject.tag == "Collectable")
+                                EventManager.instance.OnCollect(hit.collider.gameObject);
+                            else
+                            {
+                                EventManager.instance.OnInteract(hit.collider.gameObject);
+                            }
 
+                        }
                     }
                 }
 

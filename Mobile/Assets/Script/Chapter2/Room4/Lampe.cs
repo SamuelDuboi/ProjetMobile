@@ -42,15 +42,8 @@ public class Lampe : ObjectHandler
                 meuble.Interact(meuble.HitBoxZoom.gameObject);
             }
             InteractActiveObject(true);
-             if (trialInstantiate == null)
-            {
-                interactifElement.onlyZoom = true;
-                HitBoxZoom.enabled = false;
-                EventManager.instance.OnInstantiateTrial();
-                interactifElement.spawnNewTrial = false;
-                trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform.position, Quaternion.identity);
-                trialInstantiate.transform.SetParent(transform);
-            }
+             
+             
         }
     }
 }

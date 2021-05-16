@@ -12,6 +12,7 @@ public class Puzzle : MonoBehaviour
 
     public void Start()
     {
+        EventManager.instance.ZoomOut += Unzoom;
         for (int i = 0; i < indexRotate.Length; i++)
         {
             indexRotate[i] = 0;
@@ -73,7 +74,21 @@ public class Puzzle : MonoBehaviour
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             InventoryManager.Instance.AddList(GetComponentInParent<ObjectHandler>().gameObject, GetComponentInParent<ObjectHandler>().NameToAddIfAnimToAdd, default, 1);
             GetComponentInParent<ObjectHandler>().Interact(GetComponentInParent<ObjectHandler>().HitBoxZoom.gameObject);
+            EventManager.instance.ZoomOut -= Unzoom;
             Destroy(gameObject);
+        }
+    }
+
+    private void Unzoom()
+    {
+        var parent = GetComponentInParent<ObjectHandler>();
+        if (parent)
+        {
+            parent.interactifElement.onlyZoom = false;
+            parent.HitBoxZoom.enabled = true;
+            parent.interactifElement.spawnNewTrial = true;
+            EventManager.instance.ZoomOut -= Unzoom;
+            Destroy(parent.trialInstantiate);
         }
     }
 }

@@ -20,7 +20,7 @@ public class ObjectToGrab : ObjectHandler
         {
             cpt++;
             var main = waterSystem.main;
-            main.startSize = new ParticleSystem.MinMaxCurve(cpt*0.5f+0.2f, cpt*0.5f+0.2f);
+            main.startSize = new ParticleSystem.MinMaxCurve(cpt*0.5f+0.35f, cpt*0.5f+0.35f);
             interactifElement.interactionAnimator.SetTrigger("Shake");
             if (cpt > 4)
             {
