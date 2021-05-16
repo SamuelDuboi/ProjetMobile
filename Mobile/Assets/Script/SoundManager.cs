@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    public bool mute;
     public static SoundManager instance;
     [SerializeField] private SoundList soundList;
     private List<AudioSource> sources;
@@ -33,6 +34,8 @@ public class SoundManager : MonoBehaviour
             {
                 audioSource.clip = soundClassic.clip;
                 audioSource.volume = soundClassic.volume;
+                if (mute)
+                    audioSource.mute = true;
                 isSelected = true;
                 if (sources == null)
                     sources = new List<AudioSource>();
@@ -48,6 +51,7 @@ public class SoundManager : MonoBehaviour
 
     public void ActiveSound(bool isActive)
     {
+        mute = isActive;
         if (isActive)
         {
             foreach (var sound in sources)

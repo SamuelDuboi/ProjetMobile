@@ -1228,6 +1228,7 @@ MonoBehaviour:
   zoomObject: {fileID: 0}
   isMenu: 1
   returnButton: {fileID: 0}
+  soundToggle: {fileID: 1906764513}
 --- !u!4 &539829919
 Transform:
   m_ObjectHideFlags: 0
@@ -1556,6 +1557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1057b36424151304486d1e0937e4e021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mute: 0
   soundList: {fileID: 11400000, guid: fe72a1046e0cee64592d99d40837a7f3, type: 2}
 --- !u!4 &766264427
 Transform:
@@ -3742,6 +3744,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9758628, y: 0.097082324, z: 2.1882293}
   m_Center: {x: 0.00000015094375, y: -0.06399356, z: 1.0438519}
+--- !u!1 &1906764513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5323146831354573061, guid: 6b0521289b40c564c981abf57e7baf33,
+    type: 3}
+  m_PrefabInstance: {fileID: 1912825945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1912013654
 GameObject:
   m_ObjectHideFlags: 0
@@ -3847,6 +3855,11 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 766264426}
+    - target: {fileID: 5323146831354573061, guid: 6b0521289b40c564c981abf57e7baf33,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5323146831563459836, guid: 6b0521289b40c564c981abf57e7baf33,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -3878,6 +3891,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 636973643}
+    - target: {fileID: 5323146831868295042, guid: 6b0521289b40c564c981abf57e7baf33,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323146832506791213, guid: 6b0521289b40c564c981abf57e7baf33,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5323146832729050288, guid: 6b0521289b40c564c981abf57e7baf33,
         type: 3}
       propertyPath: m_Name
@@ -3987,6 +4010,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323146833142520392, guid: 6b0521289b40c564c981abf57e7baf33,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323146833142520392, guid: 6b0521289b40c564c981abf57e7baf33,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323146833142520392, guid: 6b0521289b40c564c981abf57e7baf33,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 539829918}
+    - target: {fileID: 5323146833142520392, guid: 6b0521289b40c564c981abf57e7baf33,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323146833142520392, guid: 6b0521289b40c564c981abf57e7baf33,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: IsToolge
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323146833142520392, guid: 6b0521289b40c564c981abf57e7baf33,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323146833142520392, guid: 6b0521289b40c564c981abf57e7baf33,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b0521289b40c564c981abf57e7baf33, type: 3}

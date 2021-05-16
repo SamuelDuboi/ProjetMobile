@@ -28,7 +28,6 @@ public class SaveManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            Debug.LogError("Instance Already existe");
         }
     }
 

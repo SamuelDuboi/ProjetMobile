@@ -15,6 +15,7 @@ public class EventManager : MonoBehaviour
     private bool isActiveSound;
     public bool isMenu;
     public GameObject returnButton;
+    public GameObject soundToggle;
     
     // Start is called before the first frame update
     private void Awake()
@@ -65,8 +66,10 @@ public class EventManager : MonoBehaviour
         if (!cantDoZoom && !hisZooming)
         {
             cantDoZoom = true;
-
-            SwipeLeft.Invoke();           
+            if (uspideDown)
+                SwipeRight.Invoke();
+            else
+                SwipeLeft.Invoke();           
         }
     }
     public void OnSwipeRight()
@@ -74,8 +77,10 @@ public class EventManager : MonoBehaviour
         if (!cantDoZoom && !hisZooming)
         {
             cantDoZoom = true;
-
-            SwipeRight.Invoke();
+            if (uspideDown)
+                SwipeLeft.Invoke();
+            else
+                SwipeRight.Invoke();
         }
     }
     public void OnZoomIn(Cams cam, float orthographicSize, GameObject current)
@@ -142,4 +147,11 @@ public class EventManager : MonoBehaviour
         ActiveSound.Invoke(isActiveSound);
     }
     #endregion
+    public void IsToolge()
+    {
+        if (SoundManager.instance.mute)
+            soundToggle.SetActive(false);
+        else
+            soundToggle.SetActive(true);
+    }
 }
