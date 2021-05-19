@@ -31,6 +31,23 @@ public class ObjectToGrab : ObjectHandler
                 main.startSize = new ParticleSystem.MinMaxCurve(2f, 2f);
                 HitBoxZoom.gameObject.SetActive(false);
                 StartCoroutine(WaterCaroutine(main));
+
+                EventManager.instance.ZoomOut -= UnZoom;
+                EventManager.instance.CollectObject -= CollectObject;
+                EventManager.instance.InteractObject -= Interact;
+                EventManager.instance.ZoomIn -= MoveCam;
+                EventManager.instance.InstantiateTrial -= SpwanTrial;
+                EventManager.instance.DestroyTrial -= DestroyTrial;
+                EventManager.instance.SwipeUp -= Swipe;
+
+                var parent = transform.parent.GetComponent<ObjectHandler>();
+                EventManager.instance.ZoomOut -= parent.UnZoom;
+                EventManager.instance.CollectObject -= parent.CollectObject;
+                EventManager.instance.InteractObject -= parent.Interact;
+                EventManager.instance.ZoomIn -= parent.MoveCam;
+                EventManager.instance.InstantiateTrial -= parent.SpwanTrial;
+                EventManager.instance.DestroyTrial -= parent.DestroyTrial;
+
                 destoyed = true;
             }
         }
@@ -45,6 +62,7 @@ public class ObjectToGrab : ObjectHandler
             mainModule.startSize = new ParticleSystem.MinMaxCurve(2f-timer, 2f-timer);
             yield return new WaitForSeconds(0.01f);
         }
+        
         Destroy(transform.parent.gameObject);
     }
 

@@ -69,6 +69,8 @@ public class ObjectHandler : MonoBehaviour
 
         if (cams != null  )
         {
+            if (currentObejct == null)
+                Debug.Log(gameObject.name);
             if(currentObejct == gameObject)
             {
                 if(HitBoxZoom != null && HitBoxZoom.gameObject != null)
