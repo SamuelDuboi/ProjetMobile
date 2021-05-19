@@ -67,7 +67,6 @@ public class Puzzle : MonoBehaviour
         if (indexRotate[0] == 2 && indexRotate[1] == 0 && (indexRotate[2] == 1 || indexRotate[2] == 3) && indexRotate[3] == 1)
         {
             puzzleResolved = true;
-            Debug.Log("Gagné");
             GetComponentInParent<ObjectHandler>().trialInstantiate = null;
             EventManager.instance.OnDestroyTrial();
 
