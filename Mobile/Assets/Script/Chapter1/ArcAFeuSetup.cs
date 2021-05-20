@@ -7,6 +7,7 @@ public class ArcAFeuSetup : ObjectHandler
     public GameObject[] objects;
     public string [] names;
     public bool canPutTorche;
+    public LightManager lightManager; 
     public override void Start()
     {
         base.Start();
@@ -20,8 +21,8 @@ public class ArcAFeuSetup : ObjectHandler
             int random;
             if (canPutTorche)
             {
-               
-                var gameObject = InventoryManager.Instance.FindObject(names[0], out random);
+               var gameObject = InventoryManager.Instance.FindObject(names[0], out random);
+                lightManager.ignoreZoom = false;
                 if (gameObject != null)
                 {
                     InventoryManager.Instance.RemoveFromList(names[0], 1);
