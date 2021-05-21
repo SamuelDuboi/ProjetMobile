@@ -33,7 +33,11 @@ public class IntroBehavor : MonoBehaviour
         if (Input.touchCount > 0)
         {
             var touch = Input.GetTouch(0);
-            if(touch.phase == TouchPhase.Ended && !pass.activeSelf && intro[0].gameObject.activeSelf && SaveManager.instance.hasDoneTuto)
+            if (touch.phase == TouchPhase.Ended)
+            {
+                intro[0].Play();
+            }
+            if (touch.phase == TouchPhase.Ended && !pass.activeSelf && intro[0].gameObject.activeSelf && SaveManager.instance.hasDoneTuto)
             {
                 pass.SetActive(true);
             }
