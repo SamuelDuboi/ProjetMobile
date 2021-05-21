@@ -18,6 +18,7 @@ public class SaveManager : MonoBehaviour
     public GameObject[] chap2Button;
     public Image FadePanel;
     public GameObject loading;
+    public bool skipIntro;
     private void Awake()
     {
         if(instance== null)
