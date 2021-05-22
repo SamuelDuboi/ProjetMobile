@@ -7,6 +7,9 @@ public class RopeBurned : MonoBehaviour
 
     public Animator burnedRope;
     private bool doOnce;
+    public bool botomRope;
+    private float timer;
+
     private void Start()
     {
         EventManager.instance.LightObject += LightOn;
@@ -15,6 +18,11 @@ public class RopeBurned : MonoBehaviour
     {
         if (gameObject == _gameObject && !doOnce)
         {
+            if(botomRope && timer < 0.5f)
+            {
+                timer += Time.deltaTime;
+                return;
+            }
             doOnce = true;
             burnedRope.SetTrigger("Interact");
             EventManager.instance.OnZoomOut();

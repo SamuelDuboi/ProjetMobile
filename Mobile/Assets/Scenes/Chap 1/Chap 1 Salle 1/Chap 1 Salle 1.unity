@@ -1310,7 +1310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197292051}
   m_LocalRotation: {x: -0, y: 0.000000029802322, z: -0.000000014901161, w: 1}
-  m_LocalPosition: {x: -0.58898443, y: 2.3069954, z: 12.286999}
+  m_LocalPosition: {x: -0.652, y: 2.307, z: 12.287}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4999949667262163712}
@@ -2432,7 +2432,7 @@ MonoBehaviour:
   - {fileID: 1916873189997190872}
   animator: {fileID: 1944396833}
   upsideDownEditor: 0
-  currentDirection: 1
+  currentDirection: 2
 --- !u!1 &363628326
 GameObject:
   m_ObjectHideFlags: 0
@@ -9274,16 +9274,16 @@ GameObject:
   - component: {fileID: 1839765862}
   - component: {fileID: 1839765861}
   - component: {fileID: 1839765860}
-  - component: {fileID: 1839765859}
   - component: {fileID: 1839765863}
   - component: {fileID: 1839765858}
+  - component: {fileID: 1839765859}
   m_Layer: 0
   m_Name: PRISME (1)
   m_TagString: Miror
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1839765857
 Transform:
   m_ObjectHideFlags: 0
@@ -9292,8 +9292,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839765856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.004, y: -0.582, z: 0.447}
-  m_LocalScale: {x: 0.25, y: 0.15, z: 0.15}
+  m_LocalPosition: {x: -0.004, y: -0.582, z: 0.447}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4467787302725697503}
   m_RootOrder: 0
@@ -9348,8 +9348,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5313013, y: 2.6093454, z: 2.7822626}
-  m_Center: {x: 0.0063668704, y: 0.0011657011, z: 0.019538518}
+  m_Size: {x: 0.30465394, y: 0.28974304, z: 0.3203321}
+  m_Center: {x: 0.000000052154064, y: 0, z: -0.000000059604645}
 --- !u!114 &1839765860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10833,6 +10833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burnedRope: {fileID: 400272262588486998}
+  botomRope: 1
 --- !u!65 &199947609384166852
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12393,7 +12394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf9c9f624dfd264d8cee33bf98c8a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWallUp: 0
+  isWallUp: 1
 --- !u!1 &2001433587567688257
 GameObject:
   m_ObjectHideFlags: 0
@@ -12803,7 +12804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506408426558730956}
   m_LocalRotation: {x: -0.6532815, y: 0.2705982, z: 0.27059838, w: 0.65328133}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 17.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1064500068322054127}
@@ -12932,7 +12933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf9c9f624dfd264d8cee33bf98c8a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWallUp: 1
+  isWallUp: 0
 --- !u!1 &2597218657366345458
 GameObject:
   m_ObjectHideFlags: 0
@@ -12966,6 +12967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burnedRope: {fileID: 400272262588486998}
+  botomRope: 0
 --- !u!65 &2597218657366345460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13259,7 +13261,7 @@ Transform:
   m_GameObject: {fileID: 113078149333335011}
   m_LocalRotation: {x: 0.51113015, y: 0.48861656, z: 0.48861665, w: 0.51112974}
   m_LocalPosition: {x: 1.536, y: 1.965, z: 0.407}
-  m_LocalScale: {x: 0.1083517, y: 0.1083517, z: 0.1083517}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2282206632010082422}
   m_RootOrder: 1
@@ -13688,7 +13690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4539043758428502305}
   m_LocalRotation: {x: 0.27059796, y: 0.65328145, z: 0.65328157, w: -0.2705983}
-  m_LocalPosition: {x: 0, y: 17.15, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2027890873}
@@ -15616,7 +15618,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018491661396130714}
-  m_LocalRotation: {x: -0.27059802, y: -0.6532815, z: -0.6532815, w: 0.27059802}
+  m_LocalRotation: {x: 0.27059808, y: -0.6532815, z: -0.6532815, w: -0.27059808}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -15997,6 +15999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burnedRope: {fileID: 9164872795447943473}
+  botomRope: 0
 --- !u!4 &6882259087799440460
 Transform:
   m_ObjectHideFlags: 0
@@ -16761,7 +16764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8637844423044619992}
   m_LocalRotation: {x: 0.008916407, y: 0.6995684, z: 0.71445674, w: -0.0087305745}
-  m_LocalPosition: {x: 0.06, y: -3.82, z: 0.82}
+  m_LocalPosition: {x: 0.23, y: -3.82, z: 0.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5671788649713107795}
@@ -16826,6 +16829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burnedRope: {fileID: 9164872795447943473}
+  botomRope: 0
 --- !u!33 &8796486997548523236
 MeshFilter:
   m_ObjectHideFlags: 0
