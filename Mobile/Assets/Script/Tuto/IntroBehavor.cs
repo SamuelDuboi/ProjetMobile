@@ -17,7 +17,11 @@ public class IntroBehavor : MonoBehaviour
         if (SaveManager.instance.skipIntro)
         {
             tipsManager.canStart = true;
+            baseSalle.SetActive(true);
+            realCanvas.SetActive(true);
+            Camera.main.backgroundColor = baseColor;
             SaveManager.instance.LoadTuto(gameObject);
+
             yield break;
         }
       else

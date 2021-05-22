@@ -31,6 +31,10 @@ public class SaveManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        LoadByXML();
+    }
 
     private void SaveByXML()
     {

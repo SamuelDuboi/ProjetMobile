@@ -45,7 +45,7 @@ public class SoundManager : MonoBehaviour
         }
         if (!isSelected)
         {
-            Debug.LogError("No sound have this name");
+            Debug.LogError("No sound have this name "+ name);
         }
     }
 
