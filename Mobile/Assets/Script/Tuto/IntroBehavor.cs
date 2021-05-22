@@ -9,6 +9,9 @@ public class IntroBehavor : MonoBehaviour
     public VideoPlayer[] intro;
     private bool doOnce;
     public GameObject pass;
+    public GameObject baseSalle;
+    public GameObject realCanvas;
+    public Color baseColor;
     private IEnumerator Start()
     {
         if (SaveManager.instance.skipIntro)
@@ -17,10 +20,12 @@ public class IntroBehavor : MonoBehaviour
             SaveManager.instance.LoadTuto(gameObject);
             yield break;
         }
-        else
+      else
         {
             intro[0].gameObject.SetActive(true);
             SaveManager.instance.skipIntro = true;
+            yield return new WaitUntil(() => intro[0].isPrepared == true);
+            intro[0].Play();
             yield return new WaitUntil(() => intro[0].time >= intro[0].length-0.1f);
             if (pass.activeSelf)
                 pass.SetActive(false);
@@ -33,10 +38,7 @@ public class IntroBehavor : MonoBehaviour
         if (Input.touchCount > 0)
         {
             var touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Ended)
-            {
-                intro[0].Play();
-            }
+
             if (touch.phase == TouchPhase.Ended && !pass.activeSelf && intro[0].gameObject.activeSelf && SaveManager.instance.hasDoneTuto)
             {
                 pass.SetActive(true);
@@ -46,24 +48,33 @@ public class IntroBehavor : MonoBehaviour
     public void Quite()
     {
         if (!doOnce)
+        {
             StartCoroutine(FadeQuite());
+        }
     }
     public void PlayeTuto()
     {
-        if(!doOnce)
-        StartCoroutine(FadePlay());
+        if (!doOnce)
+        {
+            StartCoroutine(FadePlay());
+        }
     }
     IEnumerator FadePlay()
     {
+        
         doOnce = true;
         intro[1].gameObject.SetActive(true);
         buttons.SetActive(false);
         yield return new WaitUntil(() => intro[1].time >= intro[1].length-0.1f);
         tipsManager.canStart = true;
+        baseSalle.SetActive(true);
+        realCanvas.SetActive(true);
+        Camera.main.backgroundColor = baseColor;
         SaveManager.instance.LoadTuto(gameObject);
     }
     IEnumerator FadeQuite()
     {
+
         doOnce = true;
         intro[2].gameObject.SetActive(true);
         buttons.SetActive(false);
