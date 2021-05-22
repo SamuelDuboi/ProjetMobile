@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.42352942, g: 0.45490196, b: 0.5176471, a: 1}
+  m_AmbientSkyColor: {r: 0.105882354, g: 0.11372549, b: 0.12941177, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -57,7 +57,7 @@ LightmapSettings:
     serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 30
-    m_AtlasSize: 1024
+    m_AtlasSize: 512
     m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 0.6
@@ -1570,6 +1570,7 @@ MonoBehaviour:
   - {fileID: 0}
   FadePanel: {fileID: 1527053984}
   loading: {fileID: 1912013654}
+  skipIntro: 0
 --- !u!4 &636973644
 Transform:
   m_ObjectHideFlags: 0
@@ -5046,7 +5047,7 @@ Light:
   m_Type: 4
   m_Shape: 0
   m_Color: {r: 0.751, g: 0.9069159, b: 1, a: 1}
-  m_Intensity: 8.72
+  m_Intensity: 9.07
   m_Range: 11.9
   m_SpotAngle: 64.35478
   m_InnerSpotAngle: 0
@@ -5138,7 +5139,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.83, g: 0.9296552, b: 1, a: 1}
-  m_Intensity: 2.68
+  m_Intensity: 6.2
   m_Range: 10.74
   m_SpotAngle: 64.35478
   m_InnerSpotAngle: 0
@@ -5230,7 +5231,7 @@ Light:
   m_Type: 3
   m_Shape: 0
   m_Color: {r: 1, g: 0.9349382, b: 0.8820755, a: 1}
-  m_Intensity: 2.71
+  m_Intensity: 3.03
   m_Range: 11.9
   m_SpotAngle: 64.35478
   m_InnerSpotAngle: 0
@@ -5329,7 +5330,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 629f197d870be7b4ca0d23d1902ce461, type: 2}
+  - {fileID: 2100000, guid: 634203c19c09a3c4d9e84d78cbfaf63e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5459,7 +5460,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 629f197d870be7b4ca0d23d1902ce461, type: 2}
+  - {fileID: 2100000, guid: 634203c19c09a3c4d9e84d78cbfaf63e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5580,7 +5581,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 629f197d870be7b4ca0d23d1902ce461, type: 2}
+  - {fileID: 2100000, guid: 634203c19c09a3c4d9e84d78cbfaf63e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5630,7 +5631,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.9536487, b: 0.77254903, a: 1}
-  m_Intensity: 23.44
+  m_Intensity: 29.05
   m_Range: 9.74
   m_SpotAngle: 145.08029
   m_InnerSpotAngle: 0
@@ -5857,7 +5858,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 629f197d870be7b4ca0d23d1902ce461, type: 2}
+  - {fileID: 2100000, guid: 634203c19c09a3c4d9e84d78cbfaf63e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
