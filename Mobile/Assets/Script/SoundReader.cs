@@ -37,7 +37,7 @@ public class SoundReader : MonoBehaviour
     }
     public void PlaySeconde()
     {
-        if (cantPLay)
+        if (!cantPLay)
         {
             SoundManager.instance.ApplyAudioClip(secondClipName, source);
             source.Play();
