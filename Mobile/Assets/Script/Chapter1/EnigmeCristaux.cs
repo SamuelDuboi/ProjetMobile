@@ -7,9 +7,8 @@ public class EnigmeCristaux : MonoBehaviour
     public GameObject[] cristaux;
     public bool[] cristalActif;
     public bool[] lockCristaux;
-    public bool constellation2;
-    public bool constellation3;
-    public bool constellation8;
+    public bool constellation1;
+    public bool constellation4;
 
     public int countCristaux;
     public int inventoryCristaux;
@@ -63,10 +62,9 @@ public class EnigmeCristaux : MonoBehaviour
                 inventoryCristaux -= 1;
                 InventoryManager.Instance.RemoveFromList(cristalName,1);
             }
-            Constellation2Check();
-            Constellation3Check();
-            Constellation8Check();
-            if (constellation2 && constellation3 && constellation8)
+            Constellation1Check();
+            Constellation4Check();
+            if (constellation1 && constellation4)
             {
                 exitDoor.interactifElement.interactionAnimator.SetTrigger("Interact");
                 EventManager.instance.OnZoomOut();
@@ -78,66 +76,11 @@ public class EnigmeCristaux : MonoBehaviour
         
     }
 
-    void Constellation2Check()
+    void Constellation1Check()
     {
-        if (index >= 7 && index <= 11)
+        if (index >= 0 && index <= 3)
         {
-            for (int i = 7; i < 12; i++)
-            {
-                if (cristalActif[i])
-                {
-                    countCristaux++;
-                }
-                else
-                {
-                    countCristaux = 0;
-                    break;
-                }
-            }
-            if (countCristaux == 5)
-            {
-                for (int i = 7; i < 12; i++)
-                {
-                    lockCristaux[i] = true;
-                    constellation2 = true;
-                }
-                countCristaux = 0;
-            }
-        }
-    }
-
-    void Constellation3Check()
-    {
-        if (index >= 38 && index <= 44)
-        {
-            for (int i = 38; i < 45; i++)
-            {
-                if (cristalActif[i])
-                {
-                    countCristaux++;
-                }
-                else
-                {
-                    countCristaux = 0;
-                    break;
-                }
-            }
-            if (countCristaux == 7)
-            {
-                for (int i = 38; i < 45; i++)
-                {
-                    lockCristaux[i] = true;
-                    constellation3 = true;
-                }
-                countCristaux = 0;
-            }
-        }
-    }
-    void Constellation8Check()
-    {
-        if (index >= 15 && index <= 18)
-        {
-            for (int i = 15; i < 19; i++)
+            for (int i = 0; i < 4; i++)
             {
                 if (cristalActif[i])
                 {
@@ -151,13 +94,42 @@ public class EnigmeCristaux : MonoBehaviour
             }
             if (countCristaux == 4)
             {
-                for (int i = 15; i < 19; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     lockCristaux[i] = true;
-                    constellation8 = true;
+                    constellation1 = true;
                 }
                 countCristaux = 0;
             }
         }
     }
+
+    void Constellation4Check()
+    {
+        if (index >= 14 && index <= 17)
+        {
+            for (int i = 14; i < 18; i++)
+            {
+                if (cristalActif[i])
+                {
+                    countCristaux++;
+                }
+                else
+                {
+                    countCristaux = 0;
+                    break;
+                }
+            }
+            if (countCristaux == 4)
+            {
+                for (int i = 14; i < 18; i++)
+                {
+                    lockCristaux[i] = true;
+                    constellation4 = true;
+                }
+                countCristaux = 0;
+            }
+        }
+    }
+    
 }

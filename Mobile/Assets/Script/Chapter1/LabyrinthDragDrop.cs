@@ -7,7 +7,7 @@ public class LabyrinthDragDrop : MonoBehaviour
     private Vector2 startPos;
     private Vector2 endPos;
     private int deadZone = 100;
-
+    private bool cantMove;
     public float speed;
     public GameObject canvas;
     private Rigidbody2D Rigidbody2D;
@@ -40,12 +40,14 @@ public class LabyrinthDragDrop : MonoBehaviour
                 if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
                 {
 
-                    if (direction.x > deadZone)
+                    if (direction.x > deadZone  && !cantMove)
                     {
+                        cantMove = true;
                         Rigidbody2D.velocity = Vector2.right * speed;
                     }
-                    else if (direction.x < -deadZone)
+                    else if (direction.x < -deadZone && !cantMove)
                     {
+                        cantMove = true;
                         Rigidbody2D.velocity = Vector2.left * speed;
 
                     }
@@ -54,12 +56,14 @@ public class LabyrinthDragDrop : MonoBehaviour
                 else
                 {
 
-                    if (direction.y > deadZone)
+                    if (direction.y > deadZone && !cantMove)
                     {
+                        cantMove = true;
                         Rigidbody2D.velocity = Vector2.up * speed;
                     }
-                    else if (direction.y < -deadZone)
+                    else if (direction.y < -deadZone&& !cantMove)
                     {
+                        cantMove = true;
                         Rigidbody2D.velocity = Vector2.down * speed;
 
                     }
@@ -67,6 +71,8 @@ public class LabyrinthDragDrop : MonoBehaviour
 
             }
         }
+        if (Rigidbody2D.velocity == Vector2.zero && cantMove)
+            cantMove = false;
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
