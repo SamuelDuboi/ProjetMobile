@@ -22,6 +22,7 @@ public class ArcAFeuSetup : ObjectHandler
             if (canPutTorche)
             {
                var gameObject = InventoryManager.Instance.FindObject(names[0], out random);
+                if(lightManager != null)
                 lightManager.ignoreZoom = false;
                 if (gameObject != null)
                 {
