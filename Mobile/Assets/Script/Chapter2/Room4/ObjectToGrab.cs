@@ -21,10 +21,9 @@ public class ObjectToGrab : ObjectHandler
             cpt++;
             var main = waterSystem.main;
             main.startSize = new ParticleSystem.MinMaxCurve(cpt*0.5f+0.35f, cpt*0.5f+0.35f);
-            interactifElement.interactionAnimator.SetTrigger("Shake");
-            if (cpt > 4)
+            interactifElement.interactionAnimator.SetTrigger("Interact");
+            if (cpt > 2)
             {
-                interactifElement.interactionAnimator.SetTrigger("Interact");
                 InventoryManager.Instance.AddList(gameObject, interactifElement.nameInventory, interactifElement.inventoryTexture);
                 TheWaterManager.instance.WaterUp();
                 var speed = waterSystem.main.startSpeed;
