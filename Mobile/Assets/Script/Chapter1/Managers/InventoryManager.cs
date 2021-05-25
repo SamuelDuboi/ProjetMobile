@@ -79,7 +79,7 @@ public class InventoryManager : Singleton<InventoryManager>
             int _index = interactifElementsList.Count - 1;
             interactifElementsList[_index].imageIndex = globalIndex;
             inventoryImages[globalIndex].sprite = image;
-             // inventoryImages[globalIndex].SetNativeSize();
+              inventoryImages[globalIndex].SetNativeSize();
             inventoryImages[globalIndex].GetComponentInChildren<TextMeshProUGUI>().text = interactifElementsList[_index].number.ToString();
           
             if (!isDoingAnim)
@@ -200,7 +200,7 @@ public class InventoryManager : Singleton<InventoryManager>
             for (int i = 0; i < inventoryImages.Length; i++)
             {
                 inventoryImages[i].sprite = initialSprite;
-                //inventoryImages[i].SetNativeSize();
+                inventoryImages[i].SetNativeSize();
 
                 inventoryImages[i].GetComponentInChildren<TextMeshProUGUI>().text="0";
                 inventoryImages[i].transform.parent.gameObject.SetActive(false); 
@@ -213,7 +213,7 @@ public class InventoryManager : Singleton<InventoryManager>
                     inventoryImages[globalIndex].GetComponentInChildren<TextMeshProUGUI>().text = item.number.ToString();
                     inventoryImages[globalIndex].sprite= item.image;
                     inventoryImages[globalIndex].transform.parent.gameObject.SetActive(true);
-                       //inventoryImages[globalIndex].SetNativeSize();
+                       inventoryImages[globalIndex].SetNativeSize();
 
                     globalIndex++;
                 }
