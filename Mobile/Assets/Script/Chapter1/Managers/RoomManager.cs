@@ -52,6 +52,7 @@ public class RoomManager : MonoBehaviour
 
     private IEnumerator Turn(bool right, float rotation)
     {
+
         if (!cantTurn)
         {
             cantTurn = true;
@@ -123,6 +124,7 @@ public class RoomManager : MonoBehaviour
 
             }
             #endregion
+            EventManager.instance.cuurrentCamDirection = currentDirection;
 
             for (int i = 0; i < 50; i++)
             {
@@ -136,7 +138,6 @@ public class RoomManager : MonoBehaviour
             main.transform.rotation = Quaternion.Euler(rotationToGo);
         }
 
-        EventManager.instance.cuurrentCamDirection = currentDirection;
         EventManager.instance.cantDoZoom = false;
     }
 

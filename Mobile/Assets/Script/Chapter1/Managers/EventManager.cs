@@ -125,11 +125,13 @@ public class EventManager : MonoBehaviour
     }
     public void OnCollect(GameObject currentObjects)
     {
+        if(!InventoryManager.Instance.isDoingAnim)
         CollectObject.Invoke(currentObjects);
     }
     public void OnInteract(GameObject currentObjects)
     {
-        InteractObject.Invoke(currentObjects);
+        if (!InventoryManager.Instance.isDoingAnim)
+            InteractObject.Invoke(currentObjects);
     }
     public void OnLightOn(GameObject currentObject)
     {
