@@ -2290,7 +2290,7 @@ MonoBehaviour:
   zoomObject: {fileID: 0}
   isMenu: 0
   returnButton: {fileID: 992218369}
-  soundToggle: {fileID: 0}
+  soundToggle: {fileID: 1269951524}
 --- !u!4 &539829919
 Transform:
   m_ObjectHideFlags: 0
@@ -4871,13 +4871,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[8].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
       objectReference: {fileID: 539829918}
     - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[8].m_Target
+      value: 
+      objectReference: {fileID: 539829918}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[8].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
       value: ChangeZoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[8].m_MethodName
+      value: IsToolge
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[8].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635524522976393, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[8].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2543635524629033388, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
@@ -4949,6 +4984,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayUrl
       objectReference: {fileID: 0}
+    - target: {fileID: 5963828077565475998, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963828077565475998, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 539829918}
+    - target: {fileID: 5963828077565475998, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Sound
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d8d9c23e639d74fa315c4cf915ce40, type: 3}
 --- !u!114 &1269951520 stripped
@@ -4999,6 +5049,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1269951524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 592740872295952358, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+    type: 3}
+  m_PrefabInstance: {fileID: 1269951519}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1287373840
 GameObject:
   m_ObjectHideFlags: 0

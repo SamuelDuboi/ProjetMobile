@@ -156,4 +156,9 @@ public class EventManager : MonoBehaviour
         else
             soundToggle.SetActive(true);
     }
+
+    public void Sound()
+    {
+        SoundManager.instance.ActiveSound(!SoundManager.instance.mute);
+    }
 }

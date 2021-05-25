@@ -1600,7 +1600,7 @@ MonoBehaviour:
   zoomObject: {fileID: 0}
   isMenu: 0
   returnButton: {fileID: 2773654317219591125}
-  soundToggle: {fileID: 0}
+  soundToggle: {fileID: 939253690824314002}
 --- !u!4 &539829919
 Transform:
   m_ObjectHideFlags: 0
@@ -19352,6 +19352,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 539829918}
+        m_MethodName: IsToolge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &2773654316752390142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22675,8 +22686,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ToogleSound
+      - m_Target: {fileID: 539829918}
+        m_MethodName: Sound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
