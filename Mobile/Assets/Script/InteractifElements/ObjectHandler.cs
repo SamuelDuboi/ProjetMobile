@@ -222,7 +222,7 @@ public class ObjectHandler : MonoBehaviour
         {
             if (ApplyOnCollect)
                 soundR.Play();
-            InventoryManager.Instance.AddList(gameObject, interactifElement.nameInventory, interactifElement.inventoryTexture);
+            InventoryManager.Instance.AddList(gameObject, interactifElement.nameInventory, interactifElement.inventoryTexture, 1,soundR);
             EventManager.instance.CollectObject -= CollectObject;
             if (interactifElement.activateTips && !doOnce)
             {

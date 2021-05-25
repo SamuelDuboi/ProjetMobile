@@ -53,7 +53,7 @@ public class EnigmeCristaux : MonoBehaviour
                 cristaux[index].GetComponent<MeshRenderer>().enabled = false;
                 cristalActif[index] = false;
                 inventoryCristaux += 1;
-                InventoryManager.Instance.AddList(cristaux[index], cristalName, inventorySprite);
+                InventoryManager.Instance.AddList(cristaux[index], cristalName, inventorySprite, 1,sound);
             }
             else if (cristalActif[index] == false && lockCristaux[index] == false && inventoryCristaux > 0)
             {

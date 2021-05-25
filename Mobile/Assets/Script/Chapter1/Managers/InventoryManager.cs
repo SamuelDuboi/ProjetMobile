@@ -17,8 +17,10 @@ public class InventoryManager : Singleton<InventoryManager>
     public bool isDoingAnim;
    List<int>numberOfAnim;
     int currentIndex;
+    SoundReader thiSoundR;
     private void Start()
     {
+        thiSoundR = GetComponent<SoundReader>();
         if(inventoryImages.Length>0 && inventoryImages[0]!= null)
         {
             initialSprite = inventoryImages[0].sprite;
@@ -53,7 +55,7 @@ public class InventoryManager : Singleton<InventoryManager>
         }
         return null;
     }
-    public void AddList(GameObject elementToAdd, string name, Sprite image, int number = 1)
+    public void AddList(GameObject elementToAdd, string name, Sprite image, int number = 1, SoundReader soundReader = null)
     {
         if(interactifElementsList == null)
         {
@@ -71,7 +73,11 @@ public class InventoryManager : Singleton<InventoryManager>
                 return;
             }
         }
-        
+        if(soundReader != null)
+        {
+            thiSoundR.clipName = soundReader.clipName;
+            thiSoundR.Play();
+        }
         interactifElementsList.Add(new InventoryItem(elementToAdd, name, number, image));
         //add image to ui
         if(image != null && image != default)
