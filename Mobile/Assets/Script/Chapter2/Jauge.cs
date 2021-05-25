@@ -69,7 +69,7 @@ public class Jauge : MonoBehaviour
 
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             InventoryManager.Instance.AddList(gameObject, "LevierBleu", default, 0);
-            StartCoroutine(GetComponentInParent<ActivateStick>().ActivateWaterStick());
+            GetComponentInParent<ActivateStick>().ActivateStickLunch();
             EventManager.instance.ZoomOut -= Unzoom;
             Destroy(gameObject);
 

@@ -74,7 +74,7 @@ public class LabyrintheManager : MonoBehaviour
             GetComponentInParent<ObjectHandler>().trialInstantiate = null;
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             InventoryManager.Instance.AddList(gameObject, "LevierJaune", default, 0);
-            StartCoroutine( GetComponentInParent<ActivateStick>().ActivateWaterStick());
+             GetComponentInParent<ActivateStick>().ActivateStickLunch();
             EventManager.instance.ZoomOut -= Unzoom;
 
             Destroy(gameObject);
