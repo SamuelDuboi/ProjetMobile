@@ -54,7 +54,7 @@ public class GreenStickTrial : MonoBehaviour
 
             GetComponentInParent<ObjectHandler>().interactifElement.spawnNewTrial = false;
             InventoryManager.Instance.AddList(gameObject, "LevierVert", default, 0);
-            StartCoroutine(GetComponentInParent<ActivateStick>().ActivateWaterStick());
+            GetComponentInParent<ActivateStick>().ActivateStickLunch();
             EventManager.instance.ZoomOut -= Unzoom;
             Destroy(gameObject);
         }
