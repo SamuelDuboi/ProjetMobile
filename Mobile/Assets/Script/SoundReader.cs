@@ -5,6 +5,8 @@ public class SoundReader : MonoBehaviour
 {
     public string clipName;
     public string secondClipName;
+    public string ThirdClipName;
+    public string ForthClipName;
     private AudioSource source;
     public bool applyAudioOnStart;
     public bool doOnce;
@@ -40,6 +42,22 @@ public class SoundReader : MonoBehaviour
         if (!cantPLay)
         {
             SoundManager.instance.ApplyAudioClip(secondClipName, source);
+            source.Play();
+        }
+    }
+    public void PlayThird()
+    {
+        if (!cantPLay)
+        {
+            SoundManager.instance.ApplyAudioClip(ThirdClipName, source);
+            source.Play();
+        }
+    }
+    public void Playforth()
+    {
+        if (!cantPLay)
+        {
+            SoundManager.instance.ApplyAudioClip(ForthClipName, source);
             source.Play();
         }
     }

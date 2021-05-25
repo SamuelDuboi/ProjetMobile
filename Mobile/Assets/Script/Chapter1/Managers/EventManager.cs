@@ -16,8 +16,9 @@ public class EventManager : MonoBehaviour
     public bool isMenu;
     public GameObject returnButton;
     public GameObject soundToggle;
-    
-    // Start is called before the first frame update
+    private SoundReader soundReader;
+
+
     private void Awake()
     {
         if (instance == null)
@@ -45,7 +46,12 @@ public class EventManager : MonoBehaviour
     public event Action<string, float> Popup;
     public event Action<int> LoadScene;
     public event Action<bool> ActiveSound;
-#endregion
+    #endregion
+
+    private void Start()
+    {
+        soundReader = GetComponent<SoundReader>();   
+    }
     public void ChangeZoom(bool zoom)
     {
         cantDoZoom = zoom;
@@ -55,6 +61,7 @@ public class EventManager : MonoBehaviour
     {
         if (!cantDoZoom && !hisZooming && !isMenu)
         {
+            soundReader.PlayThird();
             uspideDown = !uspideDown;
             cantDoZoom = true;
             SwipeUp.Invoke(up);
@@ -65,6 +72,8 @@ public class EventManager : MonoBehaviour
     {
         if (!cantDoZoom && !hisZooming)
         {
+            soundReader.Playforth();
+
             cantDoZoom = true;
             if (uspideDown)
                 SwipeRight.Invoke();
@@ -76,6 +85,7 @@ public class EventManager : MonoBehaviour
     {
         if (!cantDoZoom && !hisZooming)
         {
+            soundReader.Playforth();
             cantDoZoom = true;
             if (uspideDown)
                 SwipeLeft.Invoke();
@@ -87,6 +97,7 @@ public class EventManager : MonoBehaviour
     {
         if (!cantDoZoom )
         {
+            soundReader.Play();
             cantDoZoom = true;
             returnButton.SetActive(true);
             ZoomIn.Invoke( cam, orthographicSize, current);
@@ -101,6 +112,8 @@ public class EventManager : MonoBehaviour
             {
                 if (!FingerTipsManager.instance.zoomBack)
                 {
+                    soundReader.PlaySeconde();
+
                     cantDoZoom = true;
                     returnButton.SetActive(false);
                     ZoomOut.Invoke();
@@ -108,6 +121,8 @@ public class EventManager : MonoBehaviour
             }
             else
             {
+                soundReader.PlaySeconde();
+
                 cantDoZoom = true;
                 returnButton.SetActive(false);
                 ZoomOut.Invoke();
