@@ -17,6 +17,7 @@ public class ObjectHandler : MonoBehaviour
     public bool ApplyOnInteractIfHAsObject;
     public bool ApplyOnInteract;
     public bool ApplyOnCollect;
+    public GameObject parent;
   public  virtual void Start()
     {
         interactifElement = GetComponent<InteractifElement>();
@@ -195,6 +196,10 @@ public class ObjectHandler : MonoBehaviour
                 if (ApplyOnInteract)
                     soundR.Play();
                 interactifElement.interactionAnimator.SetTrigger("Interact");
+                if(parent != null)
+                {
+                    StartCoroutine(ChangeParent());
+                }
                 if (interactifElement.activateTips && !doOnce)
                 {
                     doOnce = true;
@@ -251,5 +256,10 @@ public class ObjectHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToWait);
         EventManager.instance.OnPopup(interactifElement.text, interactifElement.timePopup);
+    }
+    public IEnumerator ChangeParent()
+    {
+        yield return new WaitForSeconds(1.5f);
+        transform.SetParent(parent.transform);
     }
 }
