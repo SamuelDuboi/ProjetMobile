@@ -1457,6 +1457,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
   waterRoom2: {fileID: 6506691481811486761}
   activationColor: 3
 --- !u!114 &354429199
@@ -1529,6 +1530,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
 --- !u!114 &357078153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1727,6 +1729,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
 --- !u!1 &427985738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,6 +1896,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 1
+  parent: {fileID: 0}
 --- !u!114 &456013155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3198,6 +3202,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
   waterRoom2: {fileID: 6506691481811486761}
   activationColor: 2
 --- !u!114 &834599508
@@ -3335,6 +3340,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
   waterStick: {fileID: 354429198}
   isGreen: 0
 --- !u!114 &872797159
@@ -3696,6 +3702,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
 --- !u!114 &1034775979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5459,6 +5466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1525519251}
   - component: {fileID: 1525519250}
+  - component: {fileID: 1525519252}
   m_Layer: 0
   m_Name: Sound
   m_TagString: Untagged
@@ -5477,7 +5485,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 876b83c8bfc24924fad82281dd404fc0, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
@@ -5576,6 +5584,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1525519252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525519249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: Macine
+  secondClipName: 
+  ThirdClipName: 
+  ForthClipName: 
+  applyAudioOnStart: 1
+  doOnce: 0
 --- !u!1001 &1536389355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6160,6 +6186,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 1
+  parent: {fileID: 0}
 --- !u!114 &1736215448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6373,6 +6400,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 1
   ApplyOnCollect: 0
+  parent: {fileID: 0}
   waterStick: {fileID: 1861929754}
   isGreen: 0
 --- !u!114 &1742200673
@@ -6718,6 +6746,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
   barrierManager: {fileID: 1702544456302216731}
   index: 2
   soundReader: {fileID: 1767633236}
@@ -6996,6 +7025,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
   levelManager: {fileID: 1702544455939463705}
   redStick: {fileID: 7028630065692970281}
   scriptToActive:
@@ -7184,6 +7214,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
   waterRoom2: {fileID: 6506691481811486761}
   activationColor: 0
 --- !u!114 &1861929755
@@ -7546,6 +7577,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
   barrierManager: {fileID: 1702544456302216731}
   index: 1
   soundReader: {fileID: 1974376184}
@@ -7788,6 +7820,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
 --- !u!114 &1991148815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8141,6 +8174,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
   barrierManager: {fileID: 1702544456302216731}
   index: 3
   soundReader: {fileID: 6373033836074428771}
@@ -13719,6 +13753,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
 --- !u!1 &2942990161008520145
 GameObject:
   m_ObjectHideFlags: 0
@@ -14702,6 +14737,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
   waterStick: {fileID: 834599507}
   isGreen: 0
 --- !u!1 &6132104786462003572
@@ -15027,6 +15063,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
 --- !u!114 &6355825838734950990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15792,6 +15829,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
 --- !u!23 &6506691481178049038
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17142,6 +17180,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
 --- !u!65 &6506691482526920806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17488,6 +17527,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 1
+  parent: {fileID: 0}
 --- !u!1 &6694580080395217139
 GameObject:
   m_ObjectHideFlags: 0
@@ -17930,6 +17970,7 @@ MonoBehaviour:
   ApplyOnInteractIfHAsObject: 0
   ApplyOnInteract: 0
   ApplyOnCollect: 0
+  parent: {fileID: 0}
   waterRoom2: {fileID: 6506691481811486761}
   activationColor: 1
 --- !u!95 &7028630066690090164

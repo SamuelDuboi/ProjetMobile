@@ -74,7 +74,6 @@ public class ObjectHandlerActiveWater : ObjectHandler
                     if (inventoryItem)
                     {
                         numberOfObject++;
-                        InventoryManager.Instance.RemoveFromList(curentGamObject, 1);
                     }
                 }
                 if (numberOfObject != interactifElement.ObjectoOpen.Count)
@@ -86,7 +85,16 @@ public class ObjectHandlerActiveWater : ObjectHandler
                 }
                 if (ApplyOnInteractIfHAsObject)
                     soundR.Play();
-                interactifElement.interactionAnimator.SetLayerWeight(1, 0);
+            foreach (var curentGamObject in interactifElement.ObjectoOpen)
+            {
+                int number;
+                var inventoryItem = InventoryManager.Instance.FindObject(curentGamObject, out number);
+                if (inventoryItem)
+                {
+                    InventoryManager.Instance.RemoveFromList(curentGamObject, 1);
+                }
+            }
+            interactifElement.interactionAnimator.SetLayerWeight(1, 0);
                 interactifElement.interactionAnimator.SetLayerWeight(2, 1);
                 interactifElement.hasLinkGameObject = false;
                 InteractActiveObject(true);

@@ -65,11 +65,22 @@ public class ZoomOnTapis : ObjectHandler
 
     }
 
+    public void StartActivateStick()
+    {
+        StartCoroutine(ActivateStick());
+    }
     public IEnumerator  ActivateStick()
     {
+        Cams cams = null;
+        float orthographicSize = redStick.interactifElement.orthoGraphicSize;
+        redStick.ChoseToZoom(out cams);
+        if (cams != null)
+            EventManager.instance.OnZoomIn(cams, orthographicSize, redStick.gameObject);
+        yield return new WaitForSeconds(0.5f);
         redStick.Interact(redStick.HitBoxZoom.gameObject);
         yield return new WaitForSeconds(redStick.interactifElement.interactionAnimator.GetCurrentAnimatorClipInfo(0).Length);
         UnZoom();
+        EventManager.instance.OnZoomOut(); 
         HitBoxZoom.enabled = false;
     }
 
