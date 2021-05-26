@@ -8,11 +8,14 @@ public class DebugManager : ObjectHandler
     public override void Start()
     {
         base.Start();
+        if(SaveManager.instance.debug == true)
+            interactifElement.interactionAnimator.SetTrigger("Interact");
     }
     public override void Interact(GameObject currentGameObject)
     {
         if (HitBoxZoom != null && currentGameObject == HitBoxZoom.gameObject)
         {
+            interactifElement.interactionAnimator.SetTrigger("Interact");
             if (SaveManager.instance.debug == false)
             SaveManager.instance.debug = true;
             else if (SaveManager.instance.debug == true)
