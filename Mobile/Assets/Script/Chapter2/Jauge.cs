@@ -62,7 +62,7 @@ public class Jauge : MonoBehaviour
 
     public void JaugeChecker()
     {
-        if(jaugeIndex[0] == 4 && jaugeIndex[1] == 2 && jaugeIndex[2] == 7)
+        if(jaugeIndex[0] == 4 && jaugeIndex[1] == 7 && jaugeIndex[2] == 2)
         {
             GetComponentInParent<ObjectHandler>().trialInstantiate = null;
             EventManager.instance.OnDestroyTrial();
