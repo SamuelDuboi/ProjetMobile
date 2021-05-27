@@ -62,7 +62,7 @@ public class ObjectToGrab : ObjectHandler
             yield return new WaitForSeconds(0.01f);
         }
         
-        Destroy(transform.parent.gameObject);
+      // Destroy(transform.parent.gameObject);
     }
 
     private void Swipe(bool up)
