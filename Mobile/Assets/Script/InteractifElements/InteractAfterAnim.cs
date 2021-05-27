@@ -20,7 +20,7 @@ public class InteractAfterAnim : StateMachineBehaviour
             {
                 if (!objet.activeSelf)
                     objet.SetActive(true);
-                if (objet.GetComponent<ObjectHandler>())
+                if (objet.GetComponent<ObjectHandler>() && objet.GetComponent<ObjectHandler>().interactifElement)
                 {
                   if (objet.GetComponent<ObjectHandler>().interactifElement.hasLinkGameObject)
                         InventoryManager.Instance.AddList(gameObject.gameObject, objet.GetComponent<ObjectHandler>().NameToAddIfAnimToAdd, default);
