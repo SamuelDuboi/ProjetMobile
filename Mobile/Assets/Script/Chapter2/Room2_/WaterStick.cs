@@ -41,6 +41,8 @@ public class WaterStick : ObjectHandler
                     interactifElement.interactionAnimator.SetTrigger("Interact");
                     return;
                 }
+                if (ApplyOnInteractIfHAsObject)
+                    soundR.Play();
                 interactifElement.interactionAnimator.SetLayerWeight(1, 0);
                 interactifElement.interactionAnimator.SetLayerWeight(2, 1);
                 waterRoom2.ActivateBool((int)activationColor);

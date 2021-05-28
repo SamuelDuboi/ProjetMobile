@@ -3246,11 +3246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20349c0086875f74690d6899a66f09ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  urls:
-  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
-  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
-  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
-  - https://www.youtube.com/watch?v=bw-6cTKvoxM&ab_channel=LostNowhere
   text:
   - "Emp\xEAchez la vapeur de s'\xE9chapper du tuyau en <b> tournant la manivelle.
     </b>"
@@ -10952,6 +10947,8 @@ GameObject:
   - component: {fileID: 1484569582}
   - component: {fileID: 1484569584}
   - component: {fileID: 1484569583}
+  - component: {fileID: 1484569586}
+  - component: {fileID: 1484569585}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -10992,9 +10989,9 @@ MonoBehaviour:
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
   doOnce: 0
-  soundR: {fileID: 0}
+  soundR: {fileID: 1484569585}
   ApplyOnInteractIfHAsObject: 0
-  ApplyOnInteract: 0
+  ApplyOnInteract: 1
   ApplyOnCollect: 0
   parent: {fileID: 0}
 --- !u!114 &1484569584
@@ -11045,6 +11042,120 @@ MonoBehaviour:
   timePopup: 0
   activateTips: 0
   indexOfTip: 0
+--- !u!114 &1484569585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484569581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: CadenasTuto
+  secondClipName: 
+  ThirdClipName: 
+  ForthClipName: 
+  applyAudioOnStart: 0
+  doOnce: 0
+--- !u!82 &1484569586
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484569581}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1485865434
 GameObject:
   m_ObjectHideFlags: 0
@@ -13150,7 +13261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipName: Porte
+  clipName: PorteMetal
   secondClipName: 
   ThirdClipName: 
   ForthClipName: 
@@ -14409,7 +14520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb64da71cec4ccd4484415c785ae6d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipName: Vapeur
+  clipName: VapeurContinue
   secondClipName: 
   ThirdClipName: 
   ForthClipName: 

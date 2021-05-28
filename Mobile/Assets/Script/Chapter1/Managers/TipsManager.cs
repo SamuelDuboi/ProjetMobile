@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class TipsManager : MonoBehaviour
 {
     public static TipsManager instance;
-    public string[] urls;
     private int index;
     public string[] text;
     public Sprite[] images;
@@ -61,8 +60,4 @@ public class TipsManager : MonoBehaviour
         }
     }
 
-    public void PlayUrl()
-    {
-        Application.OpenURL( urls[index]);
-    }
 }
