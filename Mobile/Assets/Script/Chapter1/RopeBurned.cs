@@ -8,6 +8,7 @@ public class RopeBurned : MonoBehaviour
     public Animator burnedRope;
     private bool doOnce;
     public bool botomRope;
+    public bool statueRope;
     private float timer;
 
     private void Start()
@@ -23,6 +24,8 @@ public class RopeBurned : MonoBehaviour
                 timer += Time.deltaTime;
                 return;
             }
+            if (statueRope)
+                TipsManager.instance.changeIndex(1);
             doOnce = true;
             burnedRope.SetTrigger("Interact");
             EventManager.instance.OnZoomOut();
