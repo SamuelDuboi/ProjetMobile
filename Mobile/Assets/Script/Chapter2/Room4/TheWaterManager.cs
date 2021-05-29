@@ -41,9 +41,14 @@ public class TheWaterManager : MonoBehaviour
     }
     public void LoadMenu()
     {
-        
-            SaveManager.instance.SaveChapter2();
-            SaveManager.instance.LoadScene(1);
-        
+        StartCoroutine(WaitLoadMenu());
+    }
+    IEnumerator WaitLoadMenu()
+    {
+        yield return new WaitForSeconds(2f);
+
+        SaveManager.instance.SaveChapter2();
+        SaveManager.instance.LoadScene(1);
+
     }
 }

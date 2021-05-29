@@ -38,6 +38,8 @@ public class ObjectHandlerActiveWater : ObjectHandler
                 interactifElement.spawnNewTrial = false;
                 trialInstantiate = Instantiate(interactifElement.TrialGameObjects, Camera.main.transform.position, Quaternion.identity);
                 trialInstantiate.transform.SetParent(transform);
+                if (ActiveSoundOnInteract)
+                    soundR.Play();
                 return;
             }
             if (!doOnceWater)
