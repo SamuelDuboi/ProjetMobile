@@ -27,6 +27,7 @@ public class PlaqueContenant : ObjectHandler
                     return;
                 }
                 interactifElement.objectToActive[0].SetActive(true);
+                TipsManager.instance.changeIndex(interactifElement.indexOfTip);
                 InventoryManager.Instance.RemoveFromList(interactifElement.ObjectoOpen[0], 1);
                 water.BlockUp();
             }

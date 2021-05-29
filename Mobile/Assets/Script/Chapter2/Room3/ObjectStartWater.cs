@@ -28,9 +28,12 @@ public class ObjectStartWater : ObjectHandler
                     foreach (var inventoryItem in InventoryManager.Instance.interactifElementsList)
                     {
                         if (inventoryItem.name == curentGamObject)
+                        {
                             numberOfObject++;
+                            
+                        }
                     }
-
+                    InventoryManager.Instance.RemoveFromList(curentGamObject, 1);
 
                 }
                 if (numberOfObject != interactifElement.ObjectoOpen.Count)
@@ -40,6 +43,8 @@ public class ObjectStartWater : ObjectHandler
                     interactifElement.interactionAnimator.SetTrigger("Interact");
                     return;
                 }
+                if (interactifElement.activateTips)
+                    TipsManager.instance.changeIndex(interactifElement.indexOfTip);
                 interactifElement.interactionAnimator.SetLayerWeight(1, 0);
                 interactifElement.interactionAnimator.SetLayerWeight(2, 1);
                 waterWall.ActivateWater();

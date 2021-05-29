@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 93922754}
   - component: {fileID: 93922757}
   - component: {fileID: 93922756}
-  - component: {fileID: 93922755}
   m_Layer: 0
   m_Name: parchemin (1)
   m_TagString: Untagged
@@ -156,20 +155,6 @@ Transform:
   m_Father: {fileID: 1706067923}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
---- !u!64 &93922755
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93922753}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6976098275286290718, guid: 19ac801de1c2c044582a1072ec028652, type: 3}
 --- !u!23 &93922756
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1420,7 +1405,6 @@ GameObject:
   - component: {fileID: 328531133}
   - component: {fileID: 328531136}
   - component: {fileID: 328531135}
-  - component: {fileID: 328531134}
   m_Layer: 0
   m_Name: parchemin (4)
   m_TagString: Untagged
@@ -1442,20 +1426,6 @@ Transform:
   m_Father: {fileID: 1706067923}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
---- !u!64 &328531134
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328531132}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6976098275286290718, guid: 19ac801de1c2c044582a1072ec028652, type: 3}
 --- !u!23 &328531135
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4223,6 +4193,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 539829918}
+    - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
       objectReference: {fileID: 1050919240}
@@ -4231,6 +4216,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
       objectReference: {fileID: 539829918}
+    - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: ChangeZoom
+      objectReference: {fileID: 0}
     - target: {fileID: 2543635523743038750, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
@@ -4418,9 +4408,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4455522632456535237, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 539829918}
+    - target: {fileID: 4455522632456535237, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
       objectReference: {fileID: 539829918}
+    - target: {fileID: 4455522632456535237, guid: 15d8d9c23e639d74fa315c4cf915ce40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: ChangeZoom
+      objectReference: {fileID: 0}
     - target: {fileID: 4455522632456535237, guid: 15d8d9c23e639d74fa315c4cf915ce40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
@@ -4821,7 +4821,6 @@ GameObject:
   - component: {fileID: 904005621}
   - component: {fileID: 904005624}
   - component: {fileID: 904005623}
-  - component: {fileID: 904005622}
   m_Layer: 0
   m_Name: planche
   m_TagString: Untagged
@@ -4843,20 +4842,6 @@ Transform:
   m_Father: {fileID: 1706067923}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: 0}
---- !u!64 &904005622
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904005620}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6976098275286290718, guid: 19ac801de1c2c044582a1072ec028652, type: 3}
 --- !u!23 &904005623
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4915,7 +4900,6 @@ GameObject:
   - component: {fileID: 907748076}
   - component: {fileID: 907748079}
   - component: {fileID: 907748078}
-  - component: {fileID: 907748077}
   m_Layer: 0
   m_Name: parchemin
   m_TagString: Untagged
@@ -4937,20 +4921,6 @@ Transform:
   m_Father: {fileID: 1706067923}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: -46.516003}
---- !u!64 &907748077
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907748075}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6976098275286290718, guid: 19ac801de1c2c044582a1072ec028652, type: 3}
 --- !u!23 &907748078
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5492,11 +5462,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text:
-  - "Trouvez <b> la loupe  </b> dans l\u2019une des biblioth\xE8ques, cach\xE9 <b>
-    derri\xE8re un parchemin. </b> Utilisez-le pour enflammer <b> la planche s\u2019\xE9tant
-    d\xE9tach\xE9e de la biblioth\xE8que </b> en pla\xE7ant la loupe <b> sur le promontoir
-    pos\xE9 sur la table </b>."
-  - "R\xE9cup\xE9rez <b> la torche \xE9teinte </b> plac\xE9e sur l\u2019un des murs
+  - "Trouvez <b>la loupe </b> dans l\u2019une des biblioth\xE8ques, cach\xE9 <b>derri\xE8re
+    un parchemin. </b>Utilisez-le pour enflammer <b>la planche s\u2019\xE9tant d\xE9tach\xE9e
+    de la biblioth\xE8que</b> en pla\xE7ant la loupe <b>sur le promontoir pos\xE9
+    sur la table</b>."
+  - "R\xE9cup\xE9rez <b>la torche \xE9teinte</b> plac\xE9e sur l\u2019un des murs
     et <b> allumez-la </b> en <b> l\u2019approchant du feu </b> allum\xE9 pr\xE9c\xE9demment. "
   - "<b> Lisez l'\xE9criteau situ\xE9 sur l\u2019un des murs du plafond </b> retra\xE7ant
     un mythe sur lequel <b> quatres lieux </b> sont indiqu\xE9s. Retrouvez ces lieux,
@@ -7210,7 +7180,7 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
-  activateTips: 1
+  activateTips: 0
   indexOfTip: 2
 --- !u!114 &1422771283
 MonoBehaviour:
@@ -7738,7 +7708,6 @@ GameObject:
   - component: {fileID: 1452856817}
   - component: {fileID: 1452856820}
   - component: {fileID: 1452856819}
-  - component: {fileID: 1452856818}
   m_Layer: 0
   m_Name: parchemin (2)
   m_TagString: Untagged
@@ -7760,20 +7729,6 @@ Transform:
   m_Father: {fileID: 1706067923}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
---- !u!64 &1452856818
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452856816}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6976098275286290718, guid: 19ac801de1c2c044582a1072ec028652, type: 3}
 --- !u!23 &1452856819
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8444,8 +8399,8 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
-  activateTips: 0
-  indexOfTip: 0
+  activateTips: 1
+  indexOfTip: 2
 --- !u!1 &1647798461
 GameObject:
   m_ObjectHideFlags: 0
@@ -8679,7 +8634,6 @@ GameObject:
   - component: {fileID: 1676478928}
   - component: {fileID: 1676478931}
   - component: {fileID: 1676478930}
-  - component: {fileID: 1676478929}
   m_Layer: 0
   m_Name: parchemin (3)
   m_TagString: Untagged
@@ -8701,20 +8655,6 @@ Transform:
   m_Father: {fileID: 1706067923}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
---- !u!64 &1676478929
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676478927}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6976098275286290718, guid: 19ac801de1c2c044582a1072ec028652, type: 3}
 --- !u!23 &1676478930
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8818,6 +8758,7 @@ GameObject:
   - component: {fileID: 1706067925}
   - component: {fileID: 1706067924}
   - component: {fileID: 1706067926}
+  - component: {fileID: 1706067927}
   m_Layer: 0
   m_Name: Bibliotheque
   m_TagString: Untagged
@@ -8911,6 +8852,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1706067927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706067922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.60801244, y: 1.5997679, z: 2.0498838}
+  m_Center: {x: -36.57, y: 0.00000016136897, z: 1.0249416}
 --- !u!1 &1745129609
 GameObject:
   m_ObjectHideFlags: 0
@@ -10240,7 +10194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
-  HitBoxZoom: {fileID: 0}
+  HitBoxZoom: {fileID: 1706067927}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
@@ -11532,8 +11486,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.454237, y: 5.7960405, z: 4.898231}
-  m_Center: {x: -2.9374344, y: -2.3980277, z: -0.45377722}
+  m_Size: {x: 5.277445, y: 4.966673, z: 3.5415795}
+  m_Center: {x: -1.8490329, y: -1.9833541, z: -1.1321057}
 --- !u!33 &2480329732874690403
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14084,7 +14038,7 @@ MonoBehaviour:
   PopupAfterAnim: 0
   text: 
   timePopup: 0
-  activateTips: 1
+  activateTips: 0
   indexOfTip: 1
 --- !u!4 &5752399146527516833
 Transform:

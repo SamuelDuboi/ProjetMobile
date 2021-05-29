@@ -50,6 +50,7 @@ public class ArcAFeuSetup : ObjectHandler
 
             if (!doOnceLight)
             {
+                TipsManager.instance.changeIndex(1);
                 doOnceLight = true;
                 interactifElement.onlyZoom = false;
                 HitBoxZoom.enabled = true;
