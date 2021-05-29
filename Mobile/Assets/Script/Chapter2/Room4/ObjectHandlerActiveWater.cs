@@ -46,6 +46,8 @@ public class ObjectHandlerActiveWater : ObjectHandler
             {
                 doOnceWater = true;
                 interactifElement.interactionAnimator.SetTrigger("Interact");
+                if (interactifElement.activateTips)
+                    TipsManager.instance.changeIndex(interactifElement.indexOfTip);
                 if (ActiveSoundOnInteract)
                     soundR.Play();
 

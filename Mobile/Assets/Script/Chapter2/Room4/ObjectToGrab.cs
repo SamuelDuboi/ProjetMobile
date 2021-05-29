@@ -32,6 +32,7 @@ public class ObjectToGrab : ObjectHandler
                 HitBoxZoom.gameObject.SetActive(false);
                 StartCoroutine(WaterCaroutine(main));
                 soundR.PlaySeconde();
+                TipsManager.instance.changeIndex(interactifElement.indexOfTip);
                 EventManager.instance.ZoomOut -= UnZoom;
                 EventManager.instance.CollectObject -= CollectObject;
                 EventManager.instance.InteractObject -= Interact;
