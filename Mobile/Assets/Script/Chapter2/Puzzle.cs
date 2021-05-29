@@ -51,10 +51,10 @@ public class Puzzle : MonoBehaviour
             }
             timer = 0f;
         }
-        while (timer <= 0.20f)
+        while (timer <= 0.09f)
         {
             timer += 0.01f;
-            button.transform.Rotate(Vector3.forward, -(90f / 20f));
+            button.transform.Rotate(Vector3.forward, -(90f / 10f));
             yield return new WaitForSeconds(0.01f);
         }
         timer = 0;

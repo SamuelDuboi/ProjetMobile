@@ -37,11 +37,13 @@ public class TheWaterManager : MonoBehaviour
     {
         currentLevel++;
         waterAnim.SetInteger("Level", currentLevel);
-        if(currentLevel > 4)
-        {
+        
+    }
+    public void LoadMenu()
+    {
+        
             SaveManager.instance.SaveChapter2();
             SaveManager.instance.LoadScene(1);
-        }
+        
     }
-
 }

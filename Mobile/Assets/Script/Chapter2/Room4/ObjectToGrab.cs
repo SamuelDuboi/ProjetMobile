@@ -22,6 +22,7 @@ public class ObjectToGrab : ObjectHandler
             var main = waterSystem.main;
             main.startSize = new ParticleSystem.MinMaxCurve(cpt*0.5f+0.35f, cpt*0.5f+0.35f);
             interactifElement.interactionAnimator.SetTrigger("Interact");
+            soundR.Play();
             if (cpt > 2)
             {
                 InventoryManager.Instance.AddList(gameObject, interactifElement.nameInventory, interactifElement.inventoryTexture);
@@ -30,7 +31,7 @@ public class ObjectToGrab : ObjectHandler
                 main.startSize = new ParticleSystem.MinMaxCurve(2f, 2f);
                 HitBoxZoom.gameObject.SetActive(false);
                 StartCoroutine(WaterCaroutine(main));
-
+                soundR.PlaySeconde();
                 EventManager.instance.ZoomOut -= UnZoom;
                 EventManager.instance.CollectObject -= CollectObject;
                 EventManager.instance.InteractObject -= Interact;
@@ -61,7 +62,7 @@ public class ObjectToGrab : ObjectHandler
             mainModule.startSize = new ParticleSystem.MinMaxCurve(2f-timer, 2f-timer);
             yield return new WaitForSeconds(0.01f);
         }
-        
+        soundR.StopSound();
       // Destroy(transform.parent.gameObject);
     }
 
