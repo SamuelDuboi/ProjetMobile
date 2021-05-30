@@ -104,7 +104,7 @@ public class ObjectHandlerActiveWater : ObjectHandler
             interactifElement.hasLinkGameObject = false;
             InteractActiveObject(true);
             EventManager.instance.OnZoomOut();
-            StartCoroutine(WaterACtiveAfterAnim());
+            StartCoroutine(WaterACtiveAfterAnim(4));
         }
 
     }
@@ -112,6 +112,14 @@ public class ObjectHandlerActiveWater : ObjectHandler
     {
         yield return new WaitForSeconds(1f);
         waterManager.WaterUp();
+        yield return new WaitForSeconds(1f);
+        soundR.StopSound();
+
+    }
+    IEnumerator WaterACtiveAfterAnim(int number)
+    {
+        yield return new WaitForSeconds(1f);
+        waterManager.WaterUp(number);
         yield return new WaitForSeconds(1f);
         soundR.StopSound();
 

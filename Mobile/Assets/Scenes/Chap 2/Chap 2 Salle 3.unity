@@ -2279,6 +2279,7 @@ Transform:
   m_Children:
   - {fileID: 1693634491}
   - {fileID: 26666989}
+  - {fileID: 1070518959}
   m_Father: {fileID: 4629343308015857670}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180.00002}
@@ -2295,7 +2296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactifElement: {fileID: 0}
-  HitBoxZoom: {fileID: 1693634493}
+  HitBoxZoom: {fileID: 1070518961}
   isZoomed: 0
   trialInstantiate: {fileID: 0}
   NameToAddIfAnimToAdd: 
@@ -4659,6 +4660,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879d96af8ffda6f46a168958e0c490f6, type: 3}
+--- !u!1 &1070518958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1070518959}
+  - component: {fileID: 1070518961}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 123
+  m_IsActive: 0
+--- !u!4 &1070518959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070518958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.052, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 620688470}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1070518961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070518958}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0374892, y: 0.95018256, z: 1}
+  m_Center: {x: 0.018744595, y: -0.024908718, z: 0.0000000059386998}
 --- !u!1 &1090564403
 GameObject:
   m_ObjectHideFlags: 0
@@ -10644,7 +10689,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1416, y: 925}
+  m_SizeDelta: {x: 925, y: 925}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1349852778
 MonoBehaviour:
@@ -11061,7 +11106,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1416, y: 925}
+  m_SizeDelta: {x: 926, y: 925}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383011153
 MonoBehaviour:
@@ -12049,7 +12094,6 @@ GameObject:
   - component: {fileID: 1693634491}
   - component: {fileID: 1693634495}
   - component: {fileID: 1693634494}
-  - component: {fileID: 1693634493}
   - component: {fileID: 1693634492}
   m_Layer: 0
   m_Name: Cube
@@ -12093,19 +12137,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &1693634493
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693634490}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0374892, y: 0.95018256, z: 1}
-  m_Center: {x: 0.018744595, y: -0.024908718, z: 0.0000000059386998}
 --- !u!23 &1693634494
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22290,7 +22321,8 @@ MonoBehaviour:
   spawnNewTrial: 0
   TrialGameObjects: {fileID: 6651476726310942946, guid: 6f112e6aa2638274e9bd63cf47e750dc,
     type: 3}
-  objectToActive: []
+  objectToActive:
+  - {fileID: 1070518958}
   objectToInteract: []
   inventory: 0
   nameInventory: 
@@ -22821,8 +22853,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24205649, y: 0.20792039, z: 0.000000051075656}
-  m_Center: {x: -0.0000010729856, y: -0.0014353804, z: -0.0000007382579}
+  m_Size: {x: 0.24552596, y: 0.21491306, z: 0.000000051075624}
+  m_Center: {x: -0.0017357621, y: -0.003959889, z: -0.00000072786514}
 --- !u!23 &5354231073795920181
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23779,7 +23811,8 @@ MonoBehaviour:
   spawnNewTrial: 0
   TrialGameObjects: {fileID: 0}
   objectToActive: []
-  objectToInteract: []
+  objectToInteract:
+  - {fileID: 5354231074937714852}
   inventory: 0
   nameInventory: 
   inventoryTexture: {fileID: 0}

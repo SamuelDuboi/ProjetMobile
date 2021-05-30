@@ -39,6 +39,12 @@ public class TheWaterManager : MonoBehaviour
         waterAnim.SetInteger("Level", currentLevel);
         
     }
+    public void WaterUp(int number)
+    {
+        currentLevel+= number;
+        waterAnim.SetInteger("Level", currentLevel);
+
+    }
     public void LoadMenu()
     {
         StartCoroutine(WaitLoadMenu());

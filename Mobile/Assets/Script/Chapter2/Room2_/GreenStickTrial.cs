@@ -5,6 +5,9 @@ public class GreenStickTrial : MonoBehaviour
 {
     public Sprite bigGear;
     public Sprite smallgGear;
+    public Sprite MidlegGear;
+    public Sprite UiGrand;
+    public Sprite UIpetit;
     int numberOfGear=0;
     int numberOfsmallGear=0;
     public ObjectHandler parent;
@@ -24,6 +27,20 @@ public class GreenStickTrial : MonoBehaviour
         {
             InventoryManager.Instance.RemoveFromList("EngrenageGros", 1);
             currentButtons.GetComponent<Image>().sprite = bigGear;
+            currentButtons.GetComponent<Image>().type = Image.Type.Simple;
+            currentButtons.interactable = false;
+            CheckNumberOfGear(false);
+        }
+    }
+    public void ClickMidleGear(Button currentButtons)
+    {
+        int number;
+        var gear = InventoryManager.Instance.FindObject("EngrenageGros", out number);
+        if (gear)
+        {
+            InventoryManager.Instance.RemoveFromList("EngrenageGros", 1);
+            currentButtons.GetComponent<Image>().sprite = MidlegGear;
+            currentButtons.GetComponent<Image>().type = Image.Type.Simple;
             currentButtons.interactable = false;
             CheckNumberOfGear(false);
         }
@@ -35,6 +52,7 @@ public class GreenStickTrial : MonoBehaviour
         if (gear)
         {
             InventoryManager.Instance.RemoveFromList("EngrenagePetit", 1);
+            currentButtons.GetComponent<Image>().type = Image.Type.Simple;
             currentButtons.GetComponent<Image>().sprite = smallgGear;
             currentButtons.interactable = false;
             CheckNumberOfGear(true);
@@ -66,9 +84,9 @@ public class GreenStickTrial : MonoBehaviour
         parent.HitBoxZoom.enabled = true;
         parent.interactifElement.spawnNewTrial = true;
         if (numberOfsmallGear == 1)
-            InventoryManager.Instance.AddList(parent.gameObject, "EngrenagePetit", smallgGear);
+            InventoryManager.Instance.AddList(parent.gameObject, "EngrenagePetit", UIpetit);
         if(numberOfGear>0)
-            InventoryManager.Instance.AddList(parent.gameObject, "EngrenageGros", bigGear,numberOfGear);
+            InventoryManager.Instance.AddList(parent.gameObject, "EngrenageGros", UiGrand,numberOfGear);
         EventManager.instance.ZoomOut -= Unzoom;
         Destroy(gameObject);
     }

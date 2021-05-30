@@ -112,14 +112,14 @@ public class SaveManager : MonoBehaviour
 
     public void SaveChapter1()
     {
-       if(SceneManager.GetActiveScene().buildIndex != 4)
+       if(SceneManager.GetActiveScene().buildIndex != 5)
             chapter1Number = SceneManager.GetActiveScene().buildIndex +1;
         SaveByXML();
     }
 
     public void SaveChapter2()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 8)
+        if (SceneManager.GetActiveScene().buildIndex != 9)
             chapter2Number = SceneManager.GetActiveScene().buildIndex+1 ;
 
         SaveByXML();
